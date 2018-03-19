@@ -1,3 +1,3 @@
 # Machine-Learning-for-Beginner-by-Python3
 
-为机器学习的入门者提供基于实例的多种ML算法的实现以及基于sklearn、TensorFlow的实现代码。
+为机器学习的入门者**提供多种基于实例的基于sklearn、TensorFlow的ML算法实现**。
