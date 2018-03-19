@@ -4,12 +4,12 @@
 
 ### 算法目录
 
-* **线性回归**
+* **Linear Regression(线性回归)**
 
-* **多项式回归**
+* **Polynomial Regression(多项式回归)**
 
-* **逻辑回归**
+* **Logistic Regression (逻辑回归)**
 
-* **Softmax回归**
+* **Softmax Regression (Softmax 回归)**
 
 . 
