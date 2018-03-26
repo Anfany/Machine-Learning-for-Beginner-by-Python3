@@ -19,7 +19,7 @@
  
  ##### 辅助代码文件
  
- 波士房价数据集爬虫程序：[Boston_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Boston_Spyder.py)
+ 波士顿房价数据集爬虫程序：[Boston_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Boston_Spyder.py)
  
  
  
