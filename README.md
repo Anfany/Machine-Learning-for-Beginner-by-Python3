@@ -4,9 +4,9 @@
 
 ### 算法目录
 
-* **Linear Regression(线性回归)**
+* **Linear Regression (线性回归)**
 
-* **Polynomial Regression(多项式回归)**
+* **Polynomial Regression (多项式回归)**
 
 * **Logistic Regression (逻辑回归)**
 
