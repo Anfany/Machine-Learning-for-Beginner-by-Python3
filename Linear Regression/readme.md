@@ -5,11 +5,9 @@
  
  ##### 数据文件
  
- 输入：
+ 波士顿房价数据集：Boston.csv [数据集说明](http://lib.stat.cmu.edu/datasets/boston)
  
- 输出：
- 
- ##### 主要代码文件
+ ##### 基于不同库的代码文件
  
  Sklearn：
  
