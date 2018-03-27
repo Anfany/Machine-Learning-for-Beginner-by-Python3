@@ -9,7 +9,7 @@
  
  ##### 基于不同库的代码文件
  
- Sklearn：
+ Sklearn：[Linear_Regression_Sklearn.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Sklearn.py)
  
  TensorFlow：
  
