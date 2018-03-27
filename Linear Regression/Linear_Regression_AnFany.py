@@ -45,7 +45,7 @@ class LinearRegression:
 
             #提前结束循环的机制
             if len(cost_function) > 1:
-                if cost_function[-1] < cost_function[-2] and cost_function[-2] - cost_function[-1] < self.error:
+                if 0 < cost_function[-2] - cost_function[-1] < self.error:
                     break
 
         return self.weights, cost_function
