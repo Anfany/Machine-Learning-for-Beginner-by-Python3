@@ -98,7 +98,7 @@ train_pre_result = regressor.predict(lrdata[0])
 
 
 #绘制误差图
-figure('误差图', [train_error[1], 'error'])
+figure('误差图 最终的MSE = %.4f'%(train_error[1][-1]), [train_error[1], 'error'])
 
 #绘制预测值与真实值图
 figure('预测值与真实值图 模型的' + r'$R^2=%.4f$'%(getR(lrdata[1], train_pre_result)), [predict_result, '预测值'],[lrdata[3],'真实值'])
