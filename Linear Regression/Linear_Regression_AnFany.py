@@ -2,7 +2,7 @@
 # &Author  AnFany
 
 #获得数据
-import Boston_Data as lrdata
+import linear_regression_data as lrdata
 import numpy as np
 
 #创建线性回归的类
@@ -55,7 +55,10 @@ class LinearRegression:
     def Formula(self, xdata, ydata, func=Trans):
         xdata = func(xdata)
         self.weights = np.dot(np.dot(np.linalg.inv(np.dot(xdata.T, xdata)), xdata.T), ydata)
-        return self.weights
+        y_predict = np.dot(xdata, self.weights)
+        cost = [np.sum((ydata - np.mean(ydata)) ** 2) / len(xdata)] #开始是以y值得平均值作为预测值计算cost
+        cost += [np.sum((y_predict - ydata) ** 2) / len(xdata)]#利用公式，一次计算便得到参数的值，不需要迭代。
+        return self.weights, cost #包括2个值
 
     #预测
     def predict(self, xdata, func=Trans):
@@ -63,12 +66,15 @@ class LinearRegression:
 
 #绘图
 import matplotlib.pyplot as plt
-from pylab import mpl  # 作图显示中文
-mpl.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文字体
+from pylab import mpl
+mpl.rcParams['font.sans-serif'] = ['SimHei']  # 中文字体
+mpl.rcParams['axes.unicode_minus'] = False    # 负号
 
+# 绘图函数
 def figure(title, *datalist):
     for jj in datalist:
         plt.plot(jj[0], '-', label=jj[1], linewidth=4)
+    plt.grid()
     plt.title(title)
     plt.legend()
     plt.show()
@@ -78,7 +84,6 @@ def getR(ydata_tr, ydata_pre):
     sum_error = np.sum(((ydata_tr - np.mean(ydata_tr)) ** 2))
     inexplicable = np.sum(((ydata_tr - ydata_pre) ** 2))
     return 1 - inexplicable / sum_error
-
 
 regressor = LinearRegression()
 #开始训练
@@ -99,4 +104,4 @@ figure('预测值与真实值图 模型的' + r'$R^2=%.4f$'%(getR(lrdata.model_d
 plt.show()
 
 #线性回归的参数
-print(train_error[0])
+print('线性回归的系数为:\n w = %s, \nb= %s'%(train_error[0][:-1], train_error[0][-1]))
