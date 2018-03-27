@@ -4,7 +4,7 @@
 
 ### 算法目录
 
-* **Linear Regression (线性回归)**
+* **[Linear Regression (线性回归)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Linear%20Regression)**
 
 * **Polynomial Regression (多项式回归)**
 
