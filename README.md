@@ -10,6 +10,6 @@
 
 * **[Logistic Regression (逻辑回归)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Logistic%20Regression)**
 
-* **Softmax Regression (Softmax 回归)**
+* **[Softmax Regression (Softmax 回归)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Softmax%20Regression)**
 
 . 
