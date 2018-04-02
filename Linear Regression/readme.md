@@ -31,7 +31,7 @@
  
      + 一元回归对比图示：
      
-     [!image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression.png)
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression.png)
  
  
  
