@@ -34,4 +34,8 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\frac{d\mathit{cost}}{dW}&space;=&space;\frac{1}{N}(X^{T}\cdot&space;(X\cdot&space;W&space;-Y))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{d\mathit{cost}}{dW}&space;=&space;\frac{1}{N}(X^{T}\cdot&space;(X\cdot&space;W&space;-Y))" title="\frac{d\mathit{cost}}{dW} = \frac{1}{N}(X^{T}\cdot (X\cdot W -Y))" /></a>
 
-更新学习率：<a href="http://www.codecogs.com/eqnedit.php?latex=W&space;=&space;W&space;-&space;\eta&space;\times&space;\frac{d&space;\mathit{cost}}{dW}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W&space;=&space;W&space;-&space;\eta&space;\times&space;\frac{d&space;\mathit{cost}}{dW}" title="W = W - \eta \times \frac{d \mathit{cost}}{dW}" /></a>
+更新<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>：
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=W&space;=&space;W&space;-&space;\eta&space;\times&space;\frac{d&space;\mathit{cost}}{dW}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W&space;=&space;W&space;-&space;\eta&space;\times&space;\frac{d&space;\mathit{cost}}{dW}" title="W = W - \eta \times \frac{d \mathit{cost}}{dW}" /></a>
+
+其中<a href="http://www.codecogs.com/eqnedit.php?latex=\eta" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\eta" title="\eta" /></a>表示学习率。
