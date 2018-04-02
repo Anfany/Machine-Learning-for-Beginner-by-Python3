@@ -58,7 +58,7 @@ figure('预测值与真实值图 模型的' + r'$R^2=%.4f$'%(r2_score(train_pre_
 plt.show()
 
 #线性回归的参数
-print('线性回归的系数为:\n w = %s'%(reg.coef_))
+print('线性回归的系数为:\n w = %s \n b = %s'%(reg.coef_, reg.intercept_) )
 
 
 
