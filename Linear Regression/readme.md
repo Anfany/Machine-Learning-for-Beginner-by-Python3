@@ -4,7 +4,7 @@
  
  + 理论推导 
  
-     + 正规方程以及梯度下降推导：[Linear_Regression_Theory](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Theory.md)
+     + 正规方程以及梯度下降推导：[Linear_Regression_Theory.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Theory.md)
  
  + 数据文件
  
