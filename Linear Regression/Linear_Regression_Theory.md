@@ -12,10 +12,13 @@
 
 得到的<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>要使得
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=\mathit{cost}&space;=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(\bar{Y}_{i}&space;-&space;Y_{i})^{2}=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(X_{i}\cdot&space;W&space;-&space;Y_{i})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathit{cost}&space;=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(\bar{Y}_{i}&space;-&space;Y_{i})^{2}=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(X_{i}\cdot&space;W&space;-&space;Y_{i})^{2}" title="\mathit{cost} =\frac{1}{2N} \sum_{i = 1}^{N}(\bar{Y}_{i} - Y_{i})^{2}=\frac{1}{2N} \sum_{i = 1}^{N}(X_{i}\cdot W - Y_{i})^{2}" /></a>最小。
+<a href="http://www.codecogs.com/eqnedit.php?latex=\mathit{cost}&space;=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(\bar{Y}_{i}&space;-&space;Y_{i})^{2}=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(X_{i}\cdot&space;W&space;-&space;Y_{i})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathit{cost}&space;=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(\bar{Y}_{i}&space;-&space;Y_{i})^{2}=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(X_{i}\cdot&space;W&space;-&space;Y_{i})^{2}" title="\mathit{cost} =\frac{1}{2N} \sum_{i = 1}^{N}(\bar{Y}_{i} - Y_{i})^{2}=\frac{1}{2N} \sum_{i = 1}^{N}(X_{i}\cdot W - Y_{i})^{2}" /></a>
+
+最小。
 
 
 + **正规方程推导**
+
 上式如果最小，也就是使得<a href="http://www.codecogs.com/eqnedit.php?latex=(X\cdot&space;W&space;-&space;Y)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?(X\cdot&space;W&space;-&space;Y)^{2}" title="(X\cdot W - Y)^{2}" /></a>最小。令
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=C&space;=&space;(X\cdot&space;W&space;-&space;Y)^{2}\\&space;........&space;=(X&space;\cdot&space;W&space;-&space;Y)^{T}\cdot&space;(X&space;\cdot&space;W&space;-&space;Y)\\&space;........=W^{T}\cdot&space;X^{T}\cdot&space;X\cdot&space;W-W^{T}\cdot&space;X^{T}\cdot&space;Y-Y^{T}\cdot&space;X\cdot&space;W&space;&plus;&space;Y^{T}\cdot&space;Y" target="_blank"><img src="http://latex.codecogs.com/gif.latex?C&space;=&space;(X\cdot&space;W&space;-&space;Y)^{2}\\&space;........&space;=(X&space;\cdot&space;W&space;-&space;Y)^{T}\cdot&space;(X&space;\cdot&space;W&space;-&space;Y)\\&space;........=W^{T}\cdot&space;X^{T}\cdot&space;X\cdot&space;W-W^{T}\cdot&space;X^{T}\cdot&space;Y-Y^{T}\cdot&space;X\cdot&space;W&space;&plus;&space;Y^{T}\cdot&space;Y" title="C = (X\cdot W - Y)^{2}\\ ........ =(X \cdot W - Y)^{T}\cdot (X \cdot W - Y)\\ ........=W^{T}\cdot X^{T}\cdot X\cdot W-W^{T}\cdot X^{T}\cdot Y-Y^{T}\cdot X\cdot W + Y^{T}\cdot Y" /></a>
