@@ -8,8 +8,6 @@
 
     + **波士顿房屋价格预测**
 
-* **Polynomial Regression (多项式回归)**
-
 * **[Logistic Regression (逻辑回归)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Logistic%20Regression)**  
 
     + **心脏病预测**
