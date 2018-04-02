@@ -2,6 +2,7 @@
 # &Author  AnFany
 
 #基于Tensorflow的程序需要改写
+#注意，运行该程序时，需要注释部分Linear_Regression_AnFany.py以Linear_Regression_Sklearn.py中的语句
 
 #生成数据
 import numpy as np
