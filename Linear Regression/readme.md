@@ -15,7 +15,7 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\mathit{cost}&space;=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(\bar{Y}_{i}&space;-&space;Y_{i})^{2}=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(X_{i}\cdot&space;W&space;-&space;Y_{i})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathit{cost}&space;=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(\bar{Y}_{i}&space;-&space;Y_{i})^{2}=\frac{1}{2N}&space;\sum_{i&space;=&space;1}^{N}(X_{i}\cdot&space;W&space;-&space;Y_{i})^{2}" title="\mathit{cost} =\frac{1}{2N} \sum_{i = 1}^{N}(\bar{Y}_{i} - Y_{i})^{2}=\frac{1}{2N} \sum_{i = 1}^{N}(X_{i}\cdot W - Y_{i})^{2}" /></a>
 
-最小，也就是使得<a href="http://www.codecogs.com/eqnedit.php?latex=(X_{i}\cdot&space;W&space;-&space;Y_{i})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?(X_{i}\cdot&space;W&space;-&space;Y_{i})^{2}" title="(X_{i}\cdot W - Y_{i})^{2}" /></a>最小。
+最小，也就是使得<a href="http://www.codecogs.com/eqnedit.php?latex=(X\cdot&space;W&space;-&space;Y)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?(X\cdot&space;W&space;-&space;Y)^{2}" title="(X\cdot W - Y)^{2}" /></a>最小。
 
 
 
