@@ -3,7 +3,7 @@
 
  #### 理论部分
  
-$\\boldsymbol{w}= (w^{(1)}, ..., w^{(d)})$
+<img src="http://latex.codecogs.com/gif.latex?Y&space;=&space;W^{T}&space;*&space;X" title="Y = W^{T} * X" />
 
  #### 文件说明
  
