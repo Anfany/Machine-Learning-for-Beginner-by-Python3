@@ -1,6 +1,6 @@
 # Linear_Regression_Theory
 
-+ **正规方程推导**
++ **线性回归问题说明**
 
 有<img src="http://latex.codecogs.com/gif.latex?N" title="N" />个样本，<img src="http://latex.codecogs.com/gif.latex?(X_{i},&space;Y_{i}),&space;i\in&space;(1,2\cdots&space;N)" title="(X_{i}, Y_{i}), i\in (1,2\cdots N)" />，<img src="http://latex.codecogs.com/gif.latex?X_{i}&space;=&space;[X_{i}^{1},&space;X_{i}^{2},&space;\cdots&space;X_{i}^{m-1}]" title="X_{i} = [X_{i}^{1}, X_{i}^{2}, \cdots X_{i}^{m-1}]" />， 表示每个样本有<img src="http://latex.codecogs.com/gif.latex?m-1" title="m-1" />个特征。
  
@@ -17,6 +17,8 @@
 最小，也就是使得<a href="http://www.codecogs.com/eqnedit.php?latex=(X\cdot&space;W&space;-&space;Y)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?(X\cdot&space;W&space;-&space;Y)^{2}" title="(X\cdot W - Y)^{2}" /></a>最小。令
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=C&space;=&space;(X\cdot&space;W&space;-&space;Y)^{2}\\&space;........&space;=(X&space;\cdot&space;W&space;-&space;Y)^{T}\cdot&space;(X&space;\cdot&space;W&space;-&space;Y)\\&space;........=W^{T}\cdot&space;X^{T}\cdot&space;X\cdot&space;W-W^{T}\cdot&space;X^{T}\cdot&space;Y-Y^{T}\cdot&space;X\cdot&space;W&space;&plus;&space;Y^{T}\cdot&space;Y" target="_blank"><img src="http://latex.codecogs.com/gif.latex?C&space;=&space;(X\cdot&space;W&space;-&space;Y)^{2}\\&space;........&space;=(X&space;\cdot&space;W&space;-&space;Y)^{T}\cdot&space;(X&space;\cdot&space;W&space;-&space;Y)\\&space;........=W^{T}\cdot&space;X^{T}\cdot&space;X\cdot&space;W-W^{T}\cdot&space;X^{T}\cdot&space;Y-Y^{T}\cdot&space;X\cdot&space;W&space;&plus;&space;Y^{T}\cdot&space;Y" title="C = (X\cdot W - Y)^{2}\\ ........ =(X \cdot W - Y)^{T}\cdot (X \cdot W - Y)\\ ........=W^{T}\cdot X^{T}\cdot X\cdot W-W^{T}\cdot X^{T}\cdot Y-Y^{T}\cdot X\cdot W + Y^{T}\cdot Y" /></a>
+
++ **正规方程推导**
 
 计算导数，令其等于0，也就是有
 
