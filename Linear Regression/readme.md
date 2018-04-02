@@ -1,7 +1,11 @@
  # Linear Regression
  
 
- #### 理论部分
+ #### 正规方程推导
+ 
+ 有<img src="http://latex.codecogs.com/gif.latex?N" title="N" />个样本，<img src="http://latex.codecogs.com/gif.latex?(X_{i},&space;Y_{i}),&space;i\in&space;(1,2\cdots&space;N)" title="(X_{i}, Y_{i}), i\in (1,2\cdots N)" />
+ 
+ 每个样本<img src="http://latex.codecogs.com/gif.latex?X_{i}&space;=&space;[X_{i}^{1},&space;X_{i}^{2},&space;\cdots&space;X_{i}^{m-1}]" title="X_{i} = [X_{i}^{1}, X_{i}^{2}, \cdots X_{i}^{m-1}]" />， 其中每个样本有<img src="http://latex.codecogs.com/gif.latex?m-1" title="m-1" />个特征
  
 <img src="http://latex.codecogs.com/gif.latex?Y&space;=&space;W^{T}&space;*&space;X" title="Y = W^{T} * X" />
 
