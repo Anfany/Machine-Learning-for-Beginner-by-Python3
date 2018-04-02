@@ -51,7 +51,9 @@
  
      + 对比程序中用到的TensorFlow程序：[TensorFlow_rewrite.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/TensorFlow_rewrite.py)
  
-     + 一元回归对比程序：[Linear_Regression_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Compare.py)，**注意**，运行该程序时，需要注释部分Linear_Regression_AnFany.py以及Linear_Regression_Sklearn.py中的语句。
+     + 一元回归对比程序：[Linear_Regression_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Compare.py)
+     
+     **注意**，运行该程序时，需要注释部分Linear_Regression_AnFany.py以Linear_Regression_Sklearn.py中的语句。
  
      + 一元回归对比图示：
      
