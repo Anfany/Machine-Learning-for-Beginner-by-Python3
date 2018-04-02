@@ -36,6 +36,6 @@
 
 更新<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>：
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=W&space;=&space;W&space;-&space;\eta&space;\times&space;\frac{d&space;\mathit{cost}}{dW}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W&space;=&space;W&space;-&space;\eta&space;\times&space;\frac{d&space;\mathit{cost}}{dW}" title="W = W - \eta \times \frac{d \mathit{cost}}{dW}" /></a>
+<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{W&space;=&space;W&space;-&space;\boldsymbol{\eta}&space;\times&space;\frac{d&space;\mathit{\boldsymbol{cost}}}{d&space;W}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{W&space;=&space;W&space;-&space;\boldsymbol{\eta}&space;\times&space;\frac{d&space;\mathit{\boldsymbol{cost}}}{d&space;W}}" title="\mathbf{W = W - \boldsymbol{\eta} \times \frac{d \mathit{\boldsymbol{cost}}}{d W}}" /></a>
 
 其中<a href="http://www.codecogs.com/eqnedit.php?latex=\eta" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\eta" title="\eta" /></a>表示学习率。
