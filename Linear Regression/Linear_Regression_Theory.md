@@ -32,7 +32,7 @@
 
 计算代价函数<a href="http://www.codecogs.com/eqnedit.php?latex=\mathit{cost}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathit{cost}" title="\mathit{cost}" /></a>对<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>的梯度：
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{d\mathit{cost}}{dW}&space;=&space;\frac{1}{N}(X^{T}\cdot&space;(X\cdot&space;W&space;-Y))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{d\mathit{cost}}{dW}&space;=&space;\frac{1}{N}(X^{T}\cdot&space;(X\cdot&space;W&space;-Y))" title="\frac{d\mathit{cost}}{dW} = \frac{1}{N}(X^{T}\cdot (X\cdot W -Y))" /></a>
+<a href="http://www.codecogs.com/eqnedit.php?latex=\bigtriangledown&space;\mathit{cost}&space;=&space;\frac{1}{2N}&space;\bigtriangledown&space;\mathit{C}\\&space;...............=\frac{1}{N}(X^{T}\cdot&space;X\cdot&space;W-X^{T}\cdot&space;Y)\\&space;...............=\frac{1}{N}(X^{T}\cdot&space;(X\cdot&space;W&space;-Y))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bigtriangledown&space;\mathit{cost}&space;=&space;\frac{1}{2N}&space;\bigtriangledown&space;\mathit{C}\\&space;...............=\frac{1}{N}(X^{T}\cdot&space;X\cdot&space;W-X^{T}\cdot&space;Y)\\&space;...............=\frac{1}{N}(X^{T}\cdot&space;(X\cdot&space;W&space;-Y))" title="\bigtriangledown \mathit{cost} = \frac{1}{2N} \bigtriangledown \mathit{C}\\ ...............=\frac{1}{N}(X^{T}\cdot X\cdot W-X^{T}\cdot Y)\\ ...............=\frac{1}{N}(X^{T}\cdot (X\cdot W -Y))" /></a>
 
 更新<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>：
 
