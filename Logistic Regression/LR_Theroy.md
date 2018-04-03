@@ -14,6 +14,12 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\Phi(X_{i}\cdot&space;W)&space;=&space;\begin{cases}&space;\geq&space;0.5&space;&&space;\text{&space;if&space;}&space;Y_{i}=1&space;\\&space;<&space;0.5&space;&&space;\text{&space;if&space;}&space;Y_{i}=0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Phi(X_{i}\cdot&space;W)&space;=&space;\begin{cases}&space;\geq&space;0.5&space;&&space;\text{&space;if&space;}&space;Y_{i}=1&space;\\&space;<&space;0.5&space;&&space;\text{&space;if&space;}&space;Y_{i}=0&space;\end{cases}" title="\Phi(X_{i}\cdot W) = \begin{cases} \geq 0.5 & \text{ if } Y_{i}=1 \\ < 0.5 & \text{ if } Y_{i}=0 \end{cases}" /></a>
 
+我们令
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=P(Y_{i}=1|X_{i},&space;W)=\Phi&space;(X_{i}\cdot&space;W)\\&space;P(Y_{i}=0|X_{i},&space;W)=1&space;-&space;\Phi&space;(X_{i}\cdot&space;W)\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?P(Y_{i}=1|X_{i},&space;W)=\Phi&space;(X_{i}\cdot&space;W)\\&space;P(Y_{i}=0|X_{i},&space;W)=1&space;-&space;\Phi&space;(X_{i}\cdot&space;W)\\" title="P(Y_{i}=1|X_{i}, W)=\Phi (X_{i}\cdot W)\\ P(Y_{i}=0|X_{i}, W)=1 - \Phi (X_{i}\cdot W)\\" /></a>
+
+其中<a href="http://www.codecogs.com/eqnedit.php?latex=P(Y_{i}=1|X_{i},&space;W)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?P(Y_{i}=1|X_{i},&space;W)" title="P(Y_{i}=1|X_{i}, W)" /></a>表示对于给定的<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>和<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}" title="X_{i}" /></a>， 得出的<a href="http://www.codecogs.com/eqnedit.php?latex=Y_{i}&space;=&space;1" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Y_{i}&space;=&space;1" title="Y_{i} = 1" /></a>的概率。
+
 定义如下的成本函数：
 
 
