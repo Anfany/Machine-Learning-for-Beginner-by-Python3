@@ -10,10 +10,10 @@
 
 * **Logistic Regression (逻辑回归)**  
 
-    + **[实例：心脏病预测](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Logistic%20Regression)**
+    + **实例：[心脏病预测](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Logistic%20Regression)**
 
 * **Softmax Regression (Softmax 回归)**  
 
-    + **[实例：鸢尾花分类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Softmax%20Regression)**
+    + **实例：[鸢尾花分类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Softmax%20Regression)**
 
 . 
