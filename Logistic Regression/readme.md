@@ -10,7 +10,7 @@
  
      + 心脏病数据集：[Heart.csv](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/Heart.csv)
      
-     + 数据集说明[Heart.doc](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/Heart.doc)
+     + 数据集说明：[Heart.doc](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/Heart.doc)
  
 + 基于不同库的代码文件
  
@@ -22,7 +22,7 @@
  
  + 辅助代码文件
  
-     + 波士顿房价数据集爬虫程序：[Heart_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/Heart_Spyder.py)
+     + 心脏病数据集爬虫程序：[Heart_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/Heart_Spyder.py)
  
      + 数据读取与预处理程序：[Heart_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/Heart_Data.py)
  
