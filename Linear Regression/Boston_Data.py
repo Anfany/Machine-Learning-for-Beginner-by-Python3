@@ -23,7 +23,7 @@ x_pre_data = scaler_01.fit_transform(x_data)
 #归一的x值，y值分为训练数据集和预测数据集
 import numpy as np
 def divided(xdata, ydata, percent=0.1):
-    sign_list = list(range(len(x_data)))
+    sign_list = list(range(len(xdata)))
     #用于测试的序号
     select_sign = sorted(np.random.choice(sign_list, int(len(x_data)*percent), replace=False))
 
