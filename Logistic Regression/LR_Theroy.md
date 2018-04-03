@@ -22,7 +22,13 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=P(Y&space;=&space;Y_{i}|(X_{i},W))&space;=&space;\Phi&space;(X_{i}\cdot&space;W)^{Y_{i}}\times&space;(1-\Phi&space;(X_{i}\cdot&space;W)^{1-Y_{i}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?P(Y&space;=&space;Y_{i}|(X_{i},W))&space;=&space;\Phi&space;(X_{i}\cdot&space;W)^{Y_{i}}\times&space;(1-\Phi&space;(X_{i}\cdot&space;W)^{1-Y_{i}}" title="P(Y = Y_{i}|(X_{i},W)) = \Phi (X_{i}\cdot W)^{Y_{i}}\times (1-\Phi (X_{i}\cdot W)^{1-Y_{i}}" /></a>
 
-定义如下的成本函数：
+利用极大似然估计，也就是计算下式的最大值：
+
+\mathbf{ML}(W)= \prod_{i=1}^{N}P(Y=Y_{i}|X_{i},W)
+
+上述式子和取对数后的式子增减性相同，下面取其对数：
+
+
 
 
 
