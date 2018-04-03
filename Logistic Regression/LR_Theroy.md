@@ -32,7 +32,7 @@
 
 计算上式的最大值，也就是计算下式的最小值：
 
-<img src="http://latex.codecogs.com/gif.latex?\mathit{cost}&space;=&space;-\mathbf{L}(W)" title="\mathit{cost} = -\mathbf{L}(W)" />
+<img src="http://latex.codecogs.com/gif.latex?\mathit{cost}&space;=&space;-&space;\frac{1}{N}\mathbf{L}(W)&space;\\" title="\mathit{cost} = - \frac{1}{N}\mathbf{L}(W) \\" />
 
 + **梯度下降推导**
 
