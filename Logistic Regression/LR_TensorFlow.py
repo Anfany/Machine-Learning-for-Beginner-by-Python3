@@ -23,7 +23,7 @@ def confusion(realy, outy):
     return mix
 
 # 构建函数
-def trans_tf(datax, datay, learn_rate=0.5, iter_tiems=40000, error=1e-9, con='L2'):
+def trans_tf(datax, datay, prea, learn_rate=0.5, iter_tiems=40000, error=1e-9, con='L2'):
     # 占位符
     x_data = tf.placeholder(shape=[None, len(datax[0])], dtype=tf.float32)
     y_target = tf.placeholder(shape=[None, 1], dtype=tf.float32)
@@ -65,14 +65,14 @@ def trans_tf(datax, datay, learn_rate=0.5, iter_tiems=40000, error=1e-9, con='L2
             if loss_vec[-2] - loss_vec[-1] >= 0 and (loss_vec[-2] - loss_vec[-1]) <= error:
                 break
 
-    predata = sess.run(model_output, feed_dict={x_data: datax})
+    predata = sess.run(model_output, feed_dict={x_data: prea})
 
     #转化
     trans_predata = [[1] if jj[0] >= 0 else [0] for jj in predata]
 
     return loss_vec, trans_predata, Weight.eval(session=sess), Bias.eval(session=sess)
 
-ypre = trans_tf(H_Data[0], H_Data[1])
+ypre = trans_tf(H_Data[0], H_Data[1], H_Data[0])
 
 print('系数为：\n', ypre[2], '\n', ypre[3])
 
