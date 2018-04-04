@@ -4,7 +4,7 @@
  
  + 理论推导 
  
-     + 理论以及梯度下降推导：[Linear_Regression_Theory.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Theory.md)
+     + 理论以及梯度下降推导：[LR_Theroy.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/LR_Theroy.md)
  
  + 数据文件
  
@@ -18,7 +18,7 @@
  
      + TensorFlow：[LR_TensorFlow.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/LR_TensorFlow.py)
  
-     + AnFany：[LRAnFany.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/LR_AnFany.py)
+     + AnFany：[LR_AnFany.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/LR_AnFany.py)
  
  + 辅助代码文件
  
