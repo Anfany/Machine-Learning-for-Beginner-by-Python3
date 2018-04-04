@@ -44,7 +44,7 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=L2=\frac{\lambda&space;}{2N}\left&space;\|&space;W&space;\right&space;\|^{2}=\frac{\lambda&space;}{2N}W^{T}\cdot&space;W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?L2=\frac{\lambda&space;}{2N}\left&space;\|&space;W&space;\right&space;\|^{2}=\frac{\lambda&space;}{2N}W^{T}\cdot&space;W" title="L2=\frac{\lambda }{2N}\left \| W \right \|^{2}=\frac{\lambda }{2N}W^{T}\cdot W" /></a>
 
-正则化的目的是为了防止过拟合，这由参数<a href="http://www.codecogs.com/eqnedit.php?latex=\lambda" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\lambda" title="\lambda" /></a>的大小决定。添加<a href="http://www.codecogs.com/eqnedit.php?latex=L2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?L2" title="L2" /></a>正则化下的
+正则化的目的是为了防止过拟合，这由参数<a href="http://www.codecogs.com/eqnedit.php?latex=\lambda" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\lambda" title="\lambda" /></a>的大小决定。添加<a href="http://www.codecogs.com/eqnedit.php?latex=L2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?L2" title="L2" /></a>正则化下的梯度：
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;\mathit{cost}}{\partial&space;W}=\frac{1}{N}X^{T}\cdot&space;(\Theta&space;(X,&space;W)-&space;Y)&plus;\frac{\lambda&space;}{N}W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\partial&space;\mathit{cost}}{\partial&space;W}=\frac{1}{N}X^{T}\cdot&space;(\Theta&space;(X,&space;W)-&space;Y)&plus;\frac{\lambda&space;}{N}W" title="\frac{\partial \mathit{cost}}{\partial W}=\frac{1}{N}X^{T}\cdot (\Theta (X, W)- Y)+\frac{\lambda }{N}W" /></a>
 
