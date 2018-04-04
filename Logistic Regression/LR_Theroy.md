@@ -50,6 +50,6 @@
 
 更新<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>：
 
-<img src="http://latex.codecogs.com/gif.latex?\mathbf{W&space;=&space;W&space;-&space;\boldsymbol{\eta}\times&space;\frac{\partial&space;\boldsymbol{cost}}{\partial&space;W}}" title="\mathbf{W = W - \boldsymbol{\eta}\times \frac{\partial \boldsymbol{cost}}{\partial W}}" />
+<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;\mathit{cost}}{\partial&space;W}=\frac{1}{N}X^{T}\cdot&space;(\Theta&space;(X,&space;W)-&space;Y)&plus;\frac{\lambda&space;}{N}W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\partial&space;\mathit{cost}}{\partial&space;W}=\frac{1}{N}X^{T}\cdot&space;(\Theta&space;(X,&space;W)-&space;Y)&plus;\frac{\lambda&space;}{N}W" title="\frac{\partial \mathit{cost}}{\partial W}=\frac{1}{N}X^{T}\cdot (\Theta (X, W)- Y)+\frac{\lambda }{N}W" /></a>
 
 其中<a href="http://www.codecogs.com/eqnedit.php?latex=\eta" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\eta" title="\eta" /></a>表示学习率。
