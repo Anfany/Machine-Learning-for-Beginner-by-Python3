@@ -27,13 +27,13 @@
      + 数据读取与预处理程序：[Boston_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Boston_Data.py)
  
  
- + 结果展示
+ + 一元回归示例
  
-     + 对比程序中用到的TensorFlow程序：[TensorFlow_rewrite.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/TensorFlow_rewrite.py)
+     + 示例程序：[Linear_Regression_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Compare.py)
+     
+     + 示例程序中用到的TensorFlow程序：[TensorFlow_rewrite.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/TensorFlow_rewrite.py)
  
-     + 一元回归对比程序：[Linear_Regression_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Compare.py)
- 
-     + 一元回归对比图示：
+     + 示例结果：
      
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression.png)
  
