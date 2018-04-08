@@ -27,7 +27,7 @@ data = pd.read_csv(r'C:\Users\GWT9\Desktop\Heart.csv')
 # 开始进行数据处理【没有缺失值】
 normal = [1, 4, 5, 8, 10, 12, 11]  # 标准化处理
 one_hot = [3, 7, 13] # one_hot编码
-binary = [14]  # 不做处理
+binary = [14]  # 原始类别为1的依然为1类，原始为2的变为0类
 
 #数据处理
 def trans(exdata, nor=normal, oh=one_hot, bin=binary):
