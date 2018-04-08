@@ -25,3 +25,6 @@
 构建如下的成本函数<a href="http://www.codecogs.com/eqnedit.php?latex=cost" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost" title="cost" /></a>，令：
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=cost&space;=&space;-\frac{1}{N}\mathbf{L}(W)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost&space;=&space;-\frac{1}{N}\mathbf{L}(W)" title="cost = -\frac{1}{N}\mathbf{L}(W)" /></a>
+
+
+则关于
