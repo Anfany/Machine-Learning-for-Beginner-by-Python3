@@ -10,8 +10,7 @@
 
 不同于逻辑回归中的二分类的情况，样本属于某一类别的概率表达式为：
 
-
-
+<a href="http://www.codecogs.com/eqnedit.php?latex=P(Y_{i}=1|X_{i},&space;W)=\Phi&space;(X_{i}\cdot&space;W)\\&space;P(Y_{i}=0|X_{i},&space;W)=1&space;-&space;\Phi&space;(X_{i}\cdot&space;W)\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?P(Y_{i}=1|X_{i},&space;W)=\Phi&space;(X_{i}\cdot&space;W)\\&space;P(Y_{i}=0|X_{i},&space;W)=1&space;-&space;\Phi&space;(X_{i}\cdot&space;W)\\" title="P(Y_{i}=1|X_{i}, W)=\Phi (X_{i}\cdot W)\\ P(Y_{i}=0|X_{i}, W)=1 - \Phi (X_{i}\cdot W)\\" /></a>
 
 Softmax回归中，样本属于某一类别的概率表达式为：
 
