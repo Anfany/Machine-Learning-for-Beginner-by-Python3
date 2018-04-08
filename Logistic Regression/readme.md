@@ -27,7 +27,7 @@
      + 数据读取与预处理程序：[Heart_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/Heart_Data.py)
  
  
- + 结果展示
+ + 简单示例
 
 
      + 二分类对比程序：[LR_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/LR_Compare.py)
