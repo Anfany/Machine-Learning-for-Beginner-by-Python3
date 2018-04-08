@@ -9,7 +9,7 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Softmax}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Softmax}" title="\mathbf{Softmax}" /></a>回归中，样本<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}" title="X_{i}" /></a>属于<a href="http://www.codecogs.com/eqnedit.php?latex=Y_{g}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Y_{g}" title="Y_{g}" /></a>类别的概率表达式为：
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=P(Y=Y_{g}|X_{i},W)=\frac{\Phi&space;(X_{i}\cdot&space;W_{g})}{\sum_{j=1}^{K}\Theta&space;(X_{i}\cdot&space;W_{j})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?P(Y=Y_{g}|X_{i},W)=\frac{\Phi&space;(X_{i}\cdot&space;W_{g})}{\sum_{j=1}^{K}\Theta&space;(X_{i}\cdot&space;W_{j})}" title="P(Y=Y_{g}|X_{i},W)=\frac{\Phi (X_{i}\cdot W_{g})}{\sum_{j=1}^{K}\Theta (X_{i}\cdot W_{j})}" /></a>
+<a href="http://www.codecogs.com/eqnedit.php?latex=P(Y=Y_{g}|X_{i},W)=\frac{e^{X_{i}\cdot&space;W_{g}}}{\sum_{j=1}^{K}e^{X_{i}\cdot&space;W_{j}}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?P(Y=Y_{g}|X_{i},W)=\frac{e^{X_{i}\cdot&space;W_{g}}}{\sum_{j=1}^{K}e^{X_{i}\cdot&space;W_{j}}}" title="P(Y=Y_{g}|X_{i},W)=\frac{e^{X_{i}\cdot W_{g}}}{\sum_{j=1}^{K}e^{X_{i}\cdot W_{j}}}" /></a>
 
 根据极大似然估计，也就是找到下面式子的最大值：
 
