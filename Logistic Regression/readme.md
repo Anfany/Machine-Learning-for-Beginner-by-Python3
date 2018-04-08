@@ -35,12 +35,9 @@
      + 二分类对比图示：
      
          - 训练结果
-     
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/train_LR.png)
      
-     
          - 预测结果
-         
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/pre_LR.png)
 
      
