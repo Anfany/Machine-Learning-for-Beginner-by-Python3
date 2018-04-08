@@ -30,10 +30,19 @@
  + 结果展示
 
 
-     + 二分类对比程序：[LR_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression_Compare.py)
+     + 二分类对比程序：[LR_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/LR_Compare.py)
  
      + 二分类对比图示：
      
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Linear%20Regression/Linear_Regression.png)
+         - 训练结果
+     
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/train_LR.png)
+     
+     
+         - 预测结果
+         
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/pre_LR.png)
+
+     
  
 
