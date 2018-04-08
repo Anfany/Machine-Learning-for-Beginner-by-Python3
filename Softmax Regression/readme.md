@@ -4,7 +4,7 @@
  
  + 理论推导 
  
-     + 理论以及梯度下降推导：[Softmax_Theroy.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Softmax_Theroy.md)
+     + 理论以及梯度下降推导：[Softmax_Theroy.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Softmax_Theory.md)
  
  + 数据文件
  
