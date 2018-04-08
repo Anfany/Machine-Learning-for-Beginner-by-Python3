@@ -12,6 +12,10 @@
 
 要使得到的<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>满足：
 
+<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}\cdot&space;W&space;=\left\{\begin{matrix}&space;\geqslant&space;0&space;&&\mathrm{if}Y_{i}=1&space;\\&space;<&space;0&space;&&\mathrm{if}Y_{i}=0&space;\end{matrix}\right." target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}\cdot&space;W&space;=\left\{\begin{matrix}&space;\geqslant&space;0&space;&&\mathrm{if}Y_{i}=1&space;\\&space;<&space;0&space;&&\mathrm{if}Y_{i}=0&space;\end{matrix}\right." title="X_{i}\cdot W =\left\{\begin{matrix} \geqslant 0 &&\mathrm{if}Y_{i}=1 \\ < 0 &&\mathrm{if}Y_{i}=0 \end{matrix}\right." /></a>
+
+也就是：
+
 <a href="http://www.codecogs.com/eqnedit.php?latex=\Phi(X_{i}\cdot&space;W)&space;=&space;\begin{cases}&space;\geq&space;0.5&space;&&space;\text{&space;if&space;}&space;Y_{i}=1&space;\\&space;<&space;0.5&space;&&space;\text{&space;if&space;}&space;Y_{i}=0&space;\end{cases}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Phi(X_{i}\cdot&space;W)&space;=&space;\begin{cases}&space;\geq&space;0.5&space;&&space;\text{&space;if&space;}&space;Y_{i}=1&space;\\&space;<&space;0.5&space;&&space;\text{&space;if&space;}&space;Y_{i}=0&space;\end{cases}" title="\Phi(X_{i}\cdot W) = \begin{cases} \geq 0.5 & \text{ if } Y_{i}=1 \\ < 0.5 & \text{ if } Y_{i}=0 \end{cases}" /></a>
 
 我们令
