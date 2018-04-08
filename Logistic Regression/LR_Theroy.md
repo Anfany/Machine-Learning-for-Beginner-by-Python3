@@ -58,4 +58,4 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{W&space;=&space;W&space;-&space;\boldsymbol{\eta&space;\times&space;\frac{\partial&space;\boldsymbol{cost}}{\partial&space;\mathbf{W}}}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{W&space;=&space;W&space;-&space;\boldsymbol{\eta&space;\times&space;\frac{\partial&space;\boldsymbol{cost}}{\partial&space;\mathbf{W}}}}" title="\mathbf{W = W - \boldsymbol{\eta \times \frac{\partial \boldsymbol{cost}}{\partial \mathbf{W}}}}" /></a>
 
-其中<a href="http://www.codecogs.com/eqnedit.php?latex=\eta" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\eta" title="\eta" /></a>表示学习率。
+其中<a href="http://www.codecogs.com/eqnedit.php?latex=\eta" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\eta" title="\eta" /></a>表示学习率，可理解为步长。
