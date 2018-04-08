@@ -1,7 +1,7 @@
 # Softmax Theory
 
 
-+ **Softmax回归问题说明**
++ **<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Softmax}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Softmax}" title="\mathbf{Softmax}" /></a>回归问题说明**
 
 有<img src="http://latex.codecogs.com/gif.latex?N" title="N" />个样本，<img src="http://latex.codecogs.com/gif.latex?(X_{i},&space;Y_{i}),&space;i\in&space;(1,2\cdots&space;N)" title="(X_{i}, Y_{i}), i\in (1,2\cdots N)" />，<img src="http://latex.codecogs.com/gif.latex?X_{i}&space;=&space;[X_{i}^{1},&space;X_{i}^{2},&space;\cdots&space;X_{i}^{m-1}]" title="X_{i} = [X_{i}^{1}, X_{i}^{2}, \cdots X_{i}^{m-1}]" />， 表示每个样本有<img src="http://latex.codecogs.com/gif.latex?m-1" title="m-1" />个特征；<a href="http://www.codecogs.com/eqnedit.php?latex=Y_{i}\in&space;\left&space;\{&space;1,2,\cdots&space;,K&space;\right&space;\}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Y_{i}\in&space;\left&space;\{&space;1,2,\cdots&space;,K&space;\right&space;\}" title="Y_{i}\in \left \{ 1,2,\cdots ,K \right \}" /></a>，其中<a href="http://www.codecogs.com/eqnedit.php?latex=K\geq&space;2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K\geq&space;2" title="K\geq 2" /></a>，代表类别数。
  
@@ -12,7 +12,7 @@
 <a href="http://www.codecogs.com/eqnedit.php?latex=\Phi(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Phi(x)=\frac{1}{1&plus;e^{-x}}" title="\Phi(x)=\frac{1}{1+e^{-x}}" /></a>
 
 
-Softmax回归中，样本<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}" title="X_{i}" /></a>属于<a href="http://www.codecogs.com/eqnedit.php?latex=Y_{g}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Y_{g}" title="Y_{g}" /></a>类别的概率表达式为：
+<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Softmax}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Softmax}" title="\mathbf{Softmax}" /></a>回归中，样本<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}" title="X_{i}" /></a>属于<a href="http://www.codecogs.com/eqnedit.php?latex=Y_{g}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Y_{g}" title="Y_{g}" /></a>类别的概率表达式为：
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=P(Y=Y_{g}|X_{i},W)=\frac{\Phi&space;(X_{i}\cdot&space;W_{g})}{\sum_{j=1}^{K}\Theta&space;(X_{i}\cdot&space;W_{j})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?P(Y=Y_{g}|X_{i},W)=\frac{\Phi&space;(X_{i}\cdot&space;W_{g})}{\sum_{j=1}^{K}\Theta&space;(X_{i}\cdot&space;W_{j})}" title="P(Y=Y_{g}|X_{i},W)=\frac{\Phi (X_{i}\cdot W_{g})}{\sum_{j=1}^{K}\Theta (X_{i}\cdot W_{j})}" /></a>
 
