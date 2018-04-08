@@ -7,9 +7,7 @@
  
 现在为每个样本添加一个特征值为1的特征，也就是令<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}&space;=&space;[X_{i}^{1},X_{i}^{2},\cdots&space;X_{i}^{m-1},X_{i}^{m}]" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}&space;=&space;[X_{i}^{1},X_{i}^{2},\cdots&space;X_{i}^{m-1},X_{i}^{m}]" title="X_{i} = [X_{i}^{1},X_{i}^{2},\cdots X_{i}^{m-1},X_{i}^{m}]" /></a>，其中<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}^{m}&space;=&space;1" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}^{m}&space;=&space;1" title="X_{i}^{m} = 1" /></a>。这样操作本质就是将<a href="http://www.codecogs.com/eqnedit.php?latex=w*X&space;&plus;&space;b" target="_blank"><img src="http://latex.codecogs.com/gif.latex?w*X&space;&plus;&space;b" title="w*X + b" /></a>中的<a href="http://www.codecogs.com/eqnedit.php?latex=w" target="_blank"><img src="http://latex.codecogs.com/gif.latex?w" title="w" /></a>和<a href="http://www.codecogs.com/eqnedit.php?latex=w" target="_blank"><img src="http://latex.codecogs.com/gif.latex?b" title="b" /></a>合为一个<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>，便于计算。
 
-和逻辑回归类似，同样引入<a href="http://www.codecogs.com/eqnedit.php?latex=Sigmoid" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Sigmoid" title="Sigmoid" /></a>函数：
-
-<a href="http://www.codecogs.com/eqnedit.php?latex=\Phi(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Phi(x)=\frac{1}{1&plus;e^{-x}}" title="\Phi(x)=\frac{1}{1+e^{-x}}" /></a>
+引入函数：
 
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Softmax}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Softmax}" title="\mathbf{Softmax}" /></a>回归中，样本<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}" title="X_{i}" /></a>属于<a href="http://www.codecogs.com/eqnedit.php?latex=Y_{g}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Y_{g}" title="Y_{g}" /></a>类别的概率表达式为：
