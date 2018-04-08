@@ -55,6 +55,7 @@ model_data = [x_pre_data, y_data]
 #x_pre_data.shape = (样本数，特征数)
 #y_data.shape= (样本数，1)
 
-
-
+# 类别说明
+# Absence (1) 1类
+# presence (2) 0类
 
