@@ -22,3 +22,5 @@
 
 其中<a href="http://www.codecogs.com/eqnedit.php?latex=\boldsymbol{I}(Y=Y_{l}|X_{i})=\left\{\begin{matrix}&space;1&space;&&space;\mathrm{if}&space;(X_{i},Y_{l})\in&space;S\\&space;0&space;&&space;\mathrm{if}&space;(X_{i},Y_{l})\notin&space;S&space;\end{matrix}\right." target="_blank"><img src="http://latex.codecogs.com/gif.latex?\boldsymbol{I}(Y=Y_{l}|X_{i})=\left\{\begin{matrix}&space;1&space;&&space;\mathrm{if}&space;(X_{i},Y_{l})\in&space;S\\&space;0&space;&&space;\mathrm{if}&space;(X_{i},Y_{l})\notin&space;S&space;\end{matrix}\right." title="\boldsymbol{I}(Y=Y_{l}|X_{i})=\left\{\begin{matrix} 1 & \mathrm{if} (X_{i},Y_{l})\in S\\ 0 & \mathrm{if} (X_{i},Y_{l})\notin S \end{matrix}\right." /></a>，<a href="http://www.codecogs.com/eqnedit.php?latex=S" target="_blank"><img src="http://latex.codecogs.com/gif.latex?S" title="S" /></a>表示总的样本集合。
 
+上述式子和取对数后的式子增减性相同，下面取其对数：
+
