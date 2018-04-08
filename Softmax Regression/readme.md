@@ -10,7 +10,7 @@
  
      + 鸢尾花数据集：[Iris.csv](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Iris.csv)
      
-     + 数据集[说明]()
+     + 数据集[说明](https://en.wikipedia.org/wiki/Iris_flower_data_set#Data_set)
  
 + 基于不同库的代码文件
  
@@ -22,7 +22,7 @@
  
  + 辅助代码文件
  
-     + 心脏病数据集爬虫程序：[Iris_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Iris_Spyder.py)
+     + 鸢尾花数据集爬虫程序：[Iris_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Iris_Spyder.py)
  
      + 数据读取与预处理程序：[Iris_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Iris_Data.py)
  
