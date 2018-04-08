@@ -39,3 +39,10 @@ Data = [X_DATA, Y_DATA]
 # X_DATA.shape = (样本数, 特征数)
 # Y_DATA.shape = (样本数, 类别数)
 
+# 类别
+# setosa  [1,0,0]
+# versicolor [0,1,0]
+# virginica  [0,0,1]
+
+
+
