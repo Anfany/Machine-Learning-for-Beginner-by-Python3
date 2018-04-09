@@ -49,7 +49,7 @@
 
 梯度变为：
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;cost}{\partial&space;W_{g}}&space;=-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))&space;&plus;&space;\frac{\lambda&space;}{N}W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\partial&space;cost}{\partial&space;W_{g}}&space;=-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))&space;&plus;&space;\frac{\lambda&space;}{N}W" title="\frac{\partial cost}{\partial W_{g}} =-\frac{1}{N}X_{T}\cdot (Y-\Gamma (e^{X\cdot W})) + \frac{\lambda }{N}W" /></a>
+<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;cost}{\partial&space;W}&space;=-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))&space;&plus;&space;\frac{\lambda&space;}{N}W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\partial&space;cost}{\partial&space;W}&space;=-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))&space;&plus;&space;\frac{\lambda&space;}{N}W" title="\frac{\partial cost}{\partial W} =-\frac{1}{N}X_{T}\cdot (Y-\Gamma (e^{X\cdot W})) + \frac{\lambda }{N}W" /></a>
 
 更新<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>：
 
