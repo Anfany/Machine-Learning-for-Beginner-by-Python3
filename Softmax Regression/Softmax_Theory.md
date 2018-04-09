@@ -40,3 +40,9 @@
 
 其中<a href="http://www.codecogs.com/eqnedit.php?latex=\Gamma&space;(e^{X_{i}\cdot&space;W_{g}})&space;=&space;\frac{e^{X_{i}\cdot&space;W_{g}}}{\sum_{k=1}^{K}e^{X_{i}\cdot&space;W_{k}}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Gamma&space;(e^{X_{i}\cdot&space;W_{g}})&space;=&space;\frac{e^{X_{i}\cdot&space;W_{g}}}{\sum_{k=1}^{K}e^{X_{i}\cdot&space;W_{k}}}" title="\Gamma (e^{X_{i}\cdot W_{g}}) = \frac{e^{X_{i}\cdot W_{g}}}{\sum_{k=1}^{K}e^{X_{i}\cdot W_{k}}}" /></a>
 
+
++ **L2正则化**
+
+此时的成本函数<a href="http://www.codecogs.com/eqnedit.php?latex=cost" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost" title="cost" /></a>关于<a href="http://www.codecogs.com/eqnedit.php?latex=W_{g}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W_{g}" title="W_{g}" /></a>变为：
+
+
