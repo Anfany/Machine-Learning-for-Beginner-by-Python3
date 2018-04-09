@@ -45,6 +45,12 @@
 
 添加正则化后，成本函数<a href="http://www.codecogs.com/eqnedit.php?latex=cost" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost" title="cost" /></a>变为：
 
+<a href="http://www.codecogs.com/eqnedit.php?latex=cost&space;=&space;-\frac{1}{N}\mathbf{L}(W)&space;&plus;&space;\frac{\lambda&space;}{2N}W^{T}\cdot&space;W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost&space;=&space;-\frac{1}{N}\mathbf{L}(W)&space;&plus;&space;\frac{\lambda&space;}{2N}W^{T}\cdot&space;W" title="cost = -\frac{1}{N}\mathbf{L}(W) + \frac{\lambda }{2N}W^{T}\cdot W" /></a>
+
+梯度变为：
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;cost}{\partial&space;W_{g}}&space;=-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))&space;&plus;&space;\frac{\lambda&space;}{N}W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\partial&space;cost}{\partial&space;W_{g}}&space;=-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))&space;&plus;&space;\frac{\lambda&space;}{N}W" title="\frac{\partial cost}{\partial W_{g}} =-\frac{1}{N}X_{T}\cdot (Y-\Gamma (e^{X\cdot W})) + \frac{\lambda }{N}W" /></a>
+
 
 
 
