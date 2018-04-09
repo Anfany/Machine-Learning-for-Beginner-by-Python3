@@ -53,7 +53,7 @@ class LRReg:
             # Sigmoid函数的值
             s_y_pre = 1/ (1 + np.exp(-y_predict))
 
-            # 计算最大似然的值
+            # 计算最大似然取对数后的值
             like = np.dot(ydata.T, np.log(s_y_pre)) + np.dot((1 - ydata).T, np.log(1- s_y_pre))
 
             # 正则化
