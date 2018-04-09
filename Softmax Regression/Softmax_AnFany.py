@@ -86,10 +86,10 @@ def transign(eydata):
 
 #计算混淆矩阵
 from prettytable import PrettyTable
-def confusion(realy, outy):
+def confusion(realy, outy, method='AnFany'):
     mix = PrettyTable()
     type = sorted(list(set(realy.T[0])), reverse=True)
-    mix.field_names = [' '] + ['预测:%d类'%si for si in type]
+    mix.field_names = [method] + ['预测:%d类'%si for si in type]
     # 字典形式存储混淆矩阵数据
     cmdict = {}
     for jkj in type:
