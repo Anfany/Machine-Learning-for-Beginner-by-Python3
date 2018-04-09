@@ -72,7 +72,7 @@ class LRReg:
 
             # 训练提前结束
             if len(cost_function) > 2:
-                if 0 <= cost_function[-1] - cost_function[-2] <= self.error:
+                if 0 <= cost_function[-2] - cost_function[-1] <= self.error:
                     break
 
             #更新
