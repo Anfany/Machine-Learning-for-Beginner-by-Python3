@@ -54,12 +54,12 @@ class LRReg:
             s_y_pre = 1/ (1 + np.exp(-y_predict))
 
             # 计算最大似然取对数后的值
-            like = np.dot(ydata.T, np.log(s_y_pre)) + np.dot((1 - ydata).T, np.log(1- s_y_pre))
+            like = np.sum(np.dot(ydata.T, np.log(s_y_pre)) + np.dot((1 - ydata).T, np.log(1- s_y_pre)))
 
             # 正则化
             if self.cpn == 'L2':
                 # 成本函数中添加系数的L2范数
-                l2norm = 0.5 * np.dot(self.weights.T, self.weights) / len(xdata)
+                l2norm = np.sum(0.5 * np.dot(self.weights.T, self.weights) / len(xdata))
                 cost = -like / len(xdata) + l2norm
 
                 grad_W = np.dot(xdata.T, (s_y_pre - ydata)) / len(xdata) + 0.9 * self.weights / len(xdata)
@@ -68,7 +68,7 @@ class LRReg:
                 cost = -like / (len(xdata))
                 grad_W = np.dot(xdata.T, (s_y_pre - ydata)) / len(xdata)
 
-            cost_function.append(cost[0][0])
+            cost_function.append(cost)
 
             # 训练提前结束
             if len(cost_function) > 2:
