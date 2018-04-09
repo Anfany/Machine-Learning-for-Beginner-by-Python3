@@ -43,6 +43,8 @@
 
 + **L2正则化**
 
-此时的成本函数<a href="http://www.codecogs.com/eqnedit.php?latex=cost" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost" title="cost" /></a>关于<a href="http://www.codecogs.com/eqnedit.php?latex=W_{g}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W_{g}" title="W_{g}" /></a>变为：
+添加正则化后，成本函数<a href="http://www.codecogs.com/eqnedit.php?latex=cost" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost" title="cost" /></a>变为：
+
+
 
 
