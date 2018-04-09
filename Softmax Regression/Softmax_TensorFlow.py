@@ -31,7 +31,7 @@ def transign(eydata):
     return np.array(ysign)
 
 # 构建函数
-def trans_tf(datax, datay, prea, learn_rate=0.005, iter_tiems=40000, error=1e-9):
+def trans_tf(datax, datay, prea, learn_rate=0.5, iter_tiems=40000, error=1e-9):
     # 占位符
     x_data = tf.placeholder(shape=[None, len(datax[0])], dtype=tf.float32)
     y_target = tf.placeholder(shape=[None, len(datay[0])], dtype=tf.float32)
