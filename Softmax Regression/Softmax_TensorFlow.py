@@ -52,8 +52,8 @@ def trans_tf(datax, datay, prea, learn_rate=0.005, iter_tiems=40000, error=1e-9)
     costfunc = tf.add(cross_entropy, reg_term)
 
     # 利用不同的方法
-    optimizer = tf.train.GradientDescentOptimizer(learn_rate) # 梯度
-    #optimizer = tf.train.MomentumOptimizer(learning_rate=learn_rate, momentum=0.9) # 动量法
+    optimizer = tf.train.GradientDescentOptimizer(learn_rate) # 梯度,需要注意学习率不可以设大，如果报错，就需要更改学习率的值
+    #optimizer = tf.train.MomentumOptimizer(learning_rate=learn_rate, momentum=0.9) # 动量法，需要注意学习率不可以设大，如果报错，就需要更改学习率的值
     #optimizer = tf.train.AdadeltaOptimizer(learning_rate=learn_rate, rho=0.55, epsilon=1e-08)
     #optimizer = tf.train.AdamOptimizer(learning_rate=learn_rate, beta1=0.9, beta2=0.99, epsilon=1e-08)
     trainstep = optimizer.minimize(costfunc)
