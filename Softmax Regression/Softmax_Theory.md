@@ -38,7 +38,7 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;cost}{\partial&space;W}&space;=&space;-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\partial&space;cost}{\partial&space;W}&space;=&space;-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))" title="\frac{\partial cost}{\partial W} = -\frac{1}{N}X_{T}\cdot (Y-\Gamma (e^{X\cdot W}))" /></a>
 
-其中<a href="http://www.codecogs.com/eqnedit.php?latex=\Gamma&space;(e^{X_{i}\cdot&space;W_{g}})&space;=&space;\frac{e^{X_{i}\cdot&space;W_{g}}}{\sum_{k=1}^{K}e^{X_{i}\cdot&space;W_{k}}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Gamma&space;(e^{X_{i}\cdot&space;W_{g}})&space;=&space;\frac{e^{X_{i}\cdot&space;W_{g}}}{\sum_{k=1}^{K}e^{X_{i}\cdot&space;W_{k}}}" title="\Gamma (e^{X_{i}\cdot W_{g}}) = \frac{e^{X_{i}\cdot W_{g}}}{\sum_{k=1}^{K}e^{X_{i}\cdot W_{k}}}" /></a>
+其中<a href="http://www.codecogs.com/eqnedit.php?latex=\Gamma&space;(e^{X_{i}\cdot&space;W_{k}})&space;=&space;\frac{e^{X_{i}\cdot&space;W_{k}}}{\sum_{k=1}^{K}e^{X_{i}\cdot&space;W_{k}}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Gamma&space;(e^{X_{i}\cdot&space;W_{k}})&space;=&space;\frac{e^{X_{i}\cdot&space;W_{k}}}{\sum_{k=1}^{K}e^{X_{i}\cdot&space;W_{k}}}" title="\Gamma (e^{X_{i}\cdot W_{k}}) = \frac{e^{X_{i}\cdot W_{k}}}{\sum_{k=1}^{K}e^{X_{i}\cdot W_{k}}}" /></a>
 
 
 + **L2正则化**
