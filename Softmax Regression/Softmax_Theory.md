@@ -51,6 +51,10 @@
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;cost}{\partial&space;W_{g}}&space;=-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))&space;&plus;&space;\frac{\lambda&space;}{N}W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{\partial&space;cost}{\partial&space;W_{g}}&space;=-\frac{1}{N}X_{T}\cdot&space;(Y-\Gamma&space;(e^{X\cdot&space;W}))&space;&plus;&space;\frac{\lambda&space;}{N}W" title="\frac{\partial cost}{\partial W_{g}} =-\frac{1}{N}X_{T}\cdot (Y-\Gamma (e^{X\cdot W})) + \frac{\lambda }{N}W" /></a>
 
+更新<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>：
 
+<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{W&space;=&space;W&space;-&space;\boldsymbol{\eta&space;\times&space;\frac{\partial&space;\boldsymbol{cost}}{\partial&space;\mathbf{W}}}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{W&space;=&space;W&space;-&space;\boldsymbol{\eta&space;\times&space;\frac{\partial&space;\boldsymbol{cost}}{\partial&space;\mathbf{W}}}}" title="\mathbf{W = W - \boldsymbol{\eta \times \frac{\partial \boldsymbol{cost}}{\partial \mathbf{W}}}}" /></a>
+
+其中<a href="http://www.codecogs.com/eqnedit.php?latex=\eta" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\eta" title="\eta" /></a>表示学习率，可理解为步长。
 
 
