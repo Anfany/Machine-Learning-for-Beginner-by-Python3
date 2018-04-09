@@ -41,9 +41,9 @@
 其中<a href="http://www.codecogs.com/eqnedit.php?latex=\Gamma&space;(e^{X_{i}\cdot&space;W_{k}})&space;=&space;\frac{e^{X_{i}\cdot&space;W_{k}}}{\sum_{k=1}^{K}e^{X_{i}\cdot&space;W_{k}}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Gamma&space;(e^{X_{i}\cdot&space;W_{k}})&space;=&space;\frac{e^{X_{i}\cdot&space;W_{k}}}{\sum_{k=1}^{K}e^{X_{i}\cdot&space;W_{k}}}" title="\Gamma (e^{X_{i}\cdot W_{k}}) = \frac{e^{X_{i}\cdot W_{k}}}{\sum_{k=1}^{K}e^{X_{i}\cdot W_{k}}}" /></a>
 
 
-+ **L2正则化**
++ **<a href="http://www.codecogs.com/eqnedit.php?latex=\boldsymbol{L2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\boldsymbol{L2}" title="\boldsymbol{L2}" /></a>正则化**
 
-添加正则化后，成本函数<a href="http://www.codecogs.com/eqnedit.php?latex=cost" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost" title="cost" /></a>变为：
+添加<a href="http://www.codecogs.com/eqnedit.php?latex=L2" target="_blank"><img src="http://latex.codecogs.com/gif.latex?L2" title="L2" /></a>正则化后，成本函数<a href="http://www.codecogs.com/eqnedit.php?latex=cost" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost" title="cost" /></a>变为：
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=cost&space;=&space;-\frac{1}{N}\mathbf{L}(W)&space;&plus;&space;\frac{\lambda&space;}{2N}W^{T}\cdot&space;W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?cost&space;=&space;-\frac{1}{N}\mathbf{L}(W)&space;&plus;&space;\frac{\lambda&space;}{2N}W^{T}\cdot&space;W" title="cost = -\frac{1}{N}\mathbf{L}(W) + \frac{\lambda }{2N}W^{T}\cdot W" /></a>
 
