@@ -34,9 +34,9 @@
      + 示例结果：
      
          - 训练结果
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/train_Softmax.png)
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Softmax_Train.png)
      
          - 预测结果
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/pre_Softmax.png)
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Softmax_Result.png)
 
  
