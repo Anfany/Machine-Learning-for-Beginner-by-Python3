@@ -49,21 +49,22 @@
      3. 计算得到的<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别的样本集合中样本的均值，作为新的<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心；
      
      4. 满足迭代次数或者类别<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心不再变化，则停止。
-     
-     
+    
      
 Kmeans聚类算法的结果会因为初始的类别中心的不同差异很大，为了避免这个缺点，下面介绍对初始类别中心的选择进行了优化的**Kmeans++聚类**算法。
 
 * **Kmeans++聚类选择初始的类别中心**
 
 
-    1. 从输入的数据点集合中随机选择一个点作为第一个聚类中心；
+    1. 从样本集合中随机选择一个样本作为第1个类别中心；
     
-    2. 对于数据集中的每一个点x，计算它与最近聚类中心(指已选择的聚类中心)的距离D(x)；
+    2. 对于样本集合中的每一个样本<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}" title="X_{i}" /></a>，计算其与上一个刚被选择成为类别中心的样本之间的距离<a href="http://www.codecogs.com/eqnedit.php?latex=dis" target="_blank"><img src="http://latex.codecogs.com/gif.latex?dis" title="dis" /></a>；
+
+    3. <a href="http://www.codecogs.com/eqnedit.php?latex=dis" target="_blank"><img src="http://latex.codecogs.com/gif.latex?dis" title="dis" /></a>较大的样本，被选取作为类别中心的概率较大；
     
-    3. 选择一个新的数据点作为新的聚类中心，选择的原则是：D(x)较大的点，被选取作为聚类中心的概率较大；
+    4. 重复步骤<a href="http://www.codecogs.com/eqnedit.php?latex=\textrm{ii}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\textrm{ii" title="\textrm{i}" /></a>和<a href="http://www.codecogs.com/eqnedit.php?latex=\textrm{iii" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\textrm{iii" title="\textrm{iii" /></a>直到<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个初始的类别中心被选出；
     
-    4. 重复2和3直到k个聚类中心被选出来。
+    5. 进行Kmeans算法。
 
 
      
