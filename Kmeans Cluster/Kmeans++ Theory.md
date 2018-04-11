@@ -20,17 +20,17 @@
 
 有两个点<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{A,B}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{A,B}" title="\mathbf{A,B}" /></a>, 坐标分别为<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix}&space;&&space;\end{matrix}&space;\mathbf{B}=[b1,b2,\cdots,bm]" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix}&space;&&space;\end{matrix}&space;\mathbf{B}=[b1,b2,\cdots,bm]" title="\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix} & \end{matrix} \mathbf{B}=[b1,b2,\cdots,bm]" /></a>
         
-     -  欧几里得距离
+   + 欧几里得距离
    
    <a href="http://www.codecogs.com/eqnedit.php?latex=E(\mathbf{A,B})&space;=&space;\sqrt{\sum_{i=1}^{m}(ai-bi)^{2}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?E(\mathbf{A,B})&space;=&space;\sqrt{\sum_{i=1}^{m}(ai-bi)^{2}}" title="E(\mathbf{A,B}) = \sqrt{\sum_{i=1}^{m}(ai-bi)^{2}}" /></a>
    
    
-     -  曼哈顿距离
+   + 曼哈顿距离
    
    <a href="http://www.codecogs.com/eqnedit.php?latex=M(\mathbf{A,B})&space;=&space;\sum_{i=1}^{m}\left&space;|&space;ai-bi&space;\right&space;|" target="_blank"><img src="http://latex.codecogs.com/gif.latex?M(\mathbf{A,B})&space;=&space;\sum_{i=1}^{m}\left&space;|&space;ai-bi&space;\right&space;|" title="M(\mathbf{A,B}) = \sum_{i=1}^{m}\left | ai-bi \right |" /></a>
    
    
-     -  闵可夫斯基距离
+   + 闵可夫斯基距离
   
    <a href="http://www.codecogs.com/eqnedit.php?latex=M(\mathbf{A,B})&space;=&space;\begin{pmatrix}&space;\sum_{i=1}^{m}(ai-bi)^{p}&space;\end{pmatrix}&space;^{1/p}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?M(\mathbf{A,B})&space;=&space;\begin{pmatrix}&space;\sum_{i=1}^{m}(ai-bi)^{p}&space;\end{pmatrix}&space;^{1/p}" title="M(\mathbf{A,B}) = \begin{pmatrix} \sum_{i=1}^{m}(ai-bi)^{p} \end{pmatrix} ^{1/p}" /></a>
     
