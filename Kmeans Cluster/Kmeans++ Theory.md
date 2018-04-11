@@ -32,7 +32,7 @@
    
      闵可夫斯基距离
   
-   <a href="http://www.codecogs.com/eqnedit.php?latex=M(\mathbf{A,B})&space;=&space;\begin{pmatrix}&space;\sum_{i=1}^{m}(ai-bi)^{p}&space;\end{pmatrix}&space;^{1/p}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?M(\mathbf{A,B})&space;=&space;\begin{pmatrix}&space;\sum_{i=1}^{m}(ai-bi)^{p}&space;\end{pmatrix}&space;^{1/p}" title="M(\mathbf{A,B}) = \begin{pmatrix} \sum_{i=1}^{m}(ai-bi)^{p} \end{pmatrix} ^{1/p}" /></a>
+   <a href="http://www.codecogs.com/eqnedit.php?latex=HM(\mathbf{A,B})&space;=&space;\begin{pmatrix}&space;\sum_{i=1}^{m}(ai-bi)^{p}&space;\end{pmatrix}&space;^{1/p}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?HM(\mathbf{A,B})&space;=&space;\begin{pmatrix}&space;\sum_{i=1}^{m}(ai-bi)^{p}&space;\end{pmatrix}&space;^{1/p}" title="HM(\mathbf{A,B}) = \begin{pmatrix} \sum_{i=1}^{m}(ai-bi)^{p} \end{pmatrix} ^{1/p}" /></a>
     
     
     
