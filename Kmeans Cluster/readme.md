@@ -8,7 +8,7 @@
  
  + 数据文件
  
-     + 葡萄酒数据集：[Wine.csv](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Wine.csv)
+     + 葡萄酒数据集：[Wine.csv](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%20Cluster/Wine.csv)
      
      + 数据集[说明](https://en.wikipedia.org/wiki/Iris_flower_data_set#Data_set)
  
@@ -21,7 +21,7 @@
  
  + 辅助代码文件
  
-     + 葡萄酒数据集爬虫程序：[Wine_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Wine_Spyder.py)
+     + 葡萄酒数据集爬虫程序：[Wine_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%20Cluster/Wine_Spyder.py)
  
      + 数据读取与预处理程序：[Wine_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Wine_Data.py)
  
