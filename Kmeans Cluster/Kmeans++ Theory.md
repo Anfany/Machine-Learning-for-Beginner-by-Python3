@@ -41,10 +41,10 @@
 
 * **Kmeans 聚类步骤**
 
-     1. 随机选择<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心<a href="http://www.codecogs.com/eqnedit.php?latex=\begin{matrix}&space;C1c,&&space;C2c,&&space;\cdots,&space;&&space;Ckc&space;\end{matrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\begin{matrix}&space;C1c,&&space;C2c,&&space;\cdots,&space;&&space;Ckc&space;\end{matrix}" title="\begin{matrix} C1c,& C2c,& \cdots, & Ckc \end{matrix}" /></a>。
+     1. 随机选择<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心<a href="http://www.codecogs.com/eqnedit.php?latex=\begin{matrix}&space;C1c,&&space;C2c,&&space;\cdots,&space;&&space;Ckc&space;\end{matrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\begin{matrix}&space;C1c,&&space;C2c,&&space;\cdots,&space;&&space;Ckc&space;\end{matrix}" title="\begin{matrix} C1c,& C2c,& \cdots, & Ckc \end{matrix}" /></a>；
      
      
-     2. gg铁塔
+     2. 对每一个样本计算和<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心的距离，找到距离最小的<a href="http://www.codecogs.com/eqnedit.php?latex=Ckc" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Ckc" title="Ckc" /></a>，然后将该样本添加到样本集合<a href="http://www.codecogs.com/eqnedit.php?latex=Ck" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Ck" title="Ck" /></a>中；
      
 
 
