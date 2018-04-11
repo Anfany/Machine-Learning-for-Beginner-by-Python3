@@ -46,6 +46,10 @@
      
      2. 对每一个样本计算和<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心的距离，找到距离最小的<a href="http://www.codecogs.com/eqnedit.php?latex=Ckc" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Ckc" title="Ckc" /></a>，然后将该样本添加到样本集合<a href="http://www.codecogs.com/eqnedit.php?latex=Ck" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Ck" title="Ck" /></a>中；
      
+     3. 计算得到的<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别的样本集合中样本的均值，作为新的<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心。
+     
+     4. 满足迭代次数或者类别<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心不再变化，则停止。
+     
 
 
 
