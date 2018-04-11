@@ -41,7 +41,7 @@
 
 * **Kmeans 聚类步骤**
 
-     . 放电
+     1. 随机选择<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心。
      
      
      . gg
