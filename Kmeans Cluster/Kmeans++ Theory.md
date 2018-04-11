@@ -1,4 +1,4 @@
-# Kmeans++ Theory
+# Kmeans & Kmeans++ 
 -------------
 
 
