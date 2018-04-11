@@ -14,10 +14,10 @@
  
 + 基于不同库的代码文件
  
-     + Sklearn：[Softmax_Sklearn.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Kmeans_Sklearn.py)
+     + Sklearn：[Softmax_Sklearn.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%20Cluster/Kmeans_Sklearn.py)
  
  
-     + AnFany：[Softmax_AnFany.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Kmeans_AnFany.py)
+     + AnFany：[Softmax_AnFany.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%20Cluster/Kmeans_AnFany.py)
  
  + 辅助代码文件
  
