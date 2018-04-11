@@ -18,6 +18,6 @@
 
 * **Kmeans Cluster (K均值聚类)**
 
-     + **实例：[啤酒聚类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Kmeans%20luster)**
+     + **实例：[葡萄酒聚类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Kmeans%20luster)**
 
 
