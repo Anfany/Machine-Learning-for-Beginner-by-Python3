@@ -41,10 +41,10 @@
 
 * **Kmeans 聚类步骤**
 
-     1. 随机选择<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心。
+     1. 随机选择<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心<a href="http://www.codecogs.com/eqnedit.php?latex=\begin{matrix}&space;C1c,&&space;C2c,&&space;\cdots,&space;&&space;Ckc&space;\end{matrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\begin{matrix}&space;C1c,&&space;C2c,&&space;\cdots,&space;&&space;Ckc&space;\end{matrix}" title="\begin{matrix} C1c,& C2c,& \cdots, & Ckc \end{matrix}" /></a>。
      
      
-     . gg
+     2. gg铁塔
      
 
 
