@@ -4,7 +4,7 @@
  
  + 理论说明 
  
-     + 理论：[Kmeans++ Theroy.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Kmeans++ Theory.md)
+     + 理论：[Kmeans++ Theroy.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Kmeans++%20Theory.md)
  
  + 数据文件
  
