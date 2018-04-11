@@ -16,4 +16,8 @@
 
     + **实例：[鸢尾花分类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Softmax%20Regression)**
 
-. 
+* **Kmeans Cluster (K均值聚类)**
+
+     + **实例：[啤酒聚类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Kmeans%20luster)**
+
+
