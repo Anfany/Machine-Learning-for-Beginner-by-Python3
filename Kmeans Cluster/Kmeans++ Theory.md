@@ -15,14 +15,22 @@
 
 其中<a href="http://www.codecogs.com/eqnedit.php?latex=nk" target="_blank"><img src="http://latex.codecogs.com/gif.latex?nk" title="nk" /></a>表示第<a href="http://www.codecogs.com/eqnedit.php?latex=k" target="_blank"><img src="http://latex.codecogs.com/gif.latex?k" title="k" /></a>个类别的样本集合中样本的个数；<a href="http://www.codecogs.com/eqnedit.php?latex=Ckc" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Ckc" title="Ckc" /></a>表示第<a href="http://www.codecogs.com/eqnedit.php?latex=k" target="_blank"><img src="http://latex.codecogs.com/gif.latex?k" title="k" /></a>个类别的中心；<a href="http://www.codecogs.com/eqnedit.php?latex=X_{ki}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{ki}" title="X_{ki}" /></a>表示第<a href="http://www.codecogs.com/eqnedit.php?latex=k" target="_blank"><img src="http://latex.codecogs.com/gif.latex?k" title="k" /></a>个类别的样本集合中的第<a href="http://www.codecogs.com/eqnedit.php?latex=i" target="_blank"><img src="http://latex.codecogs.com/gif.latex?i" title="i" /></a>个样本。<a href="http://www.codecogs.com/eqnedit.php?latex=dis(X_{ki}-Ckc)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?dis(X_{ki}-Ckc)" title="dis(X_{ki}-Ckc)" /></a>表示第<a href="http://www.codecogs.com/eqnedit.php?latex=k" target="_blank"><img src="http://latex.codecogs.com/gif.latex?k" title="k" /></a>个类别的样本集合中的样本与该类别中心的距离。
 
-    -  不同的距离计算方式
+        +  不同的距离计算方式
+        
+        
     
-        * 欧氏距离
+                - 欧氏距离
+            
+            
         
         
-        * 闵可夫斯基距离
+                - 闵可夫斯基距离
+            
+            
         
         
-        * 曼哈顿距离
+                - 曼哈顿距离
+            
+            
 
 + Kmeans++ 聚类
