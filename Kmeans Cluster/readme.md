@@ -1,10 +1,10 @@
-# Kmeans Cluster
+# Kmeans++ Cluster
  
 #### 文件说明
  
  + 理论说明 
  
-     + 理论：[Kmeans_Theroy.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Kmeans_Theory.md)
+     + 理论：[Kmeans++_Theroy.md](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Kmeans++_Theory.md)
  
  + 数据文件
  
