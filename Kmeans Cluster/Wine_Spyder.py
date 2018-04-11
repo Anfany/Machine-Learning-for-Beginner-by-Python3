@@ -26,7 +26,10 @@ for hh in namest.split('\n'):
     sample = hh.split(',')
     if len(sample) > 1:
         for hhh in range(len(sample)):
-            datadict[att_name[hhh]].append(float(sample[hhh]))
+            if hhh == 0:
+                datadict[att_name[hhh]].append(int(sample[hhh]))
+            else:
+                datadict[att_name[hhh]].append(float(sample[hhh]))
     else:
         break
 
