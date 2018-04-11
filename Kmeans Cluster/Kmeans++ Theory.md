@@ -50,6 +50,12 @@
      
      4. 满足迭代次数或者类别<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个类别中心不再变化，则停止。
      
+     
+     
+Kmeans聚类算法的结果会因为初始的类别中心的不同差异很大，为了避免这个缺点，下面介绍**Kmeans++聚类**算法。
+
+* **Kmeans++聚类**
+     
 
 
 
