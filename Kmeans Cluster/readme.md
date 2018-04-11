@@ -10,7 +10,7 @@
  
      + 葡萄酒数据集：[Wine.csv](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%20Cluster/Wine.csv)
      
-     + 数据集[说明](https://en.wikipedia.org/wiki/Iris_flower_data_set#Data_set)
+     + 数据集[说明](http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.names)
  
 + 基于不同库的代码文件
  
