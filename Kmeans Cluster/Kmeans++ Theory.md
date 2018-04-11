@@ -34,8 +34,15 @@
   
    <a href="http://www.codecogs.com/eqnedit.php?latex=HM(\mathbf{A,B})&space;=&space;\begin{pmatrix}&space;\sum_{i=1}^{m}(ai-bi)^{p}&space;\end{pmatrix}&space;^{1/p}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?HM(\mathbf{A,B})&space;=&space;\begin{pmatrix}&space;\sum_{i=1}^{m}(ai-bi)^{p}&space;\end{pmatrix}&space;^{1/p}" title="HM(\mathbf{A,B}) = \begin{pmatrix} \sum_{i=1}^{m}(ai-bi)^{p} \end{pmatrix} ^{1/p}" /></a>
     
-    
-    
+
+根据样本特征选择不同的距离公式，本算例采用欧几里得距离。
+
+
+
+* **Kmeans 聚类步骤**
+
+
+
             
             
         
