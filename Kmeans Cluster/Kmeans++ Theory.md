@@ -62,7 +62,7 @@ Kmeans聚类算法的结果会因为初始的类别中心的不同差异很大�
 
     3. <a href="http://www.codecogs.com/eqnedit.php?latex=dis" target="_blank"><img src="http://latex.codecogs.com/gif.latex?dis" title="dis" /></a>较大的样本，被选取作为类别中心的概率较大；
     
-    4. 重复步骤<a href="http://www.codecogs.com/eqnedit.php?latex=\textrm{ii}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\textrm{ii" title="\textrm{i}" /></a>和<a href="http://www.codecogs.com/eqnedit.php?latex=\textrm{iii" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\textrm{iii" title="\textrm{iii" /></a>直到<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个初始的类别中心被选出；
+    4. 重复步骤<a href="http://www.codecogs.com/eqnedit.php?latex=\textrm{ii}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\textrm{ii" title="\textrm{ii}" /></a>和<a href="http://www.codecogs.com/eqnedit.php?latex=\textrm{iii" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\textrm{iii" title="\textrm{iii" /></a>直到<a href="http://www.codecogs.com/eqnedit.php?latex=K" target="_blank"><img src="http://latex.codecogs.com/gif.latex?K" title="K" /></a>个初始的类别中心被选出；
     
     5. 进行Kmeans算法。
 
