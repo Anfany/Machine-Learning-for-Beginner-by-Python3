@@ -1,3 +1,6 @@
+#-*- coding：utf-8 -*-
+# &Author  AnFany
+
 # 引入三种方法
 import Softmax_AnFany as SM_A  # 需要注释105行以后的内容
 import Softmax_Sklearn as SM_S # 需要注释37行以后的内容
