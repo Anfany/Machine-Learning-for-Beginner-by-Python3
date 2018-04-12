@@ -25,7 +25,7 @@ def selec(dislist):
             return hh
 
 # 定义生成初始的聚类中心的函数
-def gencenter(sample, type=3):
+def gencenter(sample, type):
     # 随机选择初始的样本编号
     sign = np.random.choice(list(range(len(sample))), 1)[0]
     #存储类别中心的数组
@@ -38,9 +38,9 @@ def gencenter(sample, type=3):
     return np.array(centerlist)
 
 # Kmeans++聚类算法
-def kmeans(sample, maxtimes=1000, costerror=1e-19):
+def kmeans(sample, maxtimes=1000, costerror=1e-19, countcenter=3):
     # kmeans++ 产生出的初始的类别中心
-    center = gencenter(sample)
+    center = gencenter(sample, type=countcenter)
 
     # 存储成本函数的值
     costfunc = []
@@ -146,6 +146,8 @@ def confusion(realy, outy, method='AnFany'):
 init_class = get_start(DATA[1])
 kresult = kmeans(DATA[0])
 newy = judge(init_class, kresult[2], DATA[1])
+
+
 
 #输出混淆矩阵
 print('混淆矩阵：\n', confusion(np.array([DATA[1]]).T, np.array([newy[0]]).T))
