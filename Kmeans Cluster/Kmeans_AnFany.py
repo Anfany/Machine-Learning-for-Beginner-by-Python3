@@ -84,7 +84,8 @@ def kmeans(samp, maxtimes, costerror, countcenter):
 
          # 更新类别中心
         for kk in samdict:
-            center[kk] = np.mean(samdict[kk], axis=0)  # 均值
+            if len(signdict[kk]) != 0:
+                center[kk] = np.mean(samdict[kk], axis=0)  # 均值
 
         iter += 1
 
@@ -94,7 +95,7 @@ def kmeans(samp, maxtimes, costerror, countcenter):
 def op_kmeans(saple, maxti=1000, costerr=1e-19, countcen=3, maxtimes=90):
     times = 0
     # 存储cost
-    costff = []
+    costff = [1e9]
 
     #最优的结果lastre
     lastre = 0
@@ -161,7 +162,6 @@ def confusion(realy, outy, method='AnFany'):
     for fu in type:
         mix.add_row(['真实:%d类'%fu] + cmdict[fu])
     return mix
-
 
 
 
