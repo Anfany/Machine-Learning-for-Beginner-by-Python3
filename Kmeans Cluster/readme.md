@@ -26,17 +26,14 @@
      + 数据读取与预处理程序：[Wine_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%20Cluster/Wine_Data.py)
  
  
- + 二元数据示例
+ + 二维数据聚类示例
 
-     + 示例程序：[Softmax_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%Cluster/Kmeans_Compare.py)
+     + 示例程序：[Kmeans_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%20Cluster/Kmeans_Compare.py)
  
      + 示例结果：
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Kmeans%20Cluster/Kmeans.png)
      
-         - 训练结果
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Softmax_Train.png)
-     
-         - 预测结果
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax%20Regression/Softmax_Result.png)
+  
 
  
 
