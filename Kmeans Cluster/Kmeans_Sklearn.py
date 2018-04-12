@@ -6,20 +6,16 @@ from Wine_Data import DATA
 import  numpy as np
 from sklearn.cluster import KMeans
 
-sk = KMeans(init='k-means++', n_clusters=3, n_init=10)
-
-
-train = sk.fit(DATA[0])
-result = sk.predict(DATA[0])
-
 
 # 需要将算法输出的类别转换为真实的类别
 
 # 首先得出原始数据中的类别对应的编号
-init_class = {}
-classtype = sorted(list(set(list(DATA[1]))))
-for du in range(len(classtype)):
-    init_class[du+1] = np.arange(len(DATA[1]))[DATA[1] == classtype[du]]
+def get_start(ydata):
+    in_class = {}
+    classtype = sorted(list(set(list(ydata))))
+    for du in range(len(classtype)):
+        in_class[du+1] = np.arange(len(ydata))[ydata == classtype[du]]
+    return in_class
 
 # 因为算法生成的类别和原始的类别的对应关系不知，下面按照最大的重复比来一一确认
 def judge(starclass, endclass, ydata):
@@ -72,6 +68,13 @@ def trans(resu):
             redict[resu[ire]] = []
     return redict
 
+
+sk = KMeans(init='k-means++', n_clusters=3, n_init=10)
+
+train = sk.fit(DATA[0])
+result = sk.predict(DATA[0])
+
+init_class = get_start(DATA[1])
 kresult = trans(result)
 
 newy = judge(init_class, kresult, DATA[1])
