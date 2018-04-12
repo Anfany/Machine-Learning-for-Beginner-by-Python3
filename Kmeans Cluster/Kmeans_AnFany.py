@@ -87,17 +87,19 @@ def kmeans(sample, maxtimes=1000, costerror=1e-19):
 
     return center, costfunc, signdict
 
-kresult = kmeans(DATA[0])
+
 
 
 # 结果验证
 
 # 首先得出原始数据中的类别对应的编号
 
-init_class = {}
-classtype = sorted(list(set(list(DATA[1]))))
-for du in range(len(classtype)):
-    init_class[du+1] = np.arange(len(DATA[1]))[DATA[1] == classtype[du]]
+def get_start(ydata):
+    in_class = {}
+    classtype = sorted(list(set(list(ydata))))
+    for du in range(len(classtype)):
+        in_class[du+1] = np.arange(len(ydata))[ydata == classtype[du]]
+    return in_class
 
 # 因为算法生成的类别和原始的类别的对应关系不知，下面按照最大的重复比来一一确认
 def judge(starclass, endclass, ydata):
@@ -140,9 +142,10 @@ def confusion(realy, outy, method='AnFany'):
         mix.add_row(['真实:%d类'%fu] + cmdict[fu])
     return mix
 
+
+init_class = get_start(DATA[1])
+kresult = kmeans(DATA[0])
 newy = judge(init_class, kresult[2], DATA[1])
-
-
 
 #输出混淆矩阵
 print('混淆矩阵：\n', confusion(np.array([DATA[1]]).T, np.array([newy[0]]).T))
