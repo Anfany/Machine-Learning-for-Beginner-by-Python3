@@ -10,8 +10,11 @@ import numpy as np
 def dis(sample, center):
     cen = np.array([center])
     sample = np.array(sample)
-    usb = np.sum((sample - cen) ** 2, axis=1) ** 0.5
-    return usb
+    if len(sample) != 0:
+        usb = np.sum((sample - cen) ** 2, axis=1) ** 0.5
+        return usb
+    else:
+        return 0
 
 # 定义根据距离列表，概率较大的被选中
 def selec(dislist):
@@ -38,9 +41,9 @@ def gencenter(sample, type):
     return np.array(centerlist)
 
 # Kmeans++聚类算法
-def kmeans(sample, maxtimes=1000, costerror=1e-19, countcenter=3):
+def kmeans(samp, maxtimes, costerror, countcenter):
     # kmeans++ 产生出的初始的类别中心
-    center = gencenter(sample, type=countcenter)
+    center = gencenter(samp, type=countcenter)
 
     # 存储成本函数的值
     costfunc = []
@@ -57,7 +60,7 @@ def kmeans(sample, maxtimes=1000, costerror=1e-19, countcenter=3):
             signdict[jj] = [] # 存储样本编号
         # 为每一个样本计算类别
         dictgn = 0
-        for hg in sample:
+        for hg in samp:
             ddis = dis(center, hg) #计算样本与每一个类别中心的距离
             # 找到最小的
             minsign = ddis.argmin()
@@ -87,7 +90,24 @@ def kmeans(sample, maxtimes=1000, costerror=1e-19, countcenter=3):
 
     return center, costfunc, signdict
 
+# 因为Kmeans 算法不保证每一次都取得最优值。因此定义运行的次数，选择cost最小的
+def op_kmeans(saple, maxti=1000, costerr=1e-19, countcen=3, maxtimes=90):
+    times = 0
+    # 存储cost
+    costff = []
 
+    #最优的结果lastre
+    lastre = 0
+    while times < maxtimes:
+        step = kmeans(saple, maxtimes=maxti, costerror=costerr, countcenter=countcen)
+        if len(costff) != 0:
+            if costff[0] > step[1][-1]:
+                lastre = step
+                costff = [step[1][-1]]
+        else:
+            costff = [step[1][-1]]
+        times += 1
+    return lastre
 
 
 # 结果验证
@@ -143,13 +163,14 @@ def confusion(realy, outy, method='AnFany'):
     return mix
 
 
+
+
 init_class = get_start(DATA[1])
-kresult = kmeans(DATA[0])
+kresult = op_kmeans(DATA[0])
 newy = judge(init_class, kresult[2], DATA[1])
 
 
-
-#输出混淆矩阵
+# #输出混淆矩阵
 print('混淆矩阵：\n', confusion(np.array([DATA[1]]).T, np.array([newy[0]]).T))
 
 #输出最后计算得到的真实类别的类别中心
