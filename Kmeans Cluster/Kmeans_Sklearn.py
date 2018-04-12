@@ -65,7 +65,7 @@ def trans(resu):
         try:
             redict[resu[ire]].append(ire)
         except KeyError:
-            redict[resu[ire]] = []
+            redict[resu[ire]] = [ire]
     return redict
 
 
