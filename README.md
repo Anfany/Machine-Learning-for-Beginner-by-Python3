@@ -21,7 +21,7 @@
      + **实例：[葡萄酒聚类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Kmeans%20Cluster)**
 
 
-### 初级篇 TensorFlow
+### 初级篇 
 
 *  **实例**
 
