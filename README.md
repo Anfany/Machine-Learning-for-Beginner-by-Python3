@@ -21,7 +21,7 @@
      + **实例：[葡萄酒聚类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Kmeans%20Cluster)**
 
 
-### 初级篇
+### 初级篇 TensorFlow
 
 *  **实例**
 
@@ -33,7 +33,7 @@
 
     + **BP Neutral Net (反向传播神经网络)**  
       
-        + 回归
+        + 回归 
         
         + 分类
 
