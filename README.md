@@ -66,4 +66,7 @@
 * **强化学习**
 
 
-
+联系方式：
+QQ：459151137
+微信：Guoguoaif
+邮箱：anxinguoguo@126.com
