@@ -45,7 +45,7 @@
  
      + 回归
  
-         - 数据读取与预处理程序：[BPNN_DATA_Reg.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_DATA_Reg.py)
+         - 数据读取与预处理程序：[BPNN_DATA_Reg.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Data_Reg.py)
      
      
      + 分类
