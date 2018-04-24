@@ -293,6 +293,7 @@ class BPNN():
 import matplotlib.pyplot as plt
 from pylab import mpl  # 作图显示中文
 mpl.rcParams['font.sans-serif'] = ['FangSong'] # 设置中文字体新宋体
+mpl.rcParams['axes.unicode_minus'] = False
 #  绘制图像
 def figure(real, net, le='训练'):
     length = len(real[0])
