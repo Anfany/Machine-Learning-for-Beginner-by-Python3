@@ -29,7 +29,7 @@ def activate(input_layer, weights, biases, actfunc):
 
 #  构建训练函数
 def Ten_train(xdata, ydata, prexdata, hiddenlayers=3, hiddennodes=100, \
-              learn_rate=0.05, itertimes=100000, batch_size=200, activate_func='sigmoid'):
+              learn_rate=0.05, itertimes=100000, batch_size=200, activate_func='sigmoid', break_error=0.0013):
     # 开始搭建神经网络
     Input_Dimen = len(xdata[0])
     Unit_Layers = [Input_Dimen] + [hiddennodes] * hiddenlayers + [len(ydata[0])]  # 输入的维数，隐层的神经数，输出的维数1
@@ -84,7 +84,7 @@ def Ten_train(xdata, ydata, prexdata, hiddenlayers=3, hiddennodes=100, \
                 print('Generation: ' + str(i + 1) + '. 归一误差：Loss = ' + str(temp_loss))
 
             # 提前退出的判断
-            if temp_loss < 0.0013:  # 根据经验获得此数值, 因为采用的是随机下降，因此误差在前期可能出现浮动
+            if temp_loss < break_error:  # 根据经验获得此数值, 因为采用的是随机下降，因此误差在前期可能出现浮动
                 break
 
         # 计算预测数据的输出
