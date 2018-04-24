@@ -108,13 +108,13 @@ from pylab import mpl  # 作图显示中文
 mpl.rcParams['font.sans-serif'] = ['FangSong'] # 设置中文字体新宋体
 mpl.rcParams['axes.unicode_minus'] = False
 #  绘制图像
-def figure(real, net, le='训练'):
+def figure(real, net, le='训练', real_line='ko-', net_line='r.-', width=4):
     length = len(real[0])
     # 绘制每个维度的对比图
     for iwe in range(length):
         plt.subplot(length, 1, iwe+1)
-        plt.plot(list(range(len(real.T[iwe]))), real.T[iwe])
-        plt.plot(list(range(len(net.T[iwe]))), net.T[iwe])
+        plt.plot(list(range(len(real.T[iwe]))), real.T[iwe], real_line, linewidth=width)
+        plt.plot(list(range(len(net.T[iwe]))), net.T[iwe], net_line, linewidth=width)
         plt.legend(['%s真实值'%le, '网络输出值'])
         if length == 1:
             plt.title('%s结果对比'%le)
@@ -127,12 +127,11 @@ def figure(real, net, le='训练'):
 
 # 绘制成本函数曲线图
 def costfig(errlist, le='成本函数曲线图'):
-    plt.plot(list(range(len(errlist))), errlist)
+    plt.plot(list(range(len(errlist))), errlist, linewidth=5)
     plt.title(le)
     plt.xlabel('迭代次数')
     plt.ylabel('成本函数值')
     plt.show()
-
 #  因为训练数据较多，为了不影响展示效果，按序随机选取一定数量的数据，便于展示
 def select(datax, datay, count=200):
     sign = list(range(len(datax)))
