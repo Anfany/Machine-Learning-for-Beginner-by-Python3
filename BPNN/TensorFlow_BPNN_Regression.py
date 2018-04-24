@@ -119,9 +119,9 @@ def figure(real, net, le='训练'):
             plt.title('%s结果对比'%le)
         else:
             if iwe == 0:
-                plt.title('%s结果对比: %s维度'%(le, iwe))
+                plt.title('%s结果: %s维度对比'%(le, iwe))
             else:
-                plt.title('%s维度对比' %le)
+                plt.title('%s维度对比'%iwe)
     plt.show()
 
 # 绘制成本函数曲线图
