@@ -1,7 +1,7 @@
 #-*- coding：utf-8 -*-
 # &Author  AnFany
 
-# 适用于多维输出
+# 也适用于多维输出
 from BPNN_DATA_Reg import model_data as R_data
 import numpy as np
 
@@ -47,21 +47,11 @@ def Lsm_der(yreal, yout):  # 成本函数的导数为网络输出值减去真实
     return yout - yreal
 
 
-
-# 输出层的激活函数
-def Linear(x):#线性函数，将数据的范围平移··到输出数据的范围
-    return x
-
-def Linear_der(s):
-    y = np.zeros(shape=s.shape)
-    return y
-
-
 '''第三部分：实现神经网络'''
 
 class BPNN():
 
-    def __init__(self, train_in, train_out, learn_rate=0.03, son_samples=50, iter_times=10000, hidden_layer=[100,100],middle_name='Sigmoid', last_name='Sigmoid', cost_func='Lsm', norr=0.00002):
+    def __init__(self, train_in, train_out, learn_rate=0.03, son_samples=50, iter_times=10000, hidden_layer=[100,100],middle_name='Sigmoid', last_name='Sigmoid', cost_func='Lsm', norr=0.00002, break_error=0.00003):
         self.train_in = train_in  # 每一行是一个样本输入
         self.train_out = train_out  # 每一行是一个样本输出
 
@@ -84,8 +74,8 @@ class BPNN():
 
 
         self.cost_func = cost_func
-
         self.norr = norr
+        self.break_error = break_error
 
     # 梯度下降法
     def train_gadient(self):
@@ -168,7 +158,7 @@ class BPNN():
             iter += 1
 
             #  提前结束的判断
-            if errortrain < 0.0004:
+            if errortrain < self.break_error:
                 break
 
         return self.weight, self.bias, error_list
@@ -282,7 +272,7 @@ class BPNN():
             iter += 1
 
             #  提前结束的判断
-            if len(error_list) > 2 and error_list[-1] > error_list[-2]:
+            if errortrain < self.break_error:
                 break
 
         return self.weight, self.bias, error_list
@@ -367,6 +357,11 @@ if __name__ == "__main__":
 
 
 __name__ == "__main__"
+
+
+
+
+
 
 
 
