@@ -49,7 +49,7 @@ datee = norm(data_hh)
 
 # 目标数据和特征数据分离
 
-Ydata = datee['pm2.5'].values  # 目标数据
+Ydata = np.array(datee['pm2.5'].values).reshape(-1, 1)  # 目标数据
 Xdata = datee.drop(['pm2.5'], axis=1).values  # 特征数据
 
 
@@ -64,11 +64,11 @@ def divided(xdata, ydata, percent=0.3):
 
     # 测试数据
     x_predict_data = xdata[select_sign]
-    y_predict_data = np.array([ydata[select_sign]]).reshape(-1, 1)  # 转化数据结构
+    y_predict_data = np.array(ydata[select_sign]).reshape(-1, len(ydata[0]))  # 转化数据结构
 
     # 训练数据
     x_train_data = xdata[no_select_sign]
-    y_train_data = np.array([ydata[no_select_sign]]).reshape(-1, 1)  # 转化数据结构
+    y_train_data = np.array(ydata[no_select_sign]).reshape(-1, len(ydata[0]))  # 转化数据结构
 
     return x_train_data, y_train_data, x_predict_data, y_predict_data # 训练的x，y;  测试的x，y;
 
