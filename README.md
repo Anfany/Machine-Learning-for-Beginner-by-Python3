@@ -34,9 +34,9 @@
 
      + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN)**  
 
-    + **SVM (支持向量机)**  
+     + **SVM (支持向量机)**  
    
-    + **Desicion Tree (决策树)** 
+     + **Desicion Tree (决策树)** 
     
  
 
