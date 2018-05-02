@@ -26,11 +26,11 @@
 
 * **理论推导**
 
-     + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)**
+     + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/readme.md)**
         
-     + **[SVM (支持向量机)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)**
+     + **SVM (支持向量机)**
         
-     + **[Desicion Tree (决策树)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)**
+     + **Desicion Tree (决策树)**
      
      
 
@@ -40,18 +40,18 @@
     
         + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)**
         
-        + **[SVM (支持向量机)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)**
+        + **SVM (支持向量机)**
         
-        + **[Desicion Tree (决策树)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)**
+        + **Desicion Tree (决策树)**
         
 
     + **成年人收入分类**
 
-        + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)**
+        + **BP Neutral Net (反向传播神经网络)**
         
-        + **[SVM (支持向量机)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)**
+        + **SVM (支持向量机)**
         
-        + **[Desicion Tree (决策树)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)**
+        + **Desicion Tree (决策树)**
  
 
 
