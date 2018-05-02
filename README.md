@@ -28,16 +28,20 @@
 
     + **北京市Pm2.5回归**
     
+        + **[BP Neutral Net (反向传播神经网络)]**(https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)
+        
+        + **[SVM (支持向量机)]**(https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)
+        
+        + **[Desicion Tree (决策树)]**(https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)
+        
+
     + **成年人收入分类**
 
-* **方法**
-
-     + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN)**  
-
-     + **SVM (支持向量机)**  
-   
-     + **Desicion Tree (决策树)** 
-    
+        + **[BP Neutral Net (反向传播神经网络)]**(https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)
+        
+        + **[SVM (支持向量机)]**(https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)
+        
+        + **[Desicion Tree (决策树)]**(https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)
  
 
 
