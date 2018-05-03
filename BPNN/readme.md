@@ -25,7 +25,7 @@
       
 + **结构图示**
 
-！[image]()
+！[image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Struct.png)
 
 
 + **正向传播**
