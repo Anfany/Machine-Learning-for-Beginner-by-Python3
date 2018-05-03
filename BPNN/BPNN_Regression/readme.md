@@ -34,15 +34,15 @@
           
            + **训练数据图示**
               
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/train_LR.png)
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Regression/Train_AnFany.png)
               
            + **预测数据图示**
            
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/train_LR.png)
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Regression/Predict_AnFany.png)
               
            + **成本函数图示**
            
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic%20Regression/train_LR.png)
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Regression/Cost_AnFany.png)
           
           
           
