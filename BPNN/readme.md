@@ -45,9 +45,7 @@
     
     + **回归**
     
-        最终的成本为：
-        
-        <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}=\mathit{C}(\mathbf{O},\mathbf{R})=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}=\mathit{C}(\mathbf{O},\mathbf{R})=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" title="\mathbf{Cost}=\mathit{C}(\mathbf{O},\mathbf{R})=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" /></a>
+        最终的成本为：<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}=\mathit{C}(\mathbf{O},\mathbf{R})=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}=\mathit{C}(\mathbf{O},\mathbf{R})=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" title="\mathbf{Cost}=\mathit{C}(\mathbf{O},\mathbf{R})=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" /></a>
     
     
 
