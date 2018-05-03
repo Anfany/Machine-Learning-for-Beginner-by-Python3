@@ -32,7 +32,7 @@
           
           + 1维度：<a href="http://www.codecogs.com/eqnedit.php?latex=x(\mathrm{sin}(x)&space;-&space;\mathrm{cos}(x))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?x(\mathrm{sin}(x)&space;-&space;\mathrm{cos}(x))" title="x(\mathrm{sin}(x) - \mathrm{cos}(x))" /></a>
 
-      + 示例程序：[Regre_Compare.py]
+      + 示例程序：[Regre_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Regression/Regre_Compare.py)
  
       + **AnFany**
           
