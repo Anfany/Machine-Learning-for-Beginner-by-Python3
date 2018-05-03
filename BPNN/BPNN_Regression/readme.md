@@ -25,11 +25,15 @@
      
 
  + 一维样本示例
+ 
+      + 数据说明：
+      
+          + 0维度：<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{1}{2}(\mathrm{sin}(x)-\mathrm{cos}(x))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{1}{2}(\mathrm{sin}(x)-\mathrm{cos}(x))" title="\frac{1}{2}(\mathrm{sin}(x)-\mathrm{cos}(x))" /></a>
+          
+          + 1维度：<a href="http://www.codecogs.com/eqnedit.php?latex=x(\mathrm{sin}(x)&space;-&space;\mathrm{cos}(x))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?x(\mathrm{sin}(x)&space;-&space;\mathrm{cos}(x))" title="x(\mathrm{sin}(x) - \mathrm{cos}(x))" /></a>
 
       + 示例程序：[Regre_Compare.py]
  
-
-
       + **AnFany**
           
            + **训练数据图示**
