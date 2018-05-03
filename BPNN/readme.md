@@ -30,28 +30,17 @@
 
 + **样本结构说明**
 
-   - 输入数据
+     * 输入数据
       
 <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{I}=\begin{bmatrix}&space;[x_{1}^{1}&x_{1}^{2}&space;&\cdots&space;&x_{1}^{N\_i}]&space;\\&space;[x_{2}^{1}&x_{2}^{2}&space;&\cdots&space;&x_{2}^{N\_i}]&space;\\&space;&&space;&\cdots&space;&\\&space;[x_{k}^{1}&space;&x_{k}^{2}&\cdots&space;&x_{k}^{N\_i}]&space;\end{bmatrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{I}=\begin{bmatrix}&space;[x_{1}^{1}&x_{1}^{2}&space;&\cdots&space;&x_{1}^{N\_i}]&space;\\&space;[x_{2}^{1}&x_{2}^{2}&space;&\cdots&space;&x_{2}^{N\_i}]&space;\\&space;&&space;&\cdots&space;&\\&space;[x_{k}^{1}&space;&x_{k}^{2}&\cdots&space;&x_{k}^{N\_i}]&space;\end{bmatrix}" title="\mathbf{I}=\begin{bmatrix} [x_{1}^{1}&x_{1}^{2} &\cdots &x_{1}^{N\_i}] \\ [x_{2}^{1}&x_{2}^{2} &\cdots &x_{2}^{N\_i}] \\ & &\cdots &\\ [x_{k}^{1} &x_{k}^{2}&\cdots &x_{k}^{N\_i}] \end{bmatrix}" /></a>，其中每一行表示一个样本的输入，每个样本有N_i个输入属性， 样本数为k；
 
-   - 输出数据
-   
-<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{R}=\begin{bmatrix}&space;[y_{1}^{1}&space;&\cdots&space;&y_{1}^{N\_o}]&space;\\&space;[y_{2}^{1}&space;&\cdots&space;&y_{2}^{N\_o}]&space;\\&space;&&space;\cdots&space;&\\&space;[y_{k}^{1}&space;&\cdots&space;&y_{k}^{N\_o}]&space;\end{bmatrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{R}=\begin{bmatrix}&space;[y_{1}^{1}&space;&\cdots&space;&y_{1}^{N\_o}]&space;\\&space;[y_{2}^{1}&space;&\cdots&space;&y_{2}^{N\_o}]&space;\\&space;&&space;\cdots&space;&\\&space;[y_{k}^{1}&space;&\cdots&space;&y_{k}^{N\_o}]&space;\end{bmatrix}" title="\mathbf{R}=\begin{bmatrix} [y_{1}^{1} &\cdots &y_{1}^{N\_o}] \\ [y_{2}^{1} &\cdots &y_{2}^{N\_o}] \\ & \cdots &\\ [y_{k}^{1} &\cdots &y_{k}^{N\_o}] \end{bmatrix}" /></a>，其中每一行表示一个样本的输出，每个样本有N_o个输出属性， 样本数为k；
+
+     * 输出数据
+     
+   <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{R}=\begin{bmatrix}&space;[y_{1}^{1}&space;&\cdots&space;&y_{1}^{N\_o}]&space;\\&space;[y_{2}^{1}&space;&\cdots&space;&y_{2}^{N\_o}]&space;\\&space;&&space;\cdots&space;&\\&space;[y_{k}^{1}&space;&\cdots&space;&y_{k}^{N\_o}]&space;\end{bmatrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{R}=\begin{bmatrix}&space;[y_{1}^{1}&space;&\cdots&space;&y_{1}^{N\_o}]&space;\\&space;[y_{2}^{1}&space;&\cdots&space;&y_{2}^{N\_o}]&space;\\&space;&&space;\cdots&space;&\\&space;[y_{k}^{1}&space;&\cdots&space;&y_{k}^{N\_o}]&space;\end{bmatrix}" title="\mathbf{R}=\begin{bmatrix} [y_{1}^{1} &\cdots &y_{1}^{N\_o}] \\ [y_{2}^{1} &\cdots &y_{2}^{N\_o}] \\ & \cdots &\\ [y_{k}^{1} &\cdots &y_{k}^{N\_o}] \end{bmatrix}" /></a>，其中每一行表示一个样本的输出，每个样本有N_o个输出属性， 样本数为k；
     
     
 
-
-+ **正向传播**
-
-
-
-+ **反向传播**
-
-
-    + **回归**
-    
-
-    + **分类**
 
  
 
