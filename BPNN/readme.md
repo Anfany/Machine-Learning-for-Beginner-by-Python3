@@ -23,9 +23,21 @@
        
     5. 输出层O与样本真实输出P之间的**成本函数**C，回归问题用最小二乘函数， 分类问题用交叉熵函数；
       
-+ **结构图示**
++ **网络结构图示**
 
 ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Struct.png)
+
+
++ **样本结构说明**
+
+   输入数据
+
+<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{X}=\begin{bmatrix}&space;[x_{1}^{1}&space;&x_{1}^{2}&space;&\cdots&space;&x_{1}^{N_i}]&space;\\&space;[x_{2}^{1}&space;&x_{2}^{2}&space;&\cdots&space;&x_{2}^{N_i}]&space;\\&space;&&space;&\cdots&space;&&space;\\&space;[x_{k}^{1}&space;&x_{k}^{2}&space;&\cdots&space;&x_{k}^{N_i}]&space;\end{bmatrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{X}=\begin{bmatrix}&space;[x_{1}^{1}&space;&x_{1}^{2}&space;&\cdots&space;&x_{1}^{N_i}]&space;\\&space;[x_{2}^{1}&space;&x_{2}^{2}&space;&\cdots&space;&x_{2}^{N_i}]&space;\\&space;&&space;&\cdots&space;&&space;\\&space;[x_{k}^{1}&space;&x_{k}^{2}&space;&\cdots&space;&x_{k}^{N_i}]&space;\end{bmatrix}" title="\mathbf{X}=\begin{bmatrix} [x_{1}^{1} &x_{1}^{2} &\cdots &x_{1}^{N_i}] \\ [x_{2}^{1} &x_{2}^{2} &\cdots &x_{2}^{N_i}] \\ & &\cdots & \\ [x_{k}^{1} &x_{k}^{2} &\cdots &x_{k}^{N_i}] \end{bmatrix}" /></a>
+
+其中每一行表示一个样本，每个样本有N_i个输入属性；
+   
+   
+   输出数据
 
 
 + **正向传播**
