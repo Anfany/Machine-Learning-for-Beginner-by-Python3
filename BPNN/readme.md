@@ -37,6 +37,9 @@
     + 输出数据
         
    <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{R}=\begin{bmatrix}&space;[y_{1}^{1}&space;&\cdots&space;&y_{1}^{N\_o}]&space;\\&space;[y_{2}^{1}&space;&\cdots&space;&y_{2}^{N\_o}]&space;\\&space;&&space;\cdots&space;&\\&space;[y_{k}^{1}&space;&\cdots&space;&y_{k}^{N\_o}]&space;\end{bmatrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{R}=\begin{bmatrix}&space;[y_{1}^{1}&space;&\cdots&space;&y_{1}^{N\_o}]&space;\\&space;[y_{2}^{1}&space;&\cdots&space;&y_{2}^{N\_o}]&space;\\&space;&&space;\cdots&space;&\\&space;[y_{k}^{1}&space;&\cdots&space;&y_{k}^{N\_o}]&space;\end{bmatrix}" title="\mathbf{R}=\begin{bmatrix} [y_{1}^{1} &\cdots &y_{1}^{N\_o}] \\ [y_{2}^{1} &\cdots &y_{2}^{N\_o}] \\ & \cdots &\\ [y_{k}^{1} &\cdots &y_{k}^{N\_o}] \end{bmatrix}" /></a>，其中每一行表示一个样本的输出，每个样本有N_o个输出属性， 样本数为k；
+   
+   
+* **正向传播**
 
 
 
