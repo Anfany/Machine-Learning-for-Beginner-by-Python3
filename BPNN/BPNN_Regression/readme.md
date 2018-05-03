@@ -24,12 +24,23 @@
       - 数据读取与预处理程序：[BPNN_Data_Reg.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Regression/BPNN_Data_Reg.py)
      
 
+ + 一维样本示例
+
+      + 示例程序：[Regre_Compare.py]
  
- + 二维数据示例
 
 
-      + 示例程序：[Kmeans_Compare.py]
- 
-      + 示例结果：
+      + **AnFany**
+          
+           + **训练数据图示**
+              
+              
+              
+           + **预测数据图示**
+              
+           + **成本函数图示**
+          
+          
+          
     
      
