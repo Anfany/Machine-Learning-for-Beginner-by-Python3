@@ -41,7 +41,15 @@
    
 * **正向传播**
 
+    <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{H_{1}}=\mathit{A_{0}}(\mathbf{I}\cdot&space;\mathbf{W_{0}}&space;&plus;&space;\mathbf{B_{0}})\\&space;\mathbf{H_{2}}=\mathit{A_{1}}(\mathbf{H_{1}}\cdot&space;\mathbf{W_{1}}&space;&plus;&space;\mathbf{B_{1}})\\&space;\cdots&space;\\&space;\mathbf{H_{m-2}}=\mathit{A_{m-3}}(\mathbf{H_{m-3}}\cdot&space;\mathbf{W_{m-3}}&space;&plus;&space;\mathbf{B_{m-3}})\\&space;\mathbf{O}=\mathit{A_{m-2}}(\mathbf{H_{m-2}}\cdot&space;\mathbf{W_{m-2}}&space;&plus;&space;\mathbf{B_{m-2}})\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;\mathbf{H_{1}}=\mathit{A_{0}}(\mathbf{I}\cdot&space;\mathbf{W_{0}}&space;&plus;&space;\mathbf{B_{0}})\\&space;\mathbf{H_{2}}=\mathit{A_{1}}(\mathbf{H_{1}}\cdot&space;\mathbf{W_{1}}&space;&plus;&space;\mathbf{B_{1}})\\&space;\cdots&space;\\&space;\mathbf{H_{m-2}}=\mathit{A_{m-3}}(\mathbf{H_{m-3}}\cdot&space;\mathbf{W_{m-3}}&space;&plus;&space;\mathbf{B_{m-3}})\\&space;\mathbf{O}=\mathit{A_{m-2}}(\mathbf{H_{m-2}}\cdot&space;\mathbf{W_{m-2}}&space;&plus;&space;\mathbf{B_{m-2}})\\" title="\\ \mathbf{H_{1}}=\mathit{A_{0}}(\mathbf{I}\cdot \mathbf{W_{0}} + \mathbf{B_{0}})\\ \mathbf{H_{2}}=\mathit{A_{1}}(\mathbf{H_{1}}\cdot \mathbf{W_{1}} + \mathbf{B_{1}})\\ \cdots \\ \mathbf{H_{m-2}}=\mathit{A_{m-3}}(\mathbf{H_{m-3}}\cdot \mathbf{W_{m-3}} + \mathbf{B_{m-3}})\\ \mathbf{O}=\mathit{A_{m-2}}(\mathbf{H_{m-2}}\cdot \mathbf{W_{m-2}} + \mathbf{B_{m-2}})\\" /></a>
+    
+    + **回归**
+    
+    最终的成本
+    
+    
 
+   
 
 
     
