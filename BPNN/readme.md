@@ -67,7 +67,7 @@
     <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{H_{0}}=\mathbf{I_{s}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{H_{0}}=\mathbf{I_{s}}" title="\mathbf{H_{0}}=\mathbf{I_{s}}" /></a>，<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{I_{s}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{I_{s}}" title="\mathbf{I_{s}}" /></a>为一次训练输入的s个样本组成的数据集。
     
     
-<a href="http://www.codecogs.com/eqnedit.php?latex=\mathrm{der(\mathbf{G})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathrm{der(\mathbf{G})}" title="\mathrm{der(\mathbf{G})}" /></a>表示对<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{G}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{G}" title="\mathbf{G}" /></a>求导。
+    <a href="http://www.codecogs.com/eqnedit.php?latex=\mathrm{der(\mathbf{G})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathrm{der(\mathbf{G})}" title="\mathrm{der(\mathbf{G})}" /></a>表示对<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{G}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{G}" title="\mathbf{G}" /></a>求导。
 
 
 
