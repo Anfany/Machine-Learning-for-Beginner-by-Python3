@@ -52,8 +52,7 @@
     + **回归**
     
      成本函数为：
-     
-     <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" title="\mathbf{Cost}=\frac{1}{2k}(\mathbf{O}-\mathbf{R})^{2}" /></a>
+     <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" title="\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" /></a>
     
     依据链式求导法则，计算出成本函数对于每一个权重以及偏置的偏导数：
     
