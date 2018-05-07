@@ -25,7 +25,7 @@
     
     6. s为**子样本数**，也就是一次训练过程中的样本数。当s为1是在线学习；当s为k，也就是全部样本数，为增量学习；s为小于K的其他数值为批量学习，比较常用；
     
-    7. **运算符号说明**：<a href="http://www.codecogs.com/eqnedit.php?latex=&plus;" target="_blank"><img src="http://latex.codecogs.com/gif.latex?&plus;" title="+" /></a>为numpy数组的广播运算加法；<a href="http://www.codecogs.com/eqnedit.php?latex=\times" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\times" title="\times" /></a>为矩阵对应元素相乘；<a href="http://www.codecogs.com/eqnedit.php?latex=\cdot" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\cdot" title="\cdot" /></a>表示矩阵之间的乘法；
+    7. **运算符号说明**：<a href="http://www.codecogs.com/eqnedit.php?latex=&plus;" target="_blank"><img src="http://latex.codecogs.com/gif.latex?&plus;" title="+" /></a>为numpy数组的广播运算加法；<a href="http://www.codecogs.com/eqnedit.php?latex=\times" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\times" title="\times" /></a>为矩阵对应元素相乘；<a href="http://www.codecogs.com/eqnedit.php?latex=\bullet" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bullet" title="\bullet" /></a>表示矩阵之间的乘法；
       
 + **网络结构图示**
 
