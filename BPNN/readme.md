@@ -25,7 +25,7 @@
       
 + **网络结构图示**
 
-![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_struct.png)
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/Bpnn_struct.png)
 
 
 + **样本结构说明**
