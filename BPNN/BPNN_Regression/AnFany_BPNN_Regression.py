@@ -160,7 +160,7 @@ class BPNN():
                 z[forward] = eval(self.func_name[forward - 1])(a[forward])
 
             # 打印误差值
-            errortrain = eval(self.cost_func)(z[len(self.all_layer) - 1], trout)
+            errortrain = eval(self.cost_func)(trout, z[len(self.all_layer) - 1])
             print('第%s代总体误差：%.9f' % (iter, errortrain))
 
             error_list.append(errortrain)
@@ -274,7 +274,7 @@ class BPNN():
                 z[forward] = eval(self.func_name[forward - 1])(a[forward])
 
             # 打印误差值
-            errortrain = eval(self.cost_func)(z[len(self.all_layer) - 1], trout)
+            errortrain = eval(self.cost_func)(trout, z[len(self.all_layer) - 1])
             print('第%s代总体误差：%.9f' % (iter, errortrain))
 
             error_list.append(errortrain)
