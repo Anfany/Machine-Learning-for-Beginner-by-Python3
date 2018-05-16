@@ -51,7 +51,7 @@
 
     + **回归**
     
-     成本函数为：
+     最小二乘成本函数为：
      <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" title="\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" /></a>
     
     依据链式求导法则以及向量化，计算出成本函数对于每一个权重以及偏置的偏导数：
@@ -67,7 +67,21 @@
     <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{H_{0}}=\mathbf{I_{s}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{H_{0}}=\mathbf{I_{s}}" title="\mathbf{H_{0}}=\mathbf{I_{s}}" /></a>，<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{I_{s}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{I_{s}}" title="\mathbf{I_{s}}" /></a>为一次训练输入的s个样本组成的数据集。
     
     
-    <a href="http://www.codecogs.com/eqnedit.php?latex=\mathrm{der(\mathbf{G})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathrm{der(\mathbf{G})}" title="\mathrm{der(\mathbf{G})}" /></a>表示对<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{G}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{G}" title="\mathbf{G}" /></a>求导。
+    <a href="http://www.codecogs.com/eqnedit.php?latex=\mathrm{der(\mathbf{G})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathrm{der(\mathbf{G})}" title="\mathrm{der(\mathbf{G})}" /></a>表示<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{G}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{G}" title="\mathbf{G}" /></a>的导数。
+    
+    
+     + **分类**
+     
+     交叉熵成本函数为：
+     <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}&space;=&space;-\frac{1}{s}(\mathbf{R}\times&space;ln(\mathbf{O})&plus;(1-\mathbf{R})\times&space;ln(1-\mathbf{O}))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}&space;=&space;-\frac{1}{s}(\mathbf{R}\times&space;ln(\mathbf{O})&plus;(1-\mathbf{R})\times&space;ln(1-\mathbf{O}))" title="\mathbf{Cost} = -\frac{1}{s}(\mathbf{R}\times ln(\mathbf{O})+(1-\mathbf{R})\times ln(1-\mathbf{O}))" /></a>
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 
