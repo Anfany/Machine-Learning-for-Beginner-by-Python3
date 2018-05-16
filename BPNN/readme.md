@@ -75,7 +75,15 @@
      交叉熵成本函数为：
      <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}&space;=&space;-\frac{1}{s}(\mathbf{R}\times&space;ln(\mathbf{O})&plus;(1-\mathbf{R})\times&space;ln(1-\mathbf{O}))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}&space;=&space;-\frac{1}{s}(\mathbf{R}\times&space;ln(\mathbf{O})&plus;(1-\mathbf{R})\times&space;ln(1-\mathbf{O}))" title="\mathbf{Cost} = -\frac{1}{s}(\mathbf{R}\times ln(\mathbf{O})+(1-\mathbf{R})\times ln(1-\mathbf{O}))" /></a>
      
-     计算梯度的方式和回归问题相似，就是将回归问题中的成本函数的导数<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{1}{s}(\mathbf{O}-\mathbf{R})" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{1}{s}(\mathbf{O}-\mathbf{R})" title="\frac{1}{s}(\mathbf{O}-\mathbf{R})" /></a>变为交叉熵成本函数的导数<a href="http://www.codecogs.com/eqnedit.php?latex=-\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times&space;(1-\mathbf{O})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?-\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times&space;(1-\mathbf{O})}" title="-\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times (1-\mathbf{O})}" /></a>即可。
+     计算梯度的方式和回归问题相似，就是将回归问题中的成本函数的导数
+     
+     <a href="http://www.codecogs.com/eqnedit.php?latex={\color{Orange}&space;\frac{1}{s}(\mathbf{O}-\mathbf{R})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{Orange}&space;\frac{1}{s}(\mathbf{O}-\mathbf{R})}" title="{\color{Orange} \frac{1}{s}(\mathbf{O}-\mathbf{R})}" /></a>
+     
+     变为交叉熵成本函数的导数
+     
+     <a href="http://www.codecogs.com/eqnedit.php?latex={\color{Orange}&space;-\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times&space;(1-\mathbf{O})}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{Orange}&space;-\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times&space;(1-\mathbf{O})}}" title="{\color{Orange} -\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times (1-\mathbf{O})}}" /></a>
+     
+     即可。
     
     
     
