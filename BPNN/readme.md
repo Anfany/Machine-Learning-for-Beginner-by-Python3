@@ -49,7 +49,7 @@
     
 * **反向传播**
 
-    + **回归**
+    + **回归问题**
     
      最小二乘成本函数为：
      <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" title="\mathbf{Cost}=\frac{1}{2s}(\mathbf{O}-\mathbf{R})^{2}" /></a>
@@ -70,10 +70,12 @@
     <a href="http://www.codecogs.com/eqnedit.php?latex=\mathrm{der(\mathbf{G})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathrm{der(\mathbf{G})}" title="\mathrm{der(\mathbf{G})}" /></a>表示<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{G}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{G}" title="\mathbf{G}" /></a>的导数。
     
     
-     + **分类**
+     + **分类问题**
      
      交叉熵成本函数为：
      <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}&space;=&space;-\frac{1}{s}(\mathbf{R}\times&space;ln(\mathbf{O})&plus;(1-\mathbf{R})\times&space;ln(1-\mathbf{O}))" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}&space;=&space;-\frac{1}{s}(\mathbf{R}\times&space;ln(\mathbf{O})&plus;(1-\mathbf{R})\times&space;ln(1-\mathbf{O}))" title="\mathbf{Cost} = -\frac{1}{s}(\mathbf{R}\times ln(\mathbf{O})+(1-\mathbf{R})\times ln(1-\mathbf{O}))" /></a>
+     
+     计算梯度的方式和回归问题相似，就是将回归问题中的成本函数的导数<a href="http://www.codecogs.com/eqnedit.php?latex=\frac{1}{s}(\mathbf{O}-\mathbf{R})" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\frac{1}{s}(\mathbf{O}-\mathbf{R})" title="\frac{1}{s}(\mathbf{O}-\mathbf{R})" /></a>变为交叉熵成本函数的导数<a href="http://www.codecogs.com/eqnedit.php?latex=-\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times&space;(1-\mathbf{O})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?-\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times&space;(1-\mathbf{O})}" title="-\frac{1}{s}\frac{\mathbf{R}-\mathbf{O}}{\mathbf{O}\times (1-\mathbf{O})}" /></a>即可。
     
     
     
