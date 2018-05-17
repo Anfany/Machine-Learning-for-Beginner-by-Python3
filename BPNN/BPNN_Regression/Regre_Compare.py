@@ -40,8 +40,8 @@ pre_y_out = model_data[3]
 
 # 引入AnFany以及TensorFlow方法
 
-import AnFany_BPNN_Regression as An_Bpnn  # 注释掉最后一行
-import TensorFlow_BPNN_Regression as Ten_Bpnn  # 注释掉最后一行
+import AnFany_BPNN_Regression as An_Bpnn  
+import TensorFlow_BPNN_Regression as Ten_Bpnn  
 
 
 # AnFany方法
