@@ -168,5 +168,5 @@ if __name__ == '__main__':
 
     costfig(tfrelu[2])
 
-__name__ == "__main__"
+
 
