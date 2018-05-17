@@ -367,7 +367,6 @@ if __name__ == "__main__":
     costfig(bpnn_train[2])
 
 
-__name__ == "__main__"
 
 
 
