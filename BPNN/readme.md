@@ -88,27 +88,5 @@
     
 * **梯度下降**
 
-
+<a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{W_{s}}&space;=&space;\mathbf{W_{s}}&space;-&space;\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{W_{s}}}\\&space;\mathbf{B_{s}}&space;=&space;\mathbf{B_{s}}&space;-&space;\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{B_{s}}},&space;\mathbf{s}={\mathbf{0},\mathbf{1},\mathbf{m-2}}\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;\mathbf{W_{s}}&space;=&space;\mathbf{W_{s}}&space;-&space;\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{W_{s}}}\\&space;\mathbf{B_{s}}&space;=&space;\mathbf{B_{s}}&space;-&space;\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{B_{s}}},&space;\mathbf{s}={\mathbf{0},\mathbf{1},\mathbf{m-2}}\\" title="\\ \mathbf{W_{s}} = \mathbf{W_{s}} - \eta \times \frac{\partial \mathbf{Cost}}{\partial \mathbf{W_{s}}}\\ \mathbf{B_{s}} = \mathbf{B_{s}} - \eta \times \frac{\partial \mathbf{Cost}}{\partial \mathbf{B_{s}}}, \mathbf{s}={\mathbf{0},\mathbf{1},\mathbf{m-2}}\\" /></a>
    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-   
-
-
-    
-    
-
-
- 
-
- 
- 
-  
