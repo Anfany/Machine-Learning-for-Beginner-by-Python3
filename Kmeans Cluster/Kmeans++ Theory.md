@@ -59,6 +59,7 @@ Kmeans聚类算法的结果会因为初始的类别中心的不同差异很大�
     1. 从样本集合中随机选择一个样本作为第1个类别中心；
     
     2. 对于样本集合中的每一个样本<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}" title="X_{i}" /></a>，计算其与上一个刚被选择成为
+    
     类别中心的样本之间的距离<a href="http://www.codecogs.com/eqnedit.php?latex=dis" target="_blank"><img src="http://latex.codecogs.com/gif.latex?dis" title="dis" /></a>；
 
     3. <a href="http://www.codecogs.com/eqnedit.php?latex=dis" target="_blank"><img src="http://latex.codecogs.com/gif.latex?dis" title="dis" /></a>较大的样本，被选取作为类别中心的概率较大；
