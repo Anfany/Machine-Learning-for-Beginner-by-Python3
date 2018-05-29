@@ -14,7 +14,7 @@
 
 这样操作本质就是将<a href="http://www.codecogs.com/eqnedit.php?latex=w*X&space;&plus;&space;b" target="_blank"><img src="http://latex.codecogs.com/gif.latex?w*X&space;&plus;&space;b" title="w*X + b" /></a>中的<a href="http://www.codecogs.com/eqnedit.php?latex=w" target="_blank"><img src="http://latex.codecogs.com/gif.latex?w" title="w" /></a>和<a href="http://www.codecogs.com/eqnedit.php?latex=w" target="_blank"><img src="http://latex.codecogs.com/gif.latex?b" title="b" /></a>合为一个<a href="http://www.codecogs.com/eqnedit.php?latex=W" target="_blank"><img src="http://latex.codecogs.com/gif.latex?W" title="W" /></a>，便于计算。
 
-<a href="http://www.codecogs.com/eqnedit.php?latex=Sigmoid" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Sigmoid" title="Sigmoid" /></a>函数形式为：
+<a href="http://www.codecogs.com/eqnedit.php?latex=Sigmoid" target="_blank"><img src="http://latex.codecogs.com/gif.latex?Sigmoid" title="Sigmoid" /></a>函数表达式为：
 
 <a href="http://www.codecogs.com/eqnedit.php?latex=\Phi(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\Phi(x)=\frac{1}{1&plus;e^{-x}}" title="\Phi(x)=\frac{1}{1+e^{-x}}" /></a>
 
