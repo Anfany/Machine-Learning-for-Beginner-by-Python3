@@ -2,7 +2,7 @@
 -------------
 
 
-+ **Kmeans 聚类**
+* **Kmeans 聚类**
 
 样本集合<a href="http://www.codecogs.com/eqnedit.php?latex=X=\begin{pmatrix}&space;X_{1},&space;&X_{2},&space;&&space;\cdots&space;,&&space;X_{N}&space;\end{pmatrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X=\begin{pmatrix}&space;X_{1},&space;&X_{2},&space;&&space;\cdots&space;,&&space;X_{N}&space;\end{pmatrix}" title="X=\begin{pmatrix} X_{1}, &X_{2}, & \cdots ,& X_{N} \end{pmatrix}" /></a>， <a href="http://www.codecogs.com/eqnedit.php?latex=N" target="_blank"><img src="http://latex.codecogs.com/gif.latex?N" title="N" /></a>为样本个数。<a href="http://www.codecogs.com/eqnedit.php?latex=X_{i}=\begin{bmatrix}&space;X_{i}^{1}&space;&&space;X_{i}^{2}&\cdots&space;&&space;X_{i}^{m}&space;\end{bmatrix}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?X_{i}=\begin{bmatrix}&space;X_{i}^{1}&space;&&space;X_{i}^{2}&\cdots&space;&&space;X_{i}^{m}&space;\end{bmatrix}" title="X_{i}=\begin{bmatrix} X_{i}^{1} & X_{i}^{2}&\cdots & X_{i}^{m} \end{bmatrix}" /></a>，<a href="http://www.codecogs.com/eqnedit.php?latex=m" target="_blank"><img src="http://latex.codecogs.com/gif.latex?m" title="m" /></a>为每个样本的特征个数。
 
@@ -17,14 +17,12 @@
 
  
 * **不同的距离计算方式**
+有两个点<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{A,B}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{A,B}" title="\mathbf{A,B}" /></a>, 坐标分别为<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix}&space;&&space;\end{matrix}&space;\mathbf{B}=[b1,b2,\cdots,bm]" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix}&space;&&space;\end{matrix}&space;\mathbf{B}=[b1,b2,\cdots,bm]" title="\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix} & \end{matrix} \mathbf{B}=[b1,b2,\cdots,bm]" /></a>。
 
-有两个点<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{A,B}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{A,B}" title="\mathbf{A,B}" /></a>, 坐标分别为<a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix}&space;&&space;\end{matrix}&space;\mathbf{B}=[b1,b2,\cdots,bm]" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix}&space;&&space;\end{matrix}&space;\mathbf{B}=[b1,b2,\cdots,bm]" title="\mathbf{A}=[a1,a2,\cdots,am]\begin{matrix} & \end{matrix} \mathbf{B}=[b1,b2,\cdots,bm]" /></a>
- 
-   + 欧几里得距离
+    + 欧几里得距离
    
    <a href="http://www.codecogs.com/eqnedit.php?latex=E(\mathbf{A,B})&space;=&space;\sqrt{\sum_{i=1}^{m}(ai-bi)^{2}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?E(\mathbf{A,B})&space;=&space;\sqrt{\sum_{i=1}^{m}(ai-bi)^{2}}" title="E(\mathbf{A,B}) = \sqrt{\sum_{i=1}^{m}(ai-bi)^{2}}" /></a>
-   
-   
+ 
    + 曼哈顿距离
    
    <a href="http://www.codecogs.com/eqnedit.php?latex=M(\mathbf{A,B})&space;=&space;\sum_{i=1}^{m}\left&space;|&space;ai-bi&space;\right&space;|" target="_blank"><img src="http://latex.codecogs.com/gif.latex?M(\mathbf{A,B})&space;=&space;\sum_{i=1}^{m}\left&space;|&space;ai-bi&space;\right&space;|" title="M(\mathbf{A,B}) = \sum_{i=1}^{m}\left | ai-bi \right |" /></a>
