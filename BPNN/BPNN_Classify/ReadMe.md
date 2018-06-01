@@ -27,7 +27,7 @@
  
       - 数据爬取程序：[BPNN_AdultData_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/BPNN_AdultData_Spyder.py)
 
-      - 数据读取与预处理程序：
+      - 数据读取与预处理程序：[BPNN_Classify_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/BPNN_Classify_Data.py)
      
 
  + Mnist手写数据集结果展示
@@ -45,7 +45,7 @@
           + 测试标签：t10k-labels.idx1-ubyte
    
       
-      + 数据集解析以及处理：[Minst_Data.py]()
+      + 数据集解析以及处理：[Minst_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/Minst_Data.py)
       
       + 训练结果展示
       
