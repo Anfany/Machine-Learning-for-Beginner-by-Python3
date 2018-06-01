@@ -30,9 +30,23 @@
       - 数据读取与预处理程序：
      
 
- + 一维样本示例
+ + Mnist手写数据集结果展示
  
-      + 数据说明：
+      + [Mnist数据集下载以及说明](http://yann.lecun.com/exdb/mnist/)
+      
+      + 数据集解析以及处理：[Minst_Data.py]()
+      
+      + 训练结果展示
+      
+          + AnFany
+          
+              + 程序
+              
+              
+              + 结果展示
+          
+          
+          + TensorFlow
       
 
 
