@@ -32,7 +32,9 @@
 
  + Mnist手写数据集结果展示
  
-      + [Mnist数据集下载以及说明](http://yann.lecun.com/exdb/mnist/)，**.gz解压缩后可得到如下文件**
+      + [Mnist数据集下载以及说明](http://yann.lecun.com/exdb/mnist/)
+      
+      **四个.gz解压缩后可得到对应文件**
       
           + 训练图片：train-images.idx3-ubyte
           
