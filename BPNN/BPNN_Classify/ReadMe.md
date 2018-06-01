@@ -40,10 +40,10 @@
       
           + AnFany
           
-              + 程序
+                a. 程序
               
               
-              + 结果展示
+                b. 结果展示
           
           
           + TensorFlow
