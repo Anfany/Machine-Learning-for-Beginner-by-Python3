@@ -32,7 +32,16 @@
 
  + Mnist手写数据集结果展示
  
-      + [Mnist数据集下载以及说明](http://yann.lecun.com/exdb/mnist/)
+      + [Mnist数据集下载以及说明](http://yann.lecun.com/exdb/mnist/)，**.gz解压缩后可得到如下文件**
+      
+          + 训练图片：train-images.idx3-ubyte
+          
+          + 训练标签：train-labels.idx1-ubyte
+          
+          + 测试图片：t10k-images.idx3-ubyte
+          
+          + 测试标签：t10k-labels.idx1-ubyte
+   
       
       + 数据集解析以及处理：[Minst_Data.py]()
       
