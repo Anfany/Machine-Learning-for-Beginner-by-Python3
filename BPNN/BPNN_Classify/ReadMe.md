@@ -38,16 +38,15 @@
       
       + 训练结果展示
       
-          + AnFany
-          
-          
+          + **AnFany**
+         
            a. 程序
               
               
            b. 结果展示
           
           
-          + TensorFlow
+          + **TensorFlow**
       
 
 
