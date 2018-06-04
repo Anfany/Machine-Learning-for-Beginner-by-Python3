@@ -50,12 +50,12 @@
               
            b. 结果展示
            
-                 + **K折交叉验证训练结果**
+           + **K折交叉验证训练结果**
                  
-                 ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/animation.gif)
+          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/animation.gif)
                  
-                 +  **测试结果**
-                 ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/last_flodui.jpg)
+           +  **测试结果**
+          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/last_flodui.jpg)
                  
           
           
