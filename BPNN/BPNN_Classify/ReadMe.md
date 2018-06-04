@@ -56,7 +56,7 @@
                  
            +  **测试结果**
            
-          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/last_flodui.jpg)
+          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/last_foldui.jpg)
                  
           
           
