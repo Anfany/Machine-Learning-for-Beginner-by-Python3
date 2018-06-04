@@ -46,7 +46,7 @@
       
           + **AnFany**
          
-           a. 程序:[Mnist_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/Mnist_Compare.py)
+           a. 程序：[Mnist_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/Mnist_Compare.py)
               
            b. 结果展示
            
