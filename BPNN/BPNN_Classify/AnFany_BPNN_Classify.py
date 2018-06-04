@@ -3,6 +3,7 @@
 
 '''第一部分：库'''
 
+
 import BPNN_Classify_Data as bpd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -21,6 +22,7 @@ countclass = 2
 def Sigmoid(x):
     s = 1 / (1 + np.exp(-x))
     return s
+
 def Sigmoid_der(s):
     y = np.multiply(s, 1 - s)
     return y
@@ -29,6 +31,7 @@ def Sigmoid_der(s):
 def Relu(x):
     s = np.maximum(0, x)
     return s
+
 def Relu_der(s):
     y = np.where(s > 0, np.ones(s.shape), np.zeros(s.shape))
     return y
@@ -37,22 +40,34 @@ def Relu_der(s):
 def Tanh(x):
     s = np.tanh(x)
     return s
+
 def Tanh_der(s):
     y = 1 - np.multiply(s, s)
     return y
 
 
+#  防止警告，对数据进行修正
+def right(exnup, minnum=0.00001, maxnum=0.9999):
+    xnup = np.where(exnup < minnum, np.array([minnum]), exnup)
+    nup = np.where(xnup > maxnum, np.array([maxnum]), xnup)
+    return nup
+
 # 成本函数
 def cross_entropy(yreal, yout):  # yreal 真实值 yout 网络输出值
+    yout = right(yout)
     costnum = - (yreal * np.log(yout) + (1 - yreal) * np.log(1 - yout)).sum() / len(yreal)
     return costnum
-def cross_entropy_der(yreal, yout, num=1e-8):
+
+def cross_entropy_der(yreal, yout):
+    yout = right(yout)
     return -(yreal - yout) / (yout * (1 - yout)) / len(yreal)
 
 
 # 输出层的激活函数
 def Linear(x):  # 线性函数，将数据的范围平移··到输出数据的范围
     return x
+
+
 def Linear_der(s):
     y = np.zeros(shape=s.shape)
     return y
@@ -82,7 +97,7 @@ def outvsreal(outdata, realdata):
 
 
 class BPNN():
-    def __init__(self, train_in, train_out, add_in, add_out, learn_rate=0.03, son_samples=50 \
+    def __init__(self, train_in, train_out, add_in, add_out, learn_rate=0.003, son_samples=50 \
                  , iter_times=200000, hidden_layer=[100, 100, 100], middle_name='Sigmoid' \
                  , last_name='Sigmoid', cost_func='cross_entropy', norr=0.00002, break_error=0.84):
         self.train_in = train_in  # 每一行是一个样本输入
@@ -246,6 +261,14 @@ class BPNN():
 
         # 存储误差值
         error_list = []
+        # 存储误差值
+        error_list_add =[]
+        # 存储训练数据集合的正确率
+        xlcorr = []
+        # 存储验证数据集合的正确率
+        adcorr = []
+        # 存储权重和偏置的字典
+        sacewei = []
         iter = 0
 
         while iter < self.iter_times:
@@ -332,10 +355,10 @@ class BPNN():
                 a[forward] = np.dot(z[forward - 1], self.weight[forward - 1]) + self.bias[forward - 1]
                 z[forward] = eval(self.func_name[forward - 1])(a[forward])
 
-            # 打印训练样本误差值
-            errortrain = eval(self.cost_func)(trout, z[len(self.all_layer) - 1])
-            print('第%s代总体误差：%.9f, 分类的正确率为%.5f' % (iter, errortrain, outvsreal(judge(z[-1]), trout)))
-
+            # 打印训练数据误差值
+            errortrain = eval(self.cost_func)(trout, z[-1])
+            train_corr = outvsreal(judge(z[-1]), trout)
+            print('第%s代训练样本误差：%.9f, 分类的正确率为%.5f' % (iter, errortrain, train_corr))
             error_list.append(errortrain)
 
             # 整个样本迭代一次计算验证样本的误差
@@ -348,14 +371,31 @@ class BPNN():
             # 打印验证数据误差值
             erain = eval(self.cost_func)(self.add_out, z[-1])
             add_correct = outvsreal(judge(z[-1]), self.add_out)
-            print('-----------------验证样本误差：%.9f, 分类的正确率为%.5f' % (erain, add_correct))
+            print('-----------------------验证样本误差：%.9f, 分类的正确率为%.5f' % (erain, add_correct))
+            error_list_add.append(erain)
 
             iter += 1
+            xlcorr.append(train_corr)
+            adcorr.append(add_correct)
 
-            #  提前结束的判断
-            if add_correct > self.break_error:
-                break
-        return self.weight, self.bias, error_list
+            # 存储权重和偏置的字典
+            if len(sacewei) == 4:
+                sacewei = sacewei[1:].copy()
+                sacewei.append([self.weight, self.bias])
+            else:
+                sacewei.append([self.weight, self.bias])
+
+            # 提前结束的判断(验证数据集分类正确率连续下降三次，退出循环, 并且存储第一次下降前的权重和偏置）
+            if len(adcorr) >= 4:
+                # 判断连续三次下降
+                edlist = adcorr[-4:-1]
+                delist = adcorr[-3:]
+                sublist = np.array(edlist) - np.array(delist)
+                if np.all(sublist > 0):
+                    self.weight, self.bias = sacewei[0]
+                    break
+
+        return self.weight, self.bias, error_list, xlcorr, adcorr, error_list_add
 
     def predict(self, pre_in_data):
         pa = list(range(len(self.all_layer)))  # 储存和值
@@ -373,7 +413,7 @@ DDatadict = bpd.kfold_train_datadict
 
 
 #  将数据分为输入数据以及输出数据
-def divided(data, cgu):
+def divided(data, cgu=countclass):
     indata = data[:, :-cgu]
     outdata = data[:, -cgu:]
     return indata, outdata
@@ -431,7 +471,7 @@ if __name__ == "__main__":
 
         fig.tight_layout()  # otherwise the right y-label is slightly clipped
         plt.title('%s折训练VS验证 结果对比' % fold, fontsize=16)
-        plt.savefig(r'C:\Users\GWT9\Desktop\%s_foldui.jpg' % fold)
+        plt.savefig(r'C:\Users\GWT9\Desktop\%s_fold.jpg' % fold)
 
     # 绘制K次的结果展示
     plt.figure()
@@ -443,6 +483,13 @@ if __name__ == "__main__":
     plt.title('绘制K次的不同数据集的结果展示', fontsize=16)
     plt.grid(True)
     plt.legend()
-    plt.savefig(r'C:\Users\GWT9\Desktop\last_foldui.jpg')
+    plt.savefig(r'C:\Users\GWT9\Desktop\last_fold.jpg')
     plt.show()
+
+
+
+
+
+
+
 
