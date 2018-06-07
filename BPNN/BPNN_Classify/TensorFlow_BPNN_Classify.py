@@ -11,7 +11,7 @@ mpl.rcParams['font.sans-serif'] = ['FangSong']  # 中文字体名称
 mpl.rcParams['axes.unicode_minus'] = False  # 显示负号
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 # 设置正确率的刻度与子刻度
-y_toge = MultipleLocator(0.02)  # 将y轴主刻度标签设置为0.1的倍数
+y_toge = MultipleLocator(0.02)  # 将y轴主刻度标签设置为0.02的倍数
 y_son = MultipleLocator(0.01)  # 将此y轴次刻度标签设置为0.01的倍数
 #  分类数
 countclass = 2
@@ -82,7 +82,7 @@ def Ten_train(xdata, ydata, addxdata, addydata, kcount, hiddenlayers=5, hiddenno
                                                  actfunc=activate_func)
         elif jj == hiddenlayers:
             VAR_NAME['ooutda%s' % jj] = activate(eval('ooutda%s' % (jj - 1)), eval('weight%s' % jj),\
-                                                 eval('bias%s' % jj), actfunc='linear')
+                                                 eval('bias%s' % jj), actfunc='linear')  # 最后一层为线性的输出
         else:
             VAR_NAME['ooutda%s' % jj] = activate(eval('ooutda%s' % (jj - 1)), eval('weight%s' % jj),\
                                                  eval('bias%s' % jj), actfunc=activate_func)
@@ -90,7 +90,7 @@ def Ten_train(xdata, ydata, addxdata, addydata, kcount, hiddenlayers=5, hiddenno
     #  需要对输出进行softmax计算
     uuu = tf.nn.softmax(eval('ooutda%s' % (hiddenlayers)))
 
-    # 交叉熵函数  此函数自带sigmoid，因此最后一层采用线性激活函数
+    # 交叉熵函数 
     loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_target, logits=eval('ooutda%s' % (hiddenlayers))))
 
     # 计算精确度需要
@@ -221,10 +221,10 @@ if __name__ == "__main__":
         #  测试添加
         corrsave_test.append(add_on_op)
         #  训练正确率添加
-        corrsave_train.append(bpnn[2][-4])
+        corrsave_train.append(bpnn[2][-1])
 
         #  验证正确率添加
-        corrsave_add.append(bpnn[3][-4])
+        corrsave_add.append(bpnn[3][-1])
 
         # 绘制训练数据集与验证数据集的正确率以及误差曲线
         fig, ax1 = plt.subplots()
