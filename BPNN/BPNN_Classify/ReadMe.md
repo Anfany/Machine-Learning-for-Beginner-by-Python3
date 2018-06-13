@@ -59,9 +59,21 @@
           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/last_foldui.jpg)
                  
           
-          
-          + **TensorFlow**
+   
+        + **TensorFlow**
       
+         a. 程序：[Mnist_TensorFlow.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/Mnist_TensorFlow.py)
+         
+          b. 结果展示
+           
+           + **K折交叉验证训练结果**
+                 
+          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/tensor.gif)
+                 
+           +  **测试结果**
+           
+          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/ten_mnist.jpg)
+         
 
 
         
