@@ -68,7 +68,7 @@
            
            + **K折交叉验证训练结果**
                  
-          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/tensor.gif)
+          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/tensorflow.gif)
                  
            +  **测试结果**
            
