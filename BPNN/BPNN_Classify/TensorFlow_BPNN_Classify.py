@@ -4,14 +4,14 @@
 '''第一部分：库'''
 import tensorflow as tf
 import BPNN_Classify_Data as bpd
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from pylab import mpl
 mpl.rcParams['font.sans-serif'] = ['FangSong']  # 中文字体名称
 mpl.rcParams['axes.unicode_minus'] = False  # 显示负号
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter
 # 设置正确率的刻度与子刻度
-y_toge = MultipleLocator(0.02)  # 将y轴主刻度标签设置为0.02的倍数
+y_toge = MultipleLocator(0.02)  # 将y轴主刻度标签设置为0.1的倍数
 y_son = MultipleLocator(0.01)  # 将此y轴次刻度标签设置为0.01的倍数
 #  分类数
 countclass = 2
@@ -55,8 +55,8 @@ def activate(input_layer, weights, biases, actfunc):
 # sigmoid: xavir  tanh: xavir   relu: he
 
 #  构建训练函数
-def Ten_train(xdata, ydata, addxdata, addydata, kcount, hiddenlayers=5, hiddennodes=100, \
-              learn_rate=0.009, itertimes=50, batch_size=200, activate_func='sigmoid'):
+def Ten_train(xdata, ydata, addxdata, addydata, kcount, hiddenlayers=3, hiddennodes=100, \
+              learn_rate=0.02, itertimes=20, batch_size=200, activate_func='tanh'):
     # 开始搭建神经网络
     Input_Dimen = len(xdata[0])
     Unit_Layers = [Input_Dimen] + [hiddennodes] * hiddenlayers + [len(ydata[0])]  # 输入的维数，隐层的神经数，输出的维数1
@@ -64,38 +64,34 @@ def Ten_train(xdata, ydata, addxdata, addydata, kcount, hiddenlayers=5, hiddenno
     # 创建占位符
     x_data = tf.placeholder(shape=[None, Input_Dimen], dtype=tf.float32, name='x_data')
 
-    print(x_data)
-
     y_target = tf.placeholder(shape=[None, len(ydata[0])], dtype=tf.float32)
 
     # 实现动态命名变量
     VAR_NAME = locals()
-
     for jj in range(hiddenlayers + 1):
-        VAR_NAME['weight%s' % jj] = tf.Variable(np.random.rand(Unit_Layers[jj], Unit_Layers[jj + 1]), dtype=tf.float32,\
-                                                name='Weight%s' % jj) / np.sqrt(Unit_Layers[jj])  # sigmoid  tanh
-        # VAR_NAME['weight%s'%jj] = tf.Variable(np.random.rand(Unit_Layers[jj], Unit_Layers[jj + 1]), dtype=tf.float32,name='weight%s' % jj) \/ np.sqrt(Unit_Layers[jj] / 2)  # relu
-        VAR_NAME['bias%s' % jj] = tf.Variable(tf.random_normal([Unit_Layers[jj + 1]], stddev=10, name='Bias%s' % jj),
-                                              dtype=tf.float32)
+        VAR_NAME['weight%s' % jj] = tf.Variable(np.random.rand(Unit_Layers[jj], Unit_Layers[jj + 1]) / np.sqrt(Unit_Layers[jj]), \
+                                                dtype=tf.float32, name='Weight%s' % jj)  # sigmoid  tanh
+        # VAR_NAME['weight%s'%jj] = tf.Variable(np.random.rand(Unit_Layers[jj], Unit_Layers[jj + 1]),dtype=tf.float32, \name='weight%s' % jj) \/ np.sqrt(Unit_Layers[jj] / 2)  # relu
+        VAR_NAME['bias%s' % jj] = tf.Variable(tf.random_normal([Unit_Layers[jj + 1]], stddev=10), dtype=tf.float32, name='Bias%s' % jj)
         if jj == 0:
             VAR_NAME['ooutda%s' % jj] = activate(x_data, eval('weight%s' % jj), eval('bias%s' % jj),
                                                  actfunc=activate_func)
         elif jj == hiddenlayers:
             VAR_NAME['ooutda%s' % jj] = activate(eval('ooutda%s' % (jj - 1)), eval('weight%s' % jj),\
-                                                 eval('bias%s' % jj), actfunc='linear')  # 最后一层为线性的输出
+                                                 eval('bias%s' % jj), actfunc='linear')  # 因此最后一层采用线性激活函数
         else:
             VAR_NAME['ooutda%s' % jj] = activate(eval('ooutda%s' % (jj - 1)), eval('weight%s' % jj),\
                                                  eval('bias%s' % jj), actfunc=activate_func)
-
     #  需要对输出进行softmax计算
     uuu = tf.nn.softmax(eval('ooutda%s' % (hiddenlayers)))
 
-    # 交叉熵函数 
+    # 交叉熵函数
     loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=y_target, logits=eval('ooutda%s' % (hiddenlayers))))
 
     # 计算精确度需要
 
     accu = eval('ooutda%s' % hiddenlayers)
+
 
 
     # 优化的方法
@@ -115,65 +111,74 @@ def Ten_train(xdata, ydata, addxdata, addydata, kcount, hiddenlayers=5, hiddenno
     acc_vec_add = []  # 验证精确度
 
     #  需要保存的权重以及偏置
-    saver = tf.train.Saver()
-    with tf.Session() as sess:
-        # 存储精确率的字典
-        accudict = {}
-        sess.run(init)
-        for i in range(itertimes):  # 在总共的迭代次数中选择最高的（验证正确率+训练精确率）
-            for jj in range(int(len(xdata) / batch_size)):
-                rand_index = np.random.choice(len(xdata), size=batch_size, replace=False)
-                rand_x = xdata[rand_index]
-                rand_y = ydata[rand_index]
-                #  开始训练
-                sess.run(train_step, feed_dict={x_data: rand_x, y_target: rand_y})
+    graph = tf.get_default_graph()
+    saver = tf.train.Saver(max_to_keep=1)
+    sess = tf.Session()
+    # 存储精确率的字典
+    accudict = {}
+    accunum = 0
+    sess.run(init)
+    for i in range(itertimes):  # 在总共的迭代次数中选择最高的（验证正确率+训练精确率）
+        for jj in range(int(len(xdata) / batch_size)):
+            rand_index = np.random.choice(len(xdata), size=batch_size, replace=False)
+            rand_x = xdata[rand_index]
+            rand_y = ydata[rand_index]
+            #  开始训练
+            sess.run(train_step, feed_dict={x_data: rand_x, y_target: rand_y})
 
-            #  训练误差
-            temp_loss = sess.run(loss, feed_dict={x_data: xdata, y_target: ydata})
-            #  存储训练误差
-            loss_vec.append(temp_loss)
+        #  训练误差
+        temp_loss = sess.run(loss, feed_dict={x_data: xdata, y_target: ydata})
+        #  存储训练误差
+        loss_vec.append(temp_loss)
 
-            #  验证误差
-            temp_loss_add = sess.run(loss, feed_dict={x_data: addxdata, y_target: addydata})
-            #  存储验证误差
-            loss_vec_add.append(temp_loss_add)
+        #  验证误差
+        temp_loss_add = sess.run(loss, feed_dict={x_data: addxdata, y_target: addydata})
+        #  存储验证误差
+        loss_vec_add.append(temp_loss_add)
 
-            # 训练精确率
-            acc_ru = sess.run(accu, feed_dict={x_data: xdata})
-            acc_rughy_train = outvsreal(judge(acc_ru), ydata)
-            #  存储
-            acc_vec.append(acc_rughy_train)
-            #  验证精确率
-            acu = sess.run(accu, feed_dict={x_data: addxdata})
-            acc_rughy = outvsreal(judge(acu), addydata)
-            # 存储
-            acc_vec_add.append(acc_rughy)
+        # 训练精确率
+        acc_ru = sess.run(accu, feed_dict={x_data: xdata})
+        acc_rughy_train = outvsreal(judge(acc_ru), ydata)
+        #  存储
+        acc_vec.append(acc_rughy_train)
+        #  验证精确率
+        acu = sess.run(accu, feed_dict={x_data: addxdata})
+        acc_rughy = outvsreal(judge(acu), addydata)
+        # 存储
+        acc_vec_add.append(acc_rughy)
 
-
-            print('%s代误差： [训练：%.4f, 验证：%.4f], 正确率： [训练：%.4f, 验证：%.4f]' % (i, temp_loss, temp_loss_add, \
+        print('%s代误差： [训练：%.4f, 验证：%.4f], 正确率： [训练：%.4f, 验证：%.4f]' % (i, temp_loss, temp_loss_add, \
                                                                        acc_rughy_train, acc_rughy))
-            accudict[i] = [acc_rughy_train, acc_rughy]
-            # # 判断提前退出 ， 验证数据集正确率连续三下降
-            # if len(acc_vec_add) >= 4:
-            #     # 判断连续三次下降
-            #     edlist = acc_vec_add[-4:-1]
-            #     delist = acc_vec_add[-3:]
-            #     sublist = np.array(edlist) - np.array(delist)
-            #     if np.all(sublist > 0):
-            #         saver.save(sess, './%smodel' % kcount, global_step=i-3)
-            #         print('%s代保存完毕' % kcount)
-            #         sign = i - 3
-            #         break
-        #  在所有的循环次数中，找到综合精确度最高的一次，输出
-        sign = max(accudict.items(), key=lambda d: 0.1 * d[1][0] + 0.9 * d[1][1])[0]
-        saver.save(sess, './%smodel' % kcount, global_step=sign)
-        print('%s代保存完毕' % kcount)
+        accudict[i] = [acc_rughy_train, acc_rughy]
+        # # 判断提前退出 ， 验证数据集正确率连续三下降
+        # if len(acc_vec_add) >= 4:
+        #     # 判断连续三次下降
+        #     edlist = acc_vec_add[-4:-1]
+        #     delist = acc_vec_add[-3:]
+        #     sublist = np.array(edlist) - np.array(delist)
+        #     if np.all(sublist > 0):
+        #         break
+
+        #  为了避免，陷入局部小值，当运行一定代数后，如果精确度未达到某值，则重新训练
+        if i > 30 and max(acc_vec) - min(acc_vec) < 0.3:
+            tf.reset_default_graph()
+            sess.close()
+            return False
+
+        #  在所有的循环次数中，找到综合精确度最高的一次，保存参数
+        zongheaccu = 0.1 * acc_rughy_train + 0.9 * acc_rughy
+        if zongheaccu > accunum:
+            accunum = zongheaccu
+            # 保存模型
+            saver.save(sess, './gu/%smodel' % kcount, global_step=i)  #注意路径
+
+    sign = max(accudict.items(), key=lambda d: 0.1 * d[1][0] + 0.9 * d[1][1])[0]
+    print('%s 折运行完毕，模型已经保存，最优的是%s代' % (kcount, sign))
     return loss_vec[: sign + 1], loss_vec_add[: sign + 1], acc_vec[: sign + 1], acc_vec_add[: sign + 1], sign, hiddenlayers
 
 
 '''第四部分：数据'''
 DDatadict = bpd.kfold_train_datadict
-
 
 #  将数据分为输入数据以及输出数据
 def divided(data, cgu=countclass):
@@ -201,22 +206,24 @@ if __name__ == "__main__":
     # 开始K折交叉验证
     for fold in DDatadict:
         TRAIN_In, TRAIN_Out, ADD_In, ADD_Out = transall(DDatadict[fold])
-        bpnn = Ten_train(TRAIN_In, TRAIN_Out, ADD_In, ADD_Out, fold)
+        while 1:
+            bpnn = Ten_train(TRAIN_In, TRAIN_Out, ADD_In, ADD_Out, fold)
+            if bpnn:
+                break
         #  下载刚才已经保存的模型
-        sess = tf.Session()
-        saver = tf.train.import_meta_graph("./%smodel-%s.meta" % (fold, bpnn[4]))
-        sess.run(tf.global_variables_initializer())
-        saver.restore(sess, tf.train.latest_checkpoint('./'))
-        graph = tf.get_default_graph()
-        op_to_restore = graph.get_tensor_by_name("Add_%s:0" % bpnn[5])
-        # Add more to the current graph
-        w1 = graph.get_tensor_by_name("x_data:0")
+        #tf.reset_default_graph()
+        graph = tf.train.import_meta_graph("./gu/%smodel-%s.meta" % (fold, bpnn[4]))
+        ses = tf.Session()
+        graph.restore(ses, tf.train.latest_checkpoint('./'))
+        op_to_restore = tf.get_default_graph().get_tensor_by_name("Add_%s:0" % bpnn[5])
+        w1 = tf.get_default_graph().get_tensor_by_name("x_data:0")
         feed_dict = {w1: TEST_In}
-        dgsio = sess.run(op_to_restore, feed_dict)
-
+        dgsio = ses.run(op_to_restore, feed_dict)
         #  测试数据集正确率
         add_on_op = outvsreal(judge(dgsio), TEST_Out)
+        print('第%s折测试正确率为' % fold, add_on_op)
         #  清空图
+        ses.close()
         tf.reset_default_graph()
         #  测试添加
         corrsave_test.append(add_on_op)
@@ -240,10 +247,8 @@ if __name__ == "__main__":
         ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
         ax2.set_ylabel('正确率', color='b')  # we already handled the x-label with ax1
-        plt.plot(list(range(len(bpnn[2]))), bpnn[2], label='训练', color='b', marker='*',
-                 linewidth=2)
-        plt.plot(list(range(len(bpnn[3]))), bpnn[3], label='验证', color='b', marker='.',
-                 linewidth=2)
+        plt.plot(list(range(len(bpnn[2]))), bpnn[2], label='训练', color='b', marker='*', linewidth=2)
+        plt.plot(list(range(len(bpnn[3]))), bpnn[3], label='验证', color='b', marker='.', linewidth=2)
         ax2.tick_params(axis='y', labelcolor='b')
         legen = ax2.legend(loc='lower center', shadow=True, fontsize='x-large')
         legen.get_frame().set_facecolor('#FFFAFA')
@@ -251,12 +256,11 @@ if __name__ == "__main__":
         ax2.yaxis.set_major_locator(y_toge)
         ax2.yaxis.set_minor_locator(y_son)
 
-
         fig.tight_layout()  # otherwise the right y-label is slightly clipped
         plt.title('%s折训练VS验证 结果对比' % fold, fontsize=16)
         plt.savefig(r'C:\Users\GWT9\Desktop\%s_fol8.jpg' % fold)
 
-    # 绘制K次的结果展示
+        # 绘制K次的结果展示
     plt.figure()
     plt.plot(list(range(len(corrsave_train))), corrsave_train, label='训练', color='b', marker='s', linewidth=2)
     plt.plot(list(range(len(corrsave_add))), corrsave_add, label='验证', color='r', marker='8', linewidth=2)
