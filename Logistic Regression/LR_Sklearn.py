@@ -19,14 +19,16 @@ def confusion(ccmatrix):
         mix.add_row(frru)
     return mix
 
+# 主函数
+if __name__ == "__main__":
+    regre = sklr.fit(H_Data[0], H_Data[1].T[0])
 
-regre = sklr.fit(H_Data[0], H_Data[1].T[0])
+    predata = sklr.predict(H_Data[0])
 
-predata = sklr.predict(H_Data[0])
-cm = confusion_matrix(H_Data[1].T[0], predata)
+    cm = confusion_matrix(H_Data[1].T[0], predata)
 
-print('系数为：\n', sklr.coef_, '\n', sklr.intercept_)
+    print('系数为：\n', sklr.coef_, '\n', sklr.intercept_)
+
+    print('混淆矩阵为：\n', confusion(cm))
 
 
-
-print('混淆矩阵为：\n', confusion(cm))
