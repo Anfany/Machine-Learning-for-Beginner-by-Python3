@@ -1,10 +1,9 @@
 #-*- coding：utf-8 -*-
 # &Author  AnFany
 
-
-# 引入三种方法
-import Kmeans_AnFany as K_Af  # 注释165行以后的内容
-import Kmeans_Sklearn as K_Sk  # 注释71行以后的内容
+# 引入方法
+import Kmeans_AnFany as K_Af  # AnFany
+import Kmeans_Sklearn as K_Sk  # Sklearn
 import matplotlib.pyplot as plt
 from pylab import mpl  # 作图显示中文
 mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
