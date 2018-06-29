@@ -1,18 +1,14 @@
 #-*- coding：utf-8 -*-
 # &Author  AnFany
-
-#基于Tensorflow的程序需要改写
-
-
 #生成数据
 import numpy as np
 X_DATA = np.random.randint(12,39,20)
 Y_DATA = 2 * X_DATA + np.random.random((1,20))[0] * 10
 
 #引入模型
-import linear_regression_AnFany as lr_af
-import linear_regression_sklearn as lr_sk
-import TensorFlow_rewrite as lr_tf
+import linear_regression_AnFany as lr_af   # AnFany
+import linear_regression_sklearn as lr_sk  # Sklearn
+import TensorFlow_rewrite as lr_tf  # TensorFlow
 
 
 #绘图对比展示
