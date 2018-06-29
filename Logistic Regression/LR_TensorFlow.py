@@ -72,23 +72,24 @@ def trans_tf(datax, datay, prea, learn_rate=0.5, iter_tiems=40000, error=1e-9, c
 
     return loss_vec, trans_predata, Weight.eval(session=sess), Bias.eval(session=sess)
 
-ypre = trans_tf(H_Data[0], H_Data[1], H_Data[0])
+# 主函数
+if __name__ == "__main__":
+    ypre = trans_tf(H_Data[0], H_Data[1], H_Data[0])
 
-print('系数为：\n', ypre[2], '\n', ypre[3])
+    print('系数为：\n', ypre[2], '\n', ypre[3])
 
-print('混淆矩阵：\n', confusion(H_Data[1], ypre[1]))
+    print('混淆矩阵：\n', confusion(H_Data[1], ypre[1]))
 
+    # 绘制成本函数图
+    import matplotlib.pyplot as plt
+    from pylab import mpl  # 作图显示中文
 
+    mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
 
-# 绘制成本函数图
-import matplotlib.pyplot as plt
-from pylab import mpl  # 作图显示中文
-mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
-
-plt.plot(list(range(len(ypre[0]))), ypre[0], '-', linewidth=5)
-plt.title('成本函数图')
-plt.ylabel('Cost 值')
-plt.xlabel('迭代次数')
-plt.grid('off')
-plt.show()
+    plt.plot(list(range(len(ypre[0]))), ypre[0], '-', linewidth=5)
+    plt.title('成本函数图')
+    plt.ylabel('Cost 值')
+    plt.xlabel('迭代次数')
+    plt.grid('off')
+    plt.show()
 
