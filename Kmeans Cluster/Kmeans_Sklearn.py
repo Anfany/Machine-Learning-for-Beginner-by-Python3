@@ -68,21 +68,21 @@ def trans(resu):
             redict[resu[ire]] = [ire]
     return redict
 
+#  最终的程序
+if __name__ == "__main__":
+    sk = KMeans(init='k-means++', n_clusters=3, n_init=10)
 
-sk = KMeans(init='k-means++', n_clusters=3, n_init=10)
+    train = sk.fit(DATA[0])
+    result = sk.predict(DATA[0])
 
-train = sk.fit(DATA[0])
-result = sk.predict(DATA[0])
+    init_class = get_start(DATA[1])
+    kresult = trans(result)
 
-init_class = get_start(DATA[1])
-kresult = trans(result)
+    newy = judge(init_class, kresult, DATA[1])
 
-newy = judge(init_class, kresult, DATA[1])
+    # 输出混淆矩阵
+    print('混淆矩阵：\n', confusion(np.array([DATA[1]]).T, np.array([newy[0]]).T))
 
+    # 输出类别中心
+    print(train.cluster_centers_)
 
-#输出混淆矩阵
-print('混淆矩阵：\n', confusion(np.array([DATA[1]]).T, np.array([newy[0]]).T))
-
-
-# 输出类别中心
-print (train.cluster_centers_)
