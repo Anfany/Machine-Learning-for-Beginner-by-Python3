@@ -53,7 +53,7 @@ class LRReg:
             # Sigmoid函数的值
             s_y_pre = 1/ (1 + np.exp(-y_predict))
 
-            # 计算最大似然取对数后的值
+            # 计算最大似然的值
             like = np.sum(np.dot(ydata.T, np.log(s_y_pre)) + np.dot((1 - ydata).T, np.log(1- s_y_pre)))
 
             # 正则化
@@ -69,10 +69,11 @@ class LRReg:
                 grad_W = np.dot(xdata.T, (s_y_pre - ydata)) / len(xdata)
 
             cost_function.append(cost)
+            print(cost, like)
 
             # 训练提前结束
             if len(cost_function) > 2:
-                if 0 <= cost_function[-2] - cost_function[-1] <= self.error:
+                if 0 <= cost_function[-1] - cost_function[-2] <= self.error:
                     break
 
             #更新
@@ -81,31 +82,32 @@ class LRReg:
         return self.weights, cost_function
 
     # 预测
-    def predict(self, xdata, func=trans):
+    def predict(self, xdata, func=trans, yuzhi=0.5):
         pnum = np.dot(func(self, xdata), self.weights)
         s_pnum = 1/ (1 + np.exp(-pnum))
-        latnum = [[1] if jj[0] >= 0.5 else [0] for jj in s_pnum]
+        latnum = [[1] if jj[0] >= yuzhi else [0] for jj in s_pnum]
         return latnum
+# 主函数
+if __name__ == "__main__":
+    lr_re = LRReg()
 
+    lf = lr_re.Gradient(H_Data[0], H_Data[1])
 
+    print('系数为：\n', lr_re.weights)
 
-lr_re = LRReg()
+    fdatd = lr_re.predict(H_Data[0])
 
-lf = lr_re.Gradient(H_Data[0], H_Data[1])
+    print('混淆矩阵：\n', confusion(H_Data[1], fdatd))
 
-print('系数为：\n', lr_re.weights)
+    # 绘制成本函数图
+    import matplotlib.pyplot as plt
+    from pylab import mpl  # 作图显示中文
 
-fdatd = lr_re.predict(H_Data[0])
+    mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
 
-print('混淆矩阵：\n', confusion(H_Data[1], fdatd))
+    plt.plot(list(range(len(lf[1]))), lf[1], '-', linewidth=5)
+    plt.title('成本函数图')
+    plt.ylabel('Cost 值')
+    plt.xlabel('迭代次数')
+    plt.show()
 
-# 绘制成本函数图
-import matplotlib.pyplot as plt
-from pylab import mpl  # 作图显示中文
-mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
-
-plt.plot(list(range(len(lf[1]))), lf[1], '-', linewidth=5)
-plt.title('成本函数图')
-plt.ylabel('Cost 值')
-plt.xlabel('迭代次数')
-plt.show()
