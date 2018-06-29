@@ -20,8 +20,8 @@ import numpy as np
 
 # 参数
 learn_rate = 0.2
-iter_times = 1000
-error = 1e-9
+iter_times = 9000000
+error = 1e-12
 
 # 预先输入的数据
 x_data = tf.placeholder(shape=[None, len(x_train_data[0])], dtype=tf.float32)
@@ -33,13 +33,14 @@ Bias = tf.Variable(tf.random_normal(shape=[1, 1]))
 y_out = tf.add(tf.matmul(x_data, Weight), Bias)
 
 #L2正则化
+'''
 tf.add_to_collection(tf.GraphKeys.WEIGHTS, Weight)
 regularizer = tf.contrib.layers.l2_regularizer(scale=5.0 / 6000)
 reg_term = tf.contrib.layers.apply_regularization(regularizer)
-
+'''
 
 # 损失函数
-cost = tf.reduce_mean(tf.square(y_out - y_data)) + reg_term
+cost = tf.reduce_mean(tf.square(y_out - y_data)) #+ reg_term
 
 # 初始化
 sess = tf.Session()
@@ -51,28 +52,23 @@ optimizer = tf.train.GradientDescentOptimizer(learn_rate).minimize(cost)
 #误差存储
 costfunc = []
 
-for i in range(iter_times):
 
-    sess.run(optimizer, feed_dict={x_data: x_train_data, y_data: y_train_data})
+#训练过程
+def train(xxdata=x_train_data, yydata=y_train_data):
+    for i in range(iter_times):
 
-    y_step_out = sess.run(y_out, feed_dict={x_data: x_train_data})
+        sess.run(optimizer, feed_dict={x_data: xxdata, y_data: yydata})
 
-    loss = sess.run(cost, feed_dict={y_out: y_step_out, y_data: y_train_data})
+        y_step_out = sess.run(y_out, feed_dict={x_data: xxdata})
 
-    costfunc.append(loss)
+        loss = sess.run(cost, feed_dict={y_out: y_step_out, y_data: yydata})
 
-    # 提前结束循环的机制
-    if len(costfunc) > 1:
-        if 0 < costfunc[-2] - costfunc[-1] < error:
-            break
+        costfunc.append(loss)
 
-
-
-# 用于预测数据的预测值
-predict_result = sess.run(y_out, feed_dict={x_data: x_predict_data})
-# 用于训练数据的预测值
-train_pre_result = sess.run(y_out, feed_dict={x_data: x_train_data})
-
+        # 提前结束循环的机制
+        if len(costfunc) > 1:
+            if 0 < costfunc[-2] - costfunc[-1] < error:
+                break
 
 
 import matplotlib.pyplot as plt#绘图
@@ -96,15 +92,26 @@ def getR(ydata_tr, ydata_pre):
     inexplicable = np.sum(((ydata_tr - ydata_pre) ** 2))
     return 1 - inexplicable / sum_error
 
+#  最终的程序
+if __name__ == "__main__":
+    train()
+    # 用于预测数据的预测值
+    predict_result = sess.run(y_out, feed_dict={x_data: x_predict_data})
+    # 用于训练数据的预测值
+    train_pre_result = sess.run(y_out, feed_dict={x_data: x_train_data})
+
+    # 绘制误差图
+    figure('误差图 最终的MSE = %.4f' % (costfunc[-1]), [costfunc, 'error'])
+
+    # 绘制预测值与真实值图
+    figure('预测值与真实值图 模型的' + r'$R^2=%.4f$' % (getR(y_train_data, train_pre_result)), [predict_result, '预测值'],
+           [y_predict_data, '真实值'])
+    plt.show()
+
+    # 线性回归的参数
+    print('线性回归的系数为:\n w = %s, \nb= %s' % (Weight.eval(session=sess), Bias.eval(session=sess)))
 
 
-#绘制误差图
-figure('误差图 最终的MSE = %.4f'%(costfunc[-1]), [costfunc, 'error'])
 
 
-#绘制预测值与真实值图
-figure('预测值与真实值图 模型的' + r'$R^2=%.4f$'%(getR(y_train_data, train_pre_result)), [predict_result, '预测值'],[y_predict_data,'真实值'])
-plt.show()
 
-#线性回归的参数
-print('线性回归的系数为:\n w = %s, \nb= %s'%(Weight.eval(session=sess), Bias.eval(session=sess)))
