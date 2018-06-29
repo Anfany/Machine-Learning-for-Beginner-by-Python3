@@ -2,9 +2,9 @@
 # &Author  AnFany
 
 # 引入三种方法
-import LR_AnFany as LR_A  # 需要注释93行以后的内容
-import LR_Sklearn as LR_S # 需要注释21行以后的内容
-import LR_TensorFlow as LR_T # 需要注释74行以后的内容
+import LR_AnFany as LR_A  # AnFany
+import LR_Sklearn as LR_S # Sklearn
+import LR_TensorFlow as LR_T # TensorFlow
 from pylab import mpl  # 作图显示中文
 mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
 mpl.rcParams['axes.unicode_minus'] = False
