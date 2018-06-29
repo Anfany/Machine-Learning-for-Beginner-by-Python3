@@ -163,32 +163,28 @@ def confusion(realy, outy, method='AnFany'):
         mix.add_row(['真实:%d类'%fu] + cmdict[fu])
     return mix
 
+#  最终的程序
+if __name__ == "__main__":
+    init_class = get_start(DATA[1])
+    kresult = op_kmeans(DATA[0])
+    newy = judge(init_class, kresult[2], DATA[1])
 
+    # #输出混淆矩阵
+    print('混淆矩阵：\n', confusion(np.array([DATA[1]]).T, np.array([newy[0]]).T))
 
-init_class = get_start(DATA[1])
-kresult = op_kmeans(DATA[0])
-newy = judge(init_class, kresult[2], DATA[1])
+    # 输出最后计算得到的真实类别的类别中心
+    for real in kresult[2]:
+        print('类别%s的中心为：\n%s' % (newy[1][real], kresult[0][real]))
 
+    # 绘制成本函数图
+    import matplotlib.pyplot as plt
+    from pylab import mpl  # 作图显示中文
 
-# #输出混淆矩阵
-print('混淆矩阵：\n', confusion(np.array([DATA[1]]).T, np.array([newy[0]]).T))
-
-#输出最后计算得到的真实类别的类别中心
-for real in kresult[2]:
-    print('类别%s的中心为：\n%s'%(newy[1][real], kresult[0][real]))
-
-# 绘制成本函数图
-import matplotlib.pyplot as plt
-from pylab import mpl  # 作图显示中文
-mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
-mpl.rcParams['axes.unicode_minus'] = False
-plt.plot(list(range(len(kresult[1]))), kresult[1], '-', linewidth=5)
-plt.title('成本函数图')
-plt.ylabel('Cost 值')
-plt.xlabel('迭代次数')
-plt.show()
-
-
-
-
+    mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
+    mpl.rcParams['axes.unicode_minus'] = False
+    plt.plot(list(range(len(kresult[1]))), kresult[1], '-', linewidth=5)
+    plt.title('成本函数图')
+    plt.ylabel('Cost 值')
+    plt.xlabel('迭代次数')
+    plt.show()
 
