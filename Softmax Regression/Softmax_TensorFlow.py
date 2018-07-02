@@ -31,7 +31,7 @@ def transign(eydata):
     return np.array(ysign)
 
 # 构建函数
-def trans_tf(datax, datay, prea, learn_rate=0.5, iter_tiems=40000, error=1e-9):
+def trans_tf(datax, datay, prea, learn_rate=0.8, iter_tiems=40000, error=1e-9):
     # 占位符
     x_data = tf.placeholder(shape=[None, len(datax[0])], dtype=tf.float32)
     y_target = tf.placeholder(shape=[None, len(datay[0])], dtype=tf.float32)
@@ -45,9 +45,8 @@ def trans_tf(datax, datay, prea, learn_rate=0.5, iter_tiems=40000, error=1e-9):
 
     # 正则化
     tf.add_to_collection(tf.GraphKeys.WEIGHTS, Weight)
-    regularizer = tf.contrib.layers.l2_regularizer(scale=2 / 2000)
+    regularizer = tf.contrib.layers.l2_regularizer(scale=2 / 20000)
     reg_term = tf.contrib.layers.apply_regularization(regularizer)
-
 
     costfunc = tf.add(-cross_entropy / len(datax), reg_term)
 
@@ -84,25 +83,25 @@ def trans_tf(datax, datay, prea, learn_rate=0.5, iter_tiems=40000, error=1e-9):
 
     return loss_vec, np.array(y_pre_type), Weight.eval(session=sess), Bias.eval(session=sess)
 
-tf_result = trans_tf(smdata[0], smdata[1], smdata[0])
+# 主函数
+if __name__ == '__main__':
+    tf_result = trans_tf(smdata[0], smdata[1], smdata[0])
 
+    print('系数：\n', np.vstack((tf_result[2], tf_result[3])))
 
+    print('混淆矩阵：\n', confusion(transign(smdata[1]), tf_result[1]))
 
-print('系数：\n', np.vstack((tf_result[2],tf_result[3])))
+    # 绘制成本函数图
+    import matplotlib.pyplot as plt
+    from pylab import mpl  # 作图显示中文
 
+    mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
+    mpl.rcParams['axes.unicode_minus'] = False
 
-print('混淆矩阵：\n', confusion(transign(smdata[1]), tf_result[1]))
-
-
-# 绘制成本函数图
-import matplotlib.pyplot as plt
-from pylab import mpl  # 作图显示中文
-mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
-mpl.rcParams['axes.unicode_minus'] = False
-
-
-plt.plot(list(range(len(tf_result[0]))), tf_result[0], '-', linewidth=5)
-plt.title('成本函数图')
-plt.ylabel('Cost 值')
-plt.xlabel('迭代次数')
-plt.show()
+    plt.plot(list(range(len(tf_result[0]))), tf_result[0], '-', linewidth=5)
+    plt.title('成本函数图')
+    plt.ylabel('Cost 值')
+    plt.xlabel('迭代次数')
+    plt.show()
+    
+    
