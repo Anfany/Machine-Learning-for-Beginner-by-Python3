@@ -102,26 +102,26 @@ def confusion(realy, outy, method='AnFany'):
         mix.add_row(['真实:%d类'%fu] + cmdict[fu])
     return mix
 
+# 主函数
+if __name__ == '__main__':
+    lr_re = LRReg()
+    lf = lr_re.Gradient(smdata[0], smdata[1])
 
-lr_re = LRReg()
-lf = lr_re.Gradient(smdata[0], smdata[1])
+    y_calss_pre = lr_re.predict(smdata[0])
+    print('系数：\n', lr_re.weights)
 
-y_calss_pre = lr_re.predict(smdata[0])
-print('系数：\n',lr_re.weights)
+    print('混淆矩阵：\n', confusion(transign(smdata[1]), y_calss_pre))
 
-print('混淆矩阵：\n', confusion(transign(smdata[1]), y_calss_pre))
+    # 绘制成本函数图
+    import matplotlib.pyplot as plt
+    from pylab import mpl  # 作图显示中文
 
+    mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
+    mpl.rcParams['axes.unicode_minus'] = False
 
-
-# 绘制成本函数图
-import matplotlib.pyplot as plt
-from pylab import mpl  # 作图显示中文
-mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
-mpl.rcParams['axes.unicode_minus'] = False
-
-
-plt.plot(list(range(len(lf[1]))), lf[1], '-', linewidth=5)
-plt.title('成本函数图')
-plt.ylabel('Cost 值')
-plt.xlabel('迭代次数')
-plt.show()
+    plt.plot(list(range(len(lf[1]))), lf[1], '-', linewidth=5)
+    plt.title('成本函数图')
+    plt.ylabel('Cost 值')
+    plt.xlabel('迭代次数')
+    plt.show()
+    
