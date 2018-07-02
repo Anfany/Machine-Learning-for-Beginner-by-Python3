@@ -23,7 +23,23 @@ def confusion(realy, outy):
         mix.add_row(['真实:%d类'%fu] + cmdict[fu])
     return mix
 
+# 返回混淆矩阵用到的数据TP，TN，FP，FN
+def getmatrix(realy, outy, possclass=1): # 默认类1 为正类
+    TP = len(['0' for jj in range(len(realy)) if realy[jj][0] == possclass and outy[jj][0] == possclass]) # 实际正预测正
 
+    TN = len(['0' for jj in range(len(realy)) if realy[jj][0] == 1 - possclass and outy[jj][0] == 1 - possclass])  # 实际负预测负
+
+    FP = len(['0' for jj in range(len(realy)) if realy[jj][0] == 1- possclass and outy[jj][0] == possclass]) # 实际负预测正
+
+    FN = len(['0' for jj in range(len(realy)) if realy[jj][0] ==  possclass and outy[jj][0] == 1 - possclass])  # 实际正预测负
+
+    # 假正率
+    FPR = FP / (FP + TN)
+
+    # 真正率
+    TPR = TP / (TP + FN)
+
+    return [FPR, TPR]
 
 class LRReg:
     def __init__(self, learn_rate=0.5, iter_times=40000, error=1e-9, cpn='L2'):
@@ -87,6 +103,9 @@ class LRReg:
         s_pnum = 1/ (1 + np.exp(-pnum))
         latnum = [[1] if jj[0] >= yuzhi else [0] for jj in s_pnum]
         return latnum
+
+
+
 # 主函数
 if __name__ == "__main__":
     lr_re = LRReg()
@@ -95,19 +114,46 @@ if __name__ == "__main__":
 
     print('系数为：\n', lr_re.weights)
 
-    fdatd = lr_re.predict(H_Data[0])
+    # 绘制ROC曲线
+    # 从0到1定义不同的阈值
+    yuzi = np.linspace(0, 1, 101)
 
-    print('混淆矩阵：\n', confusion(H_Data[1], fdatd))
+    # ROC 曲线数据
+    roc = []
+    #  开始遍历不同的阈值
+    for yy in yuzi:
+        fdatd = lr_re.predict(H_Data[0], yuzhi=yy)
+        if yy == 0.5:
+            print('阈值为%s时的混淆矩阵：\n' % yy, confusion(H_Data[1], fdatd))
+        roc.append(getmatrix(H_Data[1], fdatd))
 
-    # 绘制成本函数图
+    # 绘制ROC曲线图
+    # 首线是FPR按着从小到大排列
+    fu = np.array(sorted(roc, key=lambda x: x[0]))
+
+
     import matplotlib.pyplot as plt
     from pylab import mpl  # 作图显示中文
+    mpl.rcParams['font.sans-serif'] = ['Microsoft Yahei']
 
-    mpl.rcParams['font.sans-serif'] = ['FangSong']  # 设置中文字体新宋体
+    #  开始绘制ROC曲线图
+    fig, ax1 = plt.subplots()
+    ax1.plot(list(fu[:, 0]), list(fu[:, 1]), '.', linewidth=4, color='r')
+    ax1.plot([0, 1], '--', linewidth=4)
+    ax1.grid('on')
+    ax1.legend(['分类器模型', '随机判断模型'], loc='lower right', shadow=True, fontsize='medium')
+    ax1.annotate('完美分类器', xy=(0, 1), xytext=(0.2, 0.7), color='#FF4589', arrowprops=dict(facecolor='#FF67FF'))
 
-    plt.plot(list(range(len(lf[1]))), lf[1], '-', linewidth=5)
-    plt.title('成本函数图')
-    plt.ylabel('Cost 值')
-    plt.xlabel('迭代次数')
+    ax1.set_title('ROC曲线', color='#123456')
+    ax1.set_xlabel('False Positive Rate(FPR，假正率)', color='#123456')
+    ax1.set_ylabel('True Positive Rate(TPR，真正率)', color='#123456')
+
+    # 绘制成本函数图
+    fig, ax2 = plt.subplots()
+    ax2.plot(list(range(len(lf[1]))), lf[1], '-', linewidth=5)
+    ax2.set_title('成本函数图')
+    ax2.set_ylabel('Cost 值')
+    ax2.set_xlabel('迭代次数')
     plt.show()
+
 
