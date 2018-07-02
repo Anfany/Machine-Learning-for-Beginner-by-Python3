@@ -35,12 +35,13 @@ def transign(eydata):
         ysign.append([list(hh).index(1) + 1])
     return np.array(ysign)
 
-regre = sklr.fit(smdata[0], transign(smdata[1]).T[0])
+# 主函数
+if __name__ == '__main__':
+    regre = sklr.fit(smdata[0], transign(smdata[1]).T[0])
 
-predata = np.array([sklr.predict(smdata[0])]).T
+    predata = np.array([sklr.predict(smdata[0])]).T
 
+    print('系数为：\n', np.hstack((sklr.coef_, np.array([sklr.intercept_]).T)).T)
 
-print('系数为：\n', np.hstack((sklr.coef_, np.array([sklr.intercept_]).T)).T)
+    print('混淆矩阵：\n', confusion(transign(smdata[1]), predata))
 
-
-print('混淆矩阵：\n',confusion(transign(smdata[1]), predata))
