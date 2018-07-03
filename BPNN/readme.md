@@ -13,9 +13,9 @@
        
        **样本真实输出**为R；
        
-    3. 层之间连接的**权重**为Wy，y为0到m-2，Wy矩阵的大小为(g, t), g为该隐层前一层的节点数，t为该隐层的节点数；
+    3. 层之间连接的**权重**为Wq，q为0到m-2，Wq矩阵的大小为(g, t), g为该隐层前一层的节点数，t为该隐层的节点数；
     
-       对应的**偏置**为By，y为0到m-2，By矩阵的大小为(1, t), t为该隐层的节点数；
+       对应的**偏置**为Bq，q为0到m-2，Bq矩阵的大小为(1, t), t为该隐层的节点数；
     
     4. 隐层的**激活函数**Ah，h为0到m-2。每一层的激活函数可以不同，但是大多数情形下设置为相同的；
     
@@ -88,5 +88,4 @@
     
 * **梯度下降**
 
-  <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{W_{y}}=\mathbf{W_{y}}&space;-\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{W_{y}}}\\&space;\\&space;\mathbf{B_{y}}=\mathbf{B_{y}}&space;-\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{B_{y}}}\\&space;\\&space;\mathbf{y}=\mathbf{0,1,2}\cdots\mathbf{m-2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;\mathbf{W_{y}}=\mathbf{W_{y}}&space;-\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{W_{y}}}\\&space;\\&space;\mathbf{B_{y}}=\mathbf{B_{y}}&space;-\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{B_{y}}}\\&space;\\&space;\mathbf{y}=\mathbf{0,1,2}\cdots\mathbf{m-2}" title="\\ \mathbf{W_{y}}=\mathbf{W_{y}} -\eta \times \frac{\partial \mathbf{Cost}}{\partial \mathbf{W_{y}}}\\ \\ \mathbf{B_{y}}=\mathbf{B_{y}} -\eta \times \frac{\partial \mathbf{Cost}}{\partial \mathbf{B_{y}}}\\ \\ \mathbf{y}=\mathbf{0,1,2}\cdots\mathbf{m-2}" /></a>
-   
+   <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{W_{q}}=\mathbf{W_{q}}&space;-\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{W_{q}}}\\&space;\\&space;\mathbf{B_{q}}=\mathbf{B_{q}}&space;-\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{B_{q}}}\\&space;\\&space;\mathbf{q}=\mathbf{0,1,2}\cdots\mathbf{m-2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;\mathbf{W_{q}}=\mathbf{W_{q}}&space;-\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{W_{q}}}\\&space;\\&space;\mathbf{B_{q}}=\mathbf{B_{q}}&space;-\eta&space;\times&space;\frac{\partial&space;\mathbf{Cost}}{\partial&space;\mathbf{B_{q}}}\\&space;\\&space;\mathbf{q}=\mathbf{0,1,2}\cdots\mathbf{m-2}" title="\\ \mathbf{W_{q}}=\mathbf{W_{q}} -\eta \times \frac{\partial \mathbf{Cost}}{\partial \mathbf{W_{q}}}\\ \\ \mathbf{B_{q}}=\mathbf{B_{q}} -\eta \times \frac{\partial \mathbf{Cost}}{\partial \mathbf{B_{q}}}\\ \\ \mathbf{q}=\mathbf{0,1,2}\cdots\mathbf{m-2}" /></a>
