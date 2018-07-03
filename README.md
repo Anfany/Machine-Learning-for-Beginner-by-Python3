@@ -43,7 +43,7 @@
         
         + **Desicion Tree (决策树)**
                
-   + **成年人收入分类&手写数据集识别**
+   + **成年人收入分类&Mnist手写数字识别**
     
         + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)**
         
