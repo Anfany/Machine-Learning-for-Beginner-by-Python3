@@ -29,5 +29,5 @@
    
   将上面的结果带入到L中，得到：
   
-  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/jisuan.png)
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/computer.png)
   
