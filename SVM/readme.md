@@ -1,5 +1,3 @@
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
 # SVM Theory
 
 * **分类**
@@ -23,4 +21,4 @@
   
   OK，整理下思路。我们需要求得**g**最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{2}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?||W||" border="0"/>最小，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{2}||W||^{2}" border="3"/>最小。这是一个求极值的问题，利用拉格朗日因子可得到下面的式子：
   
-$ddf=dfgd8dfgd$
+  
