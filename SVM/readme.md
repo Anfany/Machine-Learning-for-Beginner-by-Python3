@@ -16,6 +16,5 @@
     现在着重研究下**Yh(Xh·W**+**b)-1 = 0**的情况，当样本h在上边缘或者在下边缘时，式子成立。假设正例**Xz**，负例**Xf**分别在上边缘、下边缘上。则上边缘与下边缘的距离，也就是分割线的最大间隔为
     
     
- 
-    ![](http://latex.codecogs.com/gif.latex?\\g=\left(Xz-Xf\right)\cdot\frac{W}{\left\|W\right\|})
+<img src="http://latex.codecogs.com/svg.latex?1+sin(x)" border="0"/>
     
