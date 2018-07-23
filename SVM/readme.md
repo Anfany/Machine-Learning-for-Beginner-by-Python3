@@ -1,3 +1,5 @@
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 # SVM Theory
 
 * **分类**
@@ -11,7 +13,7 @@
     
     下面定义一个向量**W**，现在只定义它的方向，就是与分割线垂直。假设这个样本空间中存在一个样本向量**U**，**PP=U·W**可看作向量**U**在**W**上的投影(因为**W**未定义长度)。现在规定：如果**U**是一个负例，则PP的值越小越好；如果是一个正例，则PP的值越大越好(见上图右)。
    
-    因此在判断样本属于正例还是负例时，就是判断PP的值是否大于一个数，也就是判断**U·W**+**b>=0**。为了求得**W**和**b**，需要添加一些约束条件。不失一般性，对于一个正例**Xz**，可以令**Xz·W**+**b>=1**， 对于一个负例**Xf**，可以令**Xf·W**+**b<=-1**。数学便利性：对于正例，令**Y= 1**，对于负例，令**Y=-1**。因此结合以上式子可得：对于任意的样本h，有<img src="http://latex.codecogs.com/svg.latex?{\color{Red}Yh(Xh\cdotW+b)-1>=0}" border="0"/>**Yh(Xh·W**+**b)-1 >=0**。
+    因此在判断样本属于正例还是负例时，就是判断PP的值是否大于一个数，也就是判断**U·W**+**b>=0**。为了求得**W**和**b**，需要添加一些约束条件。不失一般性，对于一个正例**Xz**，可以令**Xz·W**+**b>=1**， 对于一个负例**Xf**，可以令**Xf·W**+**b<=-1**。数学便利性：对于正例，令**Y= 1**，对于负例，令**Y=-1**。因此结合以上式子可得：对于任意的样本h，有**Yh(Xh·W**+**b)-1 >=0**。
     
     现在着重研究下**Yh(Xh·W**+**b)-1 = 0**的情况，当样本h在上边缘或者在下边缘时，式子成立。假设正例**Xz**，负例**Xf**分别在上边缘、下边缘上。则上边缘与下边缘的距离，也就是分割线的**最大间隔**为<img src="http://latex.codecogs.com/svg.latex?g=(Xz-Xf)\cdot\frac{W}{||W||}" border="0"/>
     
@@ -19,4 +21,6 @@
     
   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/gap.png)
   
-  OK，整理下思路。我们需要求得**g**最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{2}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?||W||" border="0"/>最小，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{2}||W||^{2}" border="3"/>最小。
+  OK，整理下思路。我们需要求得**g**最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{2}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?||W||" border="0"/>最小，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{2}||W||^{2}" border="3"/>最小。这是一个求极值的问题，利用拉格朗日因子可得到下面的式子：
+  
+$ddf=dfgd8dfgd$
