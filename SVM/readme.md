@@ -13,8 +13,10 @@
    
     因此在判断样本属于正例还是负例时，就是判断PP的值是否大于一个数，也就是判断**U·W**+**b>=0**。为了求得**W**和**b**，需要添加一些约束条件。不失一般性，对于一个正例**Xz**，可以令**Xz·W**+**b>=1**， 对于一个负例**Xf**，可以令**Xf·W**+**b<=-1**。数学便利性：对于正例，令**Y= 1**，对于负例，令**Y=-1**。因此结合以上式子可得：对于任意的样本h，有**Yh(Xh·W**+**b)-1 >=0**。
     
-    现在着重研究下**Yh(Xh·W**+**b)-1 = 0**的情况，当样本h在上边缘或者在下边缘时，式子成立。假设正例**Xz**，负例**Xf**分别在上边缘、下边缘上。则上边缘与下边缘的距离，也就是分割线的最大间隔为<img src="http://latex.codecogs.com/svg.latex?g=(Xz-Xf)\cdot\frac{W}{||W||}" border="0"/>
+    现在着重研究下**Yh(Xh·W**+**b)-1 = 0**的情况，当样本h在上边缘或者在下边缘时，式子成立。假设正例**Xz**，负例**Xf**分别在上边缘、下边缘上。则上边缘与下边缘的距离，也就是分割线的**最大间隔**为<img src="http://latex.codecogs.com/svg.latex?g=(Xz-Xf)\cdot\frac{W}{||W||}" border="0"/>
     
     因为**Yz=1，Xz·W = 1-b， Yf=-1，Xf·W = -1-b**， 所以**g=2/||W||**。
     
-  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/the.png)
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/gap.png)
+  
+  
