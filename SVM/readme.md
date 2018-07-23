@@ -26,3 +26,8 @@
  也就是计算上式的极小值，求极值，就需要求导，并且另导数等于0，得到下面的式子：
  
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/der.png)
+   
+  将上面的结果带入到L中，得到：
+  
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/jisuan.png)
+  
