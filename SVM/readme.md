@@ -68,15 +68,15 @@
      
      以上描述的都是线性可分的情形，现在考虑下面的情形(下图左)：
      
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/he.png)
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/noli.png)
      
-     首先上述不存在硬间隔，如果使用软间隔，则和数据分布不符，因此需要对数据进行非线性转换，也就是利用核函数。
+     首先上述不存在硬间隔，如果使用软间隔，则和数据分布不符，因此需要对原始的数据进行非线性转换(上图右)。
      
-     看前面2种情况的最终的对偶问题表达式中，都只是和内积有关。因此只要找到一个函数Ｆ，使得 
+     前面2种情况的最终的对偶问题表达式中，都只是和内积有关。因此只要找到一个函数Ｆ，使得 
      
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/neiji.png)
      
-     其中P是非线性转换函数。也就是说F的值恰好是非线性转换后的向量的内积。此时的F称为核函数。
+     其中P是非线性转换函数。也就是说F的值恰好是非线性转换后的向量的内积，此时的F称为核函数。
    
      下面介绍几种常用的核函数：
    
