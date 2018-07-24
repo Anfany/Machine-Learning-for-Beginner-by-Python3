@@ -25,7 +25,7 @@
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/pro1.png)
   
-  这是一个求极值的问题，利用拉格朗日因子可得到下面的式子：
+  这是一个凸二次优化问题，可以求得其全局最小值。利用拉格朗日因子可得到下面的式子：
   
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/mubiao.png)
   
