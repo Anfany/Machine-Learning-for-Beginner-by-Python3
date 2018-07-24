@@ -83,7 +83,8 @@
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/he.png)
      
      经过核函数的对偶问题为：
-   
+     
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou3.png)
     
    
    
