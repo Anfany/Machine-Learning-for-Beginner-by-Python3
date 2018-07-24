@@ -19,7 +19,13 @@
     
   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/gap.png)
   
-  OK，整理下思路。我们需要求得**g**最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{2}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?||W||" border="0"/>最小，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{2}||W||^{2}" border="3"/>最小。这是一个求极值的问题，利用拉格朗日因子可得到下面的式子：
+  OK，整理下思路。我们需要求得**g**最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{2}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?||W||" border="0"/>最小，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{2}||W||^{2}" border="3"/>最小。
+  
+   * **线性可分情况：问题描述**
+   
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/pro1.png)
+  
+  这是一个求极值的问题，利用拉格朗日因子可得到下面的式子：
   
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/mubiao.png)
   
