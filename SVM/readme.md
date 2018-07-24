@@ -25,7 +25,7 @@
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/pro1.png)
   
-  这是一个凸二次优化问题，可以求得其全局最小值。引入拉格朗日乘，可得到拉格朗日函数：
+  这是一个凸二次优化问题，可以求得其全局最小值。引入拉格朗日乘子，可得到拉格朗日函数：
   
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/mubiao.png)
   
@@ -48,7 +48,17 @@
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/ying.png)
    
-   情况A如果依然按着硬间隔进行划分，可能会过拟合；而情况B不存在硬间隔。因此在这种情形下，要适当的对约束条件进行放宽。
+   情况A如果依然按着硬间隔进行划分，可能会过拟合；而情况B不存在硬间隔。因此在这种情形下，要适当的对约束条件进行如下的放宽。
+   
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/ru.png)
+   
+   因为不能无限放宽，因此需要在目标函数里面增加一个惩罚项，问题变为：
+   
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/ruan.png)
+   
+   
+   
+   
    
    
    
