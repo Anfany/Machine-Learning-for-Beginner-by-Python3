@@ -25,7 +25,7 @@
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/pro1.png)
   
-  这是一个凸二次优化问题，可以求得其全局最小值。利用拉格朗日因子可得到下面的式子：
+  这是一个凸二次优化问题，可以求得其全局最小值。引入拉格朗日乘，可得到拉格朗日函数：
   
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/mubiao.png)
   
@@ -33,7 +33,13 @@
  
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/der.png)
    
-  将上面的结果带入到L中，得到：
+  将上面的结果带入到拉格朗日函数中，得到：
   
   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/computer.png)
+  
+  也就将原始问题转为其对偶问题：
+  
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/dui1.png)
+  
+  
   
