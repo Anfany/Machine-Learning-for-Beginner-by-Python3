@@ -52,6 +52,8 @@
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/ru.png)
    
+   对于硬间隔而言，**Yh(Xh·W**+**b) >=0**对任何的样本均成立，也就是保证所有的样本均分类正确。而在软间隔中，**Yh(Xh·W**+**b) >=0**不是对所有的样本均成立，也就是允许对一些离散的点分类错误。
+   
    因为不能无限放宽，因此需要在目标函数里面增加一个惩罚项，问题变为：
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/ruan.png)
@@ -87,7 +89,7 @@
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou3.png)
     
    
-   
+   * **求解算法：SMO**
    
    
    
