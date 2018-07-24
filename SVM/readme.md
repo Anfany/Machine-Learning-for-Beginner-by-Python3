@@ -96,11 +96,11 @@
        坐标上升用于求极大值，下降用于计算极小值，两者的本质是一样的。对于凸函数而言，这种方法可以获得全局最优值，但对于有多个极值的函数而言，很大可能会获得局部最优值，这和初始值的选取有很大关系。下面用例子说明算法的步骤：
        
         ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/zuo.png)
-      重复步骤1和2，直到函数的值变化很小。[基于Python3实现的上述例子的代码](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/coor_de.py)
+      重复步骤1和2，直到函数的值变化很小。[基于Python3实现的上述例子的代码。](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/coor_de.py)
      
      **图示**：
      
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/biao.png)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/bia.png)
 
      + **SMO算法**
 
