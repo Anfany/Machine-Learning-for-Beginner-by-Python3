@@ -21,7 +21,7 @@
   
   OK，整理下思路。我们需要求得**g**最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{2}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{||W||}" border="0"/>最大，也就是<img src="http://latex.codecogs.com/svg.latex?||W||" border="0"/>最小，也就是<img src="http://latex.codecogs.com/svg.latex?\frac{1}{2}||W||^{2}" border="3"/>最小。
   
-   * **线性可分情况：问题描述**
+   * **线性可分情况：硬间隔**
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/pro1.png)
   
@@ -29,7 +29,7 @@
   
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/mubiao.png)
   
- 也就是计算上式的极小值，求极值，就需要求导，并且另导数等于0，得到下面的式子：
+   也就是计算上式的极小值，求极值，就需要求导，并且另导数等于0，得到下面的式子：
  
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/der.png)
    
@@ -41,5 +41,15 @@
   
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou1.png)
   
-  
-  
+ 
+   * **线性不可分情况：软间隔**
+   
+   上面描述的是线性可分的情形，也就是存在线或者面可以将样本按类别很好的分开。现在看下面的2种情况：
+   
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/ying.png)
+   
+   情况A如果依然按着硬间隔进行划分，可能会过拟合；而情况B不存在硬间隔。因此在这种情形下，要适当的对约束条件进行放宽。
+   
+   
+   
+   
