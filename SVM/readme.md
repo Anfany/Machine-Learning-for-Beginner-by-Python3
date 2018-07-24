@@ -39,7 +39,7 @@
   
   也就将原始问题转为其对偶问题：
   
-   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/dui1.png)
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou1.png)
   
   
   
