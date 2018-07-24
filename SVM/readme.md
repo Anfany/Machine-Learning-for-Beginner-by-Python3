@@ -44,17 +44,43 @@
  
    * **线性不可分情况：软间隔**
    
-   上面描述的是线性可分的情形，也就是存在线或者面可以将样本按类别很好的分开。现在看下面的2种情况：
+   上面描述的是线性可分的情形，也就是存在线或者面可以将样本按类别很好的分开。现在看下面存在离群点的2种情况：
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/ying.png)
    
-   情况A如果依然按着硬间隔进行划分，可能会过拟合；而情况B不存在硬间隔。因此在这种情形下，要适当的对约束条件进行如下的放宽。
+   情况A：如果依然按着硬间隔进行划分，可能会过拟合；情况B：不存在硬间隔。因此在这种情形下，要适当的对约束条件进行如下的放宽。
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/ru.png)
    
    因为不能无限放宽，因此需要在目标函数里面增加一个惩罚项，问题变为：
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/ruan.png)
+   
+   上式中C的值越大，离群点的存在会使得目标函数的值变大，为了降低目标函数的值，这时候，得到的结果趋向于硬间隔。
+   
+   经过和硬间隔同样的变化，得到软间隔的对偶问题：
+   
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou2.png)
+   
+   模型多了αi<=C的限制条件，并且表达式中没有参数ξi，此时b的求值公式也会发生改变。
+   
+     * **线性不可分情况：核函数**
+     
+     以上描述的都是线性可分的情形，现在考虑下面的情形(下图左)：
+     
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/he.png)
+     
+     首先上述不存在硬间隔，如果使用软间隔，则和数据分布不符，因此需要对数据进行非线性转换，也就是利用核函数。
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
    
    
