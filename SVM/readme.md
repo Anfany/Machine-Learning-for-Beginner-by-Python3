@@ -89,7 +89,7 @@
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou3.png)
     
    
-   * **求解算法：SMO**
+   * **求解算法：序列最小优化算法SMO**
    
    
    
