@@ -62,7 +62,7 @@
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou2.png)
    
-   模型多了αi<=C的限制条件，并且表达式中没有参数ξi，此时b的求值公式也会发生改变。
+   模型多了αi<=C的限制条件，并且表达式中没有参数ξi，此时b的求值公式也会发生相应的改变。
    
      * **线性不可分情况：核函数**
      
@@ -71,6 +71,10 @@
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/he.png)
      
      首先上述不存在硬间隔，如果使用软间隔，则和数据分布不符，因此需要对数据进行非线性转换，也就是利用核函数。
+     
+     看前面2种情况的最终的对偶问题表达式中，都只是和内积有关。因此主要找到一个函数Ｆ，使得
+     
+     <img src="http://latex.codecogs.com/svg.latex?F(X_i,X_j)=P(X_i)∙P(X_j)"　border="0"/>　
    
    
    
