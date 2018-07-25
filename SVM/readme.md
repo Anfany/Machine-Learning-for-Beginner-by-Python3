@@ -41,7 +41,10 @@
   
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou1.png)
   
- 
+  因为上面的约束条件包含不等式约束，因此需要利用**KKT条件**求解(只有等式约束，可利用拉格朗日乘子法求解)。现把所有的不等式约束、等式约束和目标函数全部写为一个式子L(a, b, x)= f(x) + a*g(x)+b*h(x)，KKT条件说的是最优值必须满足以下条件：
+  
+  
+  
    * **线性不可分情况：软间隔**
    
    上面描述的是线性可分的情形，也就是存在线或者面可以将样本按类别很好的分开。现在看下面存在离群点的2种情况：
