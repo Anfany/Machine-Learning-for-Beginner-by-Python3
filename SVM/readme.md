@@ -97,10 +97,13 @@
        
         ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/zuo.png)
       重复步骤1和2，直到函数的值变化很小。[基于Python3实现的上述例子的代码。](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/coor_de.py)
+       
+     **算法总结**：对于多未知量的函数求极值，每次都更新一个值，把其他的变量当做已知量。按着变量的顺序或者其他比较好的顺序依次更新每一个变量。直到达到全局最优值。
      
      **图示**：
      
       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/bia.png)
+    
 
      + **SMO算法**
 
