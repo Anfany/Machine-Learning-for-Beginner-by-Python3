@@ -43,7 +43,7 @@
   
   因为上面的约束条件包含不等式约束，因此需要利用**KKT(Karush-Kuhn-Tucker)条件**求解(只有等式约束，可利用拉格朗日乘子法求解)。KKT条件是取得的解是最优解的必要条件，而对于像本问题这样的凸优化问题，则是充要条件，下面给出KKT条件：
   
-  
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/kkt1.png)
   
    * **线性不可分情况：软间隔**
    
