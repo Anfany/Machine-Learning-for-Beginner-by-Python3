@@ -71,7 +71,9 @@
    
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou2.png)
    
-   模型多了αi<=C的限制条件，并且表达式中没有参数ξi，此时b的求值公式也会发生相应的改变。
+   模型多了αi<=C的限制条件，并且表达式中没有参数ξi，此时b的求值公式也会发生相应的改变。下面给出KKT条件：
+   
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/kkt2.png)
    
      * **线性不可分情况：核函数**
      
