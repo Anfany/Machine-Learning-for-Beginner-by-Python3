@@ -45,10 +45,11 @@
   
   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/kkt1.png)
   
+  假设得到的解为：
   
   
   
-   * **线性不可分情况：软间隔**
+   * **线性可分情况：软间隔**
    
    上面描述的是线性可分的情形，也就是存在线或者面可以将样本按类别很好的分开。现在看下面存在离群点的2种情况：
    
