@@ -124,14 +124,16 @@
 
 
 
-# TensorFlow方法
-# 引入对偶问题的出发点：是打算利用SMO算法求解此问题。而TensorFlow中解决此问题利用的是梯度下降法，因此要解决的问题变为如下：
+### TensorFlow方法
+##### 引入对偶问题的出发点：是打算利用SMO算法求解此问题。而TensorFlow中解决此问题利用的是梯度下降法，因此要解决的问题变为如下：
 
 * **分类**
 
      + **线性软间隔问题**
+     
+     <a href="http://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost}&space;=\frac{1}{k}\sum_{i=1}^{k}\textbf{max}(0,&space;1-Y_{i}(W\cdot&space;X_{i}-b))&plus;&space;\beta&space;\left&space;\|&space;W&space;\right&space;\|^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}&space;=\frac{1}{k}\sum_{i=1}^{k}\textbf{max}(0,&space;1-Y_{i}(W\cdot&space;X_{i}-b))&plus;&space;\beta&space;\left&space;\|&space;W&space;\right&space;\|^{2}" title="\mathbf{Cost} =\frac{1}{k}\sum_{i=1}^{k}\textbf{max}(0, 1-Y_{i}(W\cdot X_{i}-b))+ \beta \left \| W \right \|^{2}" /></a>
   
-  
+    + **非线性软间隔问题**
 
 
 
