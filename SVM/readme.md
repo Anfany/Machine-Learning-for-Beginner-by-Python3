@@ -139,7 +139,10 @@
 
     对于线性不可分问题，因为要具有可以引入核函数的形式。因此需要换一种描述问题的方法：
     
+    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou3.png)
     
+    也就是利用TensorFlow去计算a的值；
+   
 
 
     
