@@ -4,7 +4,7 @@
  
  + 数据文件
 
-     + 心脏病数据集[数据集说明参见逻辑回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master)
+     + 心脏病数据集[数据集说明参见逻辑回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/)
    
  
 + 基于不同库的代码文件
@@ -34,11 +34,11 @@
  
       + **AnFany **
                  
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_2svm.jpg)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_2svm.png)
                  
      + **Sklearn**
      
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/sk_2svm.jpg)
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/sk_2svm.png)
 
 
          
