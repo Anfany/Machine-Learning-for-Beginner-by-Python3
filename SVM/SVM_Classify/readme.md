@@ -4,67 +4,41 @@
  
  + 数据文件
 
-     + 心脏病数据集
+     + 心脏病数据集[数据集说明参见逻辑回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master)
    
  
 + 基于不同库的代码文件
-
  
-     - AnFany：[AnFany_BPNN_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/AnFany_BPNN_Classify.py)
+     - AnFany：[AnFany_SVM_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/AnFany_SVM_Classify.py)
  
  
-     - Sklearn：[TensorFow_BPNN_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/TensorFow_BPNN_Classify.py)
+     - Sklearn：[Sklearn_Classify_SVM.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/Sklearn_Classify_SVM.py)
 
     
  + 辅助代码文件
- 
-      - 数据爬取程序：[BPNN_AdultData_Spyder.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/BPNN_AdultData_Spyder.py)
 
-      - 数据读取与预处理程序：[BPNN_Classify_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/BPNN_Classify_Data.py)
+      - 数据读取与预处理程序：[SVM_Classify_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/SVM_Classify_Data.py)
      
-
- + **Mnist手写数据集结果展示**
+      
+ + K折交叉验证训练结果展示
+      
+      + **AnFany **
+                 
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_svm.jpg)
+                 
+     + **Sklearn**
+     
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/sk_svm.jpg)
+   
+ + 二维数据集结果展示 
  
-      + [Mnist数据集下载以及说明](http://yann.lecun.com/exdb/mnist/)。四个.gz解压缩后可得到对应文件
-      
-      
-            训练图片：train-images.idx3-ubyte
-            训练标签：train-labels.idx1-ubyte
-            测试图片：t10k-images.idx3-ubyte
-            测试标签：t10k-labels.idx1-ubyte
-   
-      
-      + 数据集解析以及处理：[Mnist_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/Mnist_Data.py)
-      
-      + 训练结果展示
-      
-          + **AnFany**
-         
-           a. 程序：[Mnist_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/Mnist_Compare.py)
-              
-           b. 结果展示
-           
-           + **K折交叉验证训练结果**
+      + **AnFany **
                  
-          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/animation.gif)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_2svm.jpg)
                  
-           +  **测试结果**
-           
-          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/last_foldui.jpg)
-                 
-          
-   
-        + **TensorFlow**
-      
-         a. 程序：[Mnist_TensorFlow.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/Mnist_TensorFlow.py)
-         
-          b. 结果展示
-           
-           + **K折交叉验证训练结果**
-                 
-          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/tensorflow.gif)
-                 
-           +  **测试结果**
-           
-          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/ten_mnist.jpg)
+     + **Sklearn**
+     
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/sk_2svm.jpg)
+
+
          
