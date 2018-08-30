@@ -24,13 +24,15 @@
       
       + **AnFany**
                  
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_svm.jpg)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_svm.png)
                  
      + **Sklearn**
      
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/sk_svm.jpg)
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/sk_svm.png)
    
- + 二维数据集结果展示 
+ + 二维数据集结果对比展示 
+ 
+      + 对比程:[SVM_Classify_Compare.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/SVM_Classify_Compare.py)
  
       + **AnFany**
                  
