@@ -1,0 +1,71 @@
+#-*- coding：utf-8 -*-
+# &Author  AnFany
+
+import pandas as pd
+data = pd.read_csv(r'C:\Users\GWT9\Desktop\Heart.csv')
+import numpy as np
+
+# 数据说明
+# Attributes types
+# -----------------
+#
+# Real: 1,4,5,8,10,12
+# Ordered:11,
+# Binary: 2,6,9
+# Nominal:7,3,13
+
+# 数据处理说明
+# Real, Ordered ： 标准化
+# Nominal  独热编码
+# Binary 不做处理
+
+# Variable to be predicted
+# ------------------------
+# Absence (1) or presence (2) of heart disease
+# 0,1编码
+
+# 开始进行数据处理【没有缺失值】
+normal = [1, 4, 5, 8, 10, 12, 11]  # 标准化处理
+one_hot = [3, 7, 13] # one_hot编码
+binary = [14]  # 原始类别为1的依然为1类，原始为2的变为0类
+
+#数据处理
+def trans(exdata, nor=normal, oh=one_hot, bin=binary):
+    keylist = exdata.keys()
+    newexdata = pd.DataFrame()
+    for ikey in range(len(keylist)):
+        if ikey + 1 in nor:
+            newexdata[keylist[ikey]] = (exdata[keylist[ikey]] - exdata[keylist[ikey]].mean()) / exdata[keylist[ikey]].std()
+        elif ikey + 1 in bin:
+            newexdata[keylist[ikey]] = [1 if inum == 1 else -1 for inum in exdata[keylist[ikey]]]
+        elif ikey + 1 in oh:
+            newdata = pd.get_dummies(exdata[keylist[ikey]], prefix=keylist[ikey])
+            newexdata = pd.concat([newexdata,newdata], axis=1)
+    return newexdata
+
+
+# 类别说明
+# Absence (1) 1类
+# presence (2) -1类
+
+#  将训练数据平均分为n份，利用K折交叉验证计算模型最终的正确率
+#  将训练数据分为训练数据和验证数据
+
+def kfold(trdata, k=10):
+    vadata = trdata.values
+    legth = len(vadata)
+    datadict = {}
+    signnuber = np.arange(legth)
+    for hh in range(k):
+        np.random.shuffle(vadata)
+        yanzhneg = np.random.choice(signnuber, int(legth / k), replace=False)
+        oneflod_yan = vadata[yanzhneg]
+        oneflod_xun = vadata[[hdd for hdd in signnuber if hdd not in yanzhneg]]
+        datadict[hh] = [oneflod_xun, oneflod_yan]
+    return datadict
+
+#  存储K折交叉验证的数据字典
+kfold_train_datadict = kfold(trans(data))
+
+
+
