@@ -4,7 +4,7 @@
  
  + 数据文件
 
-     + 心脏病数据集[数据集说明参见逻辑回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/)
+     + 心脏病数据集[数据集说明参见逻辑回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic Regression)
    
  
 + 基于不同库的代码文件
