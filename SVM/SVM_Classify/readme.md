@@ -4,7 +4,7 @@
  
  + 数据文件
 
-     + 心脏病数据集[数据集说明参见逻辑回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Logistic Regression)
+     + 心脏病数据集：[数据集说明参见逻辑回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Logistic%20Regression)
    
  
 + 基于不同库的代码文件
@@ -22,7 +22,7 @@
       
  + K折交叉验证训练结果展示
       
-      + **AnFany **
+      + **AnFany**
                  
       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_svm.jpg)
                  
@@ -32,7 +32,7 @@
    
  + 二维数据集结果展示 
  
-      + **AnFany **
+      + **AnFany**
                  
       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_2svm.png)
                  
