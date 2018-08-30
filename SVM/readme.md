@@ -47,7 +47,7 @@
   
   假设得到的解为：
   
-  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/jie.png)
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/jie_1.png)
   
    * **线性可分情况：软间隔**
    
