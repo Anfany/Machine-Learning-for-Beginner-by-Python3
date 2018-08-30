@@ -126,4 +126,7 @@ def figdata(featuredata, labeldata, osel='Sklearn'):
     plt.show()
 
 
-figdata(traindata[0], traindata[1])
+'''第四部分：最终的运行程序'''
+if __name__ == "__main__":
+    figdata(traindata[0], traindata[1], osel='AnFany')
+    figdata(traindata[0], traindata[1])
