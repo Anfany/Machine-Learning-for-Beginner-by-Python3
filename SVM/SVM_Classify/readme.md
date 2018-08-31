@@ -11,7 +11,7 @@
  
      - **AnFany**：[AnFany_SVM_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/AnFany_SVM_Classify.py)
      
-     - **TensorFlow**：[TensorFlow_SVM_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/TensorFlow_SVM_Classify.py):
+     - **TensorFlow**：[TensorFlow_SVM_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/TensorFlow_SVM_Classify.py)
  
  
      - **Sklearn**：[Sklearn_Classify_SVM.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/Sklearn_Classify_SVM.py)
@@ -26,7 +26,7 @@
       
       + **AnFany**
                  
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_svm.png)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/anf_svm.png)
       
       + **TensorFlow**
                  
@@ -42,11 +42,14 @@
  
       + **AnFany**
                  
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/an_ssvm.png)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/anfany_svm.png)
+      
+      + **TensorFlow**
+     
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/tensorflow_svm.png)
                  
      + **Sklearn**
      
-     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/sk_ssvm.png)
-
-
-         
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/sklearn_ssvm.png)
+     
+     
