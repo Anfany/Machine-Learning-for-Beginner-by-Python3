@@ -23,7 +23,7 @@ class KERNEL:
     核函数：注意输入数据的shape以及输出数据的shape。
     xVSy包括3种情况：单样本VS单样本  单样本VS多样本  多样本VS多样本
     """
-    def __init__(self, polyd=3, rbfsigma=0.22, tanhbeta=0.6, tanhtheta=-0.6):
+    def __init__(self, polyd=3, rbfsigma=0.2, tanhbeta=0.6, tanhtheta=-0.6):
         self.polyd = polyd
         self.rbfsigma = rbfsigma
         self.tanhbeta = tanhbeta
@@ -75,7 +75,7 @@ class KERNEL:
 
 #  构建SVM的结构
 class SVM:
-    def __init__(self, feature, labels, kernel='rbf', C=0.8, toler=0.001, times=300):
+    def __init__(self, feature, labels, kernel='rbf', C=0.8, toler=0.001, times=100):
         #  训练样本的属性数据、标签数据
         self.feature = feature
         self.labels = labels
@@ -241,7 +241,7 @@ def platt_smo(svm):
     # 遍历所有alpha的标记
     entire = True
     pair_changed = 0
-    while it < svm.times:  # and (pair_changed > 0 or entire):
+    while it < svm.times and (pair_changed > 0 or entire):
         pair_changed = 0
         if entire:
             for i in range(len(svm.feature)):
@@ -261,9 +261,7 @@ def platt_smo(svm):
             entire = False
         elif pair_changed == 0:
             entire = True
-
         print('外层循环的次数: %s' % it)
-
     return svm.alphas, svm.b
 
 
@@ -278,7 +276,9 @@ def getacc(svm, prefeature, prelabel):
     predu = predict(svm, prefeature)
     # 计算正确率
     sub = np.array(predu - prelabel)
+    print(sub)
     acc = len(sub[sub == 0]) / len(prelabel)
+    print(acc)
     return acc
 
 
@@ -304,12 +304,16 @@ def result(datadict, he):
         # 开始训练
         platt_smo(resu)
         # 训练完，储存训练、测试的精确度结果
-        trainacc.append(getacc(resu, xd, yd))
-        testacc.append(getacc(resu, texd, teyd))
+        traaa = getacc(resu, xd, yd)
+        teaaa = getacc(resu, texd, teyd)
+        trainacc.append(traaa)
+        testacc.append(teaaa)
         # 保存支持向量的个数
-        count = len(resu.alphas < 0.001)
+        count = len(resu.alphas > 0)
         vec.append(count)
         sign.append(jj)
+
+        print(traaa, teaaa, count)
 
     # 绘制多y轴图
     fig, host = plt.subplots()
@@ -350,7 +354,12 @@ def result(datadict, he):
 
 '''第四部分：最终的运行程序'''
 if __name__ == "__main__":
+    # 核函数参数的选择很重要
     result(sdata.kfold_train_datadict, 'rbf')
+
+
+
+
 
 
 
