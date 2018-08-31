@@ -1,18 +1,16 @@
 # -*- coding：utf-8 -*-
 # &Author AnFany
 
-#  AnFany与Sklearn的结果对比
+#  AnFany、Sklearn、TensorFlow的结果对比
 
 """
 第一部分：生成数据
 """
 import numpy as np
 
-data = np.random.rand(900, 2)
-
-
 #  将数据分类, 样本数定为200
-def fenlei(exdata, samples=200):
+def fenlei(samples=200):
+    exdata = np.random.rand(900, 2)
     feadata, ladata = [], []
     for jj in exdata:
         if jj[1] - jj[0] - 0.55 > 0:
@@ -34,7 +32,7 @@ def fenlei(exdata, samples=200):
     return np.array(feadata), np.array(ladata)
 
 
-traindata = fenlei(data)
+traindata = fenlei()
 
 """
 第二部分：SVM训练，引入模型
@@ -43,6 +41,8 @@ traindata = fenlei(data)
 import AnFany_SVM_Classify as An_svm
 #  Sklearn
 from sklearn import svm
+# TensorFlow
+import Tensorflow_SVM_Classify as ten_svm
 
 
 # 得到绘制决策边界的数据
@@ -58,7 +58,7 @@ def bound(featuredata, labeldata, mol, ke='rbf'):
 
     if mol == 'AnFany':
 
-        # 开始引入模型
+        # 开始引入模型 rbfsigma=0.2
         model = An_svm.SVM(feature=featuredata, labels=labeldata, kernel=ke, times=900)
         #  开始训练
         An_svm.platt_smo(model)
@@ -66,7 +66,7 @@ def bound(featuredata, labeldata, mol, ke='rbf'):
         support = model.feature[model.alphas > 0]
         # 开始预测
         prepre = An_svm.predict(model, grid_points)
-    else:
+    elif mol == 'Sklearn':
         # 开始引入模型
         clf = svm.SVC(kernel=ke, max_iter=900, gamma=8)
         #  开始训练
@@ -75,6 +75,18 @@ def bound(featuredata, labeldata, mol, ke='rbf'):
         support = clf.support_vectors_
         # 开始预测
         prepre = clf.predict(grid_points)
+    elif mol == 'TensorFlow':
+        # 开始引入模型
+        clf = ten_svm.SVM(maxtimes=300, kernel=ke, rbf_sigma=0.18)
+        #  开始训练
+        rgg = clf.train_svm(featuredata, labeldata, grid_points)
+        prepre = rgg[2]
+        # 返回支持向量
+        support = featuredata[rgg[3] > 0]
+    else:
+        print('方法错误')
+        prepre = 0
+        support = 0
     return xx, yy, prepre, support
 
 
@@ -96,7 +108,6 @@ def figdata(featuredata, labeldata, osel='Sklearn'):
 
     # 绘图
     fig, ax = plt.subplots()
-
 
     # 绘制决策边界
     xx, yy, opre, suo = bound(featuredata, labeldata, mol=osel)
@@ -128,5 +139,6 @@ def figdata(featuredata, labeldata, osel='Sklearn'):
 
 '''第四部分：最终的运行程序'''
 if __name__ == "__main__":
+    figdata(traindata[0], traindata[1], osel='TensorFlow')
+    figdata(traindata[0], traindata[1], osel='Sklearn')
     figdata(traindata[0], traindata[1], osel='AnFany')
-    figdata(traindata[0], traindata[1])
