@@ -141,9 +141,8 @@
     
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou3.png)
     
-    也就是利用TensorFlow去计算a的值；
     
-    因为TensorFlow是基于梯度的求解，只能取到局部的最优值。而利用SMO算法可以取到全局的最优值。这里只给出线性可分问题的基于TensorFlow的程序。
+ 
    
 
 
