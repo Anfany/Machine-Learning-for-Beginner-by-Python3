@@ -42,7 +42,7 @@
  
       + **AnFany**
                  
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/anfany_svm.png)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/anfan_svm.png)
       
       + **TensorFlow**
      
