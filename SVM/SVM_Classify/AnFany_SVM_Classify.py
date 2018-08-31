@@ -278,7 +278,7 @@ def getacc(svm, prefeature, prelabel):
     predu = predict(svm, prefeature)
     # 计算正确率
     sub = np.array(predu - prelabel)
-    acc = len(sub == 0) / len(prelabel)
+    acc = len(sub[sub == 0]) / len(prelabel)
     return acc
 
 
