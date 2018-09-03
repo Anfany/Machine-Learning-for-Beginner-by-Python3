@@ -122,15 +122,14 @@
      
 * **回归**
 
-     分类是最大化两个类别之间的间隔，并且保证间隔内的样本误差和最小。而回归是最大化间隔内的样本个数，并且保证间隔外的样本误差最小。下面图形说明：
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/svr1.png)
      
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/svr2.png)
      
-     + **软边缘**
-     
+     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/svr3.png)
      
   
   
-
 #  
 
 
@@ -150,6 +149,10 @@
     对于线性不可分问题，因为要具有可以引入核函数的形式。因此需要换一种描述问题的方法：
     
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/formula/duiou3.png)
+    
+* **回归**  
+
+    回归参见回归
     
     
  
