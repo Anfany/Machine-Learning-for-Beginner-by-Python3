@@ -115,16 +115,6 @@ class SVM:
     def update_errors(self):
         self.errors = [self.get_error(i) for i in range(len(self.feature))]
 
-    # 判断是否违背KKT条件
-    def meet_kkt(self, i):
-        alpha, x = self.alphas[i], self.feature[i]
-        if alpha == 0:
-            return self.line_num(x) >= 1
-        elif alpha == self.C:
-            return self.line_num(x) <= 1
-        else:
-            return self.line_num(x) == 1
-
 """
 第三部分：构建SMO算法需要的函数
 """
