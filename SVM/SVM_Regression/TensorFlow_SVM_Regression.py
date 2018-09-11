@@ -1,7 +1,7 @@
 # -*- coding：utf-8 -*-
 # &Author AnFany
 
-# 基于TensorFlow实现支持向量机二分类
+# 基于TensorFlow实现支持向量机回归
 # 防止精确率的不稳定性，不采用batchsize的方式训练，每一次训练都是全部样本
 # 因此不适用于样本数据量较大的情况
 
