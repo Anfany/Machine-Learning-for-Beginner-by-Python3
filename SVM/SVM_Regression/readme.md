@@ -4,7 +4,7 @@
  
  + 数据文件
 
-     + 北京市Pm2.5数据集：[数据集说明参见](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Logistic%20Regression)
+     + 北京市Pm2.5数据集：[数据集说明参见](http://archive.ics.uci.edu/ml/datasets/Beijing+PM2.5+Data#)
    
  
 + 基于不同库的代码文件
