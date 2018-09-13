@@ -152,7 +152,14 @@
     
 * **回归**  
 
-    回归参见回归
+    + **线性回归**
+    
+    <img src="http://latex.codecogs.com/gif.latex?\mathbf{Cost}&space;=&space;\frac{1}{k}\sum_{i=1}^{k}\mathbf{max}(0,&space;\left&space;|&space;Y_{i}-(W&space;\cdot&space;X_{i}&space;&plus;&space;b)&space;\right|-&space;\varepsilon)&space;&plus;\beta&space;\left&space;\|&space;W&space;\right&space;\|^{2}" title="\mathbf{Cost} = \frac{1}{k}\sum_{i=1}^{k}\mathbf{max}(0, \left | Y_{i}-(W \cdot X_{i} + b) \right|- \varepsilon) +\beta \left \| W \right \|^{2}" />
+    
+    其中<a href="http://www.codecogs.com/eqnedit.php?latex=\beta" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\beta" title="\beta" /></a>的值越大，得到的直线的斜率越趋近于0。
+    
+     + **核函数回归**
+    
     
     
  
