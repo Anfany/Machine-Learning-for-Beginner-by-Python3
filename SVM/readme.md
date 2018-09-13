@@ -128,7 +128,7 @@
      
      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/svr3.png)
      
-  同样可利用SMO算法解决。[说明参见](https://alex.smola.org/papers/2004/SmoSch04.pdf)：
+  同样可利用SMO算法解决，[说明参见](https://alex.smola.org/papers/2004/SmoSch04.pdf "SMO算法")。
   
 #  
 
@@ -160,27 +160,7 @@
     
      + **核函数回归**
     
-    
+    参见回归
     
  
-   
-
-
-    
-       
-       
-       
-       
-      
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
    
