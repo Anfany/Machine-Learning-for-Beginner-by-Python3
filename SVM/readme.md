@@ -5,7 +5,7 @@
     
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/svm.png)
     
-    如上图左，平面内展示了二维数据样本，正例用“+”号表示，负例用“-”号表示。存在很多的分割线可以分开上述两类(上图右)。但只存在一条最优的：**最近负例到这条线的距离等于到最近正例到这条线的距离，并且两个距离的和是所有线中最大的**(见下图左)。
+    如上图左，平面内展示了二维数据样本，正例用“+”号表示，负例用“-”号表示。存在很多的分割线可以分开上述两类(上图右)。但只存在一条最优的：**分割线到负例的距离中最小的那个距离，要等于到正例的距离中最小的距离，并且这两个距离的和是所有满足前一个条件的分割线中最大的**(见下图左)。
     
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/zuiyou.png)
     
