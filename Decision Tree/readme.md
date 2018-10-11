@@ -22,6 +22,6 @@ CART的目的是生成一个类似下面这样的树：
 
 ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/2.png)
 
-### 基尼系数
+* **基尼系数**
 
 
