@@ -56,11 +56,18 @@
  
 
 
-### 中级篇（集成算法）
+### 中级篇(集成学习)
 
 
 * **Boosting(AdaBoost)**  
-* **Bagging(随机森林)**  
+   
+     + **AdaBoost**
+   
+     + **GBDT**
+     
+* **Bagging**  
+
+     + **随机森林**
 
    
 
