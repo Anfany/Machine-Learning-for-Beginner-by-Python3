@@ -6,7 +6,7 @@
 
 C4.5是ID3的改进版，而CART是最常用的，因此本文主要介绍CART。
 
-# CART
+### CART
 
 首先看下面表格中的示例数据(随机生成，仅供参考)。其中类似年龄，身高，月收入为连续变量，学历，工作为离散变量。动心为目标变量，此问题为分类问题。
 
@@ -22,6 +22,6 @@ CART的目的是生成一个类似下面这样的树：
 
 ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/2.png)
 
-
+### 基尼系数
 
 
