@@ -59,7 +59,7 @@
 ### 中级篇(集成学习)
 
 
-* **Boosting(AdaBoost)**  
+* **Boosting**  
    
      + **AdaBoost**
    
