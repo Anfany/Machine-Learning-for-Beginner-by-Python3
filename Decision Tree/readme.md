@@ -67,7 +67,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
          
            + 计算示例
            
-           
+           <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;\\\mathbf{Msp1}=[0.56,&space;0.52]\\&space;\\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\&space;\\\mathbf{asp1}=0.54,&space;\mathbf{asp2}=0.63875\\&space;\\\mathbf{MSE(sp)}=[(0.56-0.54)^{2}&space;&plus;&space;(0.52-0.54)^{2}]\\&space;\\&space;&plus;&space;[(0.49-0.63875)^{2}&plus;\cdots&space;&plus;&space;(0.88-0.63875)^{2}]\\&space;\\=0.008&plus;0.1662875=0.1670875" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;\\\mathbf{Msp1}=[0.56,&space;0.52]\\&space;\\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\&space;\\\mathbf{asp1}=0.54,&space;\mathbf{asp2}=0.63875\\&space;\\\mathbf{MSE(sp)}=[(0.56-0.54)^{2}&space;&plus;&space;(0.52-0.54)^{2}]\\&space;\\&space;&plus;&space;[(0.49-0.63875)^{2}&plus;\cdots&space;&plus;&space;(0.88-0.63875)^{2}]\\&space;\\=0.008&plus;0.1662875=0.1670875" title="\\\mathbf{Msp1}=[0.56, 0.52]\\ \\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\ \\\mathbf{asp1}=0.54, \mathbf{asp2}=0.63875\\ \\\mathbf{MSE(sp)}=[(0.56-0.54)^{2} + (0.52-0.54)^{2}]\\ \\ + [(0.49-0.63875)^{2}+\cdots + (0.88-0.63875)^{2}]\\ \\=0.008+0.1662875=0.1670875" /></a>
          
          类似于计算MSE(sp)，遍历所有学历中的值，得到下面的MSE(ms)，MSE(dr)。
         
@@ -78,7 +78,9 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         数据集**Dms1=D(学历=硕士)** 以及 **Dms2=D(学历!=硕士)**，Dms1中动心度构成的集合为**Mms1**，均值为**ams1**；Dms2中动心度构成的集合为**Mms2**，均值为**ams2**；
         
         **Ddr1=D(学历=博士)** 以及 **Ddr2=D(学历!=博士)**，Ddr1中动心度构成的集合为**Mdr1**，均值为**adr1**；Ddr2中动心度构成的集合为**Mdr2**，均值为**adr2**
-         
+        
+        我们可以得到
+        
         得到以上结果后，在其中选择MSE最小的变量，如果最终的最佳特征为学历，则以此变量作为分割变量。
          
          
