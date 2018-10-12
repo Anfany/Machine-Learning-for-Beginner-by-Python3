@@ -55,15 +55,16 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
 
       + 说明示例
       
-         以上面给出的示例数据为例，下面从特征变量的2种情况分别说明回归树的生成方式。将数据集合定义为D，
+         以上面给出的示例数据为例，下面从特征变量的2种情况分别说明回归树的生成方式。将数据集合定义为**D**，
      
          + 离散变量
          
          以学历为例：
          
-         1. 将数据集合D分为D1=D(学历=专科)以及D2=D(学历!=专科)，其中D1中动心度构成的集合为M1，均值为a1；D2中动心度构成的集合为M2，均值为a2；计算2个集合的误差平方和的和值：
+         1. 将数据集合D分为**D1=D(学历=专科)**以及**D2=D(学历!=专科)**，其中D1中动心度构成的集合为**M1**，均值为**a1**；D2中动心度构成的集合为**M2**，均值为**a2**；计算2个集合的误差平方和的和值：
          
          **MSE(专科)**
+         
          = <a href="http://www.codecogs.com/eqnedit.php?latex=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
         
         2. 将数据集合D分为D1=D(学历=硕士)以及D2=D(学历!=硕士)
