@@ -27,9 +27,11 @@ C4.5是ID3的改进版，而CART是最常用的，因此本文主要介绍CART�
 |0009|23|专科|私企|13|176|**否**|0.52|
 |0010|30|博士|国企|11|180|**是**|0.83|
 
-CART的目的是生成一个类似下面这样的树：
+CART的目的是生成一个类似下面这样的树：分类树或者回归树。
 
 ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/TreeCart.png)
+
+叶子节点为是或者否，是分类树。是数字，为回归树。
 
 * **基尼系数**
 
