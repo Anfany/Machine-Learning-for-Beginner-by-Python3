@@ -49,7 +49,21 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
        
        <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S)}&space;=&space;\mathbf{1}&space;-&space;\sum_{\mathrm{i}=1}^{\mathrm{m}}(\frac{|\mathbf{S_{i}}|}{|\mathbf{S}|})^{2}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S)}&space;=&space;\mathbf{1}&space;-&space;\sum_{\mathrm{i}=1}^{\mathrm{m}}(\frac{|\mathbf{S_{i}}|}{|\mathbf{S}|})^{2}}" title="{\color{Blue} \mathbf{G(S)} = \mathbf{1} - \sum_{\mathrm{i}=1}^{\mathrm{m}}(\frac{|\mathbf{S_{i}}|}{|\mathbf{S}|})^{2}}" /></a>
        
-       其中符号**||**为计算集合内元素个数的符号。
+       其中符号||为计算集合内元素个数的符号，对于m等于2的情况，上面的式子等价与
+       
+       <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S)}&space;=&space;\mathbf{2}\mathbf{P(k)}*(\mathbf{1}-\mathbf{P(k)})}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S)}&space;=&space;\mathbf{2}\mathbf{P(k)}*(\mathbf{1}-\mathbf{P(k)})}" title="{\color{Blue} \mathbf{G(S)} = \mathbf{2}\mathbf{P(k)}*(\mathbf{1}-\mathbf{P(k)})}" /></a>
+       
+       如果样本集合**S**，被某个规则R划分为n个数据子集，分别为S1， S2，……， Sn，则此时的计算基尼系数公示如下：
+       
+       <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S,&space;R&space;)}&space;=&space;\sum_{\mathrm{\mathbf{i=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Si|}}{\mathbf{|S|}}\mathbf{G(Si)}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S,&space;R&space;)}&space;=&space;\sum_{\mathrm{\mathbf{i=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Si|}}{\mathbf{|S|}}\mathbf{G(Si)}}" title="{\color{Blue} \mathbf{G(S, R )} = \sum_{\mathrm{\mathbf{i=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Si|}}{\mathbf{|S|}}\mathbf{G(Si)}}" /></a>
+       
+       在CART算法中，上述n的值一定为2。因为每一次分裂，都是把数据集合一分为二。
+       
+       针对离散、连续的变量，下面给出具体的计算基尼系数的步骤：
+       
+       
+       
+       
      
      + **离散变量**
          
