@@ -64,12 +64,8 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
          1. 将数据集合D分为**Dsp1=D(学历=专科)**以及**Dsp2=D(学历!=专科)**，其中Dsp1中动心度构成的集合为**Msp1**，均值为**asp1**；Dsp2中动心度构成的集合为**Msp2**，均值为**asp2**；计算2个数据子集合的误差平方和的和值：
          
          <a href="http://www.codecogs.com/eqnedit.php?latex={\color{Red}&space;MSE(sp)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{Red}&space;MSE(sp)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}}" title="{\color{Red} MSE(sp)=\sum_{di\in Msp1}(di-asp1)^{2} + \sum_{di\in Msp2}(di-asp2)^{2}}" /></a>
-         
-           + 计算示例
-           
-           <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;\\\mathbf{Msp1}=[0.56,&space;0.52]\\&space;\\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\&space;\\\mathbf{asp1}=0.54,&space;\mathbf{asp2}=0.63875\\&space;\\\mathbf{MSE(sp)}=[(0.56-0.54)^{2}&space;&plus;&space;(0.52-0.54)^{2}]\\&space;\\&space;&plus;&space;[(0.49-0.63875)^{2}&plus;\cdots&space;&plus;&space;(0.88-0.63875)^{2}]\\&space;\\=0.008&plus;0.1662875=0.1670875" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;\\\mathbf{Msp1}=[0.56,&space;0.52]\\&space;\\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\&space;\\\mathbf{asp1}=0.54,&space;\mathbf{asp2}=0.63875\\&space;\\\mathbf{MSE(sp)}=[(0.56-0.54)^{2}&space;&plus;&space;(0.52-0.54)^{2}]\\&space;\\&space;&plus;&space;[(0.49-0.63875)^{2}&plus;\cdots&space;&plus;&space;(0.88-0.63875)^{2}]\\&space;\\=0.008&plus;0.1662875=0.1670875" title="\\\mathbf{Msp1}=[0.56, 0.52]\\ \\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\ \\\mathbf{asp1}=0.54, \mathbf{asp2}=0.63875\\ \\\mathbf{MSE(sp)}=[(0.56-0.54)^{2} + (0.52-0.54)^{2}]\\ \\ + [(0.49-0.63875)^{2}+\cdots + (0.88-0.63875)^{2}]\\ \\=0.008+0.1662875=0.1670875" /></a>
-         
-         类似于计算MSE(sp)，遍历所有学历中的值，得到下面的MSE(ms)，MSE(dr)。
+        
+         类似于MSE(sp)，遍历所有学历中的值，得到下面的MSE(ms)，MSE(dr)。
         
         <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;{\color{Red}&space;MSE(ms)=\sum_{di\in&space;Mms1}(di-ams1)^{2}&space;&plus;&space;\sum_{di\in&space;Mms2}(di-ams2)^{2}}&space;\\&space;\\&space;\\&space;{\color{Red}&space;MSE(dr)=\sum_{di\in&space;Mdr1}(di-adr1)^{2}&space;&plus;&space;\sum_{di\in&space;Mdr2}(di-adr2)^{2}}&space;\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;{\color{Red}&space;MSE(ms)=\sum_{di\in&space;Mms1}(di-ams1)^{2}&space;&plus;&space;\sum_{di\in&space;Mms2}(di-ams2)^{2}}&space;\\&space;\\&space;\\&space;{\color{Red}&space;MSE(dr)=\sum_{di\in&space;Mdr1}(di-adr1)^{2}&space;&plus;&space;\sum_{di\in&space;Mdr2}(di-adr2)^{2}}&space;\\" title="\\ {\color{Red} MSE(ms)=\sum_{di\in Mms1}(di-ams1)^{2} + \sum_{di\in Mms2}(di-ams2)^{2}} \\ \\ \\ {\color{Red} MSE(dr)=\sum_{di\in Mdr1}(di-adr1)^{2} + \sum_{di\in Mdr2}(di-adr2)^{2}} \\" /></a>
         
@@ -79,6 +75,10 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         
         **Ddr1=D(学历=博士)** 以及 **Ddr2=D(学历!=博士)**，Ddr1中动心度构成的集合为**Mdr1**，均值为**adr1**；Ddr2中动心度构成的集合为**Mdr2**，均值为**adr2**
         
+        + 计算示例
+           
+           <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;\\\mathbf{Msp1}=[0.56,&space;0.52]\\&space;\\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\&space;\\\mathbf{asp1}=0.54,&space;\mathbf{asp2}=0.63875\\&space;\\\mathbf{MSE(sp)}=[(0.56-0.54)^{2}&space;&plus;&space;(0.52-0.54)^{2}]\\&space;\\&space;&plus;&space;[(0.49-0.63875)^{2}&plus;\cdots&space;&plus;&space;(0.88-0.63875)^{2}]\\&space;\\=0.008&plus;0.1662875=0.1670875" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;\\\mathbf{Msp1}=[0.56,&space;0.52]\\&space;\\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\&space;\\\mathbf{asp1}=0.54,&space;\mathbf{asp2}=0.63875\\&space;\\\mathbf{MSE(sp)}=[(0.56-0.54)^{2}&space;&plus;&space;(0.52-0.54)^{2}]\\&space;\\&space;&plus;&space;[(0.49-0.63875)^{2}&plus;\cdots&space;&plus;&space;(0.88-0.63875)^{2}]\\&space;\\=0.008&plus;0.1662875=0.1670875" title="\\\mathbf{Msp1}=[0.56, 0.52]\\ \\\boldsymbol{Msp2}=[0.49,0.76,0.67,0.58,0.60,0.73,0.40,0.88]\\ \\\mathbf{asp1}=0.54, \mathbf{asp2}=0.63875\\ \\\mathbf{MSE(sp)}=[(0.56-0.54)^{2} + (0.52-0.54)^{2}]\\ \\ + [(0.49-0.63875)^{2}+\cdots + (0.88-0.63875)^{2}]\\ \\=0.008+0.1662875=0.1670875" /></a>
+           
         我们可以得到
         
         得到以上结果后，在其中选择MSE最小的变量，如果最终的最佳特征为学历，则以此变量作为分割变量。
