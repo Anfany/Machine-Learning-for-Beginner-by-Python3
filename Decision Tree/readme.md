@@ -63,7 +63,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
          
          1. 将数据集合D分为**Dsp1=D(学历=专科)**以及**Dsp2=D(学历!=专科)**，其中Dsp1中动心度构成的集合为**Msp1**，均值为**asp1**；Dsp2中动心度构成的集合为**Msp2**，均值为**asp2**；计算2个数据子集合的误差平方和的和值：
          
-         <a href="http://www.codecogs.com/eqnedit.php?latex=MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}" title="MSE(SP)=\sum_{di\in Msp1}(di-asp1)^{2} + \sum_{di\in Msp2}(di-asp2)^{2}" /></a>
+         <a href="http://www.codecogs.com/eqnedit.php?latex={\color{Red}&space;MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}&space;}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{Red}&space;MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}&space;}" title="{\color{Red} MSE(SP)=\sum_{di\in Msp1}(di-asp1)^{2} + \sum_{di\in Msp2}(di-asp2)^{2} }" /></a>
          
            + 计算示例
            
@@ -71,14 +71,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
          
          类似于计算MSE(SP)，遍历所有学历中的值，得到下面的MSE(MS)，MSE(DR)。
         
-        2. 将数据集合D分为D1=D(学历=硕士)以及D2=D(学历!=硕士)
         
-        **MSE(硕士)**
-        <a href="http://www.codecogs.com/eqnedit.php?latex==\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="=\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
-           
-        3. 将数据集合D分为D1=D(学历=博士)以及D2=D(学历!=博士)
-         
-        **MSE(博士)**<a href="http://www.codecogs.com/eqnedit.php?latex==\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="=\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
          
         得到以上结果后，在其中选择MSE最小的变量，如果最终的最佳特征为学历，则以此变量作为分割变量。
          
