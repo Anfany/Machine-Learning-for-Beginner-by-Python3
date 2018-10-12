@@ -61,13 +61,14 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
          
          以学历为例：
          
-         1. 将数据集合D分为**Dsp1=D(学历=专科)**以及**Dsp2=D(学历!=专科)**，其中Dsp1中动心度构成的集合为**Msp1**，均值为**asp1**；Dsp2中动心度构成的集合为**Msp2**，均值为**asp2**；计算2个数据子集合的误差平方和的和值：<a href="http://www.codecogs.com/eqnedit.php?latex=MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}" title="MSE(SP)=\sum_{di\in Msp1}(di-asp1)^{2} + \sum_{di\in Msp2}(di-asp2)^{2}" /></a>
+         1. 将数据集合D分为**Dsp1=D(学历=专科)**以及**Dsp2=D(学历!=专科)**，其中Dsp1中动心度构成的集合为**Msp1**，均值为**asp1**；Dsp2中动心度构成的集合为**Msp2**，均值为**asp2**；计算2个数据子集合的误差平方和的和值：
+         <a href="http://www.codecogs.com/eqnedit.php?latex=MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}" title="MSE(SP)=\sum_{di\in Msp1}(di-asp1)^{2} + \sum_{di\in Msp2}(di-asp2)^{2}" /></a>
          
            + 计算示例
            
            
          
-         类似于计算MSE(专科)，遍历所有学历中的值，得到下面的MSE(硕士)，MSE(博士)。
+         类似于计算MSE(SP)，遍历所有学历中的值，得到下面的MSE(MS)，MSE(DR)。
         
         2. 将数据集合D分为D1=D(学历=硕士)以及D2=D(学历!=硕士)
         
