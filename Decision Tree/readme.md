@@ -55,19 +55,17 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
        
        如果样本集合**S**，被某个规则R划分为n个数据子集，分别为S1， S2，……， Sn，则此时的计算基尼系数公示如下：
        
-       <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S,&space;R&space;)}&space;=&space;\sum_{\mathrm{\mathbf{i=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Si|}}{\mathbf{|S|}}\mathbf{G(Si)}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S,&space;R&space;)}&space;=&space;\sum_{\mathrm{\mathbf{i=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Si|}}{\mathbf{|S|}}\mathbf{G(Si)}}" title="{\color{Blue} \mathbf{G(S, R )} = \sum_{\mathrm{\mathbf{i=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Si|}}{\mathbf{|S|}}\mathbf{G(Si)}}" /></a>
+       <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S,&space;R&space;)}&space;=&space;\sum_{\mathrm{\mathbf{j=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Sj|}}{\mathbf{|S|}}\mathbf{G(Sj)}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S,&space;R&space;)}&space;=&space;\sum_{\mathrm{\mathbf{j=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Sj|}}{\mathbf{|S|}}\mathbf{G(Sj)}}" title="{\color{Blue} \mathbf{G(S, R )} = \sum_{\mathrm{\mathbf{j=1}}}^{\mathrm{\mathbf{n}}}\frac{\mathbf{|Sj|}}{\mathbf{|S|}}\mathbf{G(Sj)}}" /></a>
        
        在CART算法中，上述n的值一定为2。因为每一次分裂，都是把数据集合一分为二。
        
        针对离散、连续的变量，下面给出具体的计算基尼系数的步骤：
        
-       
-       
-       
+     + **离散变量：以工作为例**
      
-     + **离散变量**
+        
          
-     + **连续变量**
+     + **连续变量：以月收入为例**
          
  * **回归树**
  
