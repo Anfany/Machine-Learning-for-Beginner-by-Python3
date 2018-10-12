@@ -2,7 +2,7 @@
 
 决策树主要包括ID3，C4.5以及CART。下面给出三种算法的说明：
 
-![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/detr.png)
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/decisiontree.png)
 
 C4.5是ID3的改进版，而CART是最常用的，因此本文主要介绍CART。
 
