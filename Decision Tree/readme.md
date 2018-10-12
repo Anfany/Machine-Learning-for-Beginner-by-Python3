@@ -29,7 +29,7 @@ C4.5是ID3的改进版，而CART是最常用的，因此本文主要介绍CART�
 
 CART的目的是生成一个类似下面这样的树：分类树或者回归树。
 
-![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/TreeCart.png)
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/TreCart.png)
 
 叶子节点为是或者否，是分类树。是数字，为回归树。
 
