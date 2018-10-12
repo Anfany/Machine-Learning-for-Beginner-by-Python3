@@ -69,9 +69,15 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
            
            
          
-         类似于计算MSE(SP)，遍历所有学历中的值，得到下面的MSE(MS)，MSE(DR)。
+         类似于计算MSE(sp)，遍历所有学历中的值，得到下面的MSE(ms)，MSE(dr)。
         
+        <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;{\color{Red}&space;MSE(ms)=\sum_{di\in&space;Mms1}(di-ams1)^{2}&space;&plus;&space;\sum_{di\in&space;Mms2}(di-ams2)^{2}}&space;\\&space;\\&space;\\&space;{\color{Red}&space;MSE(dr)=\sum_{di\in&space;Mdr1}(di-adr1)^{2}&space;&plus;&space;\sum_{di\in&space;Mdr2}(di-adr2)^{2}}&space;\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;{\color{Red}&space;MSE(ms)=\sum_{di\in&space;Mms1}(di-ams1)^{2}&space;&plus;&space;\sum_{di\in&space;Mms2}(di-ams2)^{2}}&space;\\&space;\\&space;\\&space;{\color{Red}&space;MSE(dr)=\sum_{di\in&space;Mdr1}(di-adr1)^{2}&space;&plus;&space;\sum_{di\in&space;Mdr2}(di-adr2)^{2}}&space;\\" title="\\ {\color{Red} MSE(ms)=\sum_{di\in Mms1}(di-ams1)^{2} + \sum_{di\in Mms2}(di-ams2)^{2}} \\ \\ \\ {\color{Red} MSE(dr)=\sum_{di\in Mdr1}(di-adr1)^{2} + \sum_{di\in Mdr2}(di-adr2)^{2}} \\" /></a>
         
+        其中
+        
+        数据集**Dms1=D(学历=硕士)** 以及 **Dms2=D(学历!=硕士)**，Dms1中动心度构成的集合为**Mms1**，均值为**ams1**；Dms2中动心度构成的集合为**Mms2**，均值为**ams2**；
+        
+        **Ddr1=D(学历=博士)** 以及 **Ddr2=D(学历!=博士)**，Ddr1中动心度构成的集合为**Mdr1**，均值为**adr1**；Ddr2中动心度构成的集合为**Mdr2**，均值为**adr2**
          
         得到以上结果后，在其中选择MSE最小的变量，如果最终的最佳特征为学历，则以此变量作为分割变量。
          
