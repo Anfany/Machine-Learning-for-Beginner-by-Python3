@@ -95,9 +95,9 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
           
           <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;\\\mathbf{MSE(174)}=0.133383,&space;\mathbf{MSE(177.5)}=0.1406857\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;\\\mathbf{MSE(174)}=0.133383,&space;\mathbf{MSE(177.5)}=0.1406857\\" title="\\\mathbf{MSE(174)}=0.133383, \mathbf{MSE(177.5)}=0.1406857\\" /></a>
           
-          可知对于特征身高最小的MSE为MSE(174)。
+          可知对于特征身高最小的MSE为MSE(174)。如果最终的最佳特征是身高，则要把数据集分为身高高于174cm、以及不足174cm的两部分数据子集。
           
-     
+     从以上可以看出身高是比学历还要好的分类特征，其他特征就不一一计算。到此，对离散、连续的变量的处理方式的说明已经结束。按照上述的方式就可以将分裂形成的数据集再次进行分裂，形成树。至于什么时候结束分裂，下文会作出说明。
           
           
           
