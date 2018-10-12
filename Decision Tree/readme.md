@@ -83,8 +83,9 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         
         <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;\\\mathbf{MSE(ms)}=0.1752083\\&space;\\\mathbf{MSE(ddr)}=0.18245\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;\\\mathbf{MSE(ms)}=0.1752083\\&space;\\\mathbf{MSE(ddr)}=0.18245\\" title="\\\mathbf{MSE(ms)}=0.1752083\\ \\\mathbf{MSE(ddr)}=0.18245\\" /></a>
         
-        得到以上结果后，在其中选择MSE最小的特征值为**专科**，如果最终的最佳特征为学历，则以此变量作为分割变量。
-         
+        得到以上结果后，在其中选择MSE最小的**MSE(sp)**,其对应的特征值为**专科**，如果最终的最佳特征为学历，则以此变量作为分割变量。
+        
+        从上面的计算可以看出特征学历最小的MSE为MSE(sp)。如何得到最佳特征，将所有的特征遍历一遍，其中最小的MSE对应的特征就是最佳分割特征。
          
          + 连续变量
 
