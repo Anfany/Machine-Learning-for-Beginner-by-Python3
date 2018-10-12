@@ -61,17 +61,17 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
          
          以学历为例：
          
-         1. 将数据集合D分为D1=D(学历=专科)以及D2=D(学历!=专科)，其中D1中动心度构成的集合为M1，均值为a1；D2中动心度构成的集合为M2，均值为a2；计算2个集合的误差平方和的和值MSE(专科)：
+         1. 将数据集合D分为D1=D(学历=专科)以及D2=D(学历!=专科)，其中D1中动心度构成的集合为M1，均值为a1；D2中动心度构成的集合为M2，均值为a2；计算2个集合的误差平方和的和值：
          
          MSE(专科) = <a href="http://www.codecogs.com/eqnedit.php?latex=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
         
-           
-           
-        将数据集合D分为D1=D(学历=硕士)以及D2=D(学历!=硕士)
-           
-           将数据集合D分为D1=D(学历=博士)以及D2=D(学历!=博士)
-         
+        2. 将数据集合D分为D1=D(学历=硕士)以及D2=D(学历!=硕士)
         
+        MSE(硕士) = <a href="http://www.codecogs.com/eqnedit.php?latex=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
+           
+        3. 将数据集合D分为D1=D(学历=博士)以及D2=D(学历!=博士)
+         
+        MSE(博士) = <a href="http://www.codecogs.com/eqnedit.php?latex=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
          
          
          
