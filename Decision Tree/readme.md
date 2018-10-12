@@ -45,11 +45,11 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
 
      + **基尼系数**
      
-       对于一个样本集合**S**，假设其包含**m**个不同的值，这**m**个值可看作**m**个不同的类。其中由**类i**组成的集合为**Si**，那么对于属于**类i**的样本点**k**而言，其概率为**P(k)=集合Si的样本个数除去集合S的元素个数**。则基于概率分布的基尼指数定义如下：
+       对于一个样本集合**S**，假设其包含**m**个不同的值，这**m**个值可看作**m**个不同的类。其中由**类i**组成的集合为**Si**，那么对于属于**类i**的样本点**k**而言，其概率为**P(k)=集合Si的样本个数除去集合S的样本个数**。则基于概率分布的基尼指数定义如下：
        
        <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S)}&space;=&space;\mathbf{1}&space;-&space;\sum_{\mathrm{i}=1}^{\mathrm{m}}(\frac{|\mathbf{S_{i}}|}{|\mathbf{S}|})^{2}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;{\color{Blue}&space;\mathbf{G(S)}&space;=&space;\mathbf{1}&space;-&space;\sum_{\mathrm{i}=1}^{\mathrm{m}}(\frac{|\mathbf{S_{i}}|}{|\mathbf{S}|})^{2}}" title="{\color{Blue} \mathbf{G(S)} = \mathbf{1} - \sum_{\mathrm{i}=1}^{\mathrm{m}}(\frac{|\mathbf{S_{i}}|}{|\mathbf{S}|})^{2}}" /></a>
        
-       
+       其中符号**||**为计算集合内元素个数的符号。
      
      + **离散变量**
          
