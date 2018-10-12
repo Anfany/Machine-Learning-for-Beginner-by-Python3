@@ -65,7 +65,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
          
          **MSE(专科)**
          
-         = <a href="http://www.codecogs.com/eqnedit.php?latex=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
+         <a href="http://www.codecogs.com/eqnedit.php?latex==\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="=\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
          
            + 计算示例
            
@@ -77,13 +77,13 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         
         **MSE(硕士)**
         
-        = <a href="http://www.codecogs.com/eqnedit.php?latex=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
+        <a href="http://www.codecogs.com/eqnedit.php?latex==\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="=\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
            
         3. 将数据集合D分为D1=D(学历=博士)以及D2=D(学历!=博士)
          
         **MSE(博士)**
         
-        = <a href="http://www.codecogs.com/eqnedit.php?latex=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
+        <a href="http://www.codecogs.com/eqnedit.php?latex==\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?=\sum_{di\in&space;M1}(di-a1)^{2}&space;&plus;&space;\sum_{di\in&space;M2}(di-a2)^{2}" title="=\sum_{di\in M1}(di-a1)^{2} + \sum_{di\in M2}(di-a2)^{2}" /></a>
          
         得到以上结果后，在其中选择MSE最小的变量，如果最终的最佳特征为学历，则以此变量作为分割变量。
          
