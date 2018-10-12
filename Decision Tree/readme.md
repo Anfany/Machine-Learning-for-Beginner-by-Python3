@@ -93,6 +93,12 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
           
           不难得到
           
+          <a href="http://www.codecogs.com/eqnedit.php?latex=\bg_white&space;\fn_phv&space;\\\mathbf{MSE(174)}=0.133383,&space;\mathbf{MSE(177.5)}=0.1406857\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\bg_white&space;\fn_phv&space;\\\mathbf{MSE(174)}=0.133383,&space;\mathbf{MSE(177.5)}=0.1406857\\" title="\\\mathbf{MSE(174)}=0.133383, \mathbf{MSE(177.5)}=0.1406857\\" /></a>
+          
+          可知对于特征身高最小的MSE为MSE(174)。
+          
+     
+          
           
           
           
