@@ -63,7 +63,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
          
          1. 将数据集合D分为**Dsp1=D(学历=专科)**以及**Dsp2=D(学历!=专科)**，其中Dsp1中动心度构成的集合为**Msp1**，均值为**asp1**；Dsp2中动心度构成的集合为**Msp2**，均值为**asp2**；计算2个数据子集合的误差平方和的和值：
          
-         <a href="http://www.codecogs.com/eqnedit.php?latex={\color{Red}&space;MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}&space;}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{Red}&space;MSE(SP)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}&space;}" title="{\color{Red} MSE(SP)=\sum_{di\in Msp1}(di-asp1)^{2} + \sum_{di\in Msp2}(di-asp2)^{2} }" /></a>
+         <a href="http://www.codecogs.com/eqnedit.php?latex={\color{Red}&space;MSE(sp)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{Red}&space;MSE(sp)=\sum_{di\in&space;Msp1}(di-asp1)^{2}&space;&plus;&space;\sum_{di\in&space;Msp2}(di-asp2)^{2}}" title="{\color{Red} MSE(sp)=\sum_{di\in Msp1}(di-asp1)^{2} + \sum_{di\in Msp2}(di-asp2)^{2}}" /></a>
          
            + 计算示例
            
