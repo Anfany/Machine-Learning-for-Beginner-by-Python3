@@ -17,15 +17,15 @@ C4.5是ID3的改进版，而CART是最常用的，因此本文主要介绍CART�
 |编号|年龄|学历|工作|月收入(k)|身高(cm)|动心|动心度|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |0001|24|专科|国企|5|175|**N**|0.56|
-|0002|35|博士|国企|12|180|**N**|0.49|
+|0002|35|博士|国企|13|180|**N**|0.49|
 |0003|27|硕士|私企|13|173|**Y**|0.76|
-|0004|23|硕士|私企|6|180|**N**|0.67|
-|0005|30|硕士|国企|8|166|**N**|0.58|
-|0006|22|硕士|国企|10|166|**Y**|0.60|
-|0007|28|博士|国企|6|175|**Y**|0.73|
-|0008|38|博士|私企|23|180|**N**|0.40|
+|0004|23|硕士|私企|5|180|**N**|0.67|
+|0005|30|硕士|国企|5|166|**N**|0.58|
+|0006|22|硕士|国企|13|166|**Y**|0.60|
+|0007|28|博士|国企|5|175|**Y**|0.73|
+|0008|38|博士|私企|19|180|**N**|0.40|
 |0009|23|专科|私企|13|175|**N**|0.52|
-|0010|30|博士|国企|11|173|**Y**|0.88|
+|0010|30|博士|国企|13|173|**Y**|0.88|
 
 CART的目的是生成一个类似下面这样的树：分类树或者回归树。
 
@@ -67,11 +67,17 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         
         此时的基尼系数计算如下：
         
-        <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;{\color{Blue}&space;\boldsymbol{Mg1=[N,&space;N,&space;N,Y,Y,Y]}}\\&space;\\&space;{\color{Blue}&space;\boldsymbol{Mg2=[N,&space;N,N,Y]}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(S,gongzuo=guoqi)=\frac{|Mg1|}{|S|}G(Mg1)&plus;\frac{|Mg2|}{|S|}G(Mg2)}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]&plus;\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{0.45}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;{\color{Blue}&space;\boldsymbol{Mg1=[N,&space;N,&space;N,Y,Y,Y]}}\\&space;\\&space;{\color{Blue}&space;\boldsymbol{Mg2=[N,&space;N,N,Y]}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(S,gongzuo=guoqi)=\frac{|Mg1|}{|S|}G(Mg1)&plus;\frac{|Mg2|}{|S|}G(Mg2)}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]&plus;\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{0.45}}" title="\\ {\color{Blue} \boldsymbol{Mg1=[N, N, N,Y,Y,Y]}}\\ \\ {\color{Blue} \boldsymbol{Mg2=[N, N,N,Y]}}\\ \\ {\color{Blue} \mathbf{G(S,gongzuo=guoqi)=\frac{|Mg1|}{|S|}G(Mg1)+\frac{|Mg2|}{|S|}G(Mg2)}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]+\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \boldsymbol{0.45}}" /></a>
+        <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;{\color{Blue}&space;\boldsymbol{Mg1=[N,&space;N,&space;N,Y,Y,Y]}}\\&space;\\&space;{\color{Blue}&space;\boldsymbol{Mg2=[N,&space;N,N,Y]}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(D,gongzuo=guoqi)=\frac{|Mg1|}{|D|}G(Mg1)&plus;\frac{|Mg2|}{|D|}G(Mg2)}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]&plus;\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{0.45}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;{\color{Blue}&space;\boldsymbol{Mg1=[N,&space;N,&space;N,Y,Y,Y]}}\\&space;\\&space;{\color{Blue}&space;\boldsymbol{Mg2=[N,&space;N,N,Y]}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(D,gongzuo=guoqi)=\frac{|Mg1|}{|D|}G(Mg1)&plus;\frac{|Mg2|}{|D|}G(Mg2)}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]&plus;\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{0.45}}" title="\\ {\color{Blue} \boldsymbol{Mg1=[N, N, N,Y,Y,Y]}}\\ \\ {\color{Blue} \boldsymbol{Mg2=[N, N,N,Y]}}\\ \\ {\color{Blue} \mathbf{G(D,gongzuo=guoqi)=\frac{|Mg1|}{|D|}G(Mg1)+\frac{|Mg2|}{|D|}G(Mg2)}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]+\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \boldsymbol{0.45}}" /></a>
         
         因为工作只有2个变量，因此按照工作为私企和工作为国企的基尼系数是相同的。
          
      + **连续变量：以月收入为例**
+     
+        1. 首先将月收入的值去重后，按照从小到大的排列顺序为[5, 13, 19],相邻的数值取平均值得到序列[9, 16].类似于离散变量的情况，以9为例，将数据集分为Dn9=D(月收入<9)以及Dm9=D(月收入>9),相应的动心组成的集合分别为**Mn9,Mm9**.
+        
+        下面给出计算基尼系数的过程：
+        
+        
      
      
          
