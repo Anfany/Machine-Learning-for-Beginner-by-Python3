@@ -65,10 +65,15 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
      
         1. 将数据集合D分为**Dg1=D(学历=国企)**以及**Dg2=D(学历!=国企)**，其中Dg1中动心构成的集合为**Mg1**；Dg2中动心构成的集合为**Mg2**;
         
-        此时的
+        此时的基尼系数计算如下：
         
+        <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;{\color{Blue}&space;\boldsymbol{Mg1=[N,&space;N,&space;N,Y,Y,Y]}}\\&space;\\&space;{\color{Blue}&space;\boldsymbol{Mg2=[N,&space;N,N,Y]}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(S,gongzuo=guoqi)=\frac{|Mg1|}{|S|}G(Mg1)&plus;\frac{|Mg2|}{|S|}G(Mg2)}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]&plus;\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{0.45}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;{\color{Blue}&space;\boldsymbol{Mg1=[N,&space;N,&space;N,Y,Y,Y]}}\\&space;\\&space;{\color{Blue}&space;\boldsymbol{Mg2=[N,&space;N,N,Y]}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(S,gongzuo=guoqi)=\frac{|Mg1|}{|S|}G(Mg1)&plus;\frac{|Mg2|}{|S|}G(Mg2)}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]&plus;\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{0.45}}" title="\\ {\color{Blue} \boldsymbol{Mg1=[N, N, N,Y,Y,Y]}}\\ \\ {\color{Blue} \boldsymbol{Mg2=[N, N,N,Y]}}\\ \\ {\color{Blue} \mathbf{G(S,gongzuo=guoqi)=\frac{|Mg1|}{|S|}G(Mg1)+\frac{|Mg2|}{|S|}G(Mg2)}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \boldsymbol{\frac{6}{10}[(]1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]+\frac{4}{10}[(]1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \boldsymbol{0.45}}" /></a>
+        
+        因为工作只有2个变量，因此按照工作为私企和工作为国企的基尼系数是相同的。
          
      + **连续变量：以月收入为例**
+     
+     
          
  * **回归树**
  
