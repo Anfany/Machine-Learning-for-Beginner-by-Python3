@@ -80,6 +80,13 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;{\color{Blue}&space;\boldsymbol{Mn9=[N,&space;N,&space;N,Y]}}\\&space;\\&space;{\color{Blue}&space;\boldsymbol{Mm9=[N,&space;Y,Y,N,N,Y]}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(D,yueshouru<>9)=\frac{|Mn9|}{|D|}G(Mn9)&plus;\frac{|Mm9|}{|D|}G(Mm9)}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\mathbf{\frac{4}{10}[1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]&space;&plus;&space;\frac{6}{10}[1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{0.45}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(D,yueshouru<>16)}}={\color{Blue}&space;\mathbf{\frac{9}{10}[1-(\frac{5}{9})^{2}-(\frac{4}{9})^{2}]&space;&plus;&space;\frac{1}{10}[1-(\frac{1}{1})^{2}-(\frac{0}{1})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\mathbf{0.54}}\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;{\color{Blue}&space;\boldsymbol{Mn9=[N,&space;N,&space;N,Y]}}\\&space;\\&space;{\color{Blue}&space;\boldsymbol{Mm9=[N,&space;Y,Y,N,N,Y]}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(D,yueshouru<>9)=\frac{|Mn9|}{|D|}G(Mn9)&plus;\frac{|Mm9|}{|D|}G(Mm9)}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\mathbf{\frac{4}{10}[1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}]&space;&plus;&space;\frac{6}{10}[1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\boldsymbol{0.45}}\\&space;\\&space;{\color{Blue}&space;\mathbf{G(D,yueshouru<>16)}}={\color{Blue}&space;\mathbf{\frac{9}{10}[1-(\frac{5}{9})^{2}-(\frac{4}{9})^{2}]&space;&plus;&space;\frac{1}{10}[1-(\frac{1}{1})^{2}-(\frac{0}{1})^{2}]}}\\&space;\\&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;={\color{Blue}&space;\mathbf{0.54}}\\" title="\\ {\color{Blue} \boldsymbol{Mn9=[N, N, N,Y]}}\\ \\ {\color{Blue} \boldsymbol{Mm9=[N, Y,Y,N,N,Y]}}\\ \\ {\color{Blue} \mathbf{G(D,yueshouru<>9)=\frac{|Mn9|}{|D|}G(Mn9)+\frac{|Mm9|}{|D|}G(Mm9)}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \mathbf{\frac{4}{10}[1-(\frac{3}{4})^{2}-(\frac{1}{4})^{2}] + \frac{6}{10}[1-(\frac{3}{6})^{2}-(\frac{3}{6})^{2}]}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \boldsymbol{0.45}}\\ \\ {\color{Blue} \mathbf{G(D,yueshouru<>16)}}={\color{Blue} \mathbf{\frac{9}{10}[1-(\frac{5}{9})^{2}-(\frac{4}{9})^{2}] + \frac{1}{10}[1-(\frac{1}{1})^{2}-(\frac{0}{1})^{2}]}}\\ \\ \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots ={\color{Blue} \mathbf{0.54}}\\" /></a>
      
      年龄的处理方式相似，加入不考虑年龄，只考虑月收入和工作，则按照工作分类或者按着月收入为9这个界限分类，都是可以的，因为0.45是最小值。
+     
+     
+     + **树的输出**
+     
+     叶子节点数据集中，目标变量中占多数的类别，为这个叶子节点的输出。如果把上面给定的示例数据集看作一个叶子节点的话，如果某条数据正好落在这个数据集内，则这个数据的分类为N，因为这个数据集中有6条数据为N，多于Y的数据。
+     
+=================================    
          
  * **回归树**
  
@@ -129,18 +136,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
           
      从以上可以看出身高是比学历还要好的分类特征，其他特征就不一一计算。到此，对离散、连续的变量的处理方式的说明已经结束。按照上述的方式就可以将分裂形成的数据集再次进行分裂，形成树。
      
-   +  **停止生长**
-   
-        上面说明了怎么生成一个树。当然树不能无限生长下去，这里说一下什么时候让某个数据子集停止分裂，也就是将这个数据子集形成一个叶子节点。一般有2种方式：
-        
-        + 通过限制树的深度，树的深度的比人们说家谱有几代少一代。示例图中显示出来的树的深度是3, 如果是家谱的就是4代。
-        
-        + 通过给定MSE的阈值，当这个数据集的MSE小于这个阈值时，就不再分裂。
-        
-   + **树的剪枝**
-   
-        为了防止过拟合，需要进行树的剪枝。所谓剪枝就是将已经分裂的数据集合，不让他分裂了。剪枝的策略
-        
+
    + **树的输出**
    
         树是通过一个个叶子节点决定输出的。输出的方式也包括2种：
@@ -148,9 +144,20 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
        +  **回归树**：叶子节点代表的数据子集中目标变量的均值，就作为输出值。例如示例中的叶子节点，其输出值为0.56+0.52=0.54。当要预测的某条数据恰好属于这个数据子集，则针对这条数据的动心度的预测值就是0.54。
           
        +  **模型树**：对于一个叶子节点来说，有输入，也有对应的输出。 根据输入和输出的关系，建立模型，这个模型可以是线性回归，也可以通过神经网络来建立。这个叶子节点的输出值是所建立的模型的输出值。当要预测的某条数据恰好属于这个数据子集，则针对这条数据的动心度的预测值就是将数据带入建立的模型中得到的值。
+       
+=================================
         
++  **停止生长**
+   
+    上面说明了怎么生成一个树。当然树不能无限生长下去，这里说一下什么时候让某个数据子集停止分裂，也就是将这个数据子集形成一个叶子节点。一般有2种方式：
         
-
-          
+      + 通过限制树的深度，树的深度的比人们说家谱有几代少一代。示例图中显示出来的树的深度是3, 如果是家谱的就是4代。
+        
+      + 通过给定MSE的阈值，当这个数据集的MSE小于这个阈值时，就不再分裂。
+        
++ **树的剪枝**
+   
+     为了防止过拟合，需要进行树的剪枝。所谓剪枝就是将已经分裂的数据集合，不让他分裂了。剪枝的策略
+                  
 
 
