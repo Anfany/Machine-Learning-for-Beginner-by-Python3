@@ -162,11 +162,15 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
      
      其实上文的停止生长，也可看作预剪枝，但是这样设置的目的不是剪枝，而是减小树的规模，提高后面真正剪枝的计算效率。这里主要讲述比较常用的后剪枝策略：代价复杂剪枝。所谓代价复杂剪枝就是在树的规模(复杂)和树的误差(代价)之间寻求一个平衡。树规模越大，树的误差越小。树的规模越小，树的误差越大。
      
-     我们的目的是为了降低代价复杂度。令其为C(Ta)，其中T代表生成的树。我们用树的叶子节点的个数描述树的规模，记为|T|， 树T的误差记为E(T)：
+     我们的目的是为了降低代价复杂度。令其为Ca(T)，其中T代表树。我们用树的叶子节点的个数描述树的规模，记为|T|， 树T的误差记为E(T)：
      
-     <a href="http://www.codecogs.com/eqnedit.php?latex={\color{Purple}&space;\mathbf{C(T)=E(T)&plus;&space;a&space;*&space;|T|}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{Purple}&space;\mathbf{C(T)=E(T)&plus;&space;a&space;*&space;|T|}}" title="{\color{Purple} \mathbf{C(T)=E(T)+ a * |T|}}" /></a>
+     <a href="http://www.codecogs.com/eqnedit.php?latex={\color{DarkRed}&space;\mathbf{Ca(T)=E(T)&plus;a*|T|}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{DarkRed}&space;\mathbf{Ca(T)=E(T)&plus;a*|T|}}" title="{\color{DarkRed} \mathbf{Ca(T)=E(T)+a*|T|}}" /></a>
      
-     其中 **a** 为权重，**a** 越大，则树规模越小，树的总体误差越大；**a** 越小，则树规模越大，树的总体误差越小；
+     其中 **a** 为权重，**a** 越大，则树规模越小，树的误差越大；**a** 越小，则树规模越大，树的误差越小；下面给出步骤：
+     
+     1. 遍历树的所有内部节点node(包括根节点)，计算
+     
+     
                   
 
 
