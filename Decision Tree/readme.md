@@ -31,7 +31,7 @@ C4.5是ID3的改进版，而CART是最常用的，因此本文主要介绍CART�
 
 CART的目的是生成一个类似下面这样的树：分类树或者回归树。
 
-![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/fenge.png)
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/Gtree.png)
 
 叶子节点若为Y或者N，是分类树；若是数字，则为回归树。下面分别讲述回归树和分类树的生成方式：
 
@@ -166,9 +166,13 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
      
      <a href="http://www.codecogs.com/eqnedit.php?latex={\color{DarkRed}&space;\mathbf{Ca(T)=E(T)&plus;a*|T|}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{DarkRed}&space;\mathbf{Ca(T)=E(T)&plus;a*|T|}}" title="{\color{DarkRed} \mathbf{Ca(T)=E(T)+a*|T|}}" /></a>
      
-     其中 **a** 为权重，**a** 越大，则树规模越小，树的误差越大；**a** 越小，则树规模越大，树的误差越小；下面给出步骤：
+     其中 **a** 为权重，**a** 越大，则树规模越小，树的误差越大；**a** 越小，则树规模越大，树的误差越小；
      
-     1. 遍历树的所有内部节点node(包括根节点)，计算
+     因为代价复杂度是和a有关系的，不同的a值可能会得到不同的最优树(此树的代价复杂度最低)，并且每个a值对应的最优树是唯一的。当a值从0慢慢趋近于无穷大的时候，最优的树便会进入一个削剪枝叶的过程，最优树会从**充分分裂后得到的树**削减到**没有经过任何分裂的树**。此时我们就形成了一个树的嵌套集合，并且前面的树包含后面的树。在形成的树的集合中，我们可以用交叉验证的方式得到最优的树，从而得到最终的树的结果。
+     
+     现在的问题是如何实现a的值从0到无穷。下面给出一种方式:
+     
+     
      
      
                   
