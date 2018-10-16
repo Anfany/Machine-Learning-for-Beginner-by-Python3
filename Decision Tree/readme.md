@@ -162,7 +162,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
      
      其实上文的停止生长，也可看作预剪枝，但是这样设置的目的不是剪枝，而是减小树的规模，提高后面真正剪枝的计算效率。这里主要讲述比较常用的后剪枝策略：代价复杂剪枝。所谓代价复杂剪枝就是在树的规模(复杂)和树的误差(代价)之间寻求一个平衡。树规模越大，树的误差越小。树的规模越小，树的误差越大。
      
-     我们的目的是为了降低代价复杂度。令其为**C(Ta)**，其中 **T** 代表生成的树。我们用树的叶子节点的个数描述树的规模，记为/**|T|**/， 树/**T**的误差记为/**E(T)**/：
+     我们的目的是为了降低代价复杂度。令其为C(Ta)，其中T代表生成的树。我们用树的叶子节点的个数描述树的规模，记为|T|， 树T的误差记为E(T)：
      
      <a href="http://www.codecogs.com/eqnedit.php?latex={\color{Purple}&space;\mathbf{C(T)=E(T)&plus;&space;a&space;*&space;|T|}}" target="_blank"><img src="http://latex.codecogs.com/gif.latex?{\color{Purple}&space;\mathbf{C(T)=E(T)&plus;&space;a&space;*&space;|T|}}" title="{\color{Purple} \mathbf{C(T)=E(T)+ a * |T|}}" /></a>
      
