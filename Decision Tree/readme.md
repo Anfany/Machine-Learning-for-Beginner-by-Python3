@@ -31,7 +31,7 @@ C4.5是ID3的改进版，而CART是最常用的，因此本文主要介绍CART�
 
 CART的目的是生成一个类似下面这样的树：分类树或者回归树。
 
-![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/CART_TREES.png)
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/fenge.png)
 
 叶子节点若为Y或者N，是分类树；若是数字，则为回归树。下面分别讲述回归树和分类树的生成方式：
 
@@ -96,7 +96,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
      
      + **离散变量：以学历为例**
          
-         1. 将数据集合D分为**Dsp1=D(学历=专科)**以及**Dsp2=D(学历!=专科)**，其中Dsp1中动心度构成的集合为**Msp1**，均值为**asp1**；Dsp2中动心度构成的集合为**Msp2**，均值为**asp2**；计算2个数据子集合的误差平方和的和值：
+         1. 将数据集合D分为**Dsp1=D(学历=专科)**以及**Dsp2=D(学历!=专科)**，其中Dsp1中动心度构成的集合为**Msp1**，均值为**asp1**；Dsp2中动心度构成的集合为**Msp2**，均值为**asp2**；计算2个数据子集合的误差序列方差的和值：
          
          <a href="http://www.codecogs.com/eqnedit.php?latex=\\&space;{\color{Blue}&space;\mathbf{MSE(sp)=\frac{|Msp1|}{|D|}\sqrt[2]{\sum_{di\in&space;Msp1}(di-asp1)^{2}}&plus;&space;\frac{|Msp2|}{|D|}\sqrt[2]{\sum_{di\in&space;Msp2}(di-asp2)^{2}}&space;}&space;}\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\\&space;{\color{Blue}&space;\mathbf{MSE(sp)=\frac{|Msp1|}{|D|}\sqrt[2]{\sum_{di\in&space;Msp1}(di-asp1)^{2}}&plus;&space;\frac{|Msp2|}{|D|}\sqrt[2]{\sum_{di\in&space;Msp2}(di-asp2)^{2}}&space;}&space;}\\" title="\\ {\color{Blue} \mathbf{MSE(sp)=\frac{|Msp1|}{|D|}\sqrt[2]{\sum_{di\in Msp1}(di-asp1)^{2}}+ \frac{|Msp2|}{|D|}\sqrt[2]{\sum_{di\in Msp2}(di-asp2)^{2}} } }\\" /></a>
         
@@ -147,7 +147,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         
       + 通过限制树的深度。树的深度和人们计算家谱有几代方式相同，只不过比其少一代。示例图中显示出来的树的深度是3， 如果是家谱的就可看作4代。
         
-      + 通过给定MSE或者基尼系数的阈值，当这个数据集的MSE或者基尼系数小于这个阈值时，就不再分裂，停止生长。
+      + 通过给定误差序列方差或者基尼系数的阈值，当这个数据集的MSE或者基尼系数小于这个阈值时，就不再分裂，停止生长。
       
 ***
         
