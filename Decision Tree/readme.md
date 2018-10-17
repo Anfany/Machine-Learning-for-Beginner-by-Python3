@@ -178,7 +178,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         inter = 0
         a(0) = 0
         T(0) = 充分生长的树
-        while 树T(inter)不是仅有一个根节点时：
+        while 树T(inter)不是仅有一个节点时：
             for node in 树T的内部节点(父节点)：
                 计算node为叶子节点时的E(T_son_node)
                 计算node为父节点时的E(T_fa_node)
