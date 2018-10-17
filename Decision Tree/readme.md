@@ -178,32 +178,34 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         inter = 0
         a(0) = 0
         T(0) = 充分生长的树
-
         while 树T(inter)不是仅有一个根节点时：
+            for node in 树T的内部节点(父节点)：
+                计算node为叶子节点时的E(T_son_node)
+                计算node为父节点时的E(T_fa_node)
+                计算g(node) =(E(T_son_node) -  E(T_fa_node))/ (|T_fa_node| - 1)
 
-        for node in 树T的内部节点(父节点)：
-
-
-            计算node为叶子节点时的E(T_son_node)
-
-            计算node为父节点时的E(T_fa_node)
-
-            计算g(node) =(E(T_fa_node) -  E(T_son_node))/ (|| - 1)
-
-       在所有的g(node)中选择值最小的对应的node，如果node不唯一，则选择辈分最小的node。
-
-       inter += 1
-      
-       T(inter) = 树T(inter-1)的父节点node变为叶子节点形成的树
-
-       a(inter) = g(node)
-
+            在所有的g(node)中选择值最小的对应的node，如果node不唯一，则选择辈分最小的node。
+            inter += 1
+            T(inter) = 树T(inter-1)的父节点node变为叶子节点形成的树
+            a(inter) = g(node)
 
       从a1开始形成了从小到大的序列，从T(1)开始形成了从茂盛到精简的树的集合，下面利用验证数据集获取最优的a值以及对应的树：
-
-
               1，计算验证数据集在每一个a值及其对应的树下的复杂代价度
               2，选择复杂代价度最小的，就是最优的
+      注意：上面的T0没有在考虑范围内，因此T0应该是经过充分生长的树，保证自身已经带有了过拟合的成分。
+      
+      符号说明：
+      T_son_node：当前的树以node为叶子节点时的树，也就是node节点没有经过分裂；
+      T_fa_node：当前的树以node为父节点时的树，也就是node节点分裂了；
+      E(T)：树T的误差(分类：误分率，回归：误差平方和）；
+      |T|：树T的叶子节点的个数；
+      
+    
+
+        
+              
+              
+          
 
       
  
