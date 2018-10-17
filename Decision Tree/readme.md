@@ -180,9 +180,9 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
         T(0) = 充分生长的树
         while 树T(inter)不是仅有一个节点时：
             for node in 树T的内部节点(父节点)：
-                计算node为叶子节点时的E(T_son_node)
-                计算node为父节点时的E(T_fa_node)
-                计算g(node) =(E(T_son_node) -  E(T_fa_node))/ (|T_fa_node| - 1)
+                计算node为叶子节点时的E(T_Son_node)
+                计算node为父节点时的E(T_Fa_node)
+                计算g(node) =(E(T_Son_node) -  E(T_Fa_node))/ (|T_Fa_node| - 1)
 
             在所有的g(node)中选择值最小的对应的node，如果node不唯一，则选择辈分最小的node。
             inter += 1
@@ -195,15 +195,15 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
 
       
       符号说明：
-      T_son_node：当前的树以node为叶子节点时的子树，也就是node节点没有经过分裂，也就是node节点剪枝后；
-      T_fa_node：当前的树以node为根节点时的子树，也就是node节点分裂了，也就是node节点剪枝前；
+      T_Son_node：当前的树T以node为叶子节点时的子树，也就是node节点没有经过分裂，也就是node节点剪枝后；
+      T_Fa_node：当前的树T以node为根节点时的子树，也就是node节点分裂了，也就是node节点剪枝前；
       E(T)：树T所有叶子节点的误差(分类问题：误分率*样本比例，回归问题：误差平方和*样本比例）之和；
       |T|：树T的叶子节点的个数；
       
       
   下面给出分类的示例
   
-  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/ex_tree.png)
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/exam_tree.png)
   
   上述问题中总的数据条数是40。因为分类问题，是以占多数的类别作为输出类别，因此两个数字中较小的数字除以数字之和就是误分率。样本比例就是这个节点占的数据条数除以总的数据条数。
   
@@ -217,7 +217,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
   
   g(t7)最小，节点t7应该被剪枝，a(1)=1/40，树T(1)变为下面这样：
   
-  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/t1.png)
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/t1tree.png)
   
   回归和分类类似，将误分率变为误差平方和即可。
       
