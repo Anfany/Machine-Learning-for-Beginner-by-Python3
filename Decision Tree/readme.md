@@ -205,6 +205,8 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
   
   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/ex_tree.png)
   
+  上述问题中总的数据条数是40。因为分类问题，是以占多数的类别作为输出类别，因此两个数字中较小的数字除以数字之和就是误分率。样本比例就是这个节点占的数据条数除以总的数据条数。
+  
   <a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\\E(T0\_Son\_t1)=\frac{20}{40}*\frac{40}{40}=\frac{20}{40}\\&space;\\E(T0\_Fa\_t1)={\color{Red}&space;\frac{1}{10}*\frac{10}{40}[t4]}&plus;{\color{Teal}&space;\frac{2}{9}*\frac{9}{40}[t5]}&plus;{\color{Blue}&space;\frac{2}{12}*\frac{12}{40}[t6]}\\&space;\\\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;&plus;{\color{Magenta}&space;\frac{0}{6}*\frac{6}{40}[t8]}&plus;{\color{Orange}&space;\frac{2}{3}*\frac{3}{40}[t9]}=\frac{7}{40}\\&space;\\g(t1)=\frac{\frac{20}{40}-\frac{7}{40}}{5-1}=\frac{13}{160}&space;\\&space;\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\dpi{100}&space;\\E(T0\_Son\_t1)=\frac{20}{40}*\frac{40}{40}=\frac{20}{40}\\&space;\\E(T0\_Fa\_t1)={\color{Red}&space;\frac{1}{10}*\frac{10}{40}[t4]}&plus;{\color{Teal}&space;\frac{2}{9}*\frac{9}{40}[t5]}&plus;{\color{Blue}&space;\frac{2}{12}*\frac{12}{40}[t6]}\\&space;\\\cdots&space;\cdots&space;\cdots&space;\cdots&space;\cdots&space;&plus;{\color{Magenta}&space;\frac{0}{6}*\frac{6}{40}[t8]}&plus;{\color{Orange}&space;\frac{2}{3}*\frac{3}{40}[t9]}=\frac{7}{40}\\&space;\\g(t1)=\frac{\frac{20}{40}-\frac{7}{40}}{5-1}=\frac{13}{160}&space;\\&space;\\" title="\\E(T0\_Son\_t1)=\frac{20}{40}*\frac{40}{40}=\frac{20}{40}\\ \\E(T0\_Fa\_t1)={\color{Red} \frac{1}{10}*\frac{10}{40}[t4]}+{\color{Teal} \frac{2}{9}*\frac{9}{40}[t5]}+{\color{Blue} \frac{2}{12}*\frac{12}{40}[t6]}\\ \\\cdots \cdots \cdots \cdots \cdots +{\color{Magenta} \frac{0}{6}*\frac{6}{40}[t8]}+{\color{Orange} \frac{2}{3}*\frac{3}{40}[t9]}=\frac{7}{40}\\ \\g(t1)=\frac{\frac{20}{40}-\frac{7}{40}}{5-1}=\frac{13}{160} \\ \\" /></a>
   
   <a href="http://www.codecogs.com/eqnedit.php?latex=\dpi{100}&space;\\E(T0\_Son\_t2)=\frac{8}{19}*\frac{19}{40}=\frac{8}{40}\\&space;\\E(T0\_Fa\_t2)={\color{Red}&space;\frac{1}{10}*\frac{10}{40}[t4]}&plus;{\color{Teal}&space;\frac{2}{9}*\frac{9}{40}[t5]}=\frac{3}{40}\\&space;\\g(t2)=\frac{\frac{8}{40}-\frac{3}{40}}{2-1}=\frac{1}{8}\\" target="_blank"><img src="http://latex.codecogs.com/gif.latex?\dpi{100}&space;\\E(T0\_Son\_t2)=\frac{8}{19}*\frac{19}{40}=\frac{8}{40}\\&space;\\E(T0\_Fa\_t2)={\color{Red}&space;\frac{1}{10}*\frac{10}{40}[t4]}&plus;{\color{Teal}&space;\frac{2}{9}*\frac{9}{40}[t5]}=\frac{3}{40}\\&space;\\g(t2)=\frac{\frac{8}{40}-\frac{3}{40}}{2-1}=\frac{1}{8}\\" title="\\E(T0\_Son\_t2)=\frac{8}{19}*\frac{19}{40}=\frac{8}{40}\\ \\E(T0\_Fa\_t2)={\color{Red} \frac{1}{10}*\frac{10}{40}[t4]}+{\color{Teal} \frac{2}{9}*\frac{9}{40}[t5]}=\frac{3}{40}\\ \\g(t2)=\frac{\frac{8}{40}-\frac{3}{40}}{2-1}=\frac{1}{8}\\" /></a>
@@ -215,22 +217,8 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
   
   g(t7)最小，节点t7应该被剪枝，a(1)=1/40，树T(1)变为下面这样：
   
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/t1.png)
   
   回归和分类类似，将误分率变为误差平方和即可。
       
-    
-
-        
-              
-              
-          
-
-      
  
-     
-     
-     
-     
-                  
-
-
