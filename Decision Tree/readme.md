@@ -217,7 +217,7 @@ CART的目的是生成一个类似下面这样的树：分类树或者回归树�
   
   g(t7)最小，节点t7应该被剪枝，a(1)=1/40，树T(1)变为下面这样：
   
-  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/t1tree.png)
+  ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/tree_t1.png)
   
   回归和分类类似，将误分率变为误差平方和即可。
       
