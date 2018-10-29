@@ -5,7 +5,7 @@
  
  + 数据文件
 
-     + 成年人收入数据集：[数据集说明参见BP神经网络分类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Logistic%20Regression)
+     + 成年人收入数据集：[数据集参见BP神经网络分类](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)
    
  
 + 基于不同库的代码文件
