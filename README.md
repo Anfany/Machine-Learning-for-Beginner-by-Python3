@@ -52,7 +52,7 @@
         
         + **[SVM (支持向量机)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/readme.md)**        
         
-        + **Desicion Tree (决策树CART)**
+        + **[Desicion Tree (决策树CART)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/readme.md)**
  
 
 
