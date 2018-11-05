@@ -22,8 +22,12 @@
       
  + 绘制树的程序
  
-      - 绘制树(树的初始深度设置为4)：[AnFany_Show_Tree.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_Show_Tree.py)
- 
+      - 绘制树程序：[AnFany_Show_Tree.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_Show_Tree.py)
+   
+      - 成人收入数据集(初始深度设为4)的树的示例：
+      
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/4_tree.png)
+      
  
  + 成人收入数据集结果对比
   
@@ -37,7 +41,7 @@
        
  +  示例(以鸢尾花数据集为例) 
  
-     - **[数据集说明参见Softmax回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Softmax)**
+     - **[数据集说明参见Softmax回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Softmax%20Regression)**
  
     - **AnFany**
     
