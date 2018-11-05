@@ -13,7 +13,7 @@
      - **AnFany**：[AnFany_DT_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Classify.py)
      
  
-     - **Sklearn**：[Sklearn_DT_Classify.py]()
+     - **Sklearn**：[Sklearn_DT_Classify.py]
 
     
  + 辅助代码文件
@@ -24,7 +24,7 @@
  
       - 绘制树程序：[AnFany_Show_Tree.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_Show_Tree.py)
    
-      - 成人收入数据集(初始深度设为4)的树的示例：
+      - 成人收入数据集(初始深度设为5)的树的示例：
       
       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/4_tree.png)
       
