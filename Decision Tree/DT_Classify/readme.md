@@ -35,15 +35,19 @@
        
       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/sklearn_adult.png)
        
- +  示例(以鸢尾花数据集为例)     
+ +  示例(以鸢尾花数据集为例) 
+ 
+     - **数据集参加Softmax回归**
  
     - **AnFany**
     
-       - 数据处理
+       - 数据处理：[Irisdata_DT_AnFany.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/Irisdata_DT_AnFany.py)
        
-       - 主程序
+       - 主程序：[AnFany_DT_Iris.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Iris.py)
        
-       - 结果
+       - 结果：
+       
+       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/iris_anfany.png)
        
     - **Sklearn**
     
