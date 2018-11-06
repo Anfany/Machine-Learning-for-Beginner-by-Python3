@@ -49,7 +49,7 @@
        
        - 决策树程序：[AnFany_DT_Iris.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Iris.py)
        
-       - 绘制树程序：[AnFany_DT_Iris.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/iris_tree.py)       
+       - 绘制树程序：[iris_tree.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/iris_tree.py)       
        
        - 结果：
        
