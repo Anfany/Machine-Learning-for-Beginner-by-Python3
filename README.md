@@ -1,6 +1,6 @@
 # Machine-Learning-for-Beginner-by-Python3
 
-为机器学习的入门者**提供多种基于实例的sklearn、TensorFlow以及自编函数(AnFany)的ML算法程序**。
+为机器学习的入门者**提供多种基于实例的sklearn、TensorFlow以及自编函数(AnFany)的ML算法程序**。只要数据格式和例子的中的一样，程序可灵活调用。
 
 ![image](https://img.shields.io/badge/Language-Python3-red.svg)	![image](https://img.shields.io/badge/license-MIT-000000.svg)
 
