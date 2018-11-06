@@ -26,7 +26,7 @@
    
       - 成人收入数据集(初始深度设为5)的树的示例：
       
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/4_tree.png)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/adult_tree.png)
       
  
  + 成人收入数据集结果对比
