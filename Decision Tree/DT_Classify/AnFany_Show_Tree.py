@@ -178,7 +178,7 @@ def draw_tree(shujuji, result, guize, guanxi):
         # 绘制所有的节点要展示的内容
         # 内部节点
         if jj in noyye:
-            ax.text(weihzi[jj][0], weihzi[jj][1], strziu[0][jj], size=10, rotation=0.,
+            ax.text(weihzi[jj][0], weihzi[jj][1], strziu[0][jj], size=13, rotation=0.,
                     ha="center", va="center",
                     bbox=dict(boxstyle="round",
                               ec=(1., 0.5, 0.5),
@@ -187,7 +187,7 @@ def draw_tree(shujuji, result, guize, guanxi):
                     )
         # 叶子节点
         else:
-            ax.text(weihzi[jj][0], weihzi[jj][1], strziu[0][jj], size=10, rotation=0.,
+            ax.text(weihzi[jj][0], weihzi[jj][1], strziu[0][jj], size=13, rotation=0.,
                     ha="center", va="center",
                     bbox=dict(boxstyle="round",
                               ec=(1., 0.5, 0.5),
@@ -200,18 +200,18 @@ def draw_tree(shujuji, result, guize, guanxi):
             # 添加左右箭头
 
             ax.annotate(' ', xy=(weihzi[jj + 'r'][0], weihzi[jj + 'r'][1]), xytext=(weihzi[jj][0], weihzi[jj][1]), ha="center", va="center",
-                        arrowprops=dict(facecolor='red', shrink=0.15))
+                        arrowprops=dict(facecolor='red', shrink=0.128))
 
             ax.annotate(' ', xy=(weihzi[jj + 'l'][0], weihzi[jj + 'l'][1]), xytext=(weihzi[jj][0], weihzi[jj][1]),
-                        ha="center", va="center", arrowprops=dict(facecolor='red', shrink=0.15))
+                        ha="center", va="center", arrowprops=dict(facecolor='red', shrink=0.128))
 
 
             # 添加左右规则
             ax.text((weihzi[jj + 'l'][0] + weihzi[jj][0]) / 2, \
-                    (weihzi[jj + 'l'][1] + weihzi[jj][1]) / 2, strziu[1][jj + 'l'], fontsize=8)
+                    (weihzi[jj + 'l'][1] + weihzi[jj][1]) / 2 - 0.2, strziu[1][jj + 'l'], fontsize=12, color='darkred')
 
             ax.text((weihzi[jj + 'r'][0] + weihzi[jj][0]) / 2, \
-                    (weihzi[jj + 'r'][1] + weihzi[jj][1]) / 2, strziu[1][jj + 'r'], fontsize=8)
+                    (weihzi[jj + 'r'][1] + weihzi[jj][1]) / 2 - 0.2, strziu[1][jj + 'r'], fontsize=12, color='darkred')
 
     ax.set(xlim=(0, huab), ylim=(0, huab))
 
@@ -236,3 +236,4 @@ if __name__ == '__main__':
     # 规则
     rule = decision_tree.node_rule
     draw_tree(shuju, jieguo, rule, cc[0])
+
