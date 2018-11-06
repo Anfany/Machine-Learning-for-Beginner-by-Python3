@@ -66,7 +66,7 @@ def output(shujuji, guanxi):
 
 # 节点数据集、节点结果、节点规则绘制树
 # 制作节点里面的内容
-def dingyistr(shujuji, reeult, guize, guanxi, zian=ziduan):
+def dingyistr(shujuji, reeult, guize, guanxi, zian):
     # 规则字典
     guizezidian = {}
     #  类别字典
@@ -160,9 +160,9 @@ def jiedian_location(guanxi):
 '''第三部分：准备工作结束，开始绘图'''
 
 # 开始绘图
-def draw_tree(shujuji, result, guize, guanxi):
+def draw_tree(shujuji, result, guize, guanxi, zian=ziduan):
     # 字符串内容
-    strziu = dingyistr(shujuji, result, guize, guanxi)
+    strziu = dingyistr(shujuji, result, guize, guanxi, zian)
     # 节点的位置
     weihzi = jiedian_location(guanxi)
 
@@ -181,8 +181,8 @@ def draw_tree(shujuji, result, guize, guanxi):
             ax.text(weihzi[jj][0], weihzi[jj][1], strziu[0][jj], size=13, rotation=0.,
                     ha="center", va="center",
                     bbox=dict(boxstyle="round",
-                              ec=(1., 0.5, 0.5),
-                              fc=(0.2, 0.4, 0.6),
+                              ec=(0.6, 0.2, 0.6),
+                              fc=(0.3, 0.6, 0.3),
                               )
                     )
         # 叶子节点
@@ -190,8 +190,8 @@ def draw_tree(shujuji, result, guize, guanxi):
             ax.text(weihzi[jj][0], weihzi[jj][1], strziu[0][jj], size=13, rotation=0.,
                     ha="center", va="center",
                     bbox=dict(boxstyle="round",
-                              ec=(1., 0.5, 0.5),
-                              fc=(0.6, 0.4, 0.5),
+                              ec=(0.2, 0.5, 0.2),
+                              fc=(0.5, 0.2, 0.5),
                               )
                     )
 
@@ -200,18 +200,18 @@ def draw_tree(shujuji, result, guize, guanxi):
             # 添加左右箭头
 
             ax.annotate(' ', xy=(weihzi[jj + 'r'][0], weihzi[jj + 'r'][1]), xytext=(weihzi[jj][0], weihzi[jj][1]), ha="center", va="center",
-                        arrowprops=dict(facecolor='red', shrink=0.128))
+                        arrowprops=dict(facecolor='darkred', shrink=0.128))
 
             ax.annotate(' ', xy=(weihzi[jj + 'l'][0], weihzi[jj + 'l'][1]), xytext=(weihzi[jj][0], weihzi[jj][1]),
-                        ha="center", va="center", arrowprops=dict(facecolor='red', shrink=0.128))
+                        ha="center", va="center", arrowprops=dict(facecolor='darkred', shrink=0.128))
 
 
             # 添加左右规则
             ax.text((weihzi[jj + 'l'][0] + weihzi[jj][0]) / 2, \
-                    (weihzi[jj + 'l'][1] + weihzi[jj][1]) / 2 - 0.2, strziu[1][jj + 'l'], fontsize=12, color='darkred')
+                    (weihzi[jj + 'l'][1] + weihzi[jj][1]) / 2 - 0.2, strziu[1][jj + 'l'], fontsize=12, color='red', weight='bold')
 
             ax.text((weihzi[jj + 'r'][0] + weihzi[jj][0]) / 2, \
-                    (weihzi[jj + 'r'][1] + weihzi[jj][1]) / 2 - 0.2, strziu[1][jj + 'r'], fontsize=12, color='darkred')
+                    (weihzi[jj + 'r'][1] + weihzi[jj][1]) / 2 - 0.2, strziu[1][jj + 'r'], fontsize=12, color='red', weight='bold')
 
     ax.set(xlim=(0, huab), ylim=(0, huab))
 
@@ -236,4 +236,5 @@ if __name__ == '__main__':
     # 规则
     rule = decision_tree.node_rule
     draw_tree(shuju, jieguo, rule, cc[0])
+
 
