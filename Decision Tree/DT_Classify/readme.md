@@ -13,7 +13,7 @@
      - **AnFany**：[AnFany_DT_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Classify.py)
      
  
-     - **Sklearn**：[Sklearn_DT_Classify.py]
+     - **Sklearn**：[Sklearn_DT_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/Sklearn_DT_Classify.py)
 
     
  + 辅助代码文件
@@ -37,7 +37,7 @@
        
       - **Sklearn**
        
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/sklearn_adult.png)
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/adult_sklearn.png)
        
  +  示例(以鸢尾花数据集为例) 
  
@@ -56,30 +56,4 @@
        ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/iris_anfany.png)
        
        ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/iris_tree.png)
-       
-       
-    - **Sklearn**
-    
-       - 数据处理
-       
-       - 主程序
-       
-       - 结果
-             
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
        
