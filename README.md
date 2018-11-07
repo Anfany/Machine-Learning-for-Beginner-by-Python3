@@ -44,7 +44,7 @@
         
         + **[SVM (支持向量机)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/SVM/SVM_Regression)**
         
-        + **Desicion Tree (决策树CART)**
+        + **[Desicion Tree (决策树CART)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Decision%20Tree/DT_Regression)**
                
    + **成年人收入分类&Mnist手写数字识别&心脏病预测**
     
