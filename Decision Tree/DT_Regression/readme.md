@@ -12,7 +12,7 @@
  
 + 基于不同库的代码文件
  
-     - **AnFany**：[AnFany_DT_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Regression.py)
+     - **AnFany**：[AnFany_DT_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/AnFany_DT_Regression.py)
      
  
      - **Sklearn**：[Sklearn_DT_Classify.py]
