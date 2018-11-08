@@ -22,6 +22,9 @@
 
       - 数据读取与预处理程序：[Data_DT_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/Data_DT_Regression.py)
       
+      
+      - 绘制树的程序：[AnFany_pm2.5_Tree.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/AnFany_pm2.5_Tree.py)
+      
  + 北京市Pm2.5数据集结果对比
   
       - **AnFany**
