@@ -15,7 +15,7 @@
      - **AnFany**：[AnFany_DT_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/AnFany_DT_Regression.py)
      
  
-     - **Sklearn**：[Sklearn_DT_Classify.py]
+     - **Sklearn**：[Sklearn_DT_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/Sklearn_DT_Regression.py)
 
     
  + 辅助代码文件
@@ -30,7 +30,10 @@
        
       - **Sklearn**
        
-      ![image]()
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/sk_pm2.5.png)
+      
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/sk_cure.png)
+      
        
  +  示例 
  
