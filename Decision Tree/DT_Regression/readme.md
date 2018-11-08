@@ -41,20 +41,21 @@
        
       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/adult_sklearn.png)
        
- +  示例(以鸢尾花数据集为例) 
+ +  示例 
  
-     - **[数据集说明参见Softmax回归](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Softmax%20Regression)**
+     - **y=sin(x1) + cos(x2)**
  
     - **AnFany**
     
-       - 数据处理：[Irisdata_DT_AnFany.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/Irisdata_DT_Anfany.py)
-       
-       - 决策树程序：[AnFany_DT_Iris.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Iris.py)
-       
-       - 绘制树程序：[Iris_tree.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/Iris_tree.py)       
+       - 决策树程序：[AnFany_Example_DT.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/AnFany_Example_DT.py)
+    
        
        - 结果：
        
-       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/iris_anfany.png)
+         + **不同初始深度**
+         
+          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/shili_mse.png)
        
-       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/iris_tree.png)
+         + **拟合对比**
+         
+          ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/cure_shili.png)
