@@ -15,31 +15,22 @@
      - **AnFany**：[AnFany_DT_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Classify.py)
      
  
-     - **Sklearn**：[Sklearn_DT_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/Sklearn_DT_Classify.py)
+     - **Sklearn**：[Sklearn_DT_Classify.py]
 
     
  + 辅助代码文件
 
-      - 数据读取与预处理程序：[DT_Classify_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/DT_Classify_Data.py)
+      - 数据读取与预处理程序：[DT_Classify_Data.py]
       
- + 绘制树的程序
- 
-      - 绘制树程序：[AnFany_Show_Tree.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_Show_Tree.py)
-   
-      - 成人收入数据集(初始深度设为5)的树的示例：
-      
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/adult_tree.png)
-      
- 
- + 成人收入数据集结果对比
+ + 北京市Pm2.5数据集结果对比
   
       - **AnFany**
        
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/adult_anfany.png)
+      ![image](
        
       - **Sklearn**
        
-      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/adult_sklearn.png)
+      ![image]()
        
  +  示例 
  
@@ -47,7 +38,7 @@
  
     - **AnFany**
     
-       - 决策树程序：[AnFany_Example_DT.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/AnFany_Example_DT.py)
+       - 决策树程序：[AnFany_example_DT.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/AnFany_example_DT.py)
     
        
        - 结果：
