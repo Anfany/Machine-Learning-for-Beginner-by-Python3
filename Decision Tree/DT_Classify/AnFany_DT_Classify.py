@@ -188,10 +188,9 @@ class DT:
 
             self.fenlei_shujuji = copy.deepcopy(copy_dict)
 
-            print(len(self.fenlei_shujuji))
-            print(len(self.node_shujuji))
-        print(self.node_rule)
-        print(self.noderela)
+            print('所有节点的个数：', len(self.fenlei_shujuji))
+            print('需要分裂的数据集的个数：', len(self.node_shujuji))
+ 
         return 'done'
 
     # 根据树得出每一个节点数据集的结果
