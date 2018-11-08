@@ -12,7 +12,7 @@
  
 + 基于不同库的代码文件
  
-     - **AnFany**：[AnFany_DT_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Classify.py)
+     - **AnFany**：[AnFany_DT_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/AnFany_DT_Regression.py)
      
  
      - **Sklearn**：[Sklearn_DT_Classify.py]
@@ -20,13 +20,13 @@
     
  + 辅助代码文件
 
-      - 数据读取与预处理程序：[DT_Classify_Data.py]
+      - 数据读取与预处理程序：[Data_DT_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/Data_DT_Regression.py)
       
  + 北京市Pm2.5数据集结果对比
   
       - **AnFany**
        
-      ![image](
+      ![image]()
        
       - **Sklearn**
        
