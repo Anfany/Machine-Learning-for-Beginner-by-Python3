@@ -30,6 +30,9 @@
       - **AnFany**
        
       ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/adult_23.png)
+      
+      ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Regression/cure_23.png)
+      
        
       - **Sklearn**
        
