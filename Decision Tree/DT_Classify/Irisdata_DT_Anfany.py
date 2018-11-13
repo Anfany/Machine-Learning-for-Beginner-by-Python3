@@ -18,7 +18,7 @@ def fenge(data, per=[0.2, 0.1]):
     shu = int(lent * per[0])
     yu = int(lent * per[1])
 
-    yanzheng = np.random.choice(alist, shu)
+    yanzheng = np.random.choice(alist, shu, replace=False)
 
     # 预测
     shengxai = np.array([i for i in alist if i not in yanzheng])
