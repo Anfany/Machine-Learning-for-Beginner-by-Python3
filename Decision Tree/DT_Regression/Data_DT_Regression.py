@@ -67,12 +67,12 @@ def fenge(exdata, per=[0.15, 0.15]):
     shu = int(lent * per[0])
     yu = int(lent * per[1])
 
-    yanzheng = np.random.choice(alist, shu)
+    yanzheng = np.random.choice(alist, shu, replace=False)
 
     # 预测
     shengxai = np.array([i for i in alist if i not in yanzheng])
 
-    yuce = np.random.choice(shengxai, yu)
+    yuce = np.random.choice(shengxai, yu, replace=False)
 
     # 训练
     train = np.array([j for j in alist if j not in yanzheng and j not in yuce])
