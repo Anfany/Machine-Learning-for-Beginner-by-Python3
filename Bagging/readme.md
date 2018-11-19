@@ -26,7 +26,7 @@
 
 + **代表方法** 
 
-    + **随机森林(Random Forest) = **Bagging + 决策树**
+    + **随机森林(Random Forest) = Bagging + 决策树**
 
 
 
