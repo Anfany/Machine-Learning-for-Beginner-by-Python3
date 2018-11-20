@@ -56,22 +56,20 @@
  
 
 
-### 中级篇(集成学习)
+### 中级篇(集成方法)
 
+* **[Bagging](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Bagging)**  
 
-* **Boosting**  
+     + **随机森林**
+     
+* **[Boosting](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting)**  
    
      + **AdaBoost**
    
      + **GBDT**
      
-     + **XGBOOST**
-     
-     
-* **Bagging**  
+     + **XGBoost**
 
-     + **随机森林**
-     
 * **Stacking**
 
      + **模型堆叠**
