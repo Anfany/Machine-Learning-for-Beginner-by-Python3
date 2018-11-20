@@ -16,7 +16,7 @@ data = pd.read_csv(r'C:\Users\GWT9\Desktop\PRSA_data_2010.1.1-2014.12.31.csv')
 '''第一部分：缺失值的处理'''
 #  因为Pm2.5是目标数据，对于缺失值直接删除这一条记录
 
-# 定义删除目标值为空值的行的函数, 其他列为控制则自动填充的函数,并将目标变量放置在数据集最后一列
+# 定义删除目标值为空值的行的函数, 其他列为缺失值则自动填充的函数,并将目标变量放置在数据集最后一列
 def DeleteTargetNan(exdata, targetstr):
     #  首先判断目标字段是否有缺失值
     if exdata[targetstr].isnull().any():
