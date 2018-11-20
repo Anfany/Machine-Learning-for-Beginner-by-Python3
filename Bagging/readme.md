@@ -27,7 +27,7 @@ Bagging就是通过Ｍ个弱模型的结果，通过**并行集成**的方式来
 
 + **代表方法** 
 
-    + **随机森林(Random Forest)**
+    + **[随机森林(Random Forest)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Bagging/Random_Forest)**
 
 
 
