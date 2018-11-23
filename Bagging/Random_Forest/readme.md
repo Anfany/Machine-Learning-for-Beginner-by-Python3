@@ -24,11 +24,11 @@
      
      + 结果图示
      
-         + 方法选择
+         * 方法选择
        
            ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/method.jpg) 
   
-        + 预测真实值与输出值对比曲线 
+        * 预测真实值与输出值对比曲线 
      
            ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/duibi.jpg)
          
