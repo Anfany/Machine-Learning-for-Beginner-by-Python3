@@ -18,11 +18,20 @@
 
   + **回归问题：北京市pm2.5预测**
   
-     + [数据处理]：
+     + 数据处理：[pm25_RF_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/master/Bagging/Random_Forest/pm25_RF_Data.py)
      
-     + [模型建立]:
+     + 模型建立：[pm25_RF_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/master/Bagging/Random_Forest/pm25_RF_Regression.py)
      
-     + [结果图示]
+     + 结果图示
+     
+         + 方法选择
+         
+         ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/master/Bagging/Random_Forest/method.jpg)
+         
+        + 预测真实值与输出值对比曲线
+         
+         ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/master/Bagging/Random_Forest/duibi.jpg)
+         
   
   
   + **分类问题：成年人收入**
