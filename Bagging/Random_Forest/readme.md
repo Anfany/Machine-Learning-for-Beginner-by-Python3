@@ -38,7 +38,7 @@
     
      + 数据处理：[adult_RF_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/adult_RF_Data.py)
      
-     + 模型建立：[adult_RF_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/adult_RF-Classify.py)
+     + 模型建立：[adult_RF_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/adult_RF_Classify.py)
      
      + 结果图示
      
