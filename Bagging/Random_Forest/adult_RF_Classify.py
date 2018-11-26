@@ -23,10 +23,10 @@ import matplotlib.pyplot as plt
 # 对于回归而言，主要的参数就是随机森林中树的个数和特征的个数,其他参数均使用默认值
 
 # 树的个数
-trees = [500, 1000, 2000, 4000, 8000]
+trees = [100, 500, 1000, 2000]
 
 # 随机选择的特征个数
-tezheng = ['sqrt', 'auto']  #  分类问题一般选用平方根个数的特征
+tezheng = ['sqrt']  #  分类问题一般选用平方根个数的特征
 
 # 混淆矩阵的函数
 def Tom(reallist, prelist):
@@ -84,7 +84,7 @@ def fmse(realist, prelist):  # 对于多类别每个类都要计算召回率
     zhaohui = np.mean(np.array(zhao_cu))
     # f1度量
     f_degree = 2 * jingque * zhaohui / (jingque + zhaohui)
-    return f_degree
+    return f_degree, jingque, zhaohui
 
 
 # 训练函数
@@ -94,12 +94,12 @@ def Train(data, treecount, tezh, yanzhgdata):
     # 给出训练数据的预测值
     train_out = model.predict(data[:, :-1])
     # 计算MSE
-    train_mse = fmse(data[:, -1], train_out)
+    train_mse = fmse(data[:, -1], train_out)[0]
 
     # 给出验证数据的预测值
     add_yan = model.predict(yanzhgdata[:, :-1])
-    # 计算MSE
-    add_mse = fmse(yanzhgdata[:, -1], add_yan)
+    # 计算f1度量
+    add_mse = fmse(yanzhgdata[:, -1], add_yan)[0]
     print(train_mse, add_mse)
     return train_mse, add_mse
 
@@ -135,7 +135,7 @@ def duibi(exdict, you):
                  label='%s%d折F1均值:%.3f' % (ii, len(exdict[ii]), np.mean(np.array(exdict[ii]))), lw=2)
     plt.legend()
     plt.title('不同参数的组合F1对比曲线[最优：%s]' % you)
-    plt.savefig(r'C:\Users\GWT9\Desktop\method.jpg')
+    plt.savefig(r'C:\Users\GWT9\Desktop\method_adult.jpg')
     return '不同方法对比完毕'
 
 # 根据获得最有参数组合绘制真实和预测值的对比曲线
@@ -151,15 +151,16 @@ def recspre(exstr, predata, datadict, zhe):
 
     print(ConfuseMatrix(predata[:, -1], yucede))
 
-    print(fmse(predata[:, -1], yucede))
-
-    return '计算完毕'
+    return fmse(predata[:, -1], yucede)
 
 # 主函数
 
 if __name__ == "__main__":
     zijian, zhehsu, xulie = Zuhe(data.dt_data)
-
+    # 绘制方法组合的对比曲线
     duibi(xulie, zijian)
-    recspre(zijian, data.predict_data, data.dt_data, zhehsu)
+    # 计算预测数据的f1度量，精确率以及召回率
+    f1, jing, zhao = recspre(zijian, data.predict_data, data.dt_data, zhehsu)
+    print('F1度量：{}, 精确率：{}, 召回率：{}'.format(f1, jing, zhao))
+
 
