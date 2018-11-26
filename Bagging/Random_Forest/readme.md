@@ -36,8 +36,32 @@
   
   + **分类问题：成年人收入**
     
-     + 数据处理：
+     + 数据处理：[adult_RF_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/adult_RF_Data.py)
      
-     + 模型建立
+     + 模型建立：[adult_RF-Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/adult_RF-Classify.py)
      
      + 结果图示
+     
+         * 方法选择
+       
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/method_adult.jpg) 
+  
+        * 预测数据集的混淆矩阵以及F1度量
+        
+           * 混淆矩阵
+           
+           +-----------+-----------+----------+
+           |  混淆矩阵 | 预测<=50K | 预测>50K |
+           +-----------+-----------+----------+
+           | 实际<=50K |   11580   |   855    |
+           |  实际>50K |    1486   |   2360   |
+           +-----------+-----------+----------+
+           
+           * F1度量
+           
+           F1 = 0.812168286902
+           
+           
+     
+         
+     
