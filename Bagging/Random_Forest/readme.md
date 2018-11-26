@@ -44,7 +44,7 @@
      
          * 方法选择
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/method_adult.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/method_adult1.jpg) 
   
         * 预测数据集的混淆矩阵以及F1度量
         
@@ -52,13 +52,13 @@
    
            |  混淆矩阵 | 预测<=50K | 预测>50K |
            |:-------|:-------|:-------|
-           | 实际<=50K |   11561  |   874    |
-           |  实际>50K |    1484  |   2362   |
+           | 实际<=50K |   11565  |   870    |
+           |  实际>50K |    1482  |   2364   |
 
            
-           * F1度量
+           * F1度量、精确率、召回率
            
-           F1 = 0.811419899762
+           F1度量：0.8118182938497857, 精确率：0.85553712916897, 召回率：0.7723503873809958
            
            
      
