@@ -46,7 +46,7 @@
        
            ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/method_adult1.jpg) 
   
-        * 预测数据集的混淆矩阵以及F1度量
+        * 预测数据集结果
         
            * 混淆矩阵
    
