@@ -67,7 +67,7 @@
    
        <a href="https://www.codecogs.com/eqnedit.php?latex=D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" title="D = \{D1, D2, \cdots , Dm\}" /></a>,n为数据集样本个数，m为要建立的弱模型的个数
    
-    * **针对数据集构建弱模型M1，得到这个弱模型的错分率为**
+    * **针对数据集构建弱模型M1，得到这个弱模型的错误率为**
     
         假设弱模型M1的训练数据集的预测类别序列为P1，预测数据集的预测类别序列为Pre_1。
    
@@ -86,7 +86,8 @@
          <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;erri=1-e^{\frac{P1i-Y0i}{maxerr}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;erri=1-e^{\frac{P1i-Y0i}{maxerr}}" title="\large erri=1-e^{\frac{P1i-Y0i}{maxerr}}" /></a>
          
         错误率的计算公式为：
-      <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;err=\sum_{i=1}^{N}S0i*erri" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;err=\sum_{i=1}^{N}S0i*erri" title="\large err=\sum_{i=1}^{N}S0i*erri" /></a>
+        
+      <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;err=\sum_{i=1}^{N}S1i*erri" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;err=\sum_{i=1}^{N}S1i*erri" title="\large err=\sum_{i=1}^{N}S1i*erri" /></a>
    
      * **计算弱模型M1的权重**
    
