@@ -43,11 +43,11 @@
        
     * **迭代**
     
-    当达到设定的迭代次数时停止，或者错分率小于某个小的正数时停止迭代。此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，以及模型的权重集合D。
+     当达到设定的迭代次数时停止，或者错分率小于某个小的正数时停止迭代。此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，以及模型的权重集合D。
     
     * **结果集成**
     
-    针对第i个预测样本的集成结果为JI_i,
+     针对第i个预测样本的集成结果为JI_i,
     
     <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" /></a>，**sign**为符号函数。
     
@@ -58,11 +58,11 @@
   
    
 * **AdaBoost答疑**   
-   1. 这个弱模型可以是什么？
+   1. **这个弱模型可以是什么？**
    
-   答：经常用的就是单层的决策树，也称为决策树桩(Decision Stump)，例如单层的CART。其实这个层数也是参数，需要交叉验证得到最好的。当然这个弱模型也可以是SVM、逻辑回归、神经网络等。
+        答：经常用的就是单层的决策树，也称为决策树桩(Decision Stump)，例如单层的CART。其实这个层数也是参数，需要交叉验证得到最好的。当然这个弱模型也可以是SVM、逻辑回归、神经网络等。
    
-   2. 增加的样本权重如何在下一个模型训练时体现出作用？
+   2. **增加的样本权重如何在下一个模型训练时体现出作用？**
    
-   答：通过重复样本的方式，就是增加上一个模型被错分的样本的个数。
+       答：通过重复样本的方式，就是增加上一个模型被错分的样本的个数。
   
