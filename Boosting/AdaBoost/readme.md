@@ -91,7 +91,7 @@
    
      * **计算弱模型M1的权重**
    
-        <a href="https://www.codecogs.com/eqnedit.php?latex=D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" title="D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" /></a>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;D1=\frac{err}{1-err}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;D1=\frac{err}{1-err}" title="\large D1=\frac{err}{1-err}" /></a>
    
     * **更改样本的权重**
    
