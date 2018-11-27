@@ -16,19 +16,29 @@
    
    <a href="https://www.codecogs.com/eqnedit.php?latex=Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" title="Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" /></a>
    
-   2. 初始的样本权重集合S0，弱模型的权重集合为D
+   假设Yi=1 or -1，这种定义便于后面的结果集成。
+   
+   2. 初始的样本权重集合**S0**，弱模型的权重集合为**D**
    
    <a href="https://www.codecogs.com/eqnedit.php?latex=S0=\{S0i=\frac{1}{n},i=1,2,\cdots&space;n\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S0=\{S0i=\frac{1}{n},i=1,2,\cdots&space;n\}" title="S0=\{S0i=\frac{1}{n},i=1,2,\cdots n\}" /></a>
+   
+   <a href="https://www.codecogs.com/eqnedit.php?latex=D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" title="D = \{D1, D2, \cdots , Dm\}" /></a>
+   
+   n为数据集样本个数，m为要建立的弱模型的个数
    
    3. 针对数据集构建弱模型M1，得到这个弱模型的错误率为：
    
    <a href="https://www.codecogs.com/eqnedit.php?latex=e&space;=&space;\frac{C_{error}}{C_{Data}}&space;=&space;\frac{C_{error}}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e&space;=&space;\frac{C_{error}}{C_{Data}}&space;=&space;\frac{C_{error}}{n}" title="e = \frac{C_{error}}{C_{Data}} = \frac{C_{error}}{n}" /></a>
    
-   其中C_error为被错分的样本个数，C_Data为全部的样本个数，也就是n。
+   其中Cerror为被错分的样本个数，CData为全部的样本个数，也就是n。
    
-   4， 计算该模型的权重
+   4，计算该模型的权重
    
    <a href="https://www.codecogs.com/eqnedit.php?latex=D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" title="D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" /></a>
+   
+   5，更改被错分的样本的权重
+   
+   
    
    
    
