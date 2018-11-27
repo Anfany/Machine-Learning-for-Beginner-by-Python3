@@ -106,7 +106,7 @@
     
      针对第i个预测样本的集成结果为JI_i,
     
-    <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" /></a>，**sign**为符号函数。 
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" title="\large JI\_i = \sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" /></a>，**注：**模型权重有个转换。
   
    
 * **AdaBoost答疑**   
