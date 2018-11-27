@@ -53,7 +53,8 @@
     <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" /></a>，**sign**为符号函数。
     
   
-  * **回归问题**  
+  * **回归问题(以Adaboost R2算法说明)**  
+  
   
   
   
