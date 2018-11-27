@@ -53,7 +53,7 @@
     <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" /></a>，**sign**为符号函数。
     
   
-  回归问题和分类问题的最大不同在于错分率的计算，下面给出回归问题的步骤，因为回归算法有很多的变种，这里以**Adaboost R2算法**为例说明：
+  回归问题和分类问题的最大不同在于，回归问题错误率的计算不同于分类问题的错分率，下面给出回归问题的步骤，因为回归算法有很多的变种，这里以**Adaboost R2算法**为例说明：
   
   * **回归问题**  
   
