@@ -17,9 +17,9 @@
       <a href="https://www.codecogs.com/eqnedit.php?latex=Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" title="Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" /></a>，令Yi=1 or -1，这种定义便于后面的结果集成。集合Y0表示数据集样本的真实类别序列。
       
    
-    * **初始的样本权重集合S0，弱模型的权重集合为D**
+    * **初始的样本权重集合S1，弱模型的权重集合为D**
    
-       <a href="https://www.codecogs.com/eqnedit.php?latex=S0=\{S0i=\frac{1}{n},i=1,2,\cdots&space;n\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S0=\{S0i=\frac{1}{n},i=1,2,\cdots&space;n\}" title="S0=\{S0i=\frac{1}{n},i=1,2,\cdots n\}" /></a>
+       <a href="https://www.codecogs.com/eqnedit.php?latex=S1=\{S1i=\frac{1}{n},i=1,2,\cdots&space;n\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S1=\{S1i=\frac{1}{n},i=1,2,\cdots&space;n\}" title="S1=\{S1i=\frac{1}{n},i=1,2,\cdots n\}" /></a>
    
        <a href="https://www.codecogs.com/eqnedit.php?latex=D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" title="D = \{D1, D2, \cdots , Dm\}" /></a>
        
