@@ -13,6 +13,10 @@
    3. **预测新数据**
    
      得到每一个决策树对于这个新数据的预测值。回归问题：采用多棵树的平均值。分类问题：采用投票计数的方法，票数大的获胜，相同的随机选择。可以把树的棵树设置为奇数避免这一问题。
+     
++ **随机森林图示**
+
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/rf.jpg) 
 
 + **随机森林文件说明**
 
