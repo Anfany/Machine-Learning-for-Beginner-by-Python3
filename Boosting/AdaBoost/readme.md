@@ -33,7 +33,7 @@
          
        ，其中Cerror表示被弱模型M1错分的样本个数，CData为全部的样本个数，也就是n。
    
-     * **计算该模型的权重**
+     * **计算弱模型M1的权重**
    
         <a href="https://www.codecogs.com/eqnedit.php?latex=D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" title="D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" /></a>
    
