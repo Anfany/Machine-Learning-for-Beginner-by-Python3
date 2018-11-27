@@ -83,7 +83,7 @@
           
          * **误差损失为指数**
          
-         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;erri=1-e^{\frac{P1i-Y0i}{maxerr}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;erri=1-e^{\frac{P1i-Y0i}{maxerr}}" title="\large erri=1-e^{\frac{P1i-Y0i}{maxerr}}" /></a>
+         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" title="\large erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" /></a>
          
         错误率的计算公式为：
         
