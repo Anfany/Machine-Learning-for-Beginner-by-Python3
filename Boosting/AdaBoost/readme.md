@@ -37,11 +37,11 @@
    
         <a href="https://www.codecogs.com/eqnedit.php?latex=D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" title="D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" /></a>
    
-    * **更改被错分的样本的权重**
+    * **更改样本的权重**
    
        <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S2)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S2)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S2)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S2)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." title="\large S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix} \frac{S1i*e^{-D1}}{\mathbf{sum}(S2)}, P1i=Y0i\\ \\ \frac{S1i*e^{D1}}{\mathbf{sum}(S2)}, P1i\neq Y0i\\ \end{matrix}\right." /></a>。因为D1为非负数，因此预测正确的样本的权重会比上一次的降低，预测错误的会比上一次的增大。
        
-    * **依此迭代**
+    * **迭代**
     
     当达到设定的迭代次数时停止，或者错分率小于某个小的正数时停止迭代。此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，以及模型的权重集合D。
     
