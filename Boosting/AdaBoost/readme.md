@@ -21,17 +21,13 @@
    
        <a href="https://www.codecogs.com/eqnedit.php?latex=S1=\{S1i=\frac{1}{n},i=1,2,\cdots&space;n\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S1=\{S1i=\frac{1}{n},i=1,2,\cdots&space;n\}" title="S1=\{S1i=\frac{1}{n},i=1,2,\cdots n\}" /></a>
    
-       <a href="https://www.codecogs.com/eqnedit.php?latex=D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" title="D = \{D1, D2, \cdots , Dm\}" /></a>
-       
-      n为数据集样本个数，m为要建立的弱模型的个数
+       <a href="https://www.codecogs.com/eqnedit.php?latex=D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" title="D = \{D1, D2, \cdots , Dm\}" /></a>,n为数据集样本个数，m为要建立的弱模型的个数
    
     * **针对数据集构建弱模型M1，得到这个弱模型的错误率为**
     
         假设弱模型M1的训练数据集的预测类别序列为P1,
    
-         <a href="https://www.codecogs.com/eqnedit.php?latex=err=\frac{C_{error}}{C_{Data}}=\frac{\left&space;\|&space;P1_{i}&space;\neq&space;Y0_{i},i=1,2\cdots&space;,n&space;\right&space;\|}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?err=\frac{C_{error}}{C_{Data}}=\frac{\left&space;\|&space;P1_{i}&space;\neq&space;Y0_{i},i=1,2\cdots&space;,n&space;\right&space;\|}{n}" title="err=\frac{C_{error}}{C_{Data}}=\frac{\left \| P1_{i} \neq Y0_{i},i=1,2\cdots ,n \right \|}{n}" /></a>
-         
-       ，其中Cerror表示被弱模型M1错分的样本个数，CData为全部的样本个数，也就是n。
+         <a href="https://www.codecogs.com/eqnedit.php?latex=err=\frac{C_{error}}{C_{Data}}=\frac{\left&space;\|&space;P1_{i}&space;\neq&space;Y0_{i},i=1,2\cdots&space;,n&space;\right&space;\|}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?err=\frac{C_{error}}{C_{Data}}=\frac{\left&space;\|&space;P1_{i}&space;\neq&space;Y0_{i},i=1,2\cdots&space;,n&space;\right&space;\|}{n}" title="err=\frac{C_{error}}{C_{Data}}=\frac{\left \| P1_{i} \neq Y0_{i},i=1,2\cdots ,n \right \|}{n}" /></a>，其中Cerror表示被弱模型M1错分的样本个数，CData为全部的样本个数，也就是n。
    
      * **计算弱模型M1的权重**
    
@@ -39,9 +35,17 @@
    
     * **更改被错分的样本的权重**
    
-       <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S2)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S2)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S2)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S2)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." title="\large S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix} \frac{S1i*e^{-D1}}{\mathbf{sum}(S2)}, P1i=Y0i\\ \\ \frac{S1i*e^{D1}}{\mathbf{sum}(S2)}, P1i\neq Y0i\\ \end{matrix}\right." /></a>
-   
-   因为D1为非负数，因此预测正确的样本的权重会比上一次的降低，预测错误的会比上一次的增大,
+       <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S2)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S2)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S2)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S2)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." title="\large S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix} \frac{S1i*e^{-D1}}{\mathbf{sum}(S2)}, P1i=Y0i\\ \\ \frac{S1i*e^{D1}}{\mathbf{sum}(S2)}, P1i\neq Y0i\\ \end{matrix}\right." /></a>。因为D1为非负数，因此预测正确的样本的权重会比上一次的降低，预测错误的会比上一次的增大。
+       
+    * **依此迭代**
+    
+    当达到设定的迭代次数时停止，或者错分率小于某个小的正数时停止迭代。此时得到m个弱模型，以及对应的预测结果序列P1，P2， ……Pm，以及模型的权重集合D。
+    
+    * **结果集成**
+    
+    
+    
+    
    
    
    
