@@ -27,7 +27,7 @@
    
        <a href="https://www.codecogs.com/eqnedit.php?latex=D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" title="D = \{D1, D2, \cdots , Dm\}" /></a>,n为数据集样本个数，m为要建立的弱模型的个数
    
-    * **针对数据集构建弱模型M1，得到这个弱模型的错误率为**
+    * **针对数据集构建弱模型M1，得到这个弱模型的错分率为**
     
         假设弱模型M1的训练数据集的预测类别序列为P1，预测数据集的预测类别序列为Pre_1。
    
