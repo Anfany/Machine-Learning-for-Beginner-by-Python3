@@ -14,7 +14,8 @@
   
     * **训练数据集**
     
-      <a href="https://www.codecogs.com/eqnedit.php?latex=Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" title="Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" /></a>，假设Yi=1 or -1，这种定义便于后面的结果集成。
+      <a href="https://www.codecogs.com/eqnedit.php?latex=Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" title="Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" /></a>，令Yi=1 or -1，这种定义便于后面的结果集成。集合Y0表示数据集样本的真实类别序列。
+      
    
     * **初始的样本权重集合S0，弱模型的权重集合为D**
    
@@ -25,9 +26,12 @@
       n为数据集样本个数，m为要建立的弱模型的个数
    
     * **针对数据集构建弱模型M1，得到这个弱模型的错误率为**
+    
+        假设弱模型M1的训练数据集输出为P1,
    
-         <a href="https://www.codecogs.com/eqnedit.php?latex=e&space;=&space;\frac{C_{error}}{C_{Data}}&space;=&space;\frac{C_{error}}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e&space;=&space;\frac{C_{error}}{C_{Data}}&space;=&space;\frac{C_{error}}{n}" title="e = \frac{C_{error}}{C_{Data}} = \frac{C_{error}}{n}" /></a>
-       ，其中Cerror为被错分的样本个数，CData为全部的样本个数，也就是n。
+         <a href="https://www.codecogs.com/eqnedit.php?latex=e=\frac{C_{error}}{C_{Data}}=\frac{\left&space;\|&space;P1_{i}&space;\neq&space;Y0_{i},i=1,2\cdots&space;,n&space;\right&space;\|}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e=\frac{C_{error}}{C_{Data}}=\frac{\left&space;\|&space;P1_{i}&space;\neq&space;Y0_{i},i=1,2\cdots&space;,n&space;\right&space;\|}{n}" title="e=\frac{C_{error}}{C_{Data}}=\frac{\left \| P1_{i} \neq Y0_{i},i=1,2\cdots ,n \right \|}{n}" /></a>
+         
+       ，其中Cerror表示被弱模型M1错分的样本个数，CData为全部的样本个数，也就是n。
    
      * **计算该模型的权重**
    
