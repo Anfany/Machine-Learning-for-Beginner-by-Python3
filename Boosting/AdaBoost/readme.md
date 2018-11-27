@@ -40,7 +40,7 @@
     * **更改样本的权重**
    
        <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\\S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right.\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}&space;S1i*e^{-D1*Y0i*P1i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;\\S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right.\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}&space;S1i*e^{-D1*Y0i*P1i}" title="\large \\S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix} \frac{S1i*e^{-D1}}{\mathbf{sum}(S)}, P1i=Y0i\\ \\ \frac{S1i*e^{D1}}{\mathbf{sum}(S)}, P1i\neq Y0i\\ \end{matrix}\right.\\ \mathbf{sum}(S)=\sum_{i=1}^{n} S1i*e^{-D1*Y0i*P1i}" /></a>。
-    因为D1为非负数，因此预测正确的样本的权重会比上一次的降低，预测错误的会比上一次的增大。其中除以sum(S)，相当于将样本权重归一化。
+    因为D1为非负数，因此预测正确的样本的权重会比上一次的降低，预测错误的会比上一次的增大。其中除以**sum**(S)，相当于将样本权重归一化。
        
     * **迭代**
     
@@ -95,8 +95,8 @@
    
     * **更改样本的权重**
    
-       <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." title="\large S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix} \frac{S1i*e^{-D1}}{\mathbf{sum}(S)}, P1i=Y0i\\ \\ \frac{S1i*e^{D1}}{\mathbf{sum}(S)}, P1i\neq Y0i\\ \end{matrix}\right." /></a>。
-    因为D1为非负数，因此预测正确的样本的权重会比上一次的降低，预测错误的会比上一次的增大。其中**sum**表示计算元素的和，除以sum(S)，相当于将样本权重归一化。
+     <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;\\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" title="\large \\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\ \mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" /></a> 。
+    其中除以**sum**(S)，相当于将样本权重归一化。
        
     * **迭代**
     
