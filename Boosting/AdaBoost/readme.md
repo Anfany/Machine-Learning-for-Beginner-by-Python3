@@ -12,16 +12,27 @@
 
   * **分类问题**
   
-   1. 训练数据集Data={(X1, Y1), (X2, Y2),……(Xn, Yn)}，每个数据集样本的初始权重为1/n。
-   2. 
+   1. 训练数据集
    
+   <a href="https://www.codecogs.com/eqnedit.php?latex=Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" title="Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" /></a>
+   
+   2. 初始的样本权重
+   
+   <a href="https://www.codecogs.com/eqnedit.php?latex=S=\{Si=\frac{1}{n},i=1,2,\cdots&space;n\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S=\{Si=\frac{1}{n},i=1,2,\cdots&space;n\}" title="S=\{Si=\frac{1}{n},i=1,2,\cdots n\}" /></a>
+   
+   3. 构建弱模型M1，
+  
+  
+  
+  * **回归问题**  
+  
    
 * **AdaBoost答疑**   
    1. 这个弱模型可以是什么？
    
-   答：经常用的就是单层的决策树，也称为决策树桩(Decision Stump)，例如单层的CART。其实这个层数也是参数，需要交叉验证得到最好的。
+   答：经常用的就是单层的决策树，也称为决策树桩(Decision Stump)，例如单层的CART。其实这个层数也是参数，需要交叉验证得到最好的。当然这个弱模型也可以是SVM、逻辑回归等。
    
    2. 增加的样本权重如何在下一个模型训练时体现出作用？
    
-   答：一种方式是通过抽样，来增加这些样本被选中的可能性；二是
+   答：通过重复样本的方式，就是增加上一个模型被错分的样本的个数。
   
