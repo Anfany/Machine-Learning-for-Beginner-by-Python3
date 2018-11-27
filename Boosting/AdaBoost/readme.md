@@ -25,7 +25,7 @@
    
     * **针对数据集构建弱模型M1，得到这个弱模型的错误率为**
     
-        假设弱模型M1的训练数据集的预测类别序列为P1,预测数据集的预测类别序列为Pre_1.
+        假设弱模型M1的训练数据集的预测类别序列为P1，预测数据集的预测类别序列为Pre_1。
    
          <a href="https://www.codecogs.com/eqnedit.php?latex=err=\frac{C_{error}}{C_{Data}}=\frac{\left&space;\|&space;P1_{i}&space;\neq&space;Y0_{i},i=1,2\cdots&space;,n&space;\right&space;\|}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?err=\frac{C_{error}}{C_{Data}}=\frac{\left&space;\|&space;P1_{i}&space;\neq&space;Y0_{i},i=1,2\cdots&space;,n&space;\right&space;\|}{n}" title="err=\frac{C_{error}}{C_{Data}}=\frac{\left \| P1_{i} \neq Y0_{i},i=1,2\cdots ,n \right \|}{n}" /></a>，其中Cerror表示被弱模型M1错分的样本个数，CData为全部的样本个数，也就是n。
    
@@ -45,18 +45,12 @@
     
     针对第i个预测样本的集成结果为JI_i,
     
-    <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" /></a>，sign为符号函数。
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" /></a>，**sign**为符号函数。
     
-    
-    
-    
-   
-   
-   
-  
-  
   
   * **回归问题**  
+  
+  
   
    
 * **AdaBoost答疑**   
