@@ -8,9 +8,9 @@
 
 2. **弱模型的权重集合**：得到的每个弱模型都对应一个权重。这个权重依赖于每个弱模型的精度(分类：正确率，回归：MSE)。精度越高的模型，其权重也就越大，在最终集成结果时，其话语权也就越大。
 
-* **AdaBoost流程**
+* **AdaBoost流程图**
 
-![image]()
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/model.png)
 
 * **AdaBoost步骤**
 
