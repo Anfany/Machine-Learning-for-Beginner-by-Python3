@@ -12,11 +12,11 @@
 
   * **分类问题**
   
-   * **训练数据集**
+    * **训练数据集**
     
       <a href="https://www.codecogs.com/eqnedit.php?latex=Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" title="Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" /></a>，假设Yi=1 or -1，这种定义便于后面的结果集成。
    
-   * **初始的样本权重集合S0，弱模型的权重集合为D**
+    * **初始的样本权重集合S0，弱模型的权重集合为D**
    
        <a href="https://www.codecogs.com/eqnedit.php?latex=S0=\{S0i=\frac{1}{n},i=1,2,\cdots&space;n\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S0=\{S0i=\frac{1}{n},i=1,2,\cdots&space;n\}" title="S0=\{S0i=\frac{1}{n},i=1,2,\cdots n\}" /></a>
    
@@ -26,14 +26,14 @@
    
     * **针对数据集构建弱模型M1，得到这个弱模型的错误率为**
    
-            <a href="https://www.codecogs.com/eqnedit.php?latex=e&space;=&space;\frac{C_{error}}{C_{Data}}&space;=&space;\frac{C_{error}}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e&space;=&space;\frac{C_{error}}{C_{Data}}&space;=&space;\frac{C_{error}}{n}" title="e = \frac{C_{error}}{C_{Data}} = \frac{C_{error}}{n}" /></a>
+         <a href="https://www.codecogs.com/eqnedit.php?latex=e&space;=&space;\frac{C_{error}}{C_{Data}}&space;=&space;\frac{C_{error}}{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?e&space;=&space;\frac{C_{error}}{C_{Data}}&space;=&space;\frac{C_{error}}{n}" title="e = \frac{C_{error}}{C_{Data}} = \frac{C_{error}}{n}" /></a>
        ，其中Cerror为被错分的样本个数，CData为全部的样本个数，也就是n。
    
      * **计算该模型的权重**
    
         <a href="https://www.codecogs.com/eqnedit.php?latex=D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" title="D1=\frac{1}{2}\mathbf{ln}(\frac{e}{1-e})" /></a>
    
-   * **更改被错分的样本的权重**
+    * **更改被错分的样本的权重**
    
    
    
