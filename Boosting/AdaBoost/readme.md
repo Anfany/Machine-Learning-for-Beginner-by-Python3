@@ -53,10 +53,50 @@
     <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" /></a>，**sign**为符号函数。
     
   
-  * **回归问题(以Adaboost R2算法说明)**  
+  回归问题和分类问题的最大不同在于错分率的计算，下面给出回归问题的步骤，因为回归算法有很多的变种，这里以**Adaboost R2算法**为例说明：
   
+  * **回归问题**  
   
-  
+    * **训练数据集**
+    
+      <a href="https://www.codecogs.com/eqnedit.php?latex=Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" title="Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" /></a>，输出值的序列为Y0。
+      
+    * **初始的样本权重集合S1，弱模型的权重集合为D**
+   
+       <a href="https://www.codecogs.com/eqnedit.php?latex=S1=\{S1i=\frac{1}{n},i=1,2,\cdots&space;n\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S1=\{S1i=\frac{1}{n},i=1,2,\cdots&space;n\}" title="S1=\{S1i=\frac{1}{n},i=1,2,\cdots n\}" /></a>
+   
+       <a href="https://www.codecogs.com/eqnedit.php?latex=D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D&space;=&space;\{D1,&space;D2,&space;\cdots&space;,&space;Dm\}" title="D = \{D1, D2, \cdots , Dm\}" /></a>,n为数据集样本个数，m为要建立的弱模型的个数
+   
+    * **针对数据集构建弱模型M1，得到这个弱模型的错分率为**
+    
+        假设弱模型M1的训练数据集的预测类别序列为P1，预测数据集的预测类别序列为Pre_1。
+   
+         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;maxerr&space;=&space;\mathbf{max}&space;(|Y0i-P1i|,i=1,2,\cdots,n)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;maxerr&space;=&space;\mathbf{max}&space;(|Y0i-P1i|,i=1,2,\cdots,n)" title="\large maxerr = \mathbf{max} (|Y0i-P1i|,i=1,2,\cdots,n)" /></a>
+         
+         * **误差损失为线性**
+         
+         * **误差损失为平方**
+          
+         * **误差损失为指数**
+   
+     * **计算弱模型M1的权重**
+   
+        <a href="https://www.codecogs.com/eqnedit.php?latex=D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" title="D1=\frac{1}{2}\mathbf{ln}(\frac{1-err}{err})" /></a>
+   
+    * **更改样本的权重**
+   
+       <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S2)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S2)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S2)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S2)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right." title="\large S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S2)}=\left\{\begin{matrix} \frac{S1i*e^{-D1}}{\mathbf{sum}(S2)}, P1i=Y0i\\ \\ \frac{S1i*e^{D1}}{\mathbf{sum}(S2)}, P1i\neq Y0i\\ \end{matrix}\right." /></a>。
+    因为D1为非负数，因此预测正确的样本的权重会比上一次的降低，预测错误的会比上一次的增大。其中**sum**表示计算元素的和，除以sum(S2)，相当于将样本权重归一化。
+       
+    * **迭代**
+    
+     当达到设定的迭代次数时停止，或者错分率小于某个小的正数时停止迭代。此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，以及模型的权重集合D。
+    
+    * **结果集成**
+    
+     针对第i个预测样本的集成结果为JI_i,
+    
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dm*Pre\_m_i" /></a>，**sign**为符号函数。 
   
    
 * **AdaBoost答疑**   
