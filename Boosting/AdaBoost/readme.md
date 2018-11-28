@@ -19,6 +19,7 @@
     * **训练数据集**
     
       <a href="https://www.codecogs.com/eqnedit.php?latex=Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" title="Data=\{(X1,Y1),(X2,Y2),\cdots,(Xn,Yn)\}" /></a>，
+      
       令Yi = 1 or -1，这种定义便于后面的结果集成。集合Y0表示数据集样本的真实类别序列。
       
    
