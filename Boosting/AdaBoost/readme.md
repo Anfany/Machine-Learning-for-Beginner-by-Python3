@@ -45,13 +45,19 @@
    
        <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\\S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right.\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}&space;S1i*e^{-D1*Y0i*P1i}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;\\S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix}&space;\frac{S1i*e^{-D1}}{\mathbf{sum}(S)},&space;P1i=Y0i\\&space;\\&space;\frac{S1i*e^{D1}}{\mathbf{sum}(S)},&space;P1i\neq&space;Y0i\\&space;\end{matrix}\right.\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}&space;S1i*e^{-D1*Y0i*P1i}" title="\large \\S2i=\frac{S1i*e^{-D1*Y0i*P1i}}{\mathbf{sum}(S)}=\left\{\begin{matrix} \frac{S1i*e^{-D1}}{\mathbf{sum}(S)}, P1i=Y0i\\ \\ \frac{S1i*e^{D1}}{\mathbf{sum}(S)}, P1i\neq Y0i\\ \end{matrix}\right.\\ \mathbf{sum}(S)=\sum_{i=1}^{n} S1i*e^{-D1*Y0i*P1i}" /></a>。
        
-    因为D1为非负数，因此预测正确的样本的权重会比上一次的降低，预测错误的会比上一次的增大。
+       D1为非负数，因此预测正确的样本的权重会比上一次的降低，
+       
+       预测错误的会比上一次的增高。
     
-    其中除以**sum**(S)，相当于将样本权重归一化。
+       其中除以**sum**(S)，相当于将样本权重规范化。
        
     * **迭代**
     
-     当达到设定的迭代次数时停止，或者错分率小于某个小的正数时停止迭代。此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，以及模型的权重集合D。
+       当达到设定的迭代次数时停止，或者错分率小于某个小的正数时停止迭代。
+       
+       此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，
+       
+       以及模型的权重集合D。
     
     * **结果集成**
     
