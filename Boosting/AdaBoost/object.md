@@ -2,33 +2,33 @@
 
   + **回归问题：北京市pm2.5预测**
   
-     + 数据处理：[pm25_RF_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/pm25_RF_Data.py)
+     + 数据处理：[pm25_AdaBoost_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/pm25_AdaBoost_Data.py)
      
-     + 模型建立：[pm25_RF_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/pm25_RF_Regression.py)
+     + 模型建立：[adult_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/adult_Regression.py)
      
      + 结果图示
      
          * 方法选择
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/method.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/adaboost_pm25.jpg) 
   
         * 预测真实值与输出值对比曲线 
      
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/duibi.jpg)
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/duibi.jpg)
          
  
   
   + **分类问题：成年人收入**
     
-     + 数据处理：[adult_RF_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/adult_RF_Data.py)
+     + 数据处理：[adult_AdaBoost_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/adult_AdaBoost_Data.py)
      
-     + 模型建立：[adult_RF_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/adult_RF_Classify.py)
+     + 模型建立：[AdaBoost_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/AdaBoost_Classify.py)
      
      + 结果图示
      
          * 方法选择
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/method_adult1.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/ada_adult.jpg) 
   
         * 预测数据集结果
         
