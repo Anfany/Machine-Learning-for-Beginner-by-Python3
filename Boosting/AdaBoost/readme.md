@@ -124,7 +124,21 @@
      针对第i个预测样本的集成结果为JI_i,
     
     <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" title="\large JI\_i = \sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" /></a>，**注**：模型权重有个转换。
-  
+ 
+* **AdaBoost正则化**  
+
+     现在将回归问题和分类问题的最终的集成形式写为如下更为一般的形式
+     
+     <a href="https://www.codecogs.com/eqnedit.php?latex=F(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" title="F(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" /></a>
+     
+     也就是有：<a href="https://www.codecogs.com/eqnedit.php?latex=F_{k}(X)=&space;F_{k-1}(X)&space;&plus;&space;D_{k}*P_{k}(X)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{k}(X)=&space;F_{k-1}(X)&space;&plus;&space;D_{k}*P_{k}(X)" title="F_{k}(X)= F_{k-1}(X) + D_{k}*P_{k}(X)" /></a>
+     
+     现在将其正则化：
+     
+     <a href="https://www.codecogs.com/eqnedit.php?latex=F_{k}(X)=&space;F_{k-1}(X)&space;&plus;&space;a&space;*D_{k}*P_{k}(X)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{k}(X)=&space;F_{k-1}(X)&space;&plus;&space;a&space;*D_{k}*P_{k}(X)" title="F_{k}(X)= F_{k-1}(X) + a *D_{k}*P_{k}(X)" /></a>
+     
+     其中a为学习率，也就是步长。在调参时，和弱模型的最大个数一起调参。
+     
    
 * **AdaBoost答疑**   
    1. **这个弱模型可以是什么？**
