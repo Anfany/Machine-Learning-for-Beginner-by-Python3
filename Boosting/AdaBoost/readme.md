@@ -121,9 +121,9 @@
     
     * **结果集成**
     
-     针对第i个预测样本的集成结果为JI_i,
+       针对第i个预测样本的集成结果为JI_i,
     
-    <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" title="\large JI\_i = \sum_{k=1}^{m}\mathbf{ln}(\frac{1}{Dk})*Pre\_k_i" /></a>，**注**：模型权重有个转换。
+       <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}&space;Dk*Pre\_k_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}&space;Dk*Pre\_k_i" title="\large JI\_i = \sum_{k=1}^{m} Dk*Pre\_k_i" /></a>
  
 * **AdaBoost正则化**  
 
