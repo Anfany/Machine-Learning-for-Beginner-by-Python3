@@ -28,7 +28,7 @@
      
          * 方法选择
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Bagging/Random_Forest/ada_adult.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/ada_adult.jpg) 
   
         * 预测数据集结果
         
