@@ -61,9 +61,9 @@
     
     * **结果集成**
     
-     针对第i个预测样本的集成结果为JI_i,
+        针对第i个预测样本的集成结果为JI_i,
     
-    <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dk*Pre\_k_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dk*Pre\_k_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dk*Pre\_k_i" /></a>，**sign**为符号函数。
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dk*Pre\_k_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\mathbf{sign}\sum_{k=1}^{m}Dk*Pre\_k_i" title="\large JI\_i = \mathbf{sign}\sum_{k=1}^{m}Dk*Pre\_k_i" /></a>，**sign**为符号函数。
     
   
   回归问题和分类问题的最大不同在于，回归问题错误率的计算不同于分类问题的错分率，下面给出回归问题的步骤，因为回归算法有很多的变种，这里以**Adaboost R2算法**为例说明：
@@ -113,11 +113,11 @@
        
     * **迭代**
     
-     当达到设定的迭代次数时停止，或者错误率小于某个小的正数时停止迭代。
+      当达到设定的迭代次数时停止，或者错误率小于某个小的正数时停止迭代。
      
-     此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，
+      此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，
      
-     以及模型的权重集合D。
+      以及模型的权重集合D。
     
     * **结果集成**
     
