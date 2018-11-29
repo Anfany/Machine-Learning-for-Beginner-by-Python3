@@ -1,5 +1,7 @@
 ## AdaBoost
 
+* **[AdaBoost程序文件](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/object.md)**
+
 * **AdaBoost初识**
 
 这个方法主要涉及到2个权重集合：
