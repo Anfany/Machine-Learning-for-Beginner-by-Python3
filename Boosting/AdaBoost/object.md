@@ -4,7 +4,7 @@
   
      + 数据处理：[pm25_AdaBoost_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/pm25_AdaBoost_Data.py)
      
-     + 模型建立：[adult_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/adult_Regression.py)
+     + 模型建立：[AdaBoost_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/AdaBoost/AdaBoost_Regression.py)
      
      + 结果图示
      
