@@ -88,19 +88,19 @@
          
          * **误差损失为线性**
          
-         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;err_i=\frac{|Y0i-P1i|}{maxerr}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;err_i=\frac{|Y0i-P1i|}{maxerr}" title="\large err_i=\frac{|Y0i-P1i|}{maxerr}" /></a>
+             <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;err_i=\frac{|Y0i-P1i|}{maxerr}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;err_i=\frac{|Y0i-P1i|}{maxerr}" title="\large err_i=\frac{|Y0i-P1i|}{maxerr}" /></a>
          
          * **误差损失为平方**
          
-         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;erri=\frac{(Y0i-P1i)^{2}}{maxerr^{2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;erri=\frac{(Y0i-P1i)^{2}}{maxerr^{2}}" title="\large erri=\frac{(Y0i-P1i)^{2}}{maxerr^{2}}" /></a>
+             <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;erri=\frac{(Y0i-P1i)^{2}}{maxerr^{2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;erri=\frac{(Y0i-P1i)^{2}}{maxerr^{2}}" title="\large erri=\frac{(Y0i-P1i)^{2}}{maxerr^{2}}" /></a>
           
          * **误差损失为指数**
          
-         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" title="\large erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" /></a>
+             <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" title="\large erri=1-e^{\frac{-|P1i-Y0i|}{maxerr}}" /></a>
          
-        错误率的计算公式为：
+         错误率的计算公式为：
         
-      <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;err=\sum_{i=1}^{N}S1i*erri" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;err=\sum_{i=1}^{N}S1i*erri" title="\large err=\sum_{i=1}^{N}S1i*erri" /></a>
+         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;err=\sum_{i=1}^{N}S1i*erri" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;err=\sum_{i=1}^{N}S1i*erri" title="\large err=\sum_{i=1}^{N}S1i*erri" /></a>
    
      * **计算弱模型M1的权重**
    
@@ -108,22 +108,22 @@
    
     * **更改样本的权重**
    
-     <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;\\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" title="\large \\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\ \mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" /></a> 。
+         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;\\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\&space;\mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" title="\large \\S2i=\frac{S1i}{\mathbf{sum}(S)}*D1^{1-erri}\\ \mathbf{sum}(S)=\sum_{i=1}^{n}S1i*D1^{1-erri}" /></a> 。
     其中除以**sum**(S)，相当于将样本权重归一化。
        
     * **迭代**
     
-      当达到设定的迭代次数时停止，或者错误率小于某个小的正数时停止迭代。
+         当达到设定的迭代次数时停止，或者错误率小于某个小的正数时停止迭代。
      
-      此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，
+         此时得到m个弱模型，以及预测数据集对应的预测结果序列Pre_1，Pre_2， ……Pre_m，
      
-      以及模型的权重集合D。
+         以及模型的权重集合D。
     
     * **结果集成**
     
-       针对第i个预测样本的集成结果为JI_i,
+         针对第i个预测样本的集成结果为JI_i,
     
-       <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}&space;Dk*Pre\_k_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}&space;Dk*Pre\_k_i" title="\large JI\_i = \sum_{k=1}^{m} Dk*Pre\_k_i" /></a>
+         <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}&space;Dk*Pre\_k_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large&space;JI\_i&space;=&space;\sum_{k=1}^{m}&space;Dk*Pre\_k_i" title="\large JI\_i = \sum_{k=1}^{m} Dk*Pre\_k_i" /></a>
  
 * **AdaBoost正则化**  
 
