@@ -7,9 +7,6 @@ import numpy as np
 # 读取数据文件
 data = pd.read_csv(r'C:\Users\GWT9\Desktop\PRSA_data_2010.1.1-2014.12.31.csv')
 
-#  因为Sklearn随机森林不能处理字符串形式，因此需要将字符串的特征独热编码
-
-
 
 '''第一部分：缺失值的处理'''
 #  因为Pm2.5是目标数据，如有缺失值直接删除这一条记录
