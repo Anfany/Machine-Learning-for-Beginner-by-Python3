@@ -129,7 +129,7 @@
 
      现在将回归问题和分类问题的最终的集成形式写为如下更为一般的形式
      
-     <a href="https://www.codecogs.com/eqnedit.php?latex=F(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" title="F(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" /></a>
+     <a href="https://www.codecogs.com/eqnedit.php?latex=F_{m}(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{m}(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" title="F_{m}(X)=\sum_{k=1}^{m}D_{k}*P_{k}(X)" /></a>
      
      也就是有：<a href="https://www.codecogs.com/eqnedit.php?latex=F_{k}(X)=&space;F_{k-1}(X)&space;&plus;&space;D_{k}*P_{k}(X)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?F_{k}(X)=&space;F_{k-1}(X)&space;&plus;&space;D_{k}*P_{k}(X)" title="F_{k}(X)= F_{k-1}(X) + D_{k}*P_{k}(X)" /></a>
      
