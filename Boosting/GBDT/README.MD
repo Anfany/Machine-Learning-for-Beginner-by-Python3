@@ -22,7 +22,12 @@
    <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{\partial&space;\mathbf{C\_T1}&space;}{\partial&space;P\_T0\_i}&space;=&space;P\_T0\_i&space;-&space;P\_T1\_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{\partial&space;\mathbf{C\_T1}&space;}{\partial&space;P\_T0\_i}&space;=&space;P\_T0\_i&space;-&space;P\_T1\_i" title="\frac{\partial \mathbf{C\_T1} }{\partial P\_T0\_i} = P\_T0\_i - P\_T1\_i" /></a>
    
    此时我们将对应的样本i的输出值更改为上面的梯度，让下一个模型T2去拟合这个数值。然后依次迭代。最后我们所有树的预测值加起来就ok了。
-   
+  
+       举个例子，如果样本1的输出真实值为10，树T1针对样本1的预测值为18，
+       然后我们让树T2去拟合样本1的值为10-18=-8。如果树T2的输出值为-10，
+       我们再让树T3去拟合-8-(-10)=2，结果树T3的预测值为1。
+       如果到此迭代结束，在最终对样本1的预测值为：18+(-10)+1=9。
+  
    到这里，整个GBDT的流程就大致清楚了。通过更改计算树的输出值的方式，以及损失函数的定义得出不同的梯度形式，从而得到多种形式的GBDT。其实梯度是根据损失函数计算而来的，每一次我都会沿着梯度的方向减小损失函数，最终我会完成拟合，这就是GBDT的核心。
    
    
