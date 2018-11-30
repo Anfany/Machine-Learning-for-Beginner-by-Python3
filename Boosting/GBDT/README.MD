@@ -26,9 +26,9 @@
    到这里，整个GBDT的流程就大致清楚了。通过更改计算树的输出值的方式，以及损失函数的定义得出不同的梯度形式，从而得到多种形式的GBDT。其实梯度是根据损失函数计算而来的，每一次我都会沿着梯度的方向减小损失函数，最终我会完成拟合，这就是GBDT的核心。
    
    
+    * **GBDT流程图** 
    
-   
-   
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/GBDT/gbdt.png)
    
    
    
