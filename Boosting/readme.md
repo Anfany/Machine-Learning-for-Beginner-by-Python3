@@ -16,7 +16,7 @@
 
    + **[AdaBoost](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/AdaBoost)**
    
-   + **GBDT**
+   + **[GBDT](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/GBDT)**
    
    + **XGBoost**
 
