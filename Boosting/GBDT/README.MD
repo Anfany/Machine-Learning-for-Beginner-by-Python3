@@ -159,20 +159,10 @@
          
              迭代完成后，得到的模型为FM，对于样本X，分别计算其属于1和-1的概率：
              
+             <a href="https://www.codecogs.com/eqnedit.php?latex=\\P(Y=1|X)=&space;\frac{1}{1&plus;exp(-2F\_m(X))}\\&space;\\&space;P(Y=-1|X)=&space;\frac{1}{1&plus;exp(2F\_m(X))}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\P(Y=1|X)=&space;\frac{1}{1&plus;exp(-2F\_m(X))}\\&space;\\&space;P(Y=-1|X)=&space;\frac{1}{1&plus;exp(2F\_m(X))}" title="\\P(Y=1|X)= \frac{1}{1+exp(-2F\_m(X))}\\ \\ P(Y=-1|X)= \frac{1}{1+exp(2F\_m(X))}" /></a>
              
-             
-             
-         
-         
-             
-         
-         
-         
-         
-         
-         
-       
-       
+             概率较大的对应的类别就是预测类别。
+
           
        + **多分类**
          
