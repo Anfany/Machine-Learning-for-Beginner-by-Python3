@@ -152,11 +152,12 @@
          
               对于树Ta的第h个叶子节点，其输出值为：
              
-              <a href="https://www.codecogs.com/eqnedit.php?latex=C\_Ta\_h&space;=&space;\frac{\sum&space;G\_i\_Ta\_h}{\sum&space;|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C\_Ta\_h&space;=&space;\frac{\sum&space;G\_i\_Ta\_h}{\sum&space;|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)}" title="C\_Ta\_h = \frac{\sum G\_i\_Ta\_h}{\sum | G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)}" /></a>
+              <a href="https://www.codecogs.com/eqnedit.php?latex=C\_Ta\_h&space;=&space;\frac{&space;\sum_{i\subseteq&space;Ta\_h}&space;G\_i\_Ta\_h}{&space;\sum_{i\subseteq&space;Ta\_h}[|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C\_Ta\_h&space;=&space;\frac{&space;\sum_{i\subseteq&space;Ta\_h}&space;G\_i\_Ta\_h}{&space;\sum_{i\subseteq&space;Ta\_h}[|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" title="C\_Ta\_h = \frac{ \sum_{i\subseteq Ta\_h} G\_i\_Ta\_h}{ \sum_{i\subseteq Ta\_h}[| G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" /></a>
              
              
          +  **集成**
          
+             
          
          
              
