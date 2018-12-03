@@ -48,7 +48,7 @@
          
        + **定义损失函数**
        
-          1. **MSE**
+          1. **MSE(GBDT回归所用)**
           
              <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost(Y\_real,Y\_tree\)}&space;=\frac{1}{2}&space;\sum_{i=1}^{n}(Y\_real\_i-Y\_tree\_i)^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{Cost(Y\_real,Y\_tree\)}&space;=\frac{1}{2}&space;\sum_{i=1}^{n}(Y\_real\_i-Y\_tree\_i)^{2}" title="\mathbf{Cost(Y\_real,Y\_tree\)} =\frac{1}{2} \sum_{i=1}^{n}(Y\_real\_i-Y\_tree\_i)^{2}" /></a>
           
