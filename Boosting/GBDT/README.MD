@@ -58,15 +58,19 @@
           
            3. **Huber损失**
            
-            它是MSE和绝对损失的组合形式，对于远离中心的异常点，采用绝对损失，其他的点采用MSE。
-            这个界限一般用分位数点度量。公式如下
+              它是MSE和绝对损失的组合形式，对于远离中心的异常点，采用绝对损失，其他的点采用MSE。
+              
+              这个界限一般用分位数点度量。公式如下
             
             <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost(Y\_real,Y\_tree\)}&space;=\left\{\begin{matrix}&space;\frac{1}{2}\sum_{i=1}^{n}(Y\_real\_i&space;-&space;Y\_tree\_i)^{2},|Y\_real\_i&space;-&space;Y\_tree\_i|\geq&space;\delta&space;\\&space;\\&space;\delta&space;(|Y\_real\_i&space;-&space;Y\_tree\_i|-\frac{\delta&space;}{2}),|Y\_real\_i&space;-&space;Y\_tree\_i|<\delta&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{Cost(Y\_real,Y\_tree\)}&space;=\left\{\begin{matrix}&space;\frac{1}{2}\sum_{i=1}^{n}(Y\_real\_i&space;-&space;Y\_tree\_i)^{2},|Y\_real\_i&space;-&space;Y\_tree\_i|\geq&space;\delta&space;\\&space;\\&space;\delta&space;(|Y\_real\_i&space;-&space;Y\_tree\_i|-\frac{\delta&space;}{2}),|Y\_real\_i&space;-&space;Y\_tree\_i|<\delta&space;\end{matrix}\right." title="\mathbf{Cost(Y\_real,Y\_tree\)} =\left\{\begin{matrix} \frac{1}{2}\sum_{i=1}^{n}(Y\_real\_i - Y\_tree\_i)^{2},|Y\_real\_i - Y\_tree\_i|\geq \delta \\ \\ \delta (|Y\_real\_i - Y\_tree\_i|-\frac{\delta }{2}),|Y\_real\_i - Y\_tree\_i|<\delta \end{matrix}\right." /></a>
             
          
        + **建立第一个CART回归树T1**
        
-          T1模型下，训练数据集对应的输出为Y_T1。计算成本
+           T1模型下，训练数据集对应的输出为Y_T1。计算成本
+         
+            <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{C}&space;=&space;\mathbf{Cost(Y\_T0,Y\_T1)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{C}&space;=&space;\mathbf{Cost(Y\_T0,Y\_T1)}" title="\mathbf{C} = \mathbf{Cost(Y\_T0,Y\_T1)}" /></a>
+          
           
           
          
