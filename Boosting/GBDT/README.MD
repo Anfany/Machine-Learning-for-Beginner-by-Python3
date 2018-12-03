@@ -59,7 +59,7 @@
        
        + **计算损失函数梯度**
        
-           下面分别给出三种损失函数的负梯度在当前模型Y_T1下的表达式：
+           下面分别给出三种损失函数的负梯度在当前模型Y_T1下的值：
            
            1. **MSE**
            
@@ -87,8 +87,7 @@
         将所有回归树的结果相加，
         
         即为最终的结果，如下公式。
-        
-        
+
         <a href="https://www.codecogs.com/eqnedit.php?latex=Pre(m)&space;=&space;\sum_{j=1}^{m}Pre\_j\\&space;Pre(k)&space;=&space;Pre(k-1)&plus;Pre\_k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Pre(m)&space;=&space;\sum_{j=1}^{m}Pre\_j\\&space;Pre(k)&space;=&space;Pre(k-1)&plus;Pre\_k" title="Pre(m) = \sum_{j=1}^{m}Pre\_j\\ Pre(k) = Pre(k-1)+Pre\_k" /></a>
         
         为了防止过拟合，可添加正则化的环节，
