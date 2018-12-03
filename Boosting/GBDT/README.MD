@@ -142,6 +142,15 @@
        
          + **对数似然损失函数**
          
+           <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{Cost(Y\_r,&space;F(X))}&space;=&space;\mathbf{log}(1&plus;\mathbf{exp}(-2*\mathbf{Y\_r}*\mathbf{F(X)})),&space;\mathbf{Y\_r}=1&space;\mathbf{or}-1\\&space;\\&space;\mathbf{F(X)}&space;=&space;\frac{1}{2}\mathbf{log}(\frac{P(Y=1|X)}{P(Y=-1|X)})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{Cost(Y\_r,&space;F(X))}&space;=&space;\mathbf{log}(1&plus;\mathbf{exp}(-2*\mathbf{Y\_r}*\mathbf{F(X)})),&space;\mathbf{Y\_r}=1&space;\mathbf{or}-1\\&space;\\&space;\mathbf{F(X)}&space;=&space;\frac{1}{2}\mathbf{log}(\frac{P(Y=1|X)}{P(Y=-1|X)})" title="\\ \mathbf{Cost(Y\_r, F(X))} = \mathbf{log}(1+\mathbf{exp}(-2*\mathbf{Y\_r}*\mathbf{F(X)})), \mathbf{Y\_r}=1 \mathbf{or}-1\\ \\ \mathbf{F(X)} = \frac{1}{2}\mathbf{log}(\frac{P(Y=1|X)}{P(Y=-1|X)})" /></a>
+           
+         + **计算负梯度**
+         
+         <a href="https://www.codecogs.com/eqnedit.php?latex=\\G\_i&space;=&space;-\frac{\partial&space;\mathbf{Cost(Y\_r,&space;F(X))}}{\partial&space;F(X\_i)}&space;=&space;\frac{\mathbf{2Y\_r\_i}}{1&space;&plus;&space;\mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\G\_i&space;=&space;-\frac{\partial&space;\mathbf{Cost(Y\_r,&space;F(X))}}{\partial&space;F(X\_i)}&space;=&space;\frac{\mathbf{2Y\_r\_i}}{1&space;&plus;&space;\mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" title="\\G\_i = -\frac{\partial \mathbf{Cost(Y\_r, F(X))}}{\partial F(X\_i)} = \frac{\mathbf{2Y\_r\_i}}{1 + \mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" /></a>
+         
+         + **计算树的叶子节点的最佳的输出值**
+         
+         
          
          
          
