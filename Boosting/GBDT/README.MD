@@ -86,9 +86,27 @@
       
          <a href="https://www.codecogs.com/eqnedit.php?latex=Data1=\{(Xi,Yi)|Xi=X0[i],&space;Yi=G\_i\&space;,i=1,2,\cdots,n&space;\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data1=\{(Xi,Yi)|Xi=X0[i],&space;Yi=G\_i\&space;,i=1,2,\cdots,n&space;\}" title="Data1=\{(Xi,Yi)|Xi=X0[i], Yi=G\_i\ ,i=1,2,\cdots,n \}" /></a>
          
+      + **建立CART回归树T1** 
+      
+        针对新生成的数据集Data1，在建立CART回归树T1。
+        
+        回归树T1建立完成后，每个叶子节点的输出值不再设定为平均值，而是利用和初始化时相同的方法，对每一个叶子节点，
+        
+        计算使得下式值最小的值作为该叶子节点的输出值：下面一叶子节点h为例。
+        
+        <a href="https://www.codecogs.com/eqnedit.php?latex=\\Cost(Y0\_T1\_h,&space;\gamma&space;&plus;&space;c\_T1\_h)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\Cost(Y0\_T1\_h,&space;\gamma&space;&plus;&space;c\_T1\_h)" title="\\Cost(Y0\_T1\_h, \gamma + c\_T1\_h)" /></a>
+        
+        其中Y0_T1_h 表示树T1的叶子节点h中包含的样本的真实输出值，
+        
+        c_T1_h表示树T1的叶子节点h的最佳的输出值。
+        
+        
       + **迭代** 
       
-        针对新生成的数据集Data1，在建立CART回归树T2。如此迭代直到满足结束条件。
+       
+        
+        
+        如此迭代直到满足结束条件。
         
       + **结果集成** 
       
