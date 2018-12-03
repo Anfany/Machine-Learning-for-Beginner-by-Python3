@@ -61,7 +61,7 @@
            
            <a href="https://www.codecogs.com/eqnedit.php?latex=\\Cost(Y0,&space;\gamma)&space;\\s.t.\mathbf{min}(Y0)\leq&space;\gamma&space;\leq&space;\mathbf{max}(Y0)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\Cost(Y0,&space;\gamma)&space;\\s.t.\mathbf{min}(Y0)\leq&space;\gamma&space;\leq&space;\mathbf{max}(Y0)" title="\\Cost(Y0, \gamma) \\s.t.\mathbf{min}(Y0)\leq \gamma \leq \mathbf{max}(Y0)" /></a>
            
-           **当前模型为M0(x) = Y_T0**
+           **当前模型为F_0(x) = Y_T0**
        
        + **计算损失函数梯度**
        
@@ -109,15 +109,15 @@
         
         后面的项就是目前所有模型的集成值。
         
-        **当前模型为M1(x) = Y_T0 + c_T1**
+        **当前模型为F_1(x) = Y_T0 + c_T1**
         
       + **迭代** 
         
-        计算损失函数的负梯度在当前模型M1(x)下的值，然后更新训练数据集的输出值，
+        计算损失函数的负梯度在当前模型F_1(x)下的值，然后更新训练数据集的输出值，
         
         然后再建立回归树，再计算每个叶子节点的最佳输出，
         
-        然后得到当前模型M2(X)，以此迭代，直到满足条件结束。
+        然后得到当前模型F_2(X)，以此迭代，直到满足条件结束。
         
         
       + **结果集成** 
@@ -155,7 +155,7 @@
               <a href="https://www.codecogs.com/eqnedit.php?latex=C\_Ta\_h&space;=&space;\frac{&space;\sum_{i\subseteq&space;Ta\_h}&space;G\_i\_Ta\_h}{&space;\sum_{i\subseteq&space;Ta\_h}[|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C\_Ta\_h&space;=&space;\frac{&space;\sum_{i\subseteq&space;Ta\_h}&space;G\_i\_Ta\_h}{&space;\sum_{i\subseteq&space;Ta\_h}[|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" title="C\_Ta\_h = \frac{ \sum_{i\subseteq Ta\_h} G\_i\_Ta\_h}{ \sum_{i\subseteq Ta\_h}[| G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" /></a>
              
              
-         +  **集成**
+         +  **最终的类别**
          
              迭代完成后，得到的模型为FM，对于样本X，分别计算其属于1和-1的概率：
              
