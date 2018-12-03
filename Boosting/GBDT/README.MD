@@ -67,7 +67,7 @@
               
            2. **绝对损失**
            
-              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i)" title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T1\_i} = \mathbf{sign}(Y\_T0\_i - Y\_T1\_i)" /></a>
+              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;-\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;-\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i)" title="G\_i = -\frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T1\_i} = \mathbf{sign}(Y\_T0\_i - Y\_T1\_i)" /></a>
           
            3. **Huber损失**
               
