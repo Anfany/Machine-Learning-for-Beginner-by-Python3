@@ -33,7 +33,7 @@
        
          <a href="https://www.codecogs.com/eqnedit.php?latex=Data0&space;=&space;\{(X1,Y1),&space;(X2,Y2),\cdots&space;,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data0&space;=&space;\{(X1,Y1),&space;(X2,Y2),\cdots&space;,(Xn,Yn)\}" title="Data0 = \{(X1,Y1), (X2,Y2),\cdots ,(Xn,Yn)\}" /></a>
          
-         Y_T0为输出值序列，X0为输入的向量集合。
+         Y0为输出值序列，X0为输入的向量集合。
          
        + **定义损失函数**
        
@@ -53,9 +53,14 @@
             
                <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{Cost(Y\_real,Y\_tree\)}&space;=\left\{\begin{matrix}&space;\frac{1}{2}\sum_{i=1}^{n}(Y\_real\_i&space;-&space;Y\_tree\_i)^{2},|Y\_real\_i&space;-&space;Y\_tree\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;(|Y\_real\_i&space;-&space;Y\_tree\_i|-\frac{\delta&space;}{2}),|Y\_real\_i&space;-&space;Y\_tree\_i|>&space;\delta&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{Cost(Y\_real,Y\_tree\)}&space;=\left\{\begin{matrix}&space;\frac{1}{2}\sum_{i=1}^{n}(Y\_real\_i&space;-&space;Y\_tree\_i)^{2},|Y\_real\_i&space;-&space;Y\_tree\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;(|Y\_real\_i&space;-&space;Y\_tree\_i|-\frac{\delta&space;}{2}),|Y\_real\_i&space;-&space;Y\_tree\_i|>&space;\delta&space;\end{matrix}\right." title="\mathbf{Cost(Y\_real,Y\_tree\)} =\left\{\begin{matrix} \frac{1}{2}\sum_{i=1}^{n}(Y\_real\_i - Y\_tree\_i)^{2},|Y\_real\_i - Y\_tree\_i|\leq \delta \\ \\ \delta (|Y\_real\_i - Y\_tree\_i|-\frac{\delta }{2}),|Y\_real\_i - Y\_tree\_i|> \delta \end{matrix}\right." /></a>
             
-       + **针对数据集Data0，建立第一个CART回归树T1**
+       + **初始化：针对数据集Data0，建立第一个CART回归树T0**
        
-           T1模型下，训练数据集对应的输出为Y_T1。
+           CART回归树T0，说是树，其实就只包括一个叶子节点。
+           
+           这个树的输出值就是使得损失函数值最小的值r：
+           
+           <a href="https://www.codecogs.com/eqnedit.php?latex=\\Cost(Y0,&space;\gamma)&space;\\s.t.\mathbf{min}(Y0)\leq&space;\gamma&space;\leq&space;\mathbf{max}(Y0)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\Cost(Y0,&space;\gamma)&space;\\s.t.\mathbf{min}(Y0)\leq&space;\gamma&space;\leq&space;\mathbf{max}(Y0)" title="\\Cost(Y0, \gamma) \\s.t.\mathbf{min}(Y0)\leq \gamma \leq \mathbf{max}(Y0)" /></a>
+           
        
        + **计算损失函数梯度**
        
