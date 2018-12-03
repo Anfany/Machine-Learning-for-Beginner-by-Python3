@@ -103,12 +103,16 @@
         
         为了防止过拟合，可添加正则化的环节，
 
-        <a href="https://www.codecogs.com/eqnedit.php?latex=Pre(k)&space;=&space;Pre(k-1)&plus;\alpha&space;*Pre\_k,&space;k\geq&space;2,0<\alpha&space;\leq&space;1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Pre(k)&space;=&space;Pre(k-1)&plus;\alpha&space;*Pre\_k,&space;k\geq&space;2,0<\alpha&space;\leq&space;1" title="Pre(k) = Pre(k-1)+\alpha *Pre\_k, k\geq 2,0<\alpha \leq 1" /></a>，
+        <a href="https://www.codecogs.com/eqnedit.php?latex=Pre(k)&space;=&space;Pre(k-1)&plus;\alpha&space;*Pre\_k,&space;k\geq&space;2,0<\alpha&space;\leq&space;1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Pre(k)&space;=&space;Pre(k-1)&plus;\alpha&space;*Pre\_k,&space;k\geq&space;2,0<\alpha&space;\leq&space;1" title="Pre(k) = Pre(k-1)+\alpha *Pre\_k, k\geq 2,0<\alpha \leq 1" /></a>，a为正则化因子。
         
-        a为正则化因子。
         
+    * **回归问题**
+    
+       + **二分类**
+       
+       
           
-         
+       + **多分类**
          
     
     
