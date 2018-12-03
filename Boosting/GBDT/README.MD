@@ -59,19 +59,19 @@
        
        + **计算损失函数梯度**
        
-           下面分别给出三种损失函数对应的梯度：
+           下面分别给出三种损失函数的负梯度在当前模型Y_T1下的表达式：
            
-           1. **MSE梯度**
+           1. **MSE**
            
-              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;Y\_T0\_i&space;-&space;Y\_T1\_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;Y\_T0\_i&space;-&space;Y\_T1\_i" title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T0\_i} = Y\_T0\_i - Y\_T1\_i" /></a>
+              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;-(Y\_T1\_i&space;-&space;Y\_T0\_i)=Y\_T0\_i&space;-&space;Y\_T1\_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;-(Y\_T1\_i&space;-&space;Y\_T0\_i)=Y\_T0\_i&space;-&space;Y\_T1\_i" title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T1\_i} = -(Y\_T1\_i - Y\_T0\_i)=Y\_T0\_i - Y\_T1\_i" /></a>
               
-           2. **绝对损失梯度**
+           2. **绝对损失**
            
-              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i)" title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T0\_i} = \mathbf{sign}(Y\_T0\_i - Y\_T1\_i)" /></a>
+              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i)" title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T1\_i} = \mathbf{sign}(Y\_T0\_i - Y\_T1\_i)" /></a>
           
-           3. **Huber损失梯度**
+           3. **Huber损失**
               
-              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;\left\{\begin{matrix}&space;Y\_T0\_i&space;-&space;Y\_T1\_i,|Y\_T0\_i&space;-&space;Y\_T1\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;*\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i),|Y\_T0\_i&space;-&space;Y\_T1\_i|>&space;\delta&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;\left\{\begin{matrix}&space;Y\_T0\_i&space;-&space;Y\_T1\_i,|Y\_T0\_i&space;-&space;Y\_T1\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;*\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i),|Y\_T0\_i&space;-&space;Y\_T1\_i|>&space;\delta&space;\end{matrix}\right." title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T0\_i} = \left\{\begin{matrix} Y\_T0\_i - Y\_T1\_i,|Y\_T0\_i - Y\_T1\_i|\leq \delta \\ \\ \delta *\mathbf{sign}(Y\_T0\_i - Y\_T1\_i),|Y\_T0\_i - Y\_T1\_i|> \delta \end{matrix}\right." /></a>
+              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;\left\{\begin{matrix}&space;Y\_T0\_i&space;-&space;Y\_T1\_i,|Y\_T0\_i&space;-&space;Y\_T1\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;*\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i),|Y\_T0\_i&space;-&space;Y\_T1\_i|>&space;\delta&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T1\_i}&space;=&space;\left\{\begin{matrix}&space;Y\_T0\_i&space;-&space;Y\_T1\_i,|Y\_T0\_i&space;-&space;Y\_T1\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;*\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i),|Y\_T0\_i&space;-&space;Y\_T1\_i|>&space;\delta&space;\end{matrix}\right." title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T1\_i} = \left\{\begin{matrix} Y\_T0\_i - Y\_T1\_i,|Y\_T0\_i - Y\_T1\_i|\leq \delta \\ \\ \delta *\mathbf{sign}(Y\_T0\_i - Y\_T1\_i),|Y\_T0\_i - Y\_T1\_i|> \delta \end{matrix}\right." /></a>
               
       + **生成新的数据集Data1** 
       
