@@ -146,9 +146,20 @@
            
          + **计算负梯度**
          
-         <a href="https://www.codecogs.com/eqnedit.php?latex=\\G\_i&space;=&space;-\frac{\partial&space;\mathbf{Cost(Y\_r,&space;F(X))}}{\partial&space;F(X\_i)}&space;=&space;\frac{\mathbf{2Y\_r\_i}}{1&space;&plus;&space;\mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\G\_i&space;=&space;-\frac{\partial&space;\mathbf{Cost(Y\_r,&space;F(X))}}{\partial&space;F(X\_i)}&space;=&space;\frac{\mathbf{2Y\_r\_i}}{1&space;&plus;&space;\mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" title="\\G\_i = -\frac{\partial \mathbf{Cost(Y\_r, F(X))}}{\partial F(X\_i)} = \frac{\mathbf{2Y\_r\_i}}{1 + \mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" /></a>
+            <a href="https://www.codecogs.com/eqnedit.php?latex=\\G\_i&space;=&space;-\frac{\partial&space;\mathbf{Cost(Y\_r,&space;F(X))}}{\partial&space;F(X\_i)}&space;=&space;\frac{\mathbf{2Y\_r\_i}}{1&space;&plus;&space;\mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\G\_i&space;=&space;-\frac{\partial&space;\mathbf{Cost(Y\_r,&space;F(X))}}{\partial&space;F(X\_i)}&space;=&space;\frac{\mathbf{2Y\_r\_i}}{1&space;&plus;&space;\mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" title="\\G\_i = -\frac{\partial \mathbf{Cost(Y\_r, F(X))}}{\partial F(X\_i)} = \frac{\mathbf{2Y\_r\_i}}{1 + \mathbf{exp}(\mathbf{2Y\_r\_i}*F(X\_i))}" /></a>
          
          + **计算树的叶子节点的最佳的输出值**
+         
+              对于树Ta的第h个叶子节点，其输出值为：
+             
+              <a href="https://www.codecogs.com/eqnedit.php?latex=C\_Ta\_h&space;=&space;\frac{\sum&space;G\_i\_Ta\_h}{\sum&space;|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C\_Ta\_h&space;=&space;\frac{\sum&space;G\_i\_Ta\_h}{\sum&space;|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)}" title="C\_Ta\_h = \frac{\sum G\_i\_Ta\_h}{\sum | G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)}" /></a>
+             
+             
+         +  **集成**
+         
+         
+         
+             
          
          
          
