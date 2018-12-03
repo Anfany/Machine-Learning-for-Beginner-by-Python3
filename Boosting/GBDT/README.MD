@@ -95,7 +95,9 @@
       + **结果集成** 
       
         假设对应m个弱模型的预测的结果分别为Pre_T1, Pre_T2,……,Pre_Tm,
-        将所有回归树的结果相加，即为最终的结果。
+        将所有回归树的结果相加，
+        
+        即为最终的结果，如下公式。
         
         <a href="https://www.codecogs.com/eqnedit.php?latex=Pre(m)&space;=&space;\sum_{j=1}^{m}Pre\_j\\&space;Pre(k)&space;=&space;Pre(k-1)&plus;Pre\_k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Pre(m)&space;=&space;\sum_{j=1}^{m}Pre\_j\\&space;Pre(k)&space;=&space;Pre(k-1)&plus;Pre\_k" title="Pre(m) = \sum_{j=1}^{m}Pre\_j\\ Pre(k) = Pre(k-1)+Pre\_k" /></a>
         
