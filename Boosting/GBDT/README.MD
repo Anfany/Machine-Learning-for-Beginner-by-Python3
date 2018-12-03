@@ -44,7 +44,7 @@
        
          <a href="https://www.codecogs.com/eqnedit.php?latex=Data0&space;=&space;\{(X1,Y1),&space;(X2,Y2),\cdots&space;,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data0&space;=&space;\{(X1,Y1),&space;(X2,Y2),\cdots&space;,(Xn,Yn)\}" title="Data0 = \{(X1,Y1), (X2,Y2),\cdots ,(Xn,Yn)\}" /></a>
          
-         Y_T0为输出值序列。
+         Y_T0为输出值序列，X0为输入的向量集合。
          
        + **定义损失函数**
        
@@ -84,9 +84,17 @@
               
               <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;\left\{\begin{matrix}&space;Y\_T0\_i&space;-&space;Y\_T1\_i,|Y\_T0\_i&space;-&space;Y\_T1\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;*\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i),|Y\_T0\_i&space;-&space;Y\_T1\_i|>&space;\delta&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;\left\{\begin{matrix}&space;Y\_T0\_i&space;-&space;Y\_T1\_i,|Y\_T0\_i&space;-&space;Y\_T1\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;*\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i),|Y\_T0\_i&space;-&space;Y\_T1\_i|>&space;\delta&space;\end{matrix}\right." title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T0\_i} = \left\{\begin{matrix} Y\_T0\_i - Y\_T1\_i,|Y\_T0\_i - Y\_T1\_i|\leq \delta \\ \\ \delta *\mathbf{sign}(Y\_T0\_i - Y\_T1\_i),|Y\_T0\_i - Y\_T1\_i|> \delta \end{matrix}\right." /></a>
               
-         + **生成新的数据集Data1** 
+      + **生成新的数据集Data1** 
+      
+         <a href="https://www.codecogs.com/eqnedit.php?latex=Data1=\{(Xi,Yi)|Xi=X0[i],&space;Yi=G\_i\&space;,i=1,2,\cdots,n&space;\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data1=\{(Xi,Yi)|Xi=X0[i],&space;Yi=G\_i\&space;,i=1,2,\cdots,n&space;\}" title="Data1=\{(Xi,Yi)|Xi=X0[i], Yi=G\_i\ ,i=1,2,\cdots,n \}" /></a>
          
-         
+      + **迭代** 
+      
+        针对新生成的数据集Data1，在建立CART回归树T2。如此迭代直到满足结束条件。
+        
+      + **结果集成** 
+      
+        
           
          
          
