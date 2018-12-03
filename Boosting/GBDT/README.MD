@@ -134,9 +134,18 @@
         <a href="https://www.codecogs.com/eqnedit.php?latex=Pre(k)&space;=&space;Pre(k-1)&plus;\alpha&space;*Pre\_k,&space;k\geq&space;2,0<\alpha&space;\leq&space;1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Pre(k)&space;=&space;Pre(k-1)&plus;\alpha&space;*Pre\_k,&space;k\geq&space;2,0<\alpha&space;\leq&space;1" title="Pre(k) = Pre(k-1)+\alpha *Pre\_k, k\geq 2,0<\alpha \leq 1" /></a>，a为正则化因子。
         
         
-    * **回归问题**
+    * **分类问题**
     
+       这里解释下，为什么GBDT解决分类问题用的也是回归树。因为GBDT的根本就是在不断地拟合残差，残差的加减可以逐渐减小偏差。而分类树输出的是类别，他们之间的加减是没有意义的。分类问题和回归问题的最大不同在于损失函数的定义以及节点输出值的确定，其他都是一样的。
+       
        + **二分类**
+       
+         + **对数似然损失函数**
+         
+         
+         
+         
+         
        
        
           
