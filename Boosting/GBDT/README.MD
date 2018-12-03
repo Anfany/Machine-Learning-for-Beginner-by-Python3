@@ -82,6 +82,7 @@
           
            3. **Huber损失梯度**
               
+              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;\left\{\begin{matrix}&space;Y\_T0\_i&space;-&space;Y\_T1\_i,|Y\_T0\_i&space;-&space;Y\_T1\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;*\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i),|Y\_T0\_i&space;-&space;Y\_T1\_i|>&space;\delta&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_i&space;=&space;\frac{\partial&space;\mathbf{Cost(Y\_T0,&space;Y\_T1)}}{\partial&space;Y\_T0\_i}&space;=&space;\left\{\begin{matrix}&space;Y\_T0\_i&space;-&space;Y\_T1\_i,|Y\_T0\_i&space;-&space;Y\_T1\_i|\leq&space;\delta&space;\\&space;\\&space;\delta&space;*\mathbf{sign}(Y\_T0\_i&space;-&space;Y\_T1\_i),|Y\_T0\_i&space;-&space;Y\_T1\_i|>&space;\delta&space;\end{matrix}\right." title="G\_i = \frac{\partial \mathbf{Cost(Y\_T0, Y\_T1)}}{\partial Y\_T0\_i} = \left\{\begin{matrix} Y\_T0\_i - Y\_T1\_i,|Y\_T0\_i - Y\_T1\_i|\leq \delta \\ \\ \delta *\mathbf{sign}(Y\_T0\_i - Y\_T1\_i),|Y\_T0\_i - Y\_T1\_i|> \delta \end{matrix}\right." /></a>
               
           
           
