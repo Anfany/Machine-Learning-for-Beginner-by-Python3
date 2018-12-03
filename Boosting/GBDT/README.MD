@@ -41,6 +41,24 @@
     * **回归问题**
    
        + **训练数据集**
+       
+         <a href="https://www.codecogs.com/eqnedit.php?latex=Data&space;=&space;\{(X1,Y1),&space;(X2,Y2),\cdots&space;,(Xn,Yn)\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Data&space;=&space;\{(X1,Y1),&space;(X2,Y2),\cdots&space;,(Xn,Yn)\}" title="Data = \{(X1,Y1), (X2,Y2),\cdots ,(Xn,Yn)\}" /></a>
+         
+         Y0为输出值序列。
+         
+       + **定义损失函数**
+       
+          1. MSE
+           
+           
+       
+          
+         
+       + **建立第一个CART回归树T1**
+       
+          T1模型下，训练数据集对应的输出为Y1。
+         
+         
     
     
     
