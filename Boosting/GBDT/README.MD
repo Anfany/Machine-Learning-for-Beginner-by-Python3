@@ -102,8 +102,12 @@
         <a href="https://www.codecogs.com/eqnedit.php?latex=\\Cost(Y0\_T1\_h,&space;\gamma&space;&plus;&space;c\_T1\_h)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\Cost(Y0\_T1\_h,&space;\gamma&space;&plus;&space;c\_T1\_h)" title="\\Cost(Y0\_T1\_h, \gamma + c\_T1\_h)" /></a>
         
         其中Y0_T1_h 表示树T1的叶子节点h中包含的样本的真实输出值，
-        
+
         c_T1_h为树T1的叶子节点h的最佳的输出值。训练数据集总的输出定义为c_T1
+        
+        上述函数中前面的项是不变的，因为唯一的目标就是降低与原始真实输出值的损失函数值。
+        
+        后面的项就是目前所有模型的集成值。
         
         **当前模型为M1(x) = Y_T0 + c_T1**
         
