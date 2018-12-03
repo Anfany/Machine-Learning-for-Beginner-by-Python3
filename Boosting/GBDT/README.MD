@@ -61,6 +61,7 @@
            
            <a href="https://www.codecogs.com/eqnedit.php?latex=\\Cost(Y0,&space;\gamma)&space;\\s.t.\mathbf{min}(Y0)\leq&space;\gamma&space;\leq&space;\mathbf{max}(Y0)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\Cost(Y0,&space;\gamma)&space;\\s.t.\mathbf{min}(Y0)\leq&space;\gamma&space;\leq&space;\mathbf{max}(Y0)" title="\\Cost(Y0, \gamma) \\s.t.\mathbf{min}(Y0)\leq \gamma \leq \mathbf{max}(Y0)" /></a>
            
+           **当前模型为M0(x) = Y_T0**
        
        + **计算损失函数梯度**
        
@@ -90,23 +91,30 @@
       
         针对新生成的数据集Data1，在建立CART回归树T1。
         
-        回归树T1建立完成后，每个叶子节点的输出值不再设定为平均值，而是利用和初始化时相同的方法，对每一个叶子节点，
+        回归树T1建立完成后，每个叶子节点的输出值不再设定为平均值，
         
-        计算使得下式值最小的值作为该叶子节点的输出值：下面一叶子节点h为例。
+        而是利用和初始化时相同的方法，对每一个叶子节点，
+        
+        计算使得下式具有最小值的值作为该叶子节点的输出值：
+        
+        下面以叶子节点h为例。
         
         <a href="https://www.codecogs.com/eqnedit.php?latex=\\Cost(Y0\_T1\_h,&space;\gamma&space;&plus;&space;c\_T1\_h)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\Cost(Y0\_T1\_h,&space;\gamma&space;&plus;&space;c\_T1\_h)" title="\\Cost(Y0\_T1\_h, \gamma + c\_T1\_h)" /></a>
         
         其中Y0_T1_h 表示树T1的叶子节点h中包含的样本的真实输出值，
         
-        c_T1_h表示树T1的叶子节点h的最佳的输出值。
+        c_T1_h为树T1的叶子节点h的最佳的输出值。训练数据集总的输出定义为c_T1
         
+        **当前模型为M1(x) = Y_T0 + c_T1**
         
       + **迭代** 
-      
-       
-        额额
         
-        如此迭代直到满足结束条件。
+        计算损失函数的负梯度在当前模型M1(x)下的值，然后更新训练数据集的输出值，
+        
+        然后再建立回归树，再计算每个叶子节点的最佳输出，
+        
+        然后得到当前模型M2(X)，以此迭代，直到满足条件结束。
+        
         
       + **结果集成** 
       
