@@ -5,9 +5,9 @@
 
 * **GBDT说明**
 
-   **GBDT**是Gradient Boosting Decison Tree的简称，其中Gradient是梯度，是这个方法的核心；Boosting是提升，是这个方法的框架；Decision Tree是决策树，是实现这个方法用到的模型。理解了梯度，也就理解了GBDT。
+   **GBDT**是Gradient Boosting Decison Tree的简称，其中Gradient是梯度，是这个方法的核心；Boosting是提升，是这个方法的框架；Decision Tree是决策树，是实现这个方法用到的模型。
 
-   GBDT可以解决回归问题，经过一些处理也可以解决分类问题，但是用到的树都是回归树，这一点需要牢记。
+   GBDT可以解决回归问题，经过一些处理也可以解决分类(二类、多类)问题，但是用到的树都是回归树，这一点需要牢记。
   
    首先通过简单的回归例子说明一下**提升(Boosting)树**：
 
