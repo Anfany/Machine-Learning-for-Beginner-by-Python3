@@ -187,5 +187,12 @@
     
          + **计算树的叶子节点的最佳的输出值**
          
+             <a href="https://www.codecogs.com/eqnedit.php?latex=C\_Ta\_h&space;=&space;\frac{K-1}{K}\frac{&space;\sum_{i\subseteq&space;Ta\_h}&space;G\_i\_Ta\_h}{&space;\sum_{i\subseteq&space;Ta\_h}[|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C\_Ta\_h&space;=&space;\frac{K-1}{K}\frac{&space;\sum_{i\subseteq&space;Ta\_h}&space;G\_i\_Ta\_h}{&space;\sum_{i\subseteq&space;Ta\_h}[|&space;G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" title="C\_Ta\_h = \frac{K-1}{K}\frac{ \sum_{i\subseteq Ta\_h} G\_i\_Ta\_h}{ \sum_{i\subseteq Ta\_h}[| G\_i\_Ta\_h|*(2-|G\_i\_Ta\_h|)]}" /></a>
+             
+          +  **最终的类别**
+          
+            到最后，每个类别都会得到m个回归树，将每个类别回归树的结果集成起来，会得到K个最终的集成结果。
+            
+            对于一个样本而言，会相应的得到K个结果，然后按照Softmax的方式，得到这个样本最终的类别。
          
    
