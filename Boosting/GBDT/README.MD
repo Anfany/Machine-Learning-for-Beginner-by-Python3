@@ -161,7 +161,7 @@
              
          +  **最终的类别**
          
-             迭代完成后，得到的模型为FM，对于样本X，分别计算其属于1和-1的概率：
+             迭代完成后，得到的模型为F_m，对于样本X，分别计算其属于1和-1的概率：
              
              <a href="https://www.codecogs.com/eqnedit.php?latex=\\P(Y=1|X)=&space;\frac{1}{1&plus;exp(-2F\_m(X))}\\&space;\\&space;P(Y=-1|X)=&space;\frac{1}{1&plus;exp(2F\_m(X))}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\P(Y=1|X)=&space;\frac{1}{1&plus;exp(-2F\_m(X))}\\&space;\\&space;P(Y=-1|X)=&space;\frac{1}{1&plus;exp(2F\_m(X))}" title="\\P(Y=1|X)= \frac{1}{1+exp(-2F\_m(X))}\\ \\ P(Y=-1|X)= \frac{1}{1+exp(2F\_m(X))}" /></a>
              
@@ -170,10 +170,22 @@
           
        + **多分类**
 
-          对于多分类任务，GDBT采用**OneVsOther**。也就是对每个类别训练m个分类器。假设有K个类别，那么训练完之后总共有K*m颗树。K个类别都拟合完第一颗树之后才开始拟合第二颗树。
+          对于多分类任务，GDBT采用**OneVsOther**，也就是对每个类别训练m个弱模型。假设有K个类别，那么训练完之后总共有K*m颗树。
           
-          
+          + **多分类对数似然损失函数**
 
+             <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{Cost(Y\_r,F(X))}=-\sum_{k=1}^{K}Y\_r\_k*\mathbf{log}p\_k(X)&space;\\&space;p\_k(X)=\frac{e^{F\_k(X)}}{\sum_{l=1}^{K}e^{F\_l(X)}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{Cost(Y\_r,F(X))}=-\sum_{k=1}^{K}Y\_r\_k*\mathbf{log}p\_k(X)&space;\\&space;p\_k(X)=\frac{e^{F\_k(X)}}{\sum_{l=1}^{K}e^{F\_l(X)}}" title="\\ \mathbf{Cost(Y\_r,F(X))}=-\sum_{k=1}^{K}Y\_r\_k*\mathbf{log}p\_k(X) \\ p\_k(X)=\frac{e^{F\_k(X)}}{\sum_{l=1}^{K}e^{F\_l(X)}}" /></a>
+             
+         + **计算负梯度**
+         
+              因为每次迭代都需要对每一个类别都构建一个回归树F_k(X), k=1,2,……，K。
+              
+              因此每个样本都要计算k次的负梯度，只不过每一次针对的类别不同。
+              
+              <a href="https://www.codecogs.com/eqnedit.php?latex=G\_k\_i&space;=&space;\mathbf{Y\_r}\_i&space;-&space;p\_k\_m(X\_i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G\_k\_i&space;=&space;\mathbf{Y\_r}\_i&space;-&space;p\_k\_m(X\_i)" title="G\_k\_i = \mathbf{Y\_r}\_i - p\_k\_m(X\_i)" /></a>
     
     
+         + **计算树的叶子节点的最佳的输出值**
+         
+         
    
