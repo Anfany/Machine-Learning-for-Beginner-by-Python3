@@ -57,7 +57,9 @@
        
            CART回归树T0，说是树，其实就只包括一个叶子节点。
            
-           这个树的输出值就是使得损失函数值最小的数r，该树对于训练数据集的序列定义为Y_T0，其实这个序列的元素全是r：
+           这个树的输出值就是使得损失函数值最小的数r，该树对于训练数据集的序列定义为Y_T0，
+           
+           其实这个序列的元素全是r：
            
            <a href="https://www.codecogs.com/eqnedit.php?latex=\\Cost(Y0,&space;\gamma)&space;\\s.t.\mathbf{min}(Y0)\leq&space;\gamma&space;\leq&space;\mathbf{max}(Y0)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\Cost(Y0,&space;\gamma)&space;\\s.t.\mathbf{min}(Y0)\leq&space;\gamma&space;\leq&space;\mathbf{max}(Y0)" title="\\Cost(Y0, \gamma) \\s.t.\mathbf{min}(Y0)\leq \gamma \leq \mathbf{max}(Y0)" /></a>
            
