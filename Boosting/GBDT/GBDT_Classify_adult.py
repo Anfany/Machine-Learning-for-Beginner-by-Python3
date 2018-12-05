@@ -5,7 +5,7 @@
 # 引入数据
 import adult_GBDT_Data as data
 
-# 引入AdaBoost分类模型，支持多类别
+# 引入GBDT分类模型
 from sklearn.ensemble import GradientBoostingClassifier
 
 import numpy as np
