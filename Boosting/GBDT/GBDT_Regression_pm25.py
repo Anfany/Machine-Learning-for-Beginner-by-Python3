@@ -4,7 +4,7 @@
 # 引入数据
 import pm25_GBDT_Data as data
 
-# 引入AdaBoost回归模型
+# 引入GBDT回归模型
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error as mse
 import numpy as np
