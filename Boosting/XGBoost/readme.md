@@ -72,25 +72,26 @@
         
       + **陈天奇提出的Weighted Quantile Sketch**
     
-        此处不加说明，[XGBoost陈天奇XGBoost_PPT](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
+        此处不加说明，[陈天奇XGBoost_PPT](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
+        
+      + **近似直方图算法**  
+        
 
-* **XGBoost相比GBDT的改进**     
+* **XGBoost相比GBDT的改进**    
+
+     1. GBDT在优化时只用到一阶导数信息，XGBoost同时用到了一阶和二阶导数，还支持自定义损失函数，前提损失函数可一阶和二阶求导；
+     
+     2. XGBoost加入了正则项，用于控制模型的复杂度，防止过拟合；
+     
+     3. XGBoost借鉴了随机森林的做法，支持列抽样(随机选择特征)，不仅能降低过拟合，还能减少计算；
+     
+     4. XGBoost寻找最佳分割点时，实现了一种近似法，还考虑了稀疏数据集、缺失值的处理，大大提升算法的效率；
+     
+     5. XGBoost支持并行；
+     
+     6. 可并行的近似直方图算法，用于高效地生成候选的分割点；
+
+     7. XGBoost在算法实现时做了很多优化，大大提升了算法的效率，内存空间不够时，利用了分块、预取、压缩、多线程协作的思想。
     
-    
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-    
-    
-    
-    
+  
     
