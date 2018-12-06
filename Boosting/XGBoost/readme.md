@@ -36,9 +36,9 @@
  
     下面说明树的复杂度部分，回顾下复杂度的函数：
     
-    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*\left&space;\|&space;w&space;\right&space;\|^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*\left&space;\|&space;w&space;\right&space;\|^{2}" title="\mathbf{G}(T\_j) = \gamma * \mathbf{H}(T\_j) + \frac{1}{2}\lambda *\left \| w \right \|^{2}" /></a>
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*&space;\sum_{r=1}^{\mathbf{H}(T\_j)}&space;\left&space;\|&space;w\_r&space;\right&space;\|^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*&space;\sum_{r=1}^{\mathbf{H}(T\_j)}&space;\left&space;\|&space;w\_r&space;\right&space;\|^{2}" title="\mathbf{G}(T\_j) = \gamma * \mathbf{H}(T\_j) + \frac{1}{2}\lambda * \sum_{r=1}^{\mathbf{H}(T\_j)} \left \| w\_r \right \|^{2}" /></a>
     
-    其中**H**(T_j)表示树T_j的叶子节点的个数，w是叶子节点的输出数值。
+    其中**H**(T_j)表示树T_j的叶子节点的个数，w_r是叶子节点r的输出数值。
      
      
      
