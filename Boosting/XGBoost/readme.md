@@ -8,7 +8,7 @@
     
     不管对于回归问题还是分类问题，好的机器学习方法的目的就是降低目标函数(也可称为损失函数)的值，目标函数包括2个部分：一是模型的损失函数，二是模型的复杂度。也就是目标函数具有下面的形式：
     
-    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{C}=\mathbf{F}(Y,\tilde{Y})&plus;\mathbf{M}(\mathbf{model})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{C}=\mathbf{F}(Y,\tilde{Y})&plus;\mathbf{M}(\mathbf{model})" title="\mathbf{C}=\mathbf{F}(Y,\tilde{Y})+\mathbf{M}(\mathbf{model})" /></a>
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{C}=\mathbf{F}(Y,\tilde{Y})&plus;\mathbf{G}(\mathbf{model})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{C}=\mathbf{F}(Y,\tilde{Y})&plus;\mathbf{G}(\mathbf{model})" title="\mathbf{C}=\mathbf{F}(Y,\tilde{Y})+\mathbf{G}(\mathbf{model})" /></a>
     
     上面公式中，前者表示模型的损失函数的值，降低它是为了降低偏差，也就是使得预测的数据和真实的数据更为接近；后者表示这个模型的复杂度，是为了降低方差，增强模型的泛化能力。
     
@@ -26,7 +26,7 @@
      
      不难看出，上面的目标函数的参数也是一个函数，因此要求解需要换个思路。也就是Boosing，利用弱模型的加法形式转换上面的目标函数：
      
-     <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,&space;\tilde{Y}\_i_{t-1}&plus;\mathbf{f\_t}(X))&plus;\mathbf{M}(\mathbf{f\_t})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,&space;\tilde{Y}\_i_{t-1}&plus;\mathbf{f\_t}(X))&plus;\mathbf{M}(\mathbf{f\_t})" title="\\ \mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i, \tilde{Y}\_i_{t-1}+\mathbf{f\_t}(X))+\mathbf{M}(\mathbf{f\_t})" /></a>
+     <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,&space;\tilde{Y}\_i_{t-1}&plus;\mathbf{f\_t}(X))&plus;\mathbf{G}(\mathbf{f\_t})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,&space;\tilde{Y}\_i_{t-1}&plus;\mathbf{f\_t}(X))&plus;\mathbf{G}(\mathbf{f\_t})" title="\\ \mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i, \tilde{Y}\_i_{t-1}+\mathbf{f\_t}(X))+\mathbf{G}(\mathbf{f\_t})" /></a>
      
      
      
