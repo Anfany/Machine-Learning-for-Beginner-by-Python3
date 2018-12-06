@@ -50,8 +50,15 @@
     
     <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s&plus;\frac{1}{2}(\mathbf{H_s}&plus;\lambda)*w\_s^{2}]&plus;\gamma*\mathbf{H(f\_t)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s&plus;\frac{1}{2}(\mathbf{H_s}&plus;\lambda)*w\_s^{2}]&plus;\gamma*\mathbf{H(f\_t)}" title="\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s+\frac{1}{2}(\mathbf{H_s}+\lambda)*w\_s^{2}]+\gamma*\mathbf{H(f\_t)}" /></a>
     
+    当树固定时，可以通过获取合适的叶子节点的输出值，使得上面的式子获得最小值，因为上面是一个二次函数，对w的值求导设置为0即可。下面给出最优的w值以及相应的最小的目标函数的值：
+    
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s}&space;&plus;&space;\lambda&space;}&space;\\&space;\\&space;\mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s}&space;&plus;&space;\lambda}&plus;\gamma&space;*&space;\mathbf{H(f\_t)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s}&space;&plus;&space;\lambda&space;}&space;\\&space;\\&space;\mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s}&space;&plus;&space;\lambda}&plus;\gamma&space;*&space;\mathbf{H(f\_t)}" title="\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s} + \lambda } \\ \\ \mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s} + \lambda}+\gamma * \mathbf{H(f\_t)}" /></a>
     
     
+    
+    
+    
+
     
     
     
