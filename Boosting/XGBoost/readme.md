@@ -67,12 +67,12 @@
     下面给出如何得到最优分割点(也就是上图中的年龄、10):
   
       + **暴力**
-    
-      遍历所有的特征，将每个特征的值从小到大顺序排列，然后从左到右遍历一次即可得到这个特征中哪个分割点的Change最小，然后在所有特征中选择Change最小的那个作为最终的分割点。
+      
+        遍历所有的特征，将每个特征的值从小到大顺序排列，然后从左到右遍历一次即可得到这个特征中哪个分割点的Change最小，然后在所有特征中选择Change最小的那个作为最终的分割点。
         
       + **陈天奇提出的Weighted Quantile Sketch**
     
-      GBoost采用的，此处不加说明，[详情参见](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
+        此处不加说明，[XGBoost陈天奇XGBoost_PPT](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
 
 * **XGBoost相比GBDT的改进**     
     
