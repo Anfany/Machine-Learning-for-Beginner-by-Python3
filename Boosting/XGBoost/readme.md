@@ -34,9 +34,11 @@
      
      从上面式子可知，目标函数只是与损失函数的一阶、二阶导数有关系，因此**XGBoost支持自定义的损失函数**。
  
-    下面说明针对树的复杂度的那一部分，如何计算：
+    下面说明树的复杂度部分，回顾下复杂度的函数：
     
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*\left&space;\|&space;w&space;\right&space;\|^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*\left&space;\|&space;w&space;\right&space;\|^{2}" title="\mathbf{G}(T\_j) = \gamma * \mathbf{H}(T\_j) + \frac{1}{2}\lambda *\left \| w \right \|^{2}" /></a>
     
+    其中**H**(T_j)表示树T_j的叶子节点的个数，w是叶子节点的输出数值。
      
      
      
