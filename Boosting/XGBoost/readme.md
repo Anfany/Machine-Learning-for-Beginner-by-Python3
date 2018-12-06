@@ -60,7 +60,7 @@
 
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/four.png)
     
-    
+    下面给出如何寻找分割点的方法，因为只有有了分割点，才能得到**G_L, G_R，H_L，H_R**之类的。
     
 
     
