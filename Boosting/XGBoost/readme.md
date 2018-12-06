@@ -33,9 +33,10 @@
      <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{O\_t}&space;=&space;\sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)&plus;\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]&plus;\mathbf{G(f\_t)}\\" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{O\_t}&space;=&space;\sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)&plus;\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]&plus;\mathbf{G(f\_t)}\\" title="\\ \mathbf{O\_t} = \sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)+\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]+\mathbf{G(f\_t)}\\" /></a>
      
      从上面式子可知，目标函数只是与损失函数的一阶、二阶导数有关系，因此**XGBoost支持自定义的损失函数**。
----
-     
-   下面说明针对树的复杂度，如何计算：
+ 
+    下面说明针对树的复杂度的那一部分，如何计算：
+    
+    
      
      
      
