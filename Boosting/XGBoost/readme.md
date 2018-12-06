@@ -16,7 +16,7 @@
     
     <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{C}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,\tilde{Y\_i})&plus;&space;\sum_{j=1}^{k}\mathbf{G}(T\_j)\\&space;\\&space;s.t.\;&space;\;&space;\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*\left&space;\|&space;w&space;\right&space;\|^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{C}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,\tilde{Y\_i})&plus;&space;\sum_{j=1}^{k}\mathbf{G}(T\_j)\\&space;\\&space;s.t.\;&space;\;&space;\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*\left&space;\|&space;w&space;\right&space;\|^{2}" title="\\ \mathbf{C}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,\tilde{Y\_i})+ \sum_{j=1}^{k}\mathbf{G}(T\_j)\\ \\ s.t.\; \; \mathbf{G}(T\_j) = \gamma * \mathbf{H}(T\_j) + \frac{1}{2}\lambda *\left \| w \right \|^{2}" /></a>
     
-    其中**H**(T_j)表示树T_j的叶子节点的个数，w是只叶子节点的输出数值。
+    其中**H**(T_j)表示树T_j的叶子节点的个数，w是叶子节点的输出数值。
     
  * **XGBoost目标函数求解**   
  
