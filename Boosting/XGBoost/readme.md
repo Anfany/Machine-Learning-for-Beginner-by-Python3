@@ -50,10 +50,16 @@
     
     <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s&plus;\frac{1}{2}(\mathbf{H_s}&plus;\lambda)*w\_s^{2}]&plus;\gamma*\mathbf{H(f\_t)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s&plus;\frac{1}{2}(\mathbf{H_s}&plus;\lambda)*w\_s^{2}]&plus;\gamma*\mathbf{H(f\_t)}" title="\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s+\frac{1}{2}(\mathbf{H_s}+\lambda)*w\_s^{2}]+\gamma*\mathbf{H(f\_t)}" /></a>
     
-    当树固定时，可以通过获取合适的叶子节点的输出值，使得上面的式子获得最小值，因为上面是一个二次函数，对w的值求导设置为0即可。下面给出最优的w值以及相应的最小的目标函数的值：
+    因为上面是一个二次函数，当树固定时，就可以获得上面式子的最小值。对w求导设置为0即可。下面给出最优的w值以及相应的最小的目标函数的值：
     
     <a href="https://www.codecogs.com/eqnedit.php?latex=\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s}&space;&plus;&space;\lambda&space;}&space;\\&space;\\&space;\mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s}&space;&plus;&space;\lambda}&plus;\gamma&space;*&space;\mathbf{H(f\_t)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s}&space;&plus;&space;\lambda&space;}&space;\\&space;\\&space;\mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s}&space;&plus;&space;\lambda}&plus;\gamma&space;*&space;\mathbf{H(f\_t)}" title="\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s} + \lambda } \\ \\ \mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s} + \lambda}+\gamma * \mathbf{H(f\_t)}" /></a>
     
+    再回顾下，目标函数分了2部分，前一部分通过二阶泰勒公式的转换，只是和前一次形成的树有关系了。后一部分，也就是怎么构建当前的这个树呢。上面的式子其实可看作一个树的评分公式。树从一开始只是有一个叶子节点(也就是根节点)，按照上面的式子计算分数，然后这个节点开始分裂，分裂后再按照上面的公式计算分数，如此下去，遍历所有的可能性，选择最好的那个，暴力可行，但是还有更好的方法。
+    
+    下面给出分裂一个当前的叶子节点，这个目标函数的变化值，通过变化值的正负变化，就可以判断这个叶子节点该不该分裂：
+    
+    
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{Change}&space;=&space;\frac{1}{2}[{\color{Red}&space;\frac{\mathbf{G_L}^{2}}{\mathbf{H_L}&plus;\lambda}}&plus;{\color{Green}&space;\frac{\mathbf{G_R}^{2}}{\mathbf{H_R}&plus;\lambda}}-{\color{Blue}&space;\frac{(\mathbf{G_L&plus;G_R})^{2}}{\mathbf{H_L&plus;H_R}&plus;\lambda}}]-\gamma" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{Change}&space;=&space;\frac{1}{2}[{\color{Red}&space;\frac{\mathbf{G_L}^{2}}{\mathbf{H_L}&plus;\lambda}}&plus;{\color{Green}&space;\frac{\mathbf{G_R}^{2}}{\mathbf{H_R}&plus;\lambda}}-{\color{Blue}&space;\frac{(\mathbf{G_L&plus;G_R})^{2}}{\mathbf{H_L&plus;H_R}&plus;\lambda}}]-\gamma" title="\mathbf{Change} = \frac{1}{2}[{\color{Red} \frac{\mathbf{G_L}^{2}}{\mathbf{H_L}+\lambda}}+{\color{Green} \frac{\mathbf{G_R}^{2}}{\mathbf{H_R}+\lambda}}-{\color{Blue} \frac{(\mathbf{G_L+G_R})^{2}}{\mathbf{H_L+H_R}+\lambda}}]-\gamma" /></a>
     
     
     
