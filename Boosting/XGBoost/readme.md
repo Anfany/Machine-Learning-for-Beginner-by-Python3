@@ -58,7 +58,7 @@
     
     下面给出分裂一个当前的叶子节点，这个目标函数的变化值，通过变化值的正负变化，就可以判断这个叶子节点该不该分裂：
 
-    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/XGBoost/four.png)
+    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/four.png)
     
     
     
