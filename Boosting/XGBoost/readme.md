@@ -4,7 +4,7 @@
 
 * **XGBoost目标函数**
 
-    首先认清一点，它是GBDT的升级版，由**陈天奇**发明，在效率、方法方面都进行了优化。
+    首先认清一点，它是GBDT的升级版，由[**陈天奇**](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)发明，在效率、方法方面都进行了优化。
     
     不管对于回归问题还是分类问题，好的机器学习方法的目的就是降低目标函数(也可称为损失函数)的值，目标函数包括2个部分：一是模型的损失函数，二是模型的复杂度。也就是目标函数具有下面的形式：
     
@@ -71,11 +71,8 @@
         遍历所有的特征，将每个特征的值从小到大顺序排列，然后从左到右遍历一次即可得到这个特征中哪个分割点的Change最小，然后在所有特征中选择Change最小的那个作为最终的分割点。
         
       + **陈天奇提出的Weighted Quantile Sketch**
-    
-        此处不加说明，[陈天奇XGBoost_PPT](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
-        
+
       + **近似直方图算法**  
-        
 
 * **XGBoost相比GBDT的改进**    
 
