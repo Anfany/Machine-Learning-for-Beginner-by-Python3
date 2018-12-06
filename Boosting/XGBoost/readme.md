@@ -8,7 +8,7 @@
     
     不管对于回归问题还是分类问题，好的机器学习方法的目的就是降低目标函数(也可称为损失函数)的值，目标函数包括2个部分：一是模型的损失函数，二是模型的复杂度。也就是目标函数具有下面的形式：
     
-    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{C}=\mathbf{F}(Y,\tilde{Y})&plus;\mathbf{M}(\mathbf{F})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{C}=\mathbf{F}(Y,\tilde{Y})&plus;\mathbf{M}(\mathbf{F})" title="\mathbf{C}=\mathbf{F}(Y,\tilde{Y})+\mathbf{M}(\mathbf{F})" /></a>
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{C}=\mathbf{F}(Y,\tilde{Y})&plus;\mathbf{M}(\mathbf{model})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{C}=\mathbf{F}(Y,\tilde{Y})&plus;\mathbf{M}(\mathbf{model})" title="\mathbf{C}=\mathbf{F}(Y,\tilde{Y})+\mathbf{M}(\mathbf{model})" /></a>
     
     上面公式中，前者表示模型的损失函数的值，降低它是为了降低偏差，也就是使得预测的数据和真实的数据更为接近；后者表示这个模型的复杂度，是为了降低方差，增强模型的泛化能力。
     
