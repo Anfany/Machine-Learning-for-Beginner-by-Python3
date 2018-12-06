@@ -20,11 +20,7 @@
     
  * **XGBoost目标函数求解**   
  
-     现在说以下XGBoost是如何求解上述目标函数的最小值的。下面以回归问题为例，其实回归问题和分类问题的目标函数的不同就在于损失函数。下面给出回归问题的目标函数：
-     
-     <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{C}=\sum_{i=1}^{n}(Y\_i-\tilde{Y\_i})^{2}&plus;&space;\sum_{j=1}^{k}\mathbf{G}(T\_j)\\&space;\\&space;s.t.\;&space;\;&space;\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*\left&space;\|&space;w&space;\right&space;\|^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{C}=\sum_{i=1}^{n}(Y\_i-\tilde{Y\_i})^{2}&plus;&space;\sum_{j=1}^{k}\mathbf{G}(T\_j)\\&space;\\&space;s.t.\;&space;\;&space;\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*\left&space;\|&space;w&space;\right&space;\|^{2}" title="\\ \mathbf{C}=\sum_{i=1}^{n}(Y\_i-\tilde{Y\_i})^{2}+ \sum_{j=1}^{k}\mathbf{G}(T\_j)\\ \\ s.t.\; \; \mathbf{G}(T\_j) = \gamma * \mathbf{H}(T\_j) + \frac{1}{2}\lambda *\left \| w \right \|^{2}" /></a>
-     
-     不难看出，上面的目标函数的参数也是一个函数，因此要求解需要换个思路。也就是Boosing，利用弱模型的加法形式转换上面的目标函数：
+     现在说以下XGBoost是如何求解上述目标函数的最小值的。可以看出，上面的目标函数的参数其实也是一个函数(树其实就是一个函数)，因此要求解需要换个思路。也就是Boosing，利用弱模型的加法形式转换上面的目标函数：
      
      <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,&space;\tilde{Y}\_i_{t-1}&plus;\mathbf{f\_t}(X))&plus;\mathbf{G}(\mathbf{f\_t})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,&space;\tilde{Y}\_i_{t-1}&plus;\mathbf{f\_t}(X))&plus;\mathbf{G}(\mathbf{f\_t})" title="\\ \mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i, \tilde{Y}\_i_{t-1}+\mathbf{f\_t}(X))+\mathbf{G}(\mathbf{f\_t})" /></a>
      
