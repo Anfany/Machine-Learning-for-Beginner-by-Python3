@@ -4,7 +4,7 @@
 
 * **XGBoost目标函数**
 
-    首先认清一点，它是GBDT的升级版，在效率、方法方面都进行了优化。
+    首先认清一点，它是GBDT的升级版，由**陈天奇**发明，在效率、方法方面都进行了优化。
     
     不管对于回归问题还是分类问题，好的机器学习方法的目的就是降低目标函数(也可称为损失函数)的值，目标函数包括2个部分：一是模型的损失函数，二是模型的复杂度。也就是目标函数具有下面的形式：
     
@@ -54,9 +54,9 @@
     
     <a href="https://www.codecogs.com/eqnedit.php?latex=\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s}&space;&plus;&space;\lambda&space;}&space;\\&space;\\&space;\mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s}&space;&plus;&space;\lambda}&plus;\gamma&space;*&space;\mathbf{H(f\_t)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s}&space;&plus;&space;\lambda&space;}&space;\\&space;\\&space;\mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s}&space;&plus;&space;\lambda}&plus;\gamma&space;*&space;\mathbf{H(f\_t)}" title="\\W_{s}^{*}=-\frac{\mathbf{G_s}}{\mathbf{H_s} + \lambda } \\ \\ \mathbf{O\_t}^{*}=-\frac{1}{2}\sum_{s=1}^{\mathbf{H(f\_t)}}\frac{\mathbf{G_s}^{2}}{\mathbf{H_s} + \lambda}+\gamma * \mathbf{H(f\_t)}" /></a>
     
-    再回顾下，目标函数分了2部分，前一部分通过二阶泰勒公式的转换，只是和前一次形成的树有关系了。后一部分，也就是怎么构建当前的这个树呢。上面的式子其实可看作一个树的评分公式。树从一开始只是有一个叶子节点(也就是根节点)，按照上面的式子计算分数，然后这个节点开始分裂，分裂后再按照上面的公式计算分数，如此下去，遍历所有的可能性，选择最好的那个，暴力可行，但是还有更好的方法。
+    再回顾下，目标函数分了2部分，前一部分通过二阶泰勒公式的转换，只是和前一次形成的树有关系了。后一部分，也就是怎么构建当前的这个树呢。上面的式子其实可看作一个树的评分公式。树从一开始只是有一个叶子节点(也就是根节点)，按照上面的式子计算分数，然后这个节点开始分裂，分裂后再按照上面的公式计算分数，如此下去，遍历所有的可能性，选择上述值最小的那个。暴力可行，但是还有更好的方法。
     
-    下面给出分裂一个当前的叶子节点，这个目标函数的变化值**Change**，通过变化值的正负变化，就可以判断这个叶子节点该不该分裂：
+    下面给出分裂一个当前的叶子节点，这个目标函数的变化值**Change**，通过变化值的正负变化，就可以判断这个叶子节点该不该分裂：如果下面的值小于0，则说明需要分裂。
 
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/four.png)
     
@@ -64,13 +64,17 @@
     
     ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/change.png)
     
+    下面给出如何得到最优分割点(也就是上图中的年龄、10):
+  
+      + **暴力**
     
+      遍历所有的特征，将每个特征的值从小到大顺序排列，然后从左到右遍历一次即可得到这个特征中哪个分割点的Change最小，然后在所有特征中选择Change最小的那个作为最终的分割点。
+        
+      + **陈天奇提出的Weighted Quantile Sketch**
     
-    
-    下面给出如何寻找分割点的方法，因为只有有了分割点，才能得到**G_L, G_R，H_L，H_R**之类的。
-    
+      GBoost采用的，此处不加说明，[详情参见](https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf)
 
-    
+* **XGBoost相比GBDT的改进**     
     
     
      
