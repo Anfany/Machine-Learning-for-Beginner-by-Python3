@@ -34,13 +34,16 @@
      
      从上面式子可知，目标函数只是与损失函数的一阶、二阶导数有关系，因此**XGBoost支持自定义的损失函数**。
  
-    下面说明树的复杂度部分，回顾下复杂度的函数：
+    下面再结合树的复杂度，首先回顾下复杂度的函数：
     
     <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*&space;\sum_{r=1}^{\mathbf{H}(T\_j)}&space;\left&space;\|&space;w\_r&space;\right&space;\|^{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{G}(T\_j)&space;=&space;\gamma&space;*&space;\mathbf{H}(T\_j)&space;&plus;&space;\frac{1}{2}\lambda&space;*&space;\sum_{r=1}^{\mathbf{H}(T\_j)}&space;\left&space;\|&space;w\_r&space;\right&space;\|^{2}" title="\mathbf{G}(T\_j) = \gamma * \mathbf{H}(T\_j) + \frac{1}{2}\lambda * \sum_{r=1}^{\mathbf{H}(T\_j)} \left \| w\_r \right \|^{2}" /></a>
     
     其中**H**(T_j)表示树T_j的叶子节点的个数，w_r是叶子节点r的输出数值。
      
-     
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{O\_t}&space;=&space;\sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)&plus;\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]&plus;\mathbf{G(f\_t)}\\&space;\\&space;\\&space;=\sum_{i=1}^{n}[\mathbf{g_{i}}*w(q(i))&plus;\frac{1}{2}\mathbf{h_{i}}*w(q(i))^{2}]&plus;&space;\gamma&space;*&space;\mathbf{H(f\_t)}&space;&plus;&space;\frac{1}{2}\lambda&space;*&space;\sum_{r=1}^{\mathbf{H(f\_t)}}&space;\left&space;\|&space;w\_r&space;\right&space;\|^{2}\\&space;\\&space;\\&space;=\sum_{r=1}^{\mathbf{H(f\_t)}}[(\sum_{i\in&space;I_{r}}\mathbf{g\_i})*w\_r&space;&plus;&space;\frac{1}{2}(\sum_{i\in&space;I_{r}}\mathbf{h\_i}&space;&plus;&space;\lambda&space;)*w\_r^{2}]&plus;\gamma&space;*&space;\mathbf{H(f\_t)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{O\_t}&space;=&space;\sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)&plus;\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]&plus;\mathbf{G(f\_t)}\\&space;\\&space;\\&space;=\sum_{i=1}^{n}[\mathbf{g_{i}}*w(q(i))&plus;\frac{1}{2}\mathbf{h_{i}}*w(q(i))^{2}]&plus;&space;\gamma&space;*&space;\mathbf{H(f\_t)}&space;&plus;&space;\frac{1}{2}\lambda&space;*&space;\sum_{r=1}^{\mathbf{H(f\_t)}}&space;\left&space;\|&space;w\_r&space;\right&space;\|^{2}\\&space;\\&space;\\&space;=\sum_{r=1}^{\mathbf{H(f\_t)}}[(\sum_{i\in&space;I_{r}}\mathbf{g\_i})*w\_r&space;&plus;&space;\frac{1}{2}(\sum_{i\in&space;I_{r}}\mathbf{h\_i}&space;&plus;&space;\lambda&space;)*w\_r^{2}]&plus;\gamma&space;*&space;\mathbf{H(f\_t)}" title="\\ \mathbf{O\_t} = \sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)+\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]+\mathbf{G(f\_t)}\\ \\ \\ =\sum_{i=1}^{n}[\mathbf{g_{i}}*w(q(i))+\frac{1}{2}\mathbf{h_{i}}*w(q(i))^{2}]+ \gamma * \mathbf{H(f\_t)} + \frac{1}{2}\lambda * \sum_{r=1}^{\mathbf{H(f\_t)}} \left \| w\_r \right \|^{2}\\ \\ \\ =\sum_{r=1}^{\mathbf{H(f\_t)}}[(\sum_{i\in I_{r}}\mathbf{g\_i})*w\_r + \frac{1}{2}(\sum_{i\in I_{r}}\mathbf{h\_i} + \lambda )*w\_r^{2}]+\gamma * \mathbf{H(f\_t)}" /></a> 
+    
+    其中q(i)表示样本i所属的叶子节点q的样本集合。w(q(i))表示叶子节点q的输出值。I_{r}表示叶子节点r的样本集合。
+    
      
      
      
