@@ -20,7 +20,7 @@
     
  * **XGBoost目标函数求解**   
  
-     现在说一下XGBoost是如何求解上述目标函数的最小值的。可以看出，上面的目标函数的参数其实也是一个函数(树其实就是一个函数)，因此要求解需要换个思路。也就是Boosing，利用弱模型的加法形式转换上面的目标函数。此外，在这里利用贪心算法，也就是当前一代的损失函数比上一代的低就可以，不是从整体考虑。转换后的第t代的目标函数为：
+     现在说一下XGBoost是如何求解上述目标函数的最小值的。可以看出，上面的目标函数的参数其实也是一个函数(其实树可看作一个函数)，因此要求解需要换个思路。也就是Boosing，利用弱模型的加法形式转换上面的目标函数。此外，在这里利用贪心算法，也就是当前一代的损失函数比上一代的低就可以，不是从整体考虑。转换后的第t代的目标函数为：
      
      <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,&space;\tilde{Y}\_i_{t-1}&plus;\mathbf{f\_t}(X\_i))&plus;\mathbf{G}(\mathbf{f\_t})&plus;&space;G_{num}\\&space;\\&space;where&space;\:&space;G_{num}=\sum_{j=1}^{t-1}\mathbf{G(f\_j)}&space;\,&space;is&space;\:&space;a&space;\:&space;constant." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i,&space;\tilde{Y}\_i_{t-1}&plus;\mathbf{f\_t}(X\_i))&plus;\mathbf{G}(\mathbf{f\_t})&plus;&space;G_{num}\\&space;\\&space;where&space;\:&space;G_{num}=\sum_{j=1}^{t-1}\mathbf{G(f\_j)}&space;\,&space;is&space;\:&space;a&space;\:&space;constant." title="\\ \mathbf{C\_t}=\sum_{i=1}^{n}\mathbf{F}(Y\_i, \tilde{Y}\_i_{t-1}+\mathbf{f\_t}(X\_i))+\mathbf{G}(\mathbf{f\_t})+ G_{num}\\ \\ where \: G_{num}=\sum_{j=1}^{t-1}\mathbf{G(f\_j)} \, is \: a \: constant." /></a>
      
@@ -33,8 +33,9 @@
      <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{O\_t}&space;=&space;\sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)&plus;\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]&plus;\mathbf{G(f\_t)}\\" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{O\_t}&space;=&space;\sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)&plus;\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]&plus;\mathbf{G(f\_t)}\\" title="\\ \mathbf{O\_t} = \sum_{i=1}^{n}[\mathbf{g_{i}}*\mathbf{f\_t}(X\_i)+\frac{1}{2}\mathbf{h_{i}}*\mathbf{f\_t}^{2}(X\_i)]+\mathbf{G(f\_t)}\\" /></a>
      
      从上面式子可知，目标函数只是与损失函数的一阶、二阶导数有关系，因此**XGBoost支持自定义的损失函数**。
+---
      
-     下面考虑一下树的复杂度，如何计算：
+   下面说明针对树的复杂度，如何计算：
      
      
      
