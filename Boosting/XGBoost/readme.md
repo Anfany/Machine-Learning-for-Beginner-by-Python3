@@ -48,6 +48,9 @@
     
     原式变为：
     
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s&plus;\frac{1}{2}(\mathbf{H_s}&plus;\lambda)*w\_s^{2}]&plus;\gamma*\mathbf{H(f\_t)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s&plus;\frac{1}{2}(\mathbf{H_s}&plus;\lambda)*w\_s^{2}]&plus;\gamma*\mathbf{H(f\_t)}" title="\mathbf{O\_t}=\sum_{s=1}^{\mathbf{H(f\_t)}}[\mathbf{G_s}*w\_s+\frac{1}{2}(\mathbf{H_s}+\lambda)*w\_s^{2}]+\gamma*\mathbf{H(f\_t)}" /></a>
+    
+    
     
     
     
