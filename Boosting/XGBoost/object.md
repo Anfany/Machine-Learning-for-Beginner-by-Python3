@@ -10,11 +10,11 @@
      
          * 方法选择
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/XGBoost_pm25.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/xgboost_pm25.jpg) 
   
         * 预测真实值与输出值对比曲线 
      
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/duibi.jpg)
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/duibi_xgb.jpg)
          
  
   
@@ -28,7 +28,7 @@
      
          * 方法选择
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/GBDT/ada_adult1.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/xgboost_adult.jpg) 
   
         * 预测数据集结果
         
