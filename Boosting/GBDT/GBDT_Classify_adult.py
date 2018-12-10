@@ -24,10 +24,10 @@ import matplotlib.pyplot as plt
 # 主要的参数就是随机森林中树的个数和特征的个数,其他参数均使用默认值
 
 # 弱模型中树的层数
-cengs = [4, 5, 6]
+cengs = [5, 7, 9]
 
 # 弱模型的个数
-models = [260, 280, 320]
+models = [120, 140, 280]
 
 # 混淆矩阵的函数
 def Tom(reallist, prelist):
