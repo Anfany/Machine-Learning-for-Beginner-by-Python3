@@ -22,42 +22,32 @@
 ### 初级篇 
 
 * **理论推导**
-
      + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/readme.md)**
      + **[SVM (支持向量机)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/SVM)**
      + **[Desicion Tree (决策树CART)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Decision%20Tree)**
      
  
 *  **实例**
-
     + **北京市Pm2.5预测**
-    
         + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Regression)**
         + **[SVM (支持向量机)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/SVM/SVM_Regression)**
         + **[Desicion Tree (决策树CART)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Decision%20Tree/DT_Regression)**
                
    + **成年人收入分类&Mnist手写数字识别&心脏病预测**
-    
-        + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)*
+        + **[BP Neutral Net (反向传播神经网络)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/BPNN/BPNN_Classify)**
         + **[SVM (支持向量机)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/SVM/SVM_Classify/readme.md)**        
         + **[Desicion Tree (决策树CART)](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Decision%20Tree/DT_Classify/readme.md)**
- 
-
 
 ### 中级篇(集成方法)
 
 * **[Bagging](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Bagging)**  
-
      + **[随机森林](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Bagging/Random_Forest)**
-     
 * **[Boosting](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting)**  
-   
      + **[AdaBoost](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/AdaBoost)**
      + **[GBDT](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/GBDT)**
      + **[XGBoost](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/XGBoost)**
 
-* **Stacking**
-
+* **Stacking*
      + **Stacking**
 
    
