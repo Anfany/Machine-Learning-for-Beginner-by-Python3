@@ -22,7 +22,7 @@
     
      + 数据处理：[adult_XGBoost_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/adult_XGBoost_Data.py)
      
-     + 模型建立：[GBDT_Classify_adult.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/XGBoost_Classify_adult.py)
+     + 模型建立：[XGBoost_Classify_adult.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/XGBoost/XGBoost_Classify_adult.py)
      
      + 结果图示
      
