@@ -21,15 +21,15 @@ import matplotlib.pyplot as plt
 
 
 # 弱模型中树的层数
-cengs = [8, 15]
+cengs = [16, 17, 18]
 
-# 弱模型的个数
-models = [600, 70, 100]
+# 定义弱模型的个数
+models = [55, 56, 57]
 
 
 # 训练函数
 def Train(data, modelcount, censhu, yanzhgdata):
-    model = GradientBoostingRegressor(loss='lad', n_estimators=modelcount, max_depth=10, learning_rate=0.9, subsample=0.8)
+    model = GradientBoostingRegressor(loss='ls', n_estimators=modelcount, max_depth=censhu, learning_rate=0.12, subsample=0.8)
 
     model.fit(data[:, :-1], data[:, -1])
     # 给出训练数据的预测值
@@ -83,7 +83,7 @@ def duibi(exdict, you):
 # 根据获得最有参数组合绘制真实和预测值的对比曲线
 def recspre(exstr, predata, datadict, zhe, count=100):
     tree, te = exstr.split('-')
-    model = GradientBoostingRegressor(loss='ls', n_estimators=int(tree), max_depth=int(te), learning_rate=0.5)
+    model = GradientBoostingRegressor(loss='ls', n_estimators=int(tree), max_depth=int(te), learning_rate=0.12, subsample=0.8)
     model.fit(datadict[zhe]['train'][:, :-1], datadict[zhe]['train'][:, -1])
 
     # 预测
