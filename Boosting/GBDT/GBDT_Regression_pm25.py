@@ -77,7 +77,7 @@ def duibi(exdict, you):
                  label='%s,%d折MSE均值:%.3f' % (ii, len(exdict[ii]), np.mean(np.array(exdict[ii]))), lw=2)
     plt.legend()
     plt.title('不同参数的组合MSE对比曲线[最优：%s]' % you)
-    plt.savefig(r'C:\Users\GWT9\Desktop\adaboost_pm25.jpg')
+    plt.savefig(r'C:\Users\GWT9\Desktop\GBDT_pm25.jpg')
     return '不同方法对比完毕'
 
 # 根据获得最有参数组合绘制真实和预测值的对比曲线
