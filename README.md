@@ -47,8 +47,11 @@
      + **[GBDT](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/GBDT)**
      + **[XGBoost](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/XGBoost)**
 
-* **Stacking*
+* **Stacking**
      + **Stacking**
+     
+* **Blending**
+     + **Blending**     
 
    
 ### 高级篇
