@@ -4,7 +4,7 @@
 
 ### LightGBM涉及到的优化([官方文档翻译](https://github.com/Microsoft/LightGBM/blob/master/docs/Features.rst))
 
-* **速度、内存方面的优化**
+* **一、速度、内存方面的优化**
 
     许多提升工具使用基于预排序的算法(近似直方图算法)（例如XGBoost中的默认算法）来进行决策树学习。这是一个比较简单的解决方案，但不容易优化。LightGBM使用基于直方图的算法，它将连续特征值存储到离散区间。这可以加快训练速度并减少了内存使用量。
 
@@ -28,41 +28,41 @@
        
       + **降低并行学习的通信成本**
       
-* **针对稀疏特征优化**
+* **二、针对稀疏特征优化**
 
      对于稀疏的特征只需要O(2 * 非零值的样本个数)的时间复杂度来构造直方图
      
-* **优化树的生长策略来提高准确率**
+* **三、优化树的生长策略来提高准确率**
 
-    + **最好的叶子节点优先分裂(Leaf_wise)的决策树生成策略**
+    + **1 最好的叶子节点优先分裂(Leaf_wise)的决策树生成策略**
      
       大多数决策树学习算法生成树的策略是以同样的深度生成树(Level_wise)，生成树的示例见下图：
 
-   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/LightGBM/level_wise.png)
+        ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/LightGBM/level_wise.png)
 
-     而LightGBM以Leaf_wise的方式生成。它将选择具有最大增益损失的叶子节点来分裂。当两种方式生成的树具有相等的叶子节点时，Leaf_wise策略生成的树会比Level_wise的拟合度更高。
+      而LightGBM以Leaf_wise的方式生成。它将选择具有最大增益损失的叶子节点来分裂。当两种方式生成的树具有相等的叶子节点时，Leaf_wise策略生成的树会比Level_wise的拟合度更高。
 
-    对于样本较少的情况，Leaf_wise方式可能会导致过度拟合，因此LightGBM中利用参数max_depth来限制树的深度。Leaf_wise方式生成的树示例如下：
+      对于样本较少的情况，Leaf_wise方式可能会导致过度拟合，因此LightGBM中利用参数max_depth来限制树的深度。Leaf_wise方式生成的树示例如下：
 
-   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/LightGBM/leaf_wise.png)
+        ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/LightGBM/leaf_wise.png)
 
-   + **特征的最优分割点**
+    + **2 特征的最优分割点**
   
-       通常使用独热编码来转换分类特征，但这种方法对于决策树的学习并不是有益的。特别是对于不同值较多的特征，独热编码后构建的树往往是不平衡的，并且需要非常大的深度才能获得较好的准确率。
+      通常使用独热编码来转换分类特征，但这种方法对于决策树的学习并不是有益的。特别是对于不同值较多的特征，独热编码后构建的树往往是不平衡的，并且需要非常大的深度才能获得较好的准确率。
 
        事实上，最佳解决方案是通过将类别划分为2个子集。如果特征具有K个不同的值，就是在**2^(k-1) - 1**种情况里找到最优的分割点。对于回归树而言，有一种解决方案可以保证在**O**(k * log(k))的时间复杂度内找到最优分割点。
 
       找到特征的最优分割点的基本思想是根据训练目标的相关性对类别进行重排序。 更具体的说，根据累加值(sum_gradient / sum_hessian)重新对（类别特征的）直方图进行排序，然后在排好序的直方图中寻找最优的分割点。
 
-* **网络通信的优化**
+* **三、网络通信的优化**
 
      在LightGBM的并行学习中，它只需要使用一些聚合通信算法，如“All reduce”，“All gather”和“Reduce scatter”。LightGBM实现了最先进的state-of-art算法。这些聚合通信算法可以提供比点对点通信更好的性能。
 
-* **并行学习中的优化**
+* **四、并行学习中的优化**
 
     LightGBM提供以下并行学习算法的优化：特征并行、数据并行、投票并行。
 
-   * **特征并行**
+   * **1 特征并行**
    
      传统算法中的特征并行，主要是体现在找到最好的分割点，其步骤为：
 
@@ -89,7 +89,7 @@
       
       然而，该并行算法在数据量很大时仍然存在计算上的局限。因此，建议在数据量很大时使用数据并行。
 
-   * **数据并行**
+   * **2 数据并行**
    
       传统算法数据并行旨在并行化整个决策学习。数据并行的过程是：
 
@@ -109,58 +109,58 @@
       
       通过上述方法，LightGBM 将数据并行中的通讯开销减少到O(0.5 * #feature * #bin)。
 
-  * **投票并行**
+  * **3 投票并行**
   
      投票并行进一步降低了数据并行中的通信成本，使其减少至常数级别。它使用两阶段投票来降低特征直方图的通信成本。
 
-* **GPU支持**
+* **五、GPU支持**
 
-* **支持的应用和度量**
+* **六、支持的应用和度量**
 
-     ##### LightGBM支持以下应用：
+   * **1 LightGBM支持以下应用**
 
-   * **回归，目标函数是L2损失**
-   * **二进制分类，目标函数是logloss(对数损失)**
-   * **多分类**
-   * **交叉熵，目标函数是logloss，支持非二进制标签的训练**
-   * **lambdarank，目标函数为基于NDCG的lambdarank**
+      * **回归，目标函数是L2损失**
+      * **二进制分类，目标函数是logloss(对数损失)**
+      * **多分类**
+      * **交叉熵，目标函数是logloss，支持非二进制标签的训练**
+      * **lambdarank，目标函数为基于NDCG的lambdarank**
    
-     ##### LightGBM支持以下度量：
+   * **2 LightGBM支持以下度量：
 
-  * **L1 loss：绝对值损失**
-  * **L2 loss：MSE，平方损失**
-  * **Log loss：对数损失**
-  * **分类错误率**
-  * **AUC（Area Under Curve）：ROC曲线下的面积**
-  * **NDCG（Normalized Discounted Cumulative Gain）：归一化折损累积增益**
-  * **MAP（Mean Average Precision）：平均精度均值**
-  * **多类别对数损失**
-  * **多类别分类错误率**
-  * **Fair损失**
-  * **Huber损失**
-  * **Possion：泊松回归**
-  * **Quantile：分位数回归**
-  * **MAPE（Mean Absolute Percent Error）：平均绝对误差百分比**
-  * **kullback_leibler：Kullback-Leibler divergence**
-  * **gamma：negative log-likelihood for Gamma regression**
-  * **tweedie, negative log-likelihood for Tweedie regression**
+      * **L1 loss：绝对值损失**
+      * **L2 loss：MSE，平方损失**
+      * **Log loss：对数损失**
+      * **分类错误率**
+      * **AUC（Area Under Curve）：ROC曲线下的面积**
+      * **NDCG（Normalized Discounted Cumulative Gain）：归一化折损累积增益**
+      * **MAP（Mean Average Precision）：平均精度均值**
+      * **多类别对数损失**
+      * **多类别分类错误率**
+      * **Fair损失**
+      * **Huber损失**
+      * **Possion：泊松回归**
+      * **Quantile：分位数回归**
+      * **MAPE（Mean Absolute Percent Error）：平均绝对误差百分比**
+      * **kullback_leibler：Kullback-Leibler divergence**
+      * **gamma：negative log-likelihood for Gamma regression**
+      * **tweedie：negative log-likelihood for Tweedie regression**
   
       [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst#metric-parameters)
 
-     ##### 其他特性
+   * **3 其他特性
       
-  * **限制树的最大深度max_depth**
-  * **DART**
-  * **L1 / L2正则化**
-  * **套袋**
-  * **随即选择列(特征)子集**
-  * **Continued train with input GBDT model**
-  * **Continued train with the input score file**
-  * **Weighted training**
-  * **Validation metric output during training**
-  * **交叉验证**
-  * **Multi metrics**
-  * **提前停止（训练和预测）**
-  * **叶指数的预测**
+     * **限制树的最大深度max_depth**
+     * **DART:Dropouts meet Multiple Additive Regression Trees**
+     * **L1 / L2正则化**
+     * **套袋**
+     * **随即选择列(特征)子集**
+     * **Continued train with input GBDT model**
+     * **Continued train with the input score file**
+     * **Weighted training**
+     * **Validation metric output during training**
+     * **交叉验证**
+     * **Multi metrics**
+     * **提前停止（训练和预测）**
+     * **叶指数的预测**
   
-       [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst) 
+     [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst) 
