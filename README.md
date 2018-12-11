@@ -46,6 +46,7 @@
      + **[AdaBoost](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/AdaBoost)**
      + **[GBDT](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/GBDT)**
      + **[XGBoost](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/XGBoost)**
+     + **[LightGBM](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/LightGBM)**     
 
 * **Stacking**
      + **Stacking**
