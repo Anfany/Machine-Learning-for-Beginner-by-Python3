@@ -38,13 +38,13 @@
      
       大多数决策树学习算法生成树的策略是以同样的深度生成树(Level_wise)，生成树的示例见下图：
 
-   ![image](level_wise.png)
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/LightGBM/level_wise.png)
 
      而LightGBM以Leaf_wise的方式生成。它将选择具有最大增益损失的叶子节点来分裂。当两种方式生成的树具有相等的叶子节点时，Leaf_wise策略生成的树会比Level_wise的拟合度更高。
 
     对于样本较少的情况，Leaf_wise方式可能会导致过度拟合，因此LightGBM中利用参数max_depth来限制树的深度。Leaf_wise方式生成的树示例如下：
 
-   ![image](leaf_wise.png)
+   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/LightGBM/leaf_wise.png)
 
    + **特征的最优分割点**
   
