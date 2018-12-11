@@ -113,11 +113,11 @@
   
   投票并行进一步降低了数据并行中的通信成本，使其减少至常数级别。它使用两阶段投票来降低特征直方图的通信成本。
 
-* **6、GPU支持**
+### **6、GPU支持**
 
-* **7、支持的应用和度量**
+### **7、支持的应用和度量**
 
-#### **7.1 LightGBM支持以下应用**
+#### **7.1 应用**
 
    * **回归，目标函数是L2损失**
    * **二进制分类，目标函数是logloss(对数损失)**
@@ -125,7 +125,7 @@
    * **交叉熵，目标函数是logloss，支持非二进制标签的训练**
    * **lambdarank，目标函数为基于NDCG的lambdarank**
    
-#### **7.2 LightGBM支持以下度量：
+#### **7.2 度量：
 
    * **L1 loss：绝对值损失**
    * **L2 loss：MSE，平方损失**
@@ -147,7 +147,7 @@
   
    [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst#metric-parameters)
 
-#### **7.3 其他特性
+#### **7.3 其他
       
   * **限制树的最大深度max_depth**
   * **DART:Dropouts meet Multiple Additive Regression Trees**
