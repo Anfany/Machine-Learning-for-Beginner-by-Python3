@@ -2,7 +2,10 @@
 
 **LightGBM**(**Light Gradient Boosting Machine**)是微软的开源分布式高性能Gradient Boosting框架，使用基于决策树的学习算法。
 
-### LightGBM涉及到的优化([官方文档翻译](https://github.com/Microsoft/LightGBM/blob/master/docs/Features.rst))
+
+## [LightGBM程序文件](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/LightGBM/object.md)
+
+## LightGBM涉及到的优化([官方文档翻译](https://github.com/Microsoft/LightGBM/blob/master/docs/Features.rst))
 
 ### **1、速度、内存方面的优化**
 
