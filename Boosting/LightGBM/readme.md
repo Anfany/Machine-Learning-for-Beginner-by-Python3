@@ -98,11 +98,7 @@
      1. 将本地直方图整合成全局直方图；
      1. 在全局直方图中寻找最佳划分，然后执行此划分；
      
-      传统数据并行的缺点：
-
-      * **通信成本高**
-      
-         如果使用点对点通信算法，则一台机器的通信成本约为O(#machine * #feature * #bin)。如果使用聚合通信算法（例如“All Reduce”），通信成本约为O(2 * #feature * #bin)。
+      传统数据并行的缺点：通信成本高。如果使用点对点通信算法，则一台机器的通信成本约为O(#machine * #feature * #bin)。如果使用聚合通信算法（例如“All Reduce”），通信成本约为O(2 * #feature * #bin)。
             
       #### LightGBM中的数据并行
       
@@ -132,7 +128,7 @@
      ##### LightGBM支持以下度量：
 
   * **L1 loss：绝对值损失**
-  * **L2 loss：MSE，平方损失*
+  * **L2 loss：MSE，平方损失**
   * **Log loss：对数损失**
   * **分类错误率**
   * **AUC（Area Under Curve）：ROC曲线下的面积**
@@ -140,7 +136,7 @@
   * **MAP（Mean Average Precision）：平均精度均值**
   * **多类别对数损失**
   * **多类别分类错误率**
-  * **Fair损失*
+  * **Fair损失**
   * **Huber损失**
   * **Possion：泊松回归**
   * **Quantile：分位数回归**
@@ -149,12 +145,12 @@
   * **gamma：negative log-likelihood for Gamma regression**
   * **tweedie, negative log-likelihood for Tweedie regression**
   
-    [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst#metric-parameters)
+      [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst#metric-parameters)
 
      ##### 其他特性
       
   * **限制树的最大深度max_depth**
-  * **镖**
+  * **DART**
   * **L1 / L2正则化**
   * **套袋**
   * **随即选择列(特征)子集**
@@ -167,4 +163,4 @@
   * **提前停止（训练和预测）**
   * **叶指数的预测**
   
-   [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst) 
+       [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst) 
