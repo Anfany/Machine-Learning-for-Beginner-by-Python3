@@ -140,17 +140,17 @@
    * **Huber损失**
    * **Possion：泊松回归**
    * **Quantile：分位数回归**
-   * **MAPE（Mean Absolute Percent Error）：平均绝对误差百分比**
+   * **MAPE（Mean Absolute Percent Error）：平均绝对百分比误差**
    * **kullback_leibler：Kullback-Leibler divergence**
    * **gamma：negative log-likelihood for Gamma regression**
    * **tweedie：negative log-likelihood for Tweedie regression**
   
-   [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst#metric-parameters)
+     [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst#metric-parameters)
 
 #### **7.3 其他**
       
   * **限制树的最大深度max_depth**
-  * **DART:Dropouts meet Multiple Additive Regression Trees**
+  * **DART：Dropouts meet Multiple Additive Regression Trees**
   * **L1 / L2正则化**
   * **套袋**
   * **随即选择列(特征)子集**
@@ -161,6 +161,6 @@
   * **交叉验证**
   * **Multi metrics**
   * **提前停止（训练和预测）**
-  * **叶指数的预测**
+  * **Prediction for leaf index**
   
-  [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst) 
+     [更多详情点击](https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst) 
