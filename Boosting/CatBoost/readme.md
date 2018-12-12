@@ -2,7 +2,7 @@
 
 **CatBoost**是俄罗斯的搜索巨头Yandex在2017年开源的机器学习库，是**Gradient Boosting**(**梯度提升**) + **Categorical Features**(**类别型特征**)。类似于LightGBM，也是基于梯度提升决策树的机器学习框架。[详情参见](https://tech.yandex.com/catboost/)。
 
-### 1，[CatBoost介绍]
+### 1，CatBoost介绍
 
 以下内容主要翻译自[论文](http://learningsys.org/nips17/assets/papers/paper_11.pdf)
 
@@ -16,13 +16,6 @@
 **Anna Veronika Dorogush, Vasily Ershov, Andrey Gulin**
 
 ##### 摘要：
-In this paper we present CatBoost, a new open-sourced gradient boosting library
-that successfully handles categorical features and outperforms existing publicly
-available implementations of gradient boosting in terms of quality on a set of
-popular publicly available datasets. The library has a GPU implementation of
-learning algorithm and a CPU implementation of scoring algorithm, which are
-significantly faster than other gradient boosting libraries on ensembles of similar
-sizes.
 
 本文介绍了一个新的开源的梯度提升库——CatBoost，它可以很好地处理类别型特征，并且在许多流行的公共数据集上，其性能超越了目前同样基于梯度提升的其他算法。这个库训练采用GPU，评分采用CPU，针对许多不同尺寸的数据样本集合，速度都明显快于其他梯度提升库。
 
