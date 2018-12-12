@@ -9,7 +9,7 @@
 
 ### 论文题目：
 
-**CatBoost: gradient boosting with categorical features support**
+**CatBoost: gradient boosting with categorical features support(支持类别型特征梯度提升的库)**
 
 ##### 作者：
 
