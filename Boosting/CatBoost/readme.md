@@ -1,12 +1,23 @@
 # CatBoost介绍
 
-**CatBoost**是俄罗斯的搜索巨头Yandex在2017年开源的机器学习库，它是MatrixNet算法的后继者。类似于LightGBM，也是基于梯度提升决策树的机器学习方法。[详情参见](https://tech.yandex.com/catboost/)
+**CatBoost**是俄罗斯的搜索巨头Yandex在2017年开源的机器学习库，是**Gradient Boosting**(**梯度提升**) + **Categorical Features**(**类别型特征**)。类似于LightGBM，也是基于梯度提升决策树的机器学习框架。[详情参见](https://tech.yandex.com/catboost/)。
 
 ### 1，[CatBoost介绍]
 
-以下内容主要翻译自[文章](http://learningsys.org/nips17/assets/papers/paper_11.pdf)
+以下内容主要翻译自[论文](http://learningsys.org/nips17/assets/papers/paper_11.pdf)
 
-**CatBoost**主要是**Gradient Boosting**(**梯度提升**) + **Categorical Features**(**类别型特征**)
+
+### 论文题目：
+
+**CatBoost: gradient boosting with categorical features support**
+
+##### 作者：
+
+**Anna Veronika Dorogush, Vasily Ershov, Andrey Gulin**
+
+##### 摘要：
+
+
 
 #### 1.1 类别型特征
 
