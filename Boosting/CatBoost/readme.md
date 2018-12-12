@@ -16,7 +16,15 @@
 **Anna Veronika Dorogush, Vasily Ershov, Andrey Gulin**
 
 ##### 摘要：
+In this paper we present CatBoost, a new open-sourced gradient boosting library
+that successfully handles categorical features and outperforms existing publicly
+available implementations of gradient boosting in terms of quality on a set of
+popular publicly available datasets. The library has a GPU implementation of
+learning algorithm and a CPU implementation of scoring algorithm, which are
+significantly faster than other gradient boosting libraries on ensembles of similar
+sizes.
 
+本文介绍了一个新的开源的梯度提升库——CatBoost，它可以很好地处理类别型特征，并且在许多流行的公共数据集上，其性能超越了目前同样基于梯度提升的其他算法。这个库训练采用GPU，评分采用CPU，针对许多不同尺寸的数据样本集合，速度都明显快于其他梯度提升库。
 
 
 #### 1.1 类别型特征
