@@ -49,8 +49,45 @@ CatBoost利用了一种更为有效的策略，降低过拟合的同时也保证
 
 #### 2.1 特征组合
 
-值得注意的是将几个分类特征的任何组合都可视为新的特征。例如，假设任务是音乐推荐，并且我们有两个分类特征：用户ID和音乐流派。例如，有些用户更喜欢摇滚乐。根据（公式1），将用户ID和音乐流派转换为数字特征时，就会丢失这些信息。结合两个特性则可以解决这个问题，并提供了一个新的强大特征。然而，组合的数量随着数据集中类别特征的数量成指数增长，并且不可能在算法中考虑所有这些特征。当为当前树构造新的分割时，CatBoost会采用贪婪策略考虑组合。对于树中的第一次拆分，不考虑任何组合。对于下一个分割，CatBoost将当前树中存在的所有组合和分类特征与数据集中的所有分类特征相结合。组合值被动态地转换为数字。CatBoost还通过以下方式生成数值特征和分类特征的组合：树中选择的所有分段都被视为具有两个值的分类，并用于
-组合方式与分类方法相同。
+值得注意的是几个特征的组合都可视为新的特征。例如，假设任务是音乐推荐，并且我们有两个类别型特征：用户ID和音乐流派。
+例如，有些用户更喜欢摇滚乐。根据（公式1），将用户ID和音乐流派转换为数字特征时，就会丢失这些信息。
+结合这两个特征则可以解决这个问题，并且得到了一个新的强大特征。然而，组合的数量会随着数据集中类别型特征的数量成指数增长，
+因此不可能在算法中考虑所有这些组合。为当前树构造新的分割点时，CatBoost会采用贪婪的策略考虑组合。
+对于树的第一次分割，不考虑任何组合。对于下一个分割，CatBoost将当前树中存在的所有组合和类别型特征与数据集中的所有类别型特征相结合。
+组合被动态地转换为数字。CatBoost还通过以下方式生成数值型特征和类别型特征的组合：树中选择的所有分割点都被视为具有两个值的类别，并且以与分类方法相同的方式组合使用
+
+
+#### 2.2 重要的实现细节
+
+用数字代替类别的另一种方法是计算该类别在数据集中的出现次数。这是一种简单但强大的技术，在CatBoost也有实现。这种统计量也是用于特征组合。
+
+CatBoost算法为了在每个步骤中拟合最优的先验条件，我们考虑几个先验条件，为每个先验条件构造一个特征，这在质量上比上述标准技术更有效。
+
+### 3 克服梯度偏差
+
+CatBoost以及所有标准梯度提升算法都是构建新树来拟合当前模型的梯度。然而，所有经典的boosting算法都存在由有偏的点态梯度估计引起的过拟合问题。在每个步骤中使用的梯度都使用当前模型中的相同的数据点来估计。这导致估计梯度在特征空间的任何域中的分布与该域中梯度的真实分布相比会发生偏移，从而导致过拟合。有偏梯度的概念在以前的文献[1]，[9]中已经讨论过。我们在文[5]对这一问题进行了形式化分析，还对经典的梯度提升算法进行了改进来解决这一问题。CatBoost实现了这些改进之一，下面简要介绍：
+
+在许多利用GBDT技术的算法（例如，XGBoost、LightGBM）中，构建下一棵树分为两个阶段：选择树结构和在树结构固定计算叶子节点的值。为了选择最佳的树结构，算法通过不同的分割枚举，用这些分割构建树，对得到的叶子节点中计算值，然后对树进行评分并选择最佳的分割。两个阶段的叶子节点的值都作为梯度[8]或牛顿步长的近似值来计算。在CatBoost中，第二阶段使用传统的GBDT方案执行，第一阶段使用修改后的版本。
+
+根据我们在文[5]中的经验结果和理论分析，使用梯度步长的无偏估计是很关键的。设Fi为构建第i棵树后的模型，gi(Xk，Yk)为建立第i棵树后第k个训练样本上的梯度值。为了使梯度gi(Xk，Yk)无偏于模型Fi，我们需要在没有观测值Xk的情况下对Fi进行训练。由于我们需要对所有训练实例计算无偏的梯度估计，所以不能使用任何观测值来训练Fi，乍一看训练变得不可能。我们考虑以下技巧来处理这个问题：对于每个示例Xk，我们训练一个单独的模型Mk，该模型Mk从未使用此示例的梯度估计进行更新。使用Mk，我们估计Xk上的梯度，并使用这个估计对结果树进行评分。让我们呈现伪代码，解释如何执行此技巧。设Loss(y，a)为优化损失函数，其中y为标签值，a为公式值。
+
+In CatBoost we generate s random permutations of our training dataset. We use several permutations to enhance the robustness of the algorithm: we sample a random permutation and obtain gradients on its basis. These are the same permutations as ones used for calculating statistics for categorical features. We use different permutations for training distinct models, thus using several permutations does not lead to overfitting. For each permutation σ, we train n different models Mi, as shown above. That means that for building one tree we need to store and recalculate O(n2) approximations for each permutation σ: for each model Mi, we have to update Mi(X1), . . . , Mi(Xi). Thus, the resulting complexity of this operation is O(s n2). In our practical implementation, we use one important trick which reduces the complexity of one tree construction to O(s n): for each permutation, instead of storing and updating O(n2) values Mi(Xj ), we maintain values M0i(Xj ), i = 1, . . . ,
+ [log2(n)], j <2i+1, where M0i(Xj ) is the approximation for the sample j based on the first 2i samples. Then, the number of predictions M0i(Xj ) is not larger than P0≤i≤log2(n)2i+1 < 4n. The gradient on the example Xk used for choosing a tree structure is estimated on the basis of the approximationM0i(Xk), where i = [log2(k)].
+
+在CatBoost中，我们生成训练数据集的随机排列。为了增强算法的鲁棒性，我们使用了几种排列：我们对随机排列进行采样，并在其基础上获得梯度。这些排列与用于计算类别型特征的统计信息的排列相同。我们使用不同的排列来训练不同的模型，因此使用几个排列不会导致过拟合。对于每个排列，我们训练n个不同的模型Mi，如上所示。这意味着为了构建一棵树，针对每个排列需要存储并重新计算，其复杂度近似于O(n^2)：对于每个模型Mi，我们必须更新Mi(X1)，.…，Mi(Xi)。因此，这种操作的结果复杂度是O(sn^2)。在我们的实现中，我们使用一个重要的技巧，它将一个树结构的复杂性降低到O(sn)：对于每个排列，我们不存储和更新值Mi(Xj)，而是保持值M0i(Xj)，i=1，.…，[log2(n)]，j<2i+1，其中M0i(Xj)是基于前2i样本的样本j的近似值。然后，预测值M0i(Xj)的数目不大于P0≤i≤log2(n)2i+1<4n，在近似M0i(Xk)的基础上估计了用于选择树结构的示例Xk上的梯度，其中i=[log2(k)]。
+
+### 4 快速评分
+
+CatBoost使用遗忘的树作为基本预测器。在这类树中，相同的分割准则在树的整个级别上使用[12，13]。这种树是平衡的，不太容易过盈。梯度增强遗忘树被成功地用于各种学习任务[7，10]。在遗忘树中，每个叶索引可以被编码为长度等于树深度的二进制向量。这个事实在CatBoost模型评估器中得到了广泛的应用：我们首先将所有使用的浮点特征、统计信息和单热点编码特征进行二值化，然后使用二进制特征来计算模型预测。
+所有示例的所有二进制特征值都存储在连续向量B中。叶值存储在大小为2d的浮点向量中，其中d是树深度。为了计算第t树的叶索引，对于示例x，我们建立了一个二进制向量Pd_1i=02i·B(x，f(t，i))，其中B(x，f)是从向量B读取的示例x上的二进制特征f的值，而f(t，i)是从深度i上的第t树中的二进制特征的数目。
+这些向量可以以数据并行方式构建，这种方式可以放弃高达3倍的加速。这导致比所有现有的得分器快得多，如我们的实验所示。
+
+### 5 基于GPU实现快速学习
+
+#### 5.1 密集的数值特征
+#### 5.2 类别型特征
+#### 5.3 多GPU支持
+
 
 
 #### 2，CatBoost的优点(官宣)
