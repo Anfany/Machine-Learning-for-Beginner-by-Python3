@@ -96,6 +96,7 @@ CatBoost，和所有标准梯度提升算法一样，都是通过构建新树来
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{{M}'_{i}}(\mathbf{X_{j}}),i=1,2,\cdots&space;[log_{2}n],j<2^{i&plus;1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{{M}'_{i}}(\mathbf{X_{j}}),i=1,2,\cdots&space;[log_{2}n],j<2^{i&plus;1}" title="\mathbf{{M}'_{i}}(\mathbf{X_{j}}),i=1,2,\cdots [log_{2}n],j<2^{i+1}" /></a>，
 
 其中<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{{M}'_{i}}(\mathbf{X_j})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{{M}'_{i}}(\mathbf{X_j})" title="\mathbf{{M}'_{i}}(\mathbf{X_j})" /></a>是样本j前的2^i样本的近似值。因此，预测值<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{{M}'_{i}}(\mathbf{X_j})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{{M}'_{i}}(\mathbf{X_j})" title="\mathbf{{M}'_{i}}(\mathbf{X_j})" /></a>不大于
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=\sum_{0\leq&space;i&space;\leq&space;log_{2}n&space;}2^{i&plus;1}<&space;4n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_{0\leq&space;i&space;\leq&space;log_{2}n&space;}2^{i&plus;1}<&space;4n" title="\sum_{0\leq i \leq log_{2}n }2^{i+1}< 4n" /></a>，
 
 用于选择树结构的样本Xk上的梯度就近似等于<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{{M}'_{i}}(\mathbf{X_k})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{{M}'_{i}}(\mathbf{X_k})" title="\mathbf{{M}'_{i}}(\mathbf{X_k})" /></a>，其中i=[log2(k)]。
@@ -104,7 +105,11 @@ CatBoost，和所有标准梯度提升算法一样，都是通过构建新树来
 
 CatBoost使用oblivious树作为基本预测器。在这类树中，相同的分割准则在树的整个级别上使用[12，13]。这种树是平衡的，不太容易过拟合。梯度提升oblivious树被成功地用于各种学习任务[7，10]。在oblivious树中，每个叶子节点的索引可以被编码为长度等于树深度的二进制向量。这在CatBoost模型评估器中得到了广泛的应用：我们首先将所有浮点特征、统计信息和独热编码特征进行二值化，然后使用二进制特征来计算模型预测值。
 
-所有样本的所有二进制特征值都存储在连续向量B中。叶子节点的值存储在大小为2^d的浮点数向量中，其中d是树的深度。为了计算第t棵树的叶子节点的索引，对于样本x，我们建立了一个二进制向量<a href="https://www.codecogs.com/eqnedit.php?latex=\sum_{i=0}^{d-1}2^{i}\cdot&space;B(x,f(t,j))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_{i=0}^{d-1}2^{i}\cdot&space;B(x,f(t,j))" title="\sum_{i=0}^{d-1}2^{i}\cdot B(x,f(t,j))" /></a>，其中<a href="https://www.codecogs.com/eqnedit.php?latex=B(x,f)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?B(x,f)" title="B(x,f)" /></a>是从向量B读取的样本x上的二进制特征f的值，而<a href="https://www.codecogs.com/eqnedit.php?latex=f(t,i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(t,i)" title="f(t,i)" /></a>是从深度i上的第t棵树中的二进制特征的数目。
+所有样本的所有二进制特征值都存储在连续向量B中。叶子节点的值存储在大小为2^d的浮点数向量中，其中d是树的深度。为了计算第t棵树的叶子节点的索引，对于样本x，我们建立了一个二进制向量
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\sum_{i=0}^{d-1}2^{i}\cdot&space;B(x,f(t,j))" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_{i=0}^{d-1}2^{i}\cdot&space;B(x,f(t,j))" title="\sum_{i=0}^{d-1}2^{i}\cdot B(x,f(t,j))" /></a>，
+
+其中<a href="https://www.codecogs.com/eqnedit.php?latex=B(x,f)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?B(x,f)" title="B(x,f)" /></a>是从向量B读取的样本x上的二进制特征f的值，而<a href="https://www.codecogs.com/eqnedit.php?latex=f(t,i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(t,i)" title="f(t,i)" /></a>是从深度i上的第t棵树中的二进制特征的数目。
 
 这些向量可以以数据并行的方式构建，这种方式可以实现高达3倍的加速。正如我们的实验所示，这比所有现有的评分器快得多，。
 
@@ -120,7 +125,11 @@ CatBoost使用oblivious树作为基本预测器。在这类树中，相同的分
 
 就GPU内存使用而言，CatBoost至少与LightGBM[11]一样有效。主要不同是利用一种不同的直方图计算方法。LightGBM和XGBoost4的算法有一个主要缺点：它们依赖于原子操作。这种技术在内存上很容易处理，但是在性能好的GPU上，它会比较慢。事实上直方图可以在不涉及原子操作的情况下更有效地计算。仅通过一个简化例子说明我们方法的基本思想：同时计算四个32箱的直方图，每个特征都有一个浮点统计计算。对于具有多个统计量和多个直方图的情况，这种思想都适用。
 
-现在有梯度值g[i]和特征组<a href="https://www.codecogs.com/eqnedit.php?latex=(f_1,f_2,f_3,f_4)[i]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(f_1,f_2,f_3,f_4)[i]" title="(f_1,f_2,f_3,f_4)[i]" /></a>。因此需要计算4个直方图<a href="https://www.codecogs.com/eqnedit.php?latex=\mathrm{hist}[j][b]&space;=&space;\sum&space;_{i:f_j[i]=b}g[i]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathrm{hist}[j][b]&space;=&space;\sum&space;_{i:f_j[i]=b}g[i]" title="\mathrm{hist}[j][b] = \sum _{i:f_j[i]=b}g[i]" /></a>。CatBoost为每个warp直方图构建部分直方图，而不是为每个线程块构建直方图。下面我们将描述一个warp在前32个样本上完成的工作。索引为i的线程处理样本i。由于我们同时构建了4个直方图，因此每warp需要32\*32\*4字节的共享内存。为了更新直方图，32个线程都将样本标签和分组特征加载到寄存器。然后，warp在4次迭代中同时执行共享内存直方图的更新：在第l次(l=0，1，2，3)迭代时，索引为i的线程处理特征<a href="https://www.codecogs.com/eqnedit.php?latex=f_{(l&plus;i)&space;mod&space;4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{(l&plus;i)&space;mod&space;4}" title="f_{(l+i) mod 4}" /></a>，并且将g[i]加到
+现在有梯度值g[i]和特征组<a href="https://www.codecogs.com/eqnedit.php?latex=(f_1,f_2,f_3,f_4)[i]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?(f_1,f_2,f_3,f_4)[i]" title="(f_1,f_2,f_3,f_4)[i]" /></a>。因此需要计算4个直方图
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\mathrm{hist}[j][b]&space;=&space;\sum&space;_{i:f_j[i]=b}g[i]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathrm{hist}[j][b]&space;=&space;\sum&space;_{i:f_j[i]=b}g[i]" title="\mathrm{hist}[j][b] = \sum _{i:f_j[i]=b}g[i]" /></a>。
+
+CatBoost为每个warp直方图构建部分直方图，而不是为每个线程块构建直方图。下面我们将描述一个warp在前32个样本上完成的工作。索引为i的线程处理样本i。由于我们同时构建了4个直方图，因此每warp需要32\*32\*4字节的共享内存。为了更新直方图，32个线程都将样本标签和分组特征加载到寄存器。然后，warp在4次迭代中同时执行共享内存直方图的更新：在第l次(l=0，1，2，3)迭代时，索引为i的线程处理特征<a href="https://www.codecogs.com/eqnedit.php?latex=f_{(l&plus;i)&space;mod&space;4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_{(l&plus;i)&space;mod&space;4}" title="f_{(l+i) mod 4}" /></a>，并且将g[i]加到
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\mathrm{hist}[(l&space;&plus;&space;i)\:&space;mod&space;\,&space;4][f_{(l&plus;i)&space;\,&space;mod&space;\:&space;4}]." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathrm{hist}[(l&space;&plus;&space;i)\:&space;mod&space;\,&space;4][f_{(l&plus;i)&space;\,&space;mod&space;\:&space;4}]." title="\mathrm{hist}[(l + i)\: mod \, 4][f_{(l+i) \, mod \: 4}]." /></a>]。
 
