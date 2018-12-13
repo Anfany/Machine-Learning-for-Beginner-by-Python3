@@ -1,6 +1,6 @@
 # CatBoost介绍
 
-**CatBoost**是俄罗斯的搜索巨头Yandex在2017年开源的机器学习库，是**Gradient Boosting**(**梯度提升**) + **Categorical Features**(**类别型特征**)。类似于LightGBM，也是基于梯度提升决策树的机器学习框架。[详情参见](https://tech.yandex.com/catboost/)。
+**CatBoost**是俄罗斯的搜索巨头Yandex在2017年开源的机器学习库，是**Gradient Boosting**(**梯度提升**) + **Categorical Features**(**类别型特征**)。类似于LightGBM，也是基于梯度提升决策树的机器学习框架。[关于CatBoost参见](https://tech.yandex.com/catboost/)，[CatBoost算法参(http://papers.nips.cc/paper/7898-catboost-unbiased-boosting-with-categorical-features.pdf)
 
 ### 一，CatBoost程序文件
 ### 二，CatBoost的优点(官宣)
@@ -22,7 +22,8 @@
 
 ### 论文题目：
 
-**CatBoost: gradient boosting with categorical features support(支持类别型特征梯度提升)**
+**CatBoost: gradient boosting with categorical features support**
+  CatBoost: 支持类别型特征梯度提升的库
 
 ##### 作者：
 
@@ -88,16 +89,30 @@ CatBoost以及所有标准梯度提升算法都是构建新树来拟合当前模
 
 ### 4 快速评分
 
-CatBoost使用遗忘的树作为基本预测器。在这类树中，相同的分割准则在树的整个级别上使用[12，13]。这种树是平衡的，不太容易过盈。梯度增强遗忘树被成功地用于各种学习任务[7，10]。在遗忘树中，每个叶索引可以被编码为长度等于树深度的二进制向量。这个事实在CatBoost模型评估器中得到了广泛的应用：我们首先将所有使用的浮点特征、统计信息和单热点编码特征进行二值化，然后使用二进制特征来计算模型预测。
-所有示例的所有二进制特征值都存储在连续向量B中。叶值存储在大小为2d的浮点向量中，其中d是树深度。为了计算第t树的叶索引，对于示例x，我们建立了一个二进制向量Pd_1i=02i·B(x，f(t，i))，其中B(x，f)是从向量B读取的示例x上的二进制特征f的值，而f(t，i)是从深度i上的第t树中的二进制特征的数目。
-这些向量可以以数据并行方式构建，这种方式可以放弃高达3倍的加速。这导致比所有现有的得分器快得多，如我们的实验所示。
+CatBoost使用对称树作为基本预测器。在这类树中，相同的分割准则在树的整个级别上使用[12，13]。这种树是平衡的，不太容易过拟合。梯度提升对称树被成功地用于各种学习任务[7，10]。在对称树中，每个叶子节点的索引可以被编码为长度等于树深度的二进制向量。这个事实在CatBoost模型评估器中得到了广泛的应用：我们首先将所有使用的浮点特征、统计信息和独热编码特征进行二值化，然后使用二进制特征来计算模型预测。
+
+所有样本的所有二进制特征值都存储在连续向量B中。叶子节点的值存储在大小为2d的浮点向量中，其中d是树深度。为了计算第t棵树的叶子节点的索引，对于示例x，我们建立了一个二进制向量Pd_1i=02i·B(x，f(t，i))，其中B(x，f)是从向量B读取的示例x上的二进制特征f的值，而f(t，i)是从深度i上的第t树中的二进制特征的数目。
+
+这些向量可以以数据并行方式构建，这种方式可以实现高达3倍的加速。这导致比所有现有的得分器快得多，正如我们的实验所示。
 
 ### 5 基于GPU实现快速学习
 
 #### 5.1 密集的数值特征
+
+One of the most important building blocks for any GBDT implementation is searching for the best split. This block is the main computation burden for building decision tree on dense numerical datasets. CatBoost uses oblivious decision trees as base learners and performs feature discretization into a fixed amount of bins to reduce memory usage [10]. The number of bins is the parameter of the algorithm. As a result we could use histogram-based approach for searching for best splits. Our approach to building decision trees on GPU is similar in spirit to one described in [11]. We group several numerical features in one 32-bit integer and currently use:
+
+对于任何GBDT算法的实现而言，最重要的步骤就是搜索最佳分割。对于密集的数值特征数据集来说，该步骤是在建立决策树的主要计算负担。CatBoost使用遗忘的决策树作为基础学习者，并将特征离散化为固定数量的箱子以减少内存使用[10]。箱子的数量是算法的参数。因此，我们可以使用基于直方图的方法来搜索最佳分割。我们在GPU上构建决策树的方法在精神上类似于[11]中所描述的方法。我们将几个数字特征分组为一个32位整数，目前使用：
+
+
 #### 5.2 类别型特征
+
+CatBoost实现了几种处理类别型特征的方法。对于独热编码特征，我们不需要任何特殊处理，基于直方图的分割搜索方法可以很容易地应用于这种情况。在数据预处理阶段，也可以对单个类别型特征进行统计计算。CatBoost还对特征组合使用统计信息。处理它们是算法中速度最慢、消耗内存最多的部分。
+
+我们使用完美哈希来存储类别特性的值以减少内存使用。由于GPU内存的限制，我们在CPU RAM中存储按位压缩的完美哈希，以及要求的数据流、重叠计算和内存操作。动态地构造特征组合要求我们为这个新特征动态地构建（完美）哈希函数，并为哈希的每个唯一值计算关于某些排列的统计数据。我们使用基数排序来构建完美的哈希，并通过哈希来分组观察。在每个组中，我们需要计算一些统计量的前缀和。该统计量的计算使用分段扫描GPU图元进行（CatBoost分段扫描实现通过算子变换[16]完成，并且基于CUB[6]中扫描图元的高效实现）。
+
 #### 5.3 多GPU支持
 
+CatBoost GPU实现支持几个现成的GPU。分布式树学习可以通过样本或特征进行并行化。CatBoost使用具有多个学习数据集置换的计算方案，并在训练期间计算分类特征的统计数据。因此，我们需要使用特征并行学习。
 
 
 
