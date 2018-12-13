@@ -102,8 +102,20 @@ CatBoost使用对称树作为基本预测器。在这类树中，相同的分割
 
 One of the most important building blocks for any GBDT implementation is searching for the best split. This block is the main computation burden for building decision tree on dense numerical datasets. CatBoost uses oblivious decision trees as base learners and performs feature discretization into a fixed amount of bins to reduce memory usage [10]. The number of bins is the parameter of the algorithm. As a result we could use histogram-based approach for searching for best splits. Our approach to building decision trees on GPU is similar in spirit to one described in [11]. We group several numerical features in one 32-bit integer and currently use:
 
-对于任何GBDT算法的实现而言，最重要的步骤就是搜索最佳分割。对于密集的数值特征数据集来说，该步骤是在建立决策树的主要计算负担。CatBoost使用遗忘的决策树作为基础学习者，并将特征离散化为固定数量的箱子以减少内存使用[10]。箱子的数量是算法的参数。因此，我们可以使用基于直方图的方法来搜索最佳分割。我们在GPU上构建决策树的方法在精神上类似于[11]中所描述的方法。我们将几个数字特征分组为一个32位整数，目前使用：
+对于任何GBDT算法的实现而言，最重要的步骤就是搜索最佳分割。对于密集的数值特征数据集来说，该步骤是在建立决策树的主要计算负担。CatBoost使用oblivious 决策树作为基础模型，并将特征离散化为固定数量的箱子以减少内存使用[10]。箱子的数量是算法的参数。因此，我们可以使用基于直方图的方法来搜索最佳分割。我们在GPU上构建决策树的方法在本质上类似于[11]中所描述的方法。我们将几个数值型特征利用一个32位整数分组，目前使用
 
+  * **1比特用于二进制特征，每个整数为32个特征。
+  * **4比特用于不超过15个值的特征，每个整数为8个特征。
+  * **其他特征为8比特（不同值的个数最大是255），每个整数为4个特征
+
+就GPU内存使用而言，CatBoost至少与LightGBM[11]一样有效。主要不同是利用一种不同的直方图计算方法。LightGBM和XGBoost4的算法具有主要缺点：它们依赖于原子操作。这种技术很容易引起内存访问的并发，即使在性能好的GPU上，它也会比较慢。事实上直方图可以在没有任何原子操作的情况下更有效地计算。我描述仅通过一个简化例子说明我们方法的基本思想：同时计算四个32-比特，每个特征具有单个浮点附加统计量的直方图。这种思想可以推广至具有多个统计和多个直方图的情况。
+
+我们有梯度值g[i]和特征组(f1，f2，f3，f4)[i]。因此需要计算4个直方图：hist[j][b]=Pi:fj[i]=bg[i]。CatBoost为每个warp5直方图构建部分直方图，而不是为每个线程块构建直方图。我们将描述在前32个样本上通过一个线程粒度完成的工作。使用索引i的线程处理示例i。由于我们同时构建4个直方图，因此每线程粒度需要32_32_4字节的共享内存。为了更新直方图，所有32个线程将样本标签和分组特征加载到寄存器。然后，线程粒度在4次迭代中同时执行共享内存直方图的更新：在第1次(l=03)上，具有索引i的迭代线程与特征f(l+i)mod 4一起工作，并为hist[(l+i)mod 4][f(l+i)mod 4添加g[i]。通过适当的直方图布局，此操作可以避免任何银行冲突，并通过所有32个线程并行添加统计数据。
+
+
+CatBoost为bin计数分别为32、64、和128、的255，每个组分别构建构建8个特征的直方图，以及2个统计过程；32个二进制特征和2个统计量；4个特征和2个统计量，
+为了实现所有这些直方图的快速计算，我们必须使用所有可用的共享内存。因此，我们的代码无法实现100%的占用率。
+所以我们利用指令级并行性进行循环展开。这种技术甚至在较低的占用率下也能实现高性能。
 
 #### 5.2 类别型特征
 
