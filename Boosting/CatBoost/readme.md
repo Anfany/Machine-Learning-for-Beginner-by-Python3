@@ -2,7 +2,20 @@
 
 **CatBoost**是俄罗斯的搜索巨头Yandex在2017年开源的机器学习库，是**Gradient Boosting**(**梯度提升**) + **Categorical Features**(**类别型特征**)。类似于LightGBM，也是基于梯度提升决策树的机器学习框架。[详情参见](https://tech.yandex.com/catboost/)。
 
-### 1，CatBoost介绍
+### 一，CatBoost程序文件
+### 二，CatBoost的优点(官宣)
+
+1. 性能卓越：在性能方面可以匹敌任何先进的机器学习算法；
+
+1. 鲁棒性/强健性：它减少了对很多超参数调优的需求，并降低了过度拟合的机会，这也使得模型变得更加具有通用性。
+
+1. 易于使用：提供与scikit集成的Python接口，以及R和命令行界面；
+
+1. 实用：可以处理类别型、数值型特征；
+
+1. 可扩展：支持自定义损失函数；
+
+### 三，CatBoost介绍
 
 以下内容主要翻译自[论文](http://learningsys.org/nips17/assets/papers/paper_11.pdf)
 
@@ -71,9 +84,6 @@ CatBoost以及所有标准梯度提升算法都是构建新树来拟合当前模
 
 根据我们在文[5]中的经验结果和理论分析，使用梯度步长的无偏估计是很关键的。设Fi为构建第i棵树后的模型，gi(Xk，Yk)为建立第i棵树后第k个训练样本上的梯度值。为了使梯度gi(Xk，Yk)无偏于模型Fi，我们需要在没有观测值Xk的情况下对Fi进行训练。由于我们需要对所有训练实例计算无偏的梯度估计，所以不能使用任何观测值来训练Fi，乍一看训练变得不可能。我们考虑以下技巧来处理这个问题：对于每个示例Xk，我们训练一个单独的模型Mk，该模型Mk从未使用此示例的梯度估计进行更新。使用Mk，我们估计Xk上的梯度，并使用这个估计对结果树进行评分。让我们呈现伪代码，解释如何执行此技巧。设Loss(y，a)为优化损失函数，其中y为标签值，a为公式值。
 
-In CatBoost we generate s random permutations of our training dataset. We use several permutations to enhance the robustness of the algorithm: we sample a random permutation and obtain gradients on its basis. These are the same permutations as ones used for calculating statistics for categorical features. We use different permutations for training distinct models, thus using several permutations does not lead to overfitting. For each permutation σ, we train n different models Mi, as shown above. That means that for building one tree we need to store and recalculate O(n2) approximations for each permutation σ: for each model Mi, we have to update Mi(X1), . . . , Mi(Xi). Thus, the resulting complexity of this operation is O(s n2). In our practical implementation, we use one important trick which reduces the complexity of one tree construction to O(s n): for each permutation, instead of storing and updating O(n2) values Mi(Xj ), we maintain values M0i(Xj ), i = 1, . . . ,
- [log2(n)], j <2i+1, where M0i(Xj ) is the approximation for the sample j based on the first 2i samples. Then, the number of predictions M0i(Xj ) is not larger than P0≤i≤log2(n)2i+1 < 4n. The gradient on the example Xk used for choosing a tree structure is estimated on the basis of the approximationM0i(Xk), where i = [log2(k)].
-
 在CatBoost中，我们生成训练数据集的随机排列。为了增强算法的鲁棒性，我们使用了几种排列：我们对随机排列进行采样，并在其基础上获得梯度。这些排列与用于计算类别型特征的统计信息的排列相同。我们使用不同的排列来训练不同的模型，因此使用几个排列不会导致过拟合。对于每个排列，我们训练n个不同的模型Mi，如上所示。这意味着为了构建一棵树，针对每个排列需要存储并重新计算，其复杂度近似于O(n^2)：对于每个模型Mi，我们必须更新Mi(X1)，.…，Mi(Xi)。因此，这种操作的结果复杂度是O(sn^2)。在我们的实现中，我们使用一个重要的技巧，它将一个树结构的复杂性降低到O(sn)：对于每个排列，我们不存储和更新值Mi(Xj)，而是保持值M0i(Xj)，i=1，.…，[log2(n)]，j<2i+1，其中M0i(Xj)是基于前2i样本的样本j的近似值。然后，预测值M0i(Xj)的数目不大于P0≤i≤log2(n)2i+1<4n，在近似M0i(Xk)的基础上估计了用于选择树结构的示例Xk上的梯度，其中i=[log2(k)]。
 
 ### 4 快速评分
@@ -90,17 +100,4 @@ CatBoost使用遗忘的树作为基本预测器。在这类树中，相同的分
 
 
 
-#### 2，CatBoost的优点(官宣)
 
-1. 性能卓越：在性能方面可以匹敌任何先进的机器学习算法；
-
-1. 鲁棒性/强健性：它减少了对很多超参数调优的需求，并降低了过度拟合的机会，这也使得模型变得更加具有通用性。
-
-1. 易于使用：提供与scikit集成的Python接口，以及R和命令行界面；
-
-1. 实用：特征值可以为字符串或者数字，无需将字符串经过编码；
-
-1. 可扩展：支持自定义损失函数；
-
-
-### 2，CatBoost程序文件
