@@ -49,8 +49,8 @@
      + **[LightGBM](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/LightGBM)**  
      + **[CatBoost](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Boosting/CatBoost)** 
 
-* **Stacking**
-     + **Stacking**
+* **[Stacking](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/readme.md)**
+     + **[Stacking](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/readme.md)**
      
 * **Blending**
      + **Blending**     
