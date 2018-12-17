@@ -4,11 +4,11 @@
 
 ### 二、Stacking流程图
 
-  + **Stacking 第一层中模型Mi的运行示意图**
+  + **Stacking第一层中模型Mi的运行示意图**
   
    ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/mi_model.png)
    
-  + **Stacking运行示意图**
+  + **2层Stacking运行示意图**
 
   ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/stacking.png)
 
