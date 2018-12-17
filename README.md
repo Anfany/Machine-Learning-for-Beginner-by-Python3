@@ -52,8 +52,8 @@
 * **[Stacking](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/readme.md)**
      + **[Stacking](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/readme.md)**
      
-* **Blending**
-     + **Blending**     
+* **[Blending](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Blending)**
+     + **[Blending](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/Blending)**     
 
    
 ### 高级篇
