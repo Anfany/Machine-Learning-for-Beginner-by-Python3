@@ -2,7 +2,7 @@
 
   + **回归问题：北京市pm2.5预测**
   
-     + 数据处理：[pm25_CatBoost_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoostpm25_CatBoost_Data.py)
+     + 数据处理：[pm25_CatBoost_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/pm25_CatBoost_Data.py)
      
      + 模型建立：[CatBoost_Regression_pm25.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/CatBoost_Regression_pm25.py)
      
@@ -20,7 +20,7 @@
   
   + **分类问题：成年人收入**
     
-     + 数据处理：[adult_CatBoost_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/adult_CatBoost_Data.py)
+     + 数据处理：[adult_CatBoost_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/adult_CatBoost_Data.py
      
      + 模型建立：[CatBoost_Classify_adult.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/CatBoost_Classify_adult.py)
      
