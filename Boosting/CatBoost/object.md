@@ -10,11 +10,11 @@
      
          * 方法选择
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/CatBoost_pm25.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/CatBoost_pm25.png) 
   
         * 预测真实值与输出值对比曲线 
      
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/CatBoost_duibi.jpg)
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/CatBoost_duibi.jpeg)
          
  
   
