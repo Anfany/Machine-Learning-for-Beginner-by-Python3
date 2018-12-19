@@ -145,7 +145,7 @@ def duibi(exdict, you, kaudu=0.3):
     '''
     :param exdict: 不同参数组合下的训练、测试数据的评分
     :param you: 最优的参数组合
-    :return: 直方图
+    :return: 柱状图
     '''
     # 参数组合列表
     palist = exdict.keys()
