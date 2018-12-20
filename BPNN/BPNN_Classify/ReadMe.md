@@ -19,7 +19,7 @@
      - AnFany：[AnFany_BPNN_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/AnFany_BPNN_Classify.py)
  
  
-     - TensorFlow：[TensorFow_BPNN_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/TensorFow_BPNN_Classify.py)
+     - TensorFlow：[TensorFow_BPNN_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/BPNN_Classify/TensorFlow_BPNN_Classify.py)
 
     
  + 辅助代码文件
