@@ -14,7 +14,7 @@ class LinearRegression:
         self.error = error
 
     #w和b合为一个参数，也就是x最后加上一列全为1的数据。
-    def Trans(xdata):
+    def Trans(self, xdata):
         one1 = np.ones(len(xdata))
         xta = np.append(xdata, one1.reshape(-1, 1), axis=1)
         return xta
