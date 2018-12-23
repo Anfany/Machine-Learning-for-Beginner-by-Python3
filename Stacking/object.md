@@ -10,13 +10,18 @@
      
      + 结果图示
      
-         * 方法选择
+         * 第一层各个模型结果
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/CatBoost_pm25.png) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/Stacking_yiceng.jpg) 
+           
+         * 第二层BPNN训练成本曲线
+       
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/Stacking_two.jpg)            
+           
   
         * 预测真实值与输出值对比曲线 
      
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/CatBoost_duibi.jpeg)
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/Stacking_last.jpg)
          
  
   
@@ -30,9 +35,9 @@
      
      + 结果图示
      
-         * 方法选择
+         * 第一层各个模型结果
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Boosting/CatBoost/Stacking_adult8.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/Stacking_adult8.jpg) 
   
         * 预测数据集结果
         
