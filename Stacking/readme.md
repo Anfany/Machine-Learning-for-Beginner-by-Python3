@@ -1,6 +1,6 @@
 # Stacking介绍
 
-### 一、Stacking实例程序
+### 一、[Stacking实例程序](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/object.md)
 
 ### 二、Stacking流程图
 
