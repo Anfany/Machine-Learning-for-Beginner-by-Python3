@@ -4,7 +4,10 @@
   
      + 数据处理：[pm25_Blending_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/pm25_Blending_Data.py)
      
-     + Stacking第二层模型建立：[BP_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/BP_Regression.py)
+     + Stacking第一层中的BPNN模型：[BP_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/BP_Regression.py)
+     
+     + Stacking第二层线性回归模型：[Linear_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/Linear_Regression.py)
+     
      
     + 最终模型建立：[Blending_Regression_pm25.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/Blending_Regression_pm25.py)
      
