@@ -2,7 +2,7 @@
 
   + **回归问题：北京市pm2.5预测**
   
-     + 数据处理：[pm25_Blending_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/pm25_Blending_Data.py)
+     + 数据处理：[pm25_Blending_data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/pm25_Blending_data.py)
      
      + Stacking第一层中的BPNN模型：[BP_Regression.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/BP_Regression.py)
      
