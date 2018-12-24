@@ -26,17 +26,21 @@
   
   + **分类问题：成年人收入**
     
-     + 数据处理：[adult_Stacking_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/adult_Stacking_Data.py)
+     + 数据处理：[adult_Blending_Data.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/adult_Blending_Data.py)
      
-     + Stacking第二层模型建立：[bp_Classify.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/bp_Classify.py) 
+     + Stacking第二层模型建立：[LR.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/LR.py) 
      
-     + 最终模型建立：[Stacking_Classify_adult.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/Stacking_Classify_adult.py)
+     + 最终模型建立：[Blending_Classify_adult.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/Blending_Classify_adult.py)
      
      + 结果图示
      
          * 第一层各个模型结果
        
-           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Stacking/Stacking_adult8.jpg) 
+           ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/Blending_adult.jpg)
+           
+          * 第二层模型
+       
+            ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/Blending_duibi.jpg)          
   
         * 预测数据集结果
         
@@ -44,5 +48,5 @@
    
            |  混淆矩阵 | 预测<=50K | 预测>50K |
            |:-------|:-------|:-------|
-           | 实际<=50K |   11640|   795   |
-           |  实际>50K |    1292 |   2554  |
+           | 实际<=50K |   11726|   709  |
+           |  实际>50K |    1400 |   2447  |
