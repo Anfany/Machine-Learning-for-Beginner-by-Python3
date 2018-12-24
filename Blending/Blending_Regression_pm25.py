@@ -449,7 +449,7 @@ class MODETWO:
 '''
 # 定义绘制第一层模型训练、验证、预测数据的误差的函数
 # 根据字典绘制不同参数下评分的对比柱状图
-def Plot_RMSE_ONE_Stacking(exdict, kaudu=0.2):
+def Plot_RMSE_ONE_Blending(exdict, kaudu=0.2):
     '''
     :param exdict: 不同模型的RMSE 最小二乘回归误差的平方根
     :return: 柱状图
@@ -545,11 +545,11 @@ def recspre(yzhenshide, yyucede, title='公式法'):
 
 
 '''
-第五部分：Stacking主函数
+第五部分：Blending主函数
 '''
 
 if __name__ == "__main__":
-    #  第一层6个模型：随机森林，AdaBoost，GBDT，LightGBM，XGBoost，CatBoost
+    #  第一层7个模型：随机森林，AdaBoost，GBDT，LightGBM，XGBoost，CatBoost，BPNN
 
     # 下面依次为每个模型建立数据
     # 随机森林、AdaBoost，GBDT，LIghtGNM，XGBoost都是一样的
@@ -568,7 +568,7 @@ if __name__ == "__main__":
     bp_data.Stand()   # 标准化
     data_bp = bp_data.Kfold()  # 分割数据
 
-    # 开始建立Stacking第一层的模型
+    # 开始建立Blending第一层的模型
     one_stacking = MODELONE(bp_data.fenmu, bp_data.cha)
     # 随机森林
     one_stacking.RF_First(data_rf)
@@ -603,7 +603,7 @@ if __name__ == "__main__":
     one_stacking.error_dict['BPNN'] = [trarm * bp_data.fenmu, adder * bp_data.fenmu, prerror]  # 因为BPNN的误差是数据处理后的误差
 
     # 绘制第一层中各个模型的误差图
-    Plot_RMSE_ONE_Stacking(one_stacking.error_dict)
+    Plot_RMSE_ONE_Blending(one_stacking.error_dict)
 
     feed_dict_add = {w1: data_bp['test'][:, :-1]}
     dgsio_add = ses.run(op_to_restore, feed_dict_add)
