@@ -2,7 +2,7 @@
 
 Blending也是一种模型融合的方法，和Stacking很类似。
 
-### 一、Blending实例程序文件
+### 一、[Blending实例程序文件](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/Blending/object.md)
 
 
 ### 二、Blending流程图
