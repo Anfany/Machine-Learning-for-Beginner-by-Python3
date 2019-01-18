@@ -71,7 +71,7 @@
 ------------
 扫描下方二维码，关注获取更多。
 
-![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/pythonfan.jpg)
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/pythonfan.jpg)
 
 * **```Join In &  Make Progress Together：```**
 
