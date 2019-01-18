@@ -39,8 +39,8 @@ def kfold(trdata, percent_test=0.2): # k最小值为5
     random_list = np.arange(length)
     np.random.shuffle(random_list)
     kfoldict[0] = {}
-    kfoldict[0]['train'] = trdata[[random_list[sign:]]]
-    kfoldict[0]['test'] = trdata[[random_list[:sign]]]
+    kfoldict[0]['train'] = trdata[random_list[sign:]]
+    kfoldict[0]['test'] = trdata[random_list[:sign]]
 
     return kfoldict
 
