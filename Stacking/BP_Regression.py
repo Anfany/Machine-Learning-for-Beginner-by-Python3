@@ -98,7 +98,7 @@ def Ten_train(xdata, ydata, prexdata, preydata, hiddenlayers=3, hiddennodes=100,
 
         sign = min(accudict.items(), key=lambda d: 0.01 * d[1][0] + 0.99 * d[1][1])[0]
 
-        return sign, hiddenlayers
+        return loss_vec, loss_pre, sign, hiddenlayers
 
 
 
