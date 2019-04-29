@@ -141,7 +141,69 @@ B_image.save(r"C:\Users\GWT9\Desktop\af_B.png")
 
 #### 四、生成自己的专属图片
 ```python
+# -*- coding：utf-8 -*-
+# &Author  AnFany
+
+# -*- coding：utf-8 -*-
+# &Author  AnFany
+
+
+#  根据生肖数+星座数+出生时辰+幸运数字生成专属图片
+
+from PIL import Image   # 根据数字矩阵生成图片
+import numpy as np   # 生成随机矩阵
+
+Fig_Path = r"C:\Users\GWT9\Desktop\my.png"   # 保存图片路径
+
+Zodiac = 8  # 取值1-12，将生肖数设置为随机种子，生成R通道矩阵
+Constellation = 3  # 取值1-12，将星座数设置为随机种子生成G通道矩阵
+Time_Birth = 9  # 取值1-12，将出生时辰设置为随机种子，生成B通道矩阵
+Lucky_Number = 7  # 取值1-9，图片的高度转换到179至187之间。1对应187，9对应179，宽度为乘以1.618取整
+
+
+# 根据数字获取矩阵
+def greate_matrix(seed, luck=Lucky_Number, channel='R', size=187):
+    """
+    根据随机种子，随机获取矩阵，防止出现
+    :param seed: 随机种子
+    :param luck: 幸运数字
+    :param channel: 通道名称
+    :param size: 图片的最大高度
+    :return: 通道矩阵
+    """
+    np.random.seed(seed * ord(channel))  # 防止三个通道出现相同的数字
+    fig_width = size - luck + 1
+    fig_height = int(fig_width * 1.618)
+    random_matrix = np.random.randint(0, 256, size=(fig_height, fig_width))
+    return random_matrix
+
+
+R = greate_matrix(Zodiac)  # 获取R通道
+G = greate_matrix(Constellation, channel='G')   # 获取G通道
+B = greate_matrix(Constellation, channel='B')    # 获取B通道
+
+# 通道矩阵变换维度
+R_t = R.reshape(-1, len(R[0]), 1)
+G_t = G.reshape(-1, len(G[0]), 1)
+B_t = B.reshape(-1, len(B[0]), 1)
+
+#  三个矩阵合成为三维矩阵
+my_matrix = np.concatenate([R_t, G_t, B_t], 2)
+
+# 输出图片
+R_image = Image.fromarray(my_matrix, mode="RGB")
+R_image.show()
+R_image.save(Fig_Path)
 
 ```
+
+* 结果
+
+ ![专属图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/my.png)!
+
+注意到，上面的图片看不出任何的线条，图案之类，就是由一些不同颜色的像素点构成。这是因为相邻的像素的颜色都是不同的，形不成线条或者任何的图案。下面利用卷积、池化操作，看看效果如何。关于卷积和池化的具体操作点击。
+
+
+
 
 
