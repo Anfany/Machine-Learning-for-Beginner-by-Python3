@@ -139,6 +139,9 @@ B_image.save(r"C:\Users\GWT9\Desktop\af_B.png")
   ![通道B](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_B.png)!
 
 
+#### 四、生成自己的专属图片
+```python
 
+```
 
 
