@@ -122,8 +122,53 @@ B通道矩阵：
  [211 200 214 ... 193 197 199]] 维度： (189, 149)
 ```
 
+#### 三、根据每个通道的数字矩阵输出图片
+
+```python
+# -*- coding：utf-8 -*-
+# &Author  AnFany
+
+from skimage import io
+from PIL import Image
 
 
+fig_path = r"C:\Users\GWT9\Desktop\af.png"   # 图片路径
+matrix = io.imread(fig_path)
+
+
+R = matrix[:, :, 0]  # 获取R通道
+G = matrix[:, :, 1]  # 获取G通道
+B = matrix[:, :, 2]  # 获取B通道
+
+R_image = Image.fromarray(R)
+R_image.show()
+R_image.save(r"C:\Users\GWT9\Desktop\af_R.png")
+
+
+G_image = Image.fromarray(G)
+G_image.show()
+G_image.save(r"C:\Users\GWT9\Desktop\af_G.png")
+
+
+B_image = Image.fromarray(B)
+B_image.show()
+B_image.save(r"C:\Users\GWT9\Desktop\af_B.png")
+```
+
+* 结果
+
+  + **通道R**
+  
+  ![通道R](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_R.png)!
+  
+  + **通道G**
+  
+  ![通道G](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_G.png)!
+  
+
+  + **通道B**
+
+  ![通道B](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_B.png)!
 
 
 
