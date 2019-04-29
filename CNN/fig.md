@@ -5,7 +5,11 @@
 
 ![彩色图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af.png)![图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_doc.png)![像素图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/afpixel.png)
 
-下面读取这个图片的三维矩阵， 
+下面读取这个图片的三维矩阵：
+```python
+
+```
+
 
 
 
