@@ -58,8 +58,18 @@
    
 ### 高级篇
 
+
+* **[卷积神经网络](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/CNN)**
+
+     + **LeNet**
+     + **AlexNet**
+     + **ZF Net**
+     + **GoogLeNet**  
+     + **VGGNet** 
+
 * **循环神经网络**
-* **卷积神经网络**
+
+
 * **深层神经网路**
 
 
