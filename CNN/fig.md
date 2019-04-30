@@ -193,11 +193,11 @@ R_image.save(Fig_Path_Original)
 
 * 结果
 
- ![专属图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/my_r.png)!
+ ![专属图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/my_r.png)
 
 注意到，上面的图片看不出任何的线条，图案之类，就是由一些不同颜色的像素点构成。这是因为相邻的像素的颜色都是不同的，形不成线条或者任何的图案。下面利用卷积、池化操作，看看效果如何。关于卷积和池化的具体操作点击。
 
-```
+```python
 Fig_Path = r"C:\Users\GWT9\Desktop\my.png"  # 保存经过卷积池化后的图片的路径
 # 卷积和池化的尺寸
 Convolution_Size = [5, 5]  # 注意2个都是奇数，这样才可以找到卷积核的中心。两个最好设置为一样的
