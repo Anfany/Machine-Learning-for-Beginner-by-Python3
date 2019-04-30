@@ -310,5 +310,5 @@ R_image.save(Fig_Path)
 
 * 结果
 
-![卷积池化后的专属图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/my.png)!
+![卷积池化后的专属图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/my.png)
 
