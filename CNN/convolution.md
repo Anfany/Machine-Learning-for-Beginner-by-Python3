@@ -15,7 +15,7 @@
   假设賴某每月都向某机构贷款f(t)元，贷款的利息是按复利计算，月利率3%。计算N个月月底賴某需要付出的利息**P(N)**？
   
   
-  ![复利](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c1.jpg)
+  ![复利](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c1.png)
   
   
   
