@@ -31,7 +31,7 @@
 
   * **连续情形：**
   
-  将借款的时间间隔无限缩小，问题就可以视为连续情形，此时利息的公式为：<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{P(N)}&space;=&space;\mathbf{\int_{\tau&space;=&space;1}^{N}f(\tau)*g(N-\tau&space;)}\mathit{\mathbf{d}\tau}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{P(N)}&space;=&space;\mathbf{\int_{\tau&space;=&space;1}^{N}f(\tau)*g(N-\tau&space;)}\mathit{\mathbf{d}\tau}" title="\mathbf{P(N)} = \mathbf{\int_{\tau = 1}^{N}f(\tau)*g(N-\tau )}\mathit{\mathbf{d}\tau}" /></a>
+  将借款的时间间隔无限缩小，利息的计算尺度也相应的缩小。问题就可以转变为连续情形，此时利息的公式为：<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{P(N)}&space;=&space;\mathbf{\int_{\tau&space;=&space;1}^{N}f(\tau)*g(N-\tau&space;)}\mathit{\mathbf{d}\tau}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{P(N)}&space;=&space;\mathbf{\int_{\tau&space;=&space;1}^{N}f(\tau)*g(N-\tau&space;)}\mathit{\mathbf{d}\tau}" title="\mathbf{P(N)} = \mathbf{\int_{\tau = 1}^{N}f(\tau)*g(N-\tau )}\mathit{\mathbf{d}\tau}" /></a>
   
   
 
