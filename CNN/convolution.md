@@ -7,14 +7,50 @@
 
 * 离散情形： <a href="https://www.codecogs.com/eqnedit.php?latex={\color{Red}&space;(f&space;*&space;g)(x)&space;=&space;\sum_{\tau&space;=&space;a}^{b}&space;f(\tau)g(x-\tau)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?{\color{Red}&space;(f&space;*&space;g)(x)&space;=&space;\sum_{\tau&space;=&space;a}^{b}&space;f(\tau)g(x-\tau)}" title="{\color{Red} (f * g)(x) = \sum_{\tau = a}^{b} f(\tau)g(x-\tau)}" /></a>
 
-
-其中连续情形下，f(x), g(x)在区间[a, b]是可积的。
+其中[a, b]为函数的定义域，连续情形下f(x), g(x)在定义域区间内是可积的。
 
 #### 二、示例说明
 
+  * **连续情形：高利贷利息**
+  
+  假设賴某每月都向某机构贷款h(m)元，贷款的利息是按复利计算，月利率3%。计算N个月后賴某需要付出的利息？
+  
+  
+  ![复利]()
+  
+  
+  
+   
+  
+  * **离散情形：**
 
 
-#### 三、卷积应用——图片
+
+#### 三、图像卷积
+
+
 
 
 #### 四、卷积类型
+
+  * **图像平滑**
+
+
+  * **平行边缘识别**
+  
+  * **竖直边缘识别**
+  
+  * **图像锐化**
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
