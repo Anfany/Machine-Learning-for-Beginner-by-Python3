@@ -33,14 +33,14 @@
   
   将借款的时间间隔无限缩小，利息的计算尺度也相应的缩小。问题就可以转变为连续情形，此时利息的公式为：<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{P(N)}&space;=&space;\mathbf{\int_{\tau&space;=&space;1}^{N}f(\tau)*g(N-\tau&space;)}\mathit{\mathbf{d}\tau}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{P(N)}&space;=&space;\mathbf{\int_{\tau&space;=&space;1}^{N}f(\tau)*g(N-\tau&space;)}\mathit{\mathbf{d}\tau}" title="\mathbf{P(N)} = \mathbf{\int_{\tau = 1}^{N}f(\tau)*g(N-\tau )}\mathit{\mathbf{d}\tau}" /></a>
   
-  
+将上面的示例抽象表示，借款好比输入，计算利息的方式可看作一个系统，利息的多少可看作输出。也就是输出等于输入与系统的卷积。系统决定了输出与输入的关系，设置不要同系统，就可以得到不同的输出。 卷积的应用很多，下面主要介绍在图像方面的应用。
 
 #### 三、图像卷积
 
 
 
 
-#### 四、卷积类型
+#### 四、卷积核类型
 
   * **图像平滑**
 
