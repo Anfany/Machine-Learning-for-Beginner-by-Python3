@@ -9,7 +9,7 @@
 
 其中[a, b]为函数的定义域，连续情形下f(x), g(x)在定义域区间内是可积的。
 
-#### 二、示例:高利贷利息
+#### 二、示例：高利贷利息
 
   
   假设賴某每月都向某机构贷款f(t)元，贷款的利息是按复利计算，月利率3%。计算N个月月底賴某需要付出的利息**P(N)**？
@@ -18,7 +18,9 @@
   ![复利](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c1.png)
   
   
+  <a href="https://www.codecogs.com/eqnedit.php?latex=\\&space;\mathbf{P(N)}&space;=&space;{\color{DarkOrange}&space;f(N)*3\%&space;}&plus;&space;\mathbf{f(N-1)*(1&plus;3\%)*3\%&space;}&plus;&space;\cdots&space;&plus;&space;{\color{Red}&space;\mathbf{f(1)}*(1&plus;3\%)^{(N-1)}*3\%}&space;\\&space;\\&space;=&space;{\color{DarkOrange}&space;f(N)*&space;g(0))}&plus;&space;\mathbf{f(N-1)*g(1)}&plus;&space;\cdots&space;&plus;&space;{\color{Red}&space;\mathbf{f(1)}*g(N-1)}&space;\\&space;\\&space;=&space;{\color{DarkOrange}&space;f(N)*&space;g(N&space;-&space;N))}&plus;&space;\mathbf{f(N-1)*g(N&space;-&space;(N-1))}&plus;&space;\cdots&space;&plus;&space;{\color{Red}&space;\mathbf{f(1)}*g(N-1)}&space;\\" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\\&space;\mathbf{P(N)}&space;=&space;{\color{DarkOrange}&space;f(N)*3\%&space;}&plus;&space;\mathbf{f(N-1)*(1&plus;3\%)*3\%&space;}&plus;&space;\cdots&space;&plus;&space;{\color{Red}&space;\mathbf{f(1)}*(1&plus;3\%)^{(N-1)}*3\%}&space;\\&space;\\&space;=&space;{\color{DarkOrange}&space;f(N)*&space;g(0))}&plus;&space;\mathbf{f(N-1)*g(1)}&plus;&space;\cdots&space;&plus;&space;{\color{Red}&space;\mathbf{f(1)}*g(N-1)}&space;\\&space;\\&space;=&space;{\color{DarkOrange}&space;f(N)*&space;g(N&space;-&space;N))}&plus;&space;\mathbf{f(N-1)*g(N&space;-&space;(N-1))}&plus;&space;\cdots&space;&plus;&space;{\color{Red}&space;\mathbf{f(1)}*g(N-1)}&space;\\" title="\\ \mathbf{P(N)} = {\color{DarkOrange} f(N)*3\% }+ \mathbf{f(N-1)*(1+3\%)*3\% }+ \cdots + {\color{Red} \mathbf{f(1)}*(1+3\%)^{(N-1)}*3\%} \\ \\ = {\color{DarkOrange} f(N)* g(0))}+ \mathbf{f(N-1)*g(1)}+ \cdots + {\color{Red} \mathbf{f(1)}*g(N-1)} \\ \\ = {\color{DarkOrange} f(N)* g(N - N))}+ \mathbf{f(N-1)*g(N - (N-1))}+ \cdots + {\color{Red} \mathbf{f(1)}*g(N-1)} \\" /></a>
   
+  其中<a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{g(x)&space;=&space;(1&plus;3\%)^{x}*3\%}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{g(x)&space;=&space;(1&plus;3\%)^{x}*3\%}" title="\mathbf{g(x) = (1+3\%)^{x}*3\%}" /></a>
   
   * **离散情形：**
 
