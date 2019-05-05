@@ -7,6 +7,6 @@
 * 离散情形： <a href="https://www.codecogs.com/eqnedit.php?latex={\color{Red}&space;(f&space;*&space;g)(x)&space;=&space;\sum_{\tau&space;=&space;a}^{b}&space;f(\tau)g(x-\tau)}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?{\color{Red}&space;(f&space;*&space;g)(x)&space;=&space;\sum_{\tau&space;=&space;a}^{b}&space;f(\tau)g(x-\tau)}" title="{\color{Red} (f * g)(x) = \sum_{\tau = a}^{b} f(\tau)g(x-\tau)}" /></a>
 
 
-其中f(x), g(x)走区间[a, b]是可积的。
+其中连续情形下，f(x), g(x)在区间[a, b]是可积的。
 
 
