@@ -1,7 +1,7 @@
 # 卷积
 #### 一、定义
 
-卷积，和加减乘除一样，是一种数学运算。下面给出它的定义：f，g的卷积记为(f\*g)，其中:
+卷积，和加减乘除一样，是一种数学运算。下面给出它的定义：f，g的卷积记为(f\*g)，其中：
 
 * 连续情形： <a href="https://www.codecogs.com/eqnedit.php?latex=\mathbf{{\color{Blue}&space;(f*g)(t)&space;=&space;\int_{a}^{b}&space;f(\tau)&space;g(t&space;-&space;\tau&space;)\mathit{d}\tau&space;}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathbf{{\color{Blue}&space;(f*g)(t)&space;=&space;\int_{a}^{b}&space;f(\tau)&space;g(t&space;-&space;\tau&space;)\mathit{d}\tau&space;}}" title="\mathbf{{\color{Blue} (f*g)(t) = \int_{a}^{b} f(\tau) g(t - \tau )\mathit{d}\tau }}" /></a>
 
