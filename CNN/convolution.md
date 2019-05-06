@@ -74,12 +74,12 @@
    步长就是上面的黄色部分每一次移动的步伐的长度。上面示例中显示的两种方式的卷积的步长均为1，下面图示给出移动步长为2，3的情况：
    
    
-  ![Strided步长](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c_s.jpg)
+  ![Strided步长](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c_s.png)
    
   
    根据上图可知，步长的不同也会最终影响卷积结果的维度。对于N\*M的矩阵，卷积核矩阵为Pr\*Pc，步长为s，填充Padding为p，那么卷积后得到的结果的行row、列column分别为：
    
-   
+   ![维度计算](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c_rc.png)
    
    
     
