@@ -43,7 +43,8 @@
   
   下面介绍图像的卷积是如何操作的：
   
- 
+   ![卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c2.png)
+  
   
   + **Padding填充**
   
