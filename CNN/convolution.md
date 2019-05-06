@@ -42,7 +42,7 @@
 
   + **卷积核说明**
   
-  卷积核一般又称为过滤器，卷积核就是一个数字矩阵，一般设置为奇数行奇数列。因为在计算机视觉里，如果有一个中心像素点会更方便，因此卷积核数字矩阵行列均为同一个奇数。在卷积神经网络中卷积核通常设置为1\*1，3\*3，5\*5，7\*7。
+  卷积核一般又称为过滤器，卷积核就是一个数字矩阵，一般设置为奇数行奇数列。因为在计算机视觉里，如果有一个中心像素点会更方便，因此卷积核数字矩阵行列均为同一个奇数。在卷积神经网络中卷积核通常设置为1\*1，3\*3，5\*5，7\*7。此外，需要注意的是，在卷积神经网络中，卷积核一般不需要进行镜像旋转。
 
 
   + **卷积操作**
@@ -50,7 +50,7 @@
   
   下面介绍图像的卷积是如何操作的：
   
-   ![卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c2.png)
+   ![valid卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c_valid.png)
    
   
 
@@ -68,7 +68,7 @@
     也就是经过卷积后，矩阵的行和列均不变，此时就需要Padding，填充的行和列分别为P-1行，P-1列。也就是在图片数字矩阵的上、下均添加(P-1)/2行元素为0的网格，左、右均添加(P-1)/2列元素为0的网格。具体参加下图：
     
     
-
+   ![same卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c_same.png)
      
      
    + **Strided步长**
