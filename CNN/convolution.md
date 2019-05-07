@@ -48,31 +48,31 @@
   + **卷积操作**
 
   
-  下面介绍单通道的数字矩阵的卷积是如何操作的：
+ 下面介绍单通道的数字矩阵的卷积是如何操作的：
   
-   ![valid卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_valid.png)
+ ![valid卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_valid.png)
    
   
-  + **Padding填充**
+   - **Padding填充**
      
-从上例可以看出，一个N\*M的矩阵与一个F\*F的卷积核的卷积结果为(N-F+1)\*(M-F+1)的矩阵。矩阵的行和列都减小了。这种卷积方式就是Valid卷积。在卷积神经网络中因为有多个卷积层，这样会导致图片越来越小，也就是会损失一些图像的信息，因此为了保证图片原来的维度，需要进行Padding，也就是填充。填充主要有4种形式：补零填充，边界复制填充，镜像填充，块填充。本文主要介绍常用的补零填充，就是在图片的数字矩阵的四周添加上值为0的网格。
+     从上例可以看出，一个N\*M的矩阵与一个F\*F的卷积核的卷积结果为(N-F+1)\*(M-F+1)的矩阵。矩阵的行和列都减小了。这种卷积方式就是Valid卷积。在卷积神经网络中因为有多个卷积层，这样会导致图片越来越小，也就是会损失一些图像的信息，因此为了保证图片原来的维度，需要进行Padding，也就是填充。填充主要有4种形式：补零填充，边界复制填充，镜像填充，块填充。本文主要介绍常用的补零填充，就是在图片的数字矩阵的四周添加上值为0的网格。
   
-   + **Valid卷积**     
+   - **Valid卷积**     
      
-   示例中的就是Valid卷积，也就是Padding为0。
+      示例中的就是Valid卷积，也就是Padding为0。
   
-   + **Same卷积**
+   - **Same卷积**
      
-   经过Same卷积后，矩阵的行和列均不变，此时就需要Padding，填充的行和列数分别为F-1，F-1，其中F为卷积核矩阵的行和列数。也就是在图片数字矩阵的上、下均添加(F-1)/2行元素为0的网格，左、右均添加(F-1)/2列元素为0的网格。具体参加下图：
+      经过Same卷积后，矩阵的行和列均不变，此时就需要Padding，填充的行和列数分别为F-1，F-1，其中F为卷积核矩阵的行和列数。也就是在图片数字矩阵的上、下均添加(F-1)/2行元素为0的网格，左、右均添加(F-1)/2列元素为0的网格。具体参加下图：
     
     
    ![same卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_same.png)
    
-   + **Full卷积**
+   - **Full卷积**
      
-   Full卷积就是在数字矩阵的四周填充F-1行，F-1列的值为0的网格。卷积后得到的结果为N+F-1行，M+F-1列。具体参见下图：
+       Full卷积就是在数字矩阵的四周填充F-1行，F-1列的值为0的网格。卷积后得到的结果为N+F-1行，M+F-1列。具体参见下图：
    
-   ![same卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_full.png) 
+       ![full卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_full.png) 
      
  + **Strided步长**
    
