@@ -95,7 +95,7 @@
 | :------:| :------: | :------: | :------: |
 | 单位卷积核| **0  0  0 <br>0  1 0<br>0 0 0** | 原图 |  ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena.jpg)|
 | 均值卷积核| **1/9  1/9  1/9 <br>1/9 1/9 1/9<br>1/9 1/9 1/9** | 模糊 |  ![均值模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_means.jpg)|
-| 高斯模糊卷积核| **1 4 7 4 1<br>4 16 26 16 4<br>1/273 * 7 26 41 26 7<br>4 16 26 16 4<br>1 4 7 4 1** | 高斯模糊 |  ![高斯模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_gauss.jpg)| 
+| 高斯模糊卷积核| ![高斯模糊](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/gauss.jpg) | 高斯模糊 | ![高斯模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_gauss.jpg)| 
 | 拉普拉斯卷积核| **-1 -1 -1 <br>-1 8 -1<br>-1 -1 -1** | 边缘检测、锐化|  ![锐化图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_laplace.jpg)|   
   
   
