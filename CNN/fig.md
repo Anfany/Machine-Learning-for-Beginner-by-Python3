@@ -137,4 +137,41 @@ B_image.save(r"C:\Users\GWT9\Desktop\af_B.png")
   + **通道B**
 
   ![通道B](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_B.png)!
+  
+  
+ #### 三、根据数字矩阵输出图片 
+ 
+  因为像素值均是[0-255]内的数字，因此要保证数字矩阵的数字在此范围内，也就是设置数字的格式为unit8，此时数字矩阵和读取生成的图片的矩阵是一样的。如果不设置数字格式，也可以为输出的图设定mode，例如mode设置为'RGB'，但是此时数字矩阵和读取生成的图片的矩阵是不同的。
+ 
+ ```python
+ # -*- coding：utf-8 -*-
+# &Author  AnFany
+
+
+from PIL import Image
+import numpy as np
+
+# 三位数字矩阵
+R = np.arange(-800, 100, 0.5, dtype=np.uint8).reshape(30, 20, 3)
+print(R)
+R_image = Image.fromarray(R)
+R_image.show()
+```
+
+```python
+# -*- coding：utf-8 -*-
+# &Author  AnFany
+
+
+from PIL import Image
+import numpy as np
+
+# 三位数字矩阵
+R = np.arange(-800, 100, 0.5).reshape(30, 20, 3)
+R_image = Image.fromarray(R, mode='RGB')
+R_image.show()
+```
+
+
+
 
