@@ -15,7 +15,7 @@
   假设賴某每月都向某机构贷款f(t)元，贷款的利息是按复利计算，月利率3%。计算N个月月底賴某需要付出的利息**P(N)**？
   
   
-  ![复利](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c1.png)
+  ![复利](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c1.png)
   
   
   利息
@@ -50,7 +50,7 @@
   
   下面介绍单通道的数字矩阵的卷积是如何操作的：
   
-   ![valid卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c_valid.png)
+   ![valid卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_valid.png)
    
   
   + **Padding填充**
@@ -66,7 +66,7 @@
    经过Same卷积后，矩阵的行和列均不变，此时就需要Padding，填充的行和列数分别为F-1，F-1，其中F为卷积核矩阵的行和列数。也就是在图片数字矩阵的上、下均添加(F-1)/2行元素为0的网格，左、右均添加(F-1)/2列元素为0的网格。具体参加下图：
     
     
-   ![same卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c_same.png)
+   ![same卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_same.png)
      
      
    + **Strided步长**
@@ -74,12 +74,12 @@
    步长就是上面的黄色部分每一次移动的步伐的长度。上面示例中显示的两种方式的卷积的步长s均为1，下面图示给出移动步长s为2，3的情况：
    
    
-  ![Strided步长](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/cs.png)
+  ![Strided步长](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/cs.png)
    
   
    根据上图可知，步长的不同也会最终影响卷积结果的维度。对于N\*M的矩阵，卷积核矩阵为F\*F，步长为s，填充Padding为P，那么卷积后得到的结果的行row、列column分别为：
    
-   ![维度计算](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/c_rc.png)
+   ![维度计算](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_rc.png)
    
    
   + **卷积结果中数字的处理**
@@ -93,10 +93,10 @@
 
 | 卷积核名称 | 卷积核 | 功能| 图片显示 | 
 | :------:| :------: | :------: | :------: |
-| 单位卷积核| **0  0  0 <br>0  1 0<br>0 0 0** | 原图 |  ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena.jpg)|
-| 均值卷积核| **1/9  1/9  1/9 <br>1/9 1/9 1/9<br>1/9 1/9 1/9** | 模糊 |  ![均值模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_means.png)|
-| 高斯模糊卷积核| ![高斯模糊](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/gauss.png) | 高斯模糊 | ![高斯模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_gauss.png)| 
-| 拉普拉斯卷积核| **-1 -1 -1 <br>-1 8 -1<br>-1 -1 -1** | 边缘检测、锐化|  ![锐化图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_laplace.png)|   
+| 单位卷积核| **0  0  0 <br>0  1 0<br>0 0 0** | 原图 |  ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/lena.jpg)|
+| 均值卷积核| **1/9  1/9  1/9 <br>1/9 1/9 1/9<br>1/9 1/9 1/9** | 模糊 |  ![均值模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/lena_means.png)|
+| 高斯模糊卷积核| ![高斯模糊](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/gauss.png) | 高斯模糊 | ![高斯模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/lena_gauss.png)| 
+| 拉普拉斯卷积核| **-1 -1 -1 <br>-1 8 -1<br>-1 -1 -1** | 边缘检测、锐化|  ![锐化图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/lena_laplace.png)|   
   
   
   
