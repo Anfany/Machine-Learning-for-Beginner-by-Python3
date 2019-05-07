@@ -67,11 +67,16 @@
     
     
    ![same卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_same.png)
-     
-     
-   + **Strided步长**
    
-   步长就是上面的黄色部分每一次移动的步伐的长度。上面示例中显示的两种方式的卷积的步长s均为1，下面图示给出移动步长s为2，3的情况：
+   + **Full卷积**
+     
+   Full卷积就是在数字矩阵的四周填充F-1行，F-1列的值为0的网格。卷积后得到的结果为N+F-1行，M+F-1列。具体参见下图：
+   
+   ![same卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_full.png) 
+     
+ + **Strided步长**
+   
+ 步长就是上面的黄色部分每一次移动的步伐的长度。上面示例中显示的两种方式的卷积的步长s均为1，下面图示给出移动步长s为2，3的情况：
    
    
   ![Strided步长](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/cs.png)
@@ -82,7 +87,7 @@
    ![维度计算](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Convolution/c_rc.png)
    
    
-  + **卷积结果中数字的处理**
+ + **卷积结果中数字的处理**
   
 对于卷积结果中的特殊数字，例如小于0大于255的数字，以及[0, 255]区间内的小数，因为在卷积神经网络中，卷积层后面一般会跟着激活层，因此不用对这些数字特别处理。如果要把卷积结果进行显示的话，可以把这些数字变为unit8的形式。
     
