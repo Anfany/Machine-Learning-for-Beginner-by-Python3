@@ -2,8 +2,7 @@
 ### 图像的结构
 
 图像是由一个个像素点构成，每个像素点有三个通道，分别对应R，G，B。彩色RGB图像其实是一个三维矩阵，矩阵中的每个数字(0到255)代表的是一个像素一个通道的灰度。下面举例说明：
-
-![彩色图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af.png)![图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_doc.png)![像素图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_pixel.png)
+![彩色图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Fig/af.png)![图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Fig/af_doc.png)![像素图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Fig/af_pixel.png)
 
 #### 一、读取这个图片的三维矩阵
 ```python
@@ -127,16 +126,16 @@ B_image.save(r"C:\Users\GWT9\Desktop\af_B.png")
 
   + **通道R**
   
-  ![通道R](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_R.png)!
+  ![通道R](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Fig/af_R.png)!
   
   + **通道G**
   
-  ![通道G](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_G.png)!
+  ![通道G](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Fig/af_G.png)!
   
 
   + **通道B**
 
-  ![通道B](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af_B.png)!
+  ![通道B](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Fig/af_B.png)!
   
   
  #### 三、根据数字矩阵输出图片 
