@@ -93,7 +93,7 @@
 
 | 卷积核 | 功能| 图片显示 |
 | :------:| :------: | :------|
-| 2|3|4 |  无变化|  ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af.png)|
+| [2, 3, 4] |  无变化|  ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af.png)|
   
   
   
