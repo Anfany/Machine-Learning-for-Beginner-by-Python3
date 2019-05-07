@@ -141,7 +141,7 @@ B_image.save(r"C:\Users\GWT9\Desktop\af_B.png")
   
  #### 三、根据数字矩阵输出图片 
  
-  因为像素值均是[0-255]内的数字，因此要保证数字矩阵的数字在此范围内，也就是设置数字的格式为uint8，此时数字矩阵和读取生成的图片的矩阵是一样的。如果不转换数字格式，也可以为输出的图设定mode，例如mode设置为'RGB'，但是此时数字矩阵和读取生成的图片的矩阵是不同的。
+  因为像素值均是[0-255]内的数字，因此要保证数字矩阵的数字在此范围内，可以设置数字的格式为uint8。
  
  ```python
  # -*- coding：utf-8 -*-
@@ -153,11 +153,10 @@ import numpy as np
 
 # 三维数字矩阵
 R = np.arange(-800, 100, 0.5, dtype=np.uint8).reshape(30, 20, 3)
-print(R)
 R_image = Image.fromarray(R)
 R_image.show()
 ```
-
+如果不转换数字格式，也可以为输出的图设定mode，例如mode设置为'RGB'，但是此时数字矩阵和读取生成的图片的矩阵是不同的。
 ```python
 # -*- coding：utf-8 -*-
 # &Author  AnFany
@@ -168,10 +167,24 @@ import numpy as np
 
 # 三维数字矩阵
 R = np.arange(-800, 100, 0.5).reshape(30, 20, 3)
-R_image = Image.fromarray(R, mode='RGB')
+R_image = Image.fromarray(R, mode='RGB')  # 设置mode
 R_image.show()
 ```
+或将数字矩阵中的数字首先变为整数形式，然后小于0的按0计算，大于255的按255计算，这种转换和直接将数字进行uint8转换得到的是不同的，最后在转换为uint8的格式进行图片的输出。 
+```python
+# -*- coding：utf-8 -*-
+# &Author  AnFany
 
 
+from PIL import Image
+import numpy as np
 
+# 三维数字矩阵
+R = np.arange(-800, 100, 0.5).reshape(30, 20, 3)
+# 进行转换
+R[R < 0] = 0
+R[R > 255] = 255
+R_image = Image.fromarray(np.uint8(R)) # 转为uint8的格式
+R_image.show()
+```
 
