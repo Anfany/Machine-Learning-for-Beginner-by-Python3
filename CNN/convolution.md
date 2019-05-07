@@ -88,14 +88,15 @@
     
   + **不同卷积核的对比**
   
-正如前文提到的，不同的卷积核就相当于不同的图像特征提取器。至于为何这种形式的卷积核，就可以提取这种特征，本文不再多做说明。下文给出不同的卷积核得到的图像不同的特征的对比。也就是图像的三个通道的数字矩阵均用同一个卷积核进行same卷积，然后将各自通道的卷积结果合成的的图片进行对比。
+正如前文提到的，不同的卷积核就相当于不同的图像特征提取器。至于为何这种形式的卷积核，就可以提取这种特征，本文不再多做说明。下文给出不同的卷积核得到的图像不同的特征的对比。也就是图像的三个通道的数字矩阵均用同一个卷积核进行same卷积，然后将各自通道的卷积结果合成的的图片进行对比。下面的示例图片是图像处理最为经典的图片，图片中的人为Lena。
     
 
 | 卷积核名称 | 卷积核 | 功能| 图片显示 | 
 | :------:| :------: | :------: | :------: |
-| 单位卷积核| **0  0  0 <br>0  1 0<br>0 0 0** | 原图|  ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/af.png)|
-  
-  
+| 单位卷积核| **0  0  0 <br>0  1 0<br>0 0 0** | 原图 |  ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena.jpg)|
+| 均值卷积核| **1/9  1/9  1/9 <br>1/9 1/9 1/9<br>1/9 1/9 1/9** | 模糊 |  ![均值模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_means.jpg)|
+| 高斯模糊卷积核| **1 4 7 4 1<br>4 16 26 16 4<br>7 26 41 26 7<br>4 16 26 16 4<br>1 4 7 4 1** | 高斯模糊 |  ![高斯模糊图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_gauss.jpg)| 
+| 拉普拉斯卷积核| **-1 -1 -1 <br>-1 8 -1<br>-1 -1 -1** | 边缘检测、锐化|  ![锐化图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/lena_laplace.jpg)|   
   
   
   
