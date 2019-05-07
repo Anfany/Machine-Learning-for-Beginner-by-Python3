@@ -151,7 +151,7 @@ B_image.save(r"C:\Users\GWT9\Desktop\af_B.png")
 from PIL import Image
 import numpy as np
 
-# 三位数字矩阵
+# 三维数字矩阵
 R = np.arange(-800, 100, 0.5, dtype=np.uint8).reshape(30, 20, 3)
 print(R)
 R_image = Image.fromarray(R)
@@ -166,7 +166,7 @@ R_image.show()
 from PIL import Image
 import numpy as np
 
-# 三位数字矩阵
+# 三维数字矩阵
 R = np.arange(-800, 100, 0.5).reshape(30, 20, 3)
 R_image = Image.fromarray(R, mode='RGB')
 R_image.show()
