@@ -46,14 +46,13 @@
 
 ### 三、池化对比
 
-
 ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/lena.jpg)
 
 
 | 池化方法 | 池化 | 图片显示| 
 | :------:| ：------: | :------: |
 | 一般：最大值| **尺寸=8，步长=10** | ![一般最大值图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/max_normal.png)|
-| 重叠：最大值| **尺寸=8，步长=6**| ![重叠最大值图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/max.png)|
+| 重叠：最大值| **尺寸=8，步长=4**| ![重叠最大值图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/max.png)|
 | 一般：普通均值| **尺寸=8，步长=10** | ![普通图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/mean_normal.png)|
 | 一般：加权均值| **尺寸=8，步长=10** | ![加权图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/mean_weight.png)| 
 
