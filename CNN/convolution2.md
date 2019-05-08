@@ -1,6 +1,6 @@
 # 再谈卷积
 
-图像卷积的计算有很多种形式，[初始卷积]()中介绍的是经典的，下面针对其他方式的卷积进行说明：
+图像卷积的计算有很多种形式，[初始卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/convolution.md)中介绍的是一般形式，下面针对其他方式的卷积进行说明：
 
 
 * **Dilation Convolution：空洞卷积**
