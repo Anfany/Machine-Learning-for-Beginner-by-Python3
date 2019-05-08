@@ -12,7 +12,7 @@ import numpy as np
 
 def generate_fig(fig, file, func):
     """
-    # 首先读取图片的矩阵，然各三个通道各自和卷积核进行卷积，将得到的结果合成为图片矩阵，最后根据矩阵显示图片
+    # 首先读取图片的矩阵，然各三个通道各自池化，将得到的结果合成为图片矩阵，最后根据矩阵显示图片
     :param fig: 需要处理的图片的路径
     :param file: 最周保存图片的路径
     :return: 图片
@@ -20,22 +20,21 @@ def generate_fig(fig, file, func):
     matrix = io.imread(fig)
     # R通道
     R = matrix[:, :, 0]
-    # 计算经过same卷积后的结果
-
+    # 计算经过池化后的结果
     R = func(R)
     # 通道矩阵变换维度
     R1 = R.reshape(-1, len(R[0]), 1)
 
     # G通道
     G = matrix[:, :, 1]
-    # 计算经过same卷积后的结果
+    # 计算经过池化后的结果
     G = func(G)
     # 通道矩阵变换维度
     G1 = G.reshape(-1, len(G[0]), 1)
 
     # B通道
     B = matrix[:, :, 2]
-    # 计算经过same卷积后的结果
+    # 计算经过池化后的结果
     B = func(B)
     # 通道矩阵变换维度
     B1 = B.reshape(-1, len(B[0]), 1)
