@@ -4,6 +4,8 @@
 
 ### 一、池化类型
 
+[程序参见](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/pooling.py)
+
 * **一般池化**
    
   池化窗口的尺寸为n\*n，一般情况下池化窗口都是正方形的。步长等于n。此时池化窗口之间是没有重叠的。对于超出数字矩阵范围的，只计算范围内的或者范围外的用0填充在计算。本文只介绍最大值池化，均值池化，随机池化。下面给出图示：
@@ -48,14 +50,14 @@
 ![原始图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/lena.jpg)
 
 
-| 池化方法 | 池化 | 图片显示 | 
+| 池化方法 | 池化 | 图片显示| 
 | :------:| ：------:|:------: |
-| 一般：最大值| **尺寸=8，步长=10** |  ![一般最大值图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/max_normal.png)|
-| 重叠：最大值| **尺寸=8，步长=6**|  ![重叠最大值图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/max.png)|
-| 一般：普通均值| **尺寸=8，步长=10** |  ![普通图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/mean_normal.png)|
-| 一般：加权均值| **尺寸=8，步长=10** |  ![加权图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/mean_weight.png)| 
+| 一般：最大值| **尺寸=8，步长=10** | ![一般最大值图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/max_normal.png)|
+| 重叠：最大值| **尺寸=8，步长=6**| ![重叠最大值图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/max.png)|
+| 一般：普通均值| **尺寸=8，步长=10** | ![普通图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/mean_normal.png)|
+| 一般：加权均值| **尺寸=8，步长=10** | ![加权图片](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/mean_weight.png)| 
 
   
-
+[程序参见](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/pooling_fig.py)
 
 
