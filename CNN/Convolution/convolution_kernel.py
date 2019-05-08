@@ -49,7 +49,7 @@ def generate_fig(fig, c, file):
     :param fig: 需要处理的图片的路径
     :param c: 卷积核矩阵
     :param file: 最周保存图片的路径
-    :return: 图图片
+    :return: 图片
     """
     matrix = io.imread(fig)
     # R通道
