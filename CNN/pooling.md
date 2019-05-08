@@ -12,13 +12,13 @@
   
   池化窗口范围内的最大值作为采样的输出值。
   
-  ![最大值池化]()
+  ![最大值池化](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/max_pool.png)
   
   + **均值池化(Average pooling)**
   
   池化窗口范围内的平均值作为采样的输出值。或者将范围内的数字归一化，每个数字与该范围内的数字之和的比例作为该数字的权重，然后原始数字和对应权重的乘积的和作为最终的输出值，也就是加权平均。下图中的示例是前者。
   
-  ![均值池化]()
+  ![均值池化](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/mean_pool.png)
   
   + **随机池化(Stochastic pooling)**
   
