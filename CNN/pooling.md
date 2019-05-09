@@ -35,13 +35,18 @@
 
 空间金字塔池化，简称SPP，又名空间金字塔匹配。BP神经网络(全连接神经网络)中要求的输入维度必须是一致的，卷积神经网络中的网络也包括全连接层。因此需要将尺寸大小不一样的图片(经过多层卷积池化后的结果)，转换为同样的尺寸，作为全连接神经网络的输入。如果利用裁剪可能会丧失很多的边缘信息，而SPP可以很好的解决这个问题。
 
-空间金字塔池化就是首先把图片看成1块，对这1块进行最大值池化，得到1个值，然后分成4块，对这4块分别进行最大值池化，得到4个值；然后分成16块，对这16块分别进行最大值池化，得到16个值，以此类推。这样就可以保证对于不同尺寸的图片而言，最终得到的值的个数是一样的。因为是最大值池化，超出范围的用不用0填充不会影响结果。
+空间金字塔池化就是首先把图片看成1块，对这1块进行最大值池化，得到1个值，分成4块，对这4块分别进行最大值池化，得到4个值；分成16块，对这16块分别进行最大值池化，得到16个值，以此类推。这样就可以保证对于不同尺寸的图片而言，最终得到的值的个数是一样的。因为是最大值池化，超出范围的用不用0填充不会影响结果。
 
+下面给出2个不同尺寸的图片，进行空间金字塔池化的结果。
 
+|  图1 | ssp结果 | 第l层 | ssp结果 | 图2 | 
+| :------:|:------:|:------:|:------:|:------:|
+| ![竖图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/vertical_iris_1.png)|R通道ssp结果: 255<br>G通道ssp结果: 255<br>B通道ssp结果: 255|**1**|:------:|![横图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/horizontal_iris_1.png|
+| ![竖图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/vertical_iris_2.png)|R通道ssp结果: [255, 255, 255, 255]<br>G通道ssp结果: [255, 255, 246, 241]<br>B通道ssp结果: [255, 255, 255, 255]|**2**|R通道ssp结果: [255, 255, 252, 255]<br>G通道ssp结果: [255, 239, 252, 248]<br>B通道ssp结果: [255, 255, 255, 255]|![横图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/horizontal_iris_2.png|
+| ![竖图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/vertical_iris_3.png)|R通道ssp结果: [249, 255, 255, 255, 255, 255, 244, 255, 236]<br>G通道ssp结果: [206, 224, 221, 255, 246, 255, 213, 241, 206]<br>B通道ssp结果: [255, 255, 255, 255, 255, 255, 255, 255, 255]|**3**|R通道ssp结果: [252, 255, 229, 252, 255, 255, 243, 251, 240]<br>G通道ssp结果: [222, 255, 215, 223, 248, 239, 194, 252, 218]<br>B通道ssp结果: [255, 255, 255, 255, 255, 255, 255, 255, 255]|![横图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/horizontal_iris_3.png|
 
+[程序参见](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/cut_fig.py)
 
-  
-  
 ### 二、池化作用
 
    1. 降低了图片尺寸，也就是增大了感受野。感受野就是数字矩阵中的一个数字所对应的原图中的区域大小。因为池化是在某个范围内选择一个数字，也就是让这个数字代表这个范围内的所有的像素得值。这样做虽然也丢失了一些图片信息，但是同时增加了鲁棒性。
