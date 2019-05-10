@@ -139,7 +139,7 @@ B_image.save(r"C:\Users\GWT9\Desktop\af_B.png")
   ![通道B](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Fig/af_B.png)!
   
   
- #### 三、根据数字矩阵输出图片 
+ #### 四、根据数字矩阵输出图片 
  
   因为像素值均是[0-255]内的数字，因此要保证数字矩阵的数字在此范围内，可以设置数字的格式为uint8。
  
