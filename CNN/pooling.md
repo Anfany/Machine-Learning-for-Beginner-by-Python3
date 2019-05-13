@@ -39,7 +39,7 @@
 
 下面给出2个不同尺寸的图片，进行空间金字塔池化的结果。
 
-|  图1 | ssp结果 | 第l层 | ssp结果 | 图2 | 
+|  图1 | ssp结果 | l层 | ssp结果 | 图2 | 
 |:------:|:------|:------:| ------:|:------:|
 | ![竖图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/vertical_iris_1.png)|R通道ssp结果: 255<br>G通道ssp结果: 255<br>B通道ssp结果: 255|**1**|R通道ssp结果: 255<br>G通道ssp结果: 255<br>B通道ssp结果: 255|![横图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/horizontal_iris_1.png)|
 | ![竖图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/vertical_iris_2.png)|R通道ssp结果: [255, 255, 255, 255]<br>G通道ssp结果: [255, 255, 246, 241]<br>B通道ssp结果: [255, 255, 255, 255]|**2**|R通道ssp结果: [255, 255, 252, 255]<br>G通道ssp结果: [255, 239, 252, 248]<br>B通道ssp结果: [255, 255, 255, 255]|![横图](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Pooling/horizontal_iris_2.png)|
