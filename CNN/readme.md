@@ -58,7 +58,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
       + **全连接层的反向传播**
       
-      全连接层的反向传播和BP神经网络的一样，可以参考：[BP神经网络]()。
+      全连接层的反向传播和BP神经网络的一样，可以参考：[BP神经网络](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/readme.md)。
        
        
       + **卷积的反向传播**
