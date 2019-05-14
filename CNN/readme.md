@@ -40,7 +40,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
 
 上面示例结构中涉及到的需要训练的参数见下表，其中卷积核也是类似于神经元，也是有阈值的，当然也可以不设置。
 
-![卷积神经网络结构](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Cnn/cnn_pa.png)
+![卷积神经网络结构](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Cnn/cnn_papng.png)
    
 * **训练**      
 
