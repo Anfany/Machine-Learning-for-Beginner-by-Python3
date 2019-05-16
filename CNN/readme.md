@@ -53,16 +53,16 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
      **2，卷积1层(CONV1)：卷积核设为C1，C1_c表示第c个卷积核，其维度为(11,11,3)。这一层输出为C1_Out，维度为(30,39,96)；**
      
-     <a href="https://www.codecogs.com/eqnedit.php?latex=C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;C1\_Out[x,&space;y,&space;z]&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;C1\_Out[x,&space;y,&space;z]&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" title="C1\_Out = PM * C1 \\ \\ .\, \, \, \, \, \, C1\_Out[x, y, z] \\ .\, \, \, \, \, \, \, \, \, =\sum_{i=1}^{3} P\_M[x1,y1,i] * C1\_z[::i] = \sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s] \times Cm[i][h,s]\\ \\ .\, \, \, \, P\_M[x1,y1,i]\,\: is\, \: the\, \: corrding \, \: erea \, \: of PM\\ \\ . \, \, \, Pm[i]=P\_M[x1,y1,i], Cm[i]=C1\_z[::i],\\ \\ .\, \, \, x\in [0,29],y\in [0,38],z\in [0,95]" /></a>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;C1\_Out[x,&space;y,&space;z]&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;C1\_Out[x,&space;y,&space;z]&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" title="C1\_Out = PM * C1 \\ \\ .\, \, \, \, \, \, C1\_Out[x, y, z] \\ .\, \, \, \, \, \, \, \, \, =\sum_{i=1}^{3} P\_M[x1,y1,i] * C1\_z[::i] = \sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s] \times Cm[i][h,s]\\ \\ .\, \, \, \, P\_M[x1,y1,i]\,\: is\, \: the\, \: corrding \, \: erea \, \: of PM\\ \\ . \, \, \, Pm[i]=P\_M[x1,y1,i], Cm[i]=C1\_z[::i],\\ \\ .\, \, \, x\in [0,29],y\in [0,38],z\in [0,95]" /></a>
      
      
      **3，激活函数1层(AF1)：激活函数定义为Af1，输出为Af1_Out，维度为(30,39,96)；**
      
-     <a href="https://www.codecogs.com/eqnedit.php?latex=Af1\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af1}(C1\_Out[x,y,z])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Af1\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af1}(C1\_Out[x,y,z])" title="Af1\_Out[x, y, z] = \mathbf{Af1}(C1\_Out[x,y,z])" /></a>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=Af1\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af1}(C1\_Out[x,y,z])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Af1\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af1}(C1\_Out[x,y,z])" title="Af1\_Out[x, y, z] = \mathbf{Af1}(C1\_Out[x,y,z])" /></a>
      
      **4，池化1层(POOL1)：输出为Pool1_Out，维度为(10,13,96)；**
      
-      选择Af1_Out中的对应区域的最大值或者均值作为输出值。
+        选择Af1_Out中的对应区域的最大值或者均值作为输出值。
      
      
      **5，卷积2层(CONV2)：卷积核设为C2，C2_c表示第c个卷积核，其维度为(7,7,96)。这一层输出为C2_Out，维度为(5,7,256)；**
@@ -75,17 +75,18 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
      **7，池化2层(POOL2)：输出为Pool2_Out，维度为(3,5,256)；**
      
-       选择Af2_Out中的对应区域的最大值或者均值作为输出值。
+        选择Af2_Out中的对应区域的最大值或者均值作为输出值。
      
      **8，全连接1层(FC1)：Pool2_Out变为一维的向量定义为In_Net，输入维度为(1,3840)，激活函数为FC1_af, 输出为FC1_Out，维度为(1,128)；**
      
-     <a href="https://www.codecogs.com/eqnedit.php?latex=FC1\_Out&space;=&space;FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC1\_Out&space;=&space;FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i])" title="FC1\_Out = FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840} W1[i,j]*In\_Net[j]+B1[i])" /></a>
+        <a href="https://www.codecogs.com/eqnedit.php?latex=FC1\_Out[i]&space;=&space;FC1\_af(\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i]),i=0,1,2,3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC1\_Out[i]&space;=&space;FC1\_af(\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i]),i=0,1,2,3" title="FC1\_Out[i] = FC1\_af(\sum_{j=1}^{3840} W1[i,j]*In\_Net[j]+B1[i]),i=0,1,2,3" /></a>
      
        其中W1为权重的矩阵，维度为(128,3840)，B1为阈值的矩阵，维度为(128,1)；
    
      **9，全连接2层(FC2)：输入维度为(1,128)，激活函数为FC2_af, 输出为FC2_Out，维度为(1,4)；**
      
-     <a href="https://www.codecogs.com/eqnedit.php?latex=FC2\_Out&space;=&space;FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC2\_Out&space;=&space;FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" title="FC2\_Out = FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128} W2[i,j]*FC1\_Out[j]+B2[i])" /></a>
+     <a href="https://www.codecogs.com/eqnedit.php?latex=FC2\_Out[i]&space;=&space;FC2\_af(\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC2\_Out[i]&space;=&space;FC2\_af(\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" title="FC2\_Out[i] = FC2\_af(\sum_{j=1}^{128} W2[i,j]*FC1\_Out[j]+B2[i]),i=0,1,2,3" /></a>
+   
      
      其中W2为权重的矩阵，维度为(4,128)，B2为阈值的矩阵，维度为(4,1)；
      
