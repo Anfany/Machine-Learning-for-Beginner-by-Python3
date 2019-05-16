@@ -62,6 +62,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
      **4，池化1层(POOL1)：输出为Pool1_Out，维度为(10,13,96)；**
      
+          
         选择Af1_Out中的对应区域的最大值或者均值作为输出值。
      
      
@@ -120,9 +121,19 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
             
             <a href="https://www.codecogs.com/eqnedit.php?latex=d6[x,y,z]=d7[x,y,z]*&space;{Af2}'(C2\_Out[x,y,z])\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;{Af2}'(s)=\frac{\partial&space;Af2(s)}{\partial&space;s}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d6[x,y,z]=d7[x,y,z]*&space;{Af2}'(C2\_Out[x,y,z])\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;{Af2}'(s)=\frac{\partial&space;Af2(s)}{\partial&space;s}" title="d6[x,y,z]=d7[x,y,z]* {Af2}'(C2\_Out[x,y,z])\\ \\ .\, \, \, \, \, \, \, {Af2}'(s)=\frac{\partial Af2(s)}{\partial s}" /></a>
      
-            也就是说，传递过来的梯度值d7[x,y,z]与激活函数的导数在点C2_Out[x,y,z]处的值的乘积就是位置[x,y,z]的梯度。
+            也就是说，传递过来的梯度值d7[x,y,z]与激活函数的导数在点C2_Out[x,y,z]处的值的乘积就是位置[x,y,z]的梯度d6[x,y,z]。
        
-       + 下面计算成本函数E对于**卷积层CONV2**的梯度矩阵，因为卷积层中需要训练的参数就是所有卷积核矩阵中的数。
+       + 下面计算成本函数E对于**卷积层CONV2**的梯度矩阵，因为卷积层中需要训练的参数就是所有卷积核矩阵中的数。现在重申下符号说明，卷积层CONV2的输入为Pool1_Out，维度为(10,13,96)，卷积核的个数为K=256，单个卷积核的维度为(7,7,96)，输出为C2_Out，维度为(5,7,256)。定义这一层的梯度矩阵为d5,其维度应该为(7,7,96,256)。
+       
+            <a href="https://www.codecogs.com/eqnedit.php?latex=C2\_Out=Pool1\_Out&space;*&space;C2,&space;\:&space;\:&space;\:&space;\:&space;\:&space;a*b&space;\:&space;\:&space;\:is&space;\:&space;\:&space;\:&space;convolution&space;\:&space;\:&space;\:&space;between&space;\:&space;\:&space;\:&space;a&space;\:&space;\:&space;\:&space;and&space;\:&space;\:&space;\:&space;b\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5&space;=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C2\_Out=Pool1\_Out&space;*&space;C2,&space;\:&space;\:&space;\:&space;\:&space;\:&space;a*b&space;\:&space;\:&space;\:is&space;\:&space;\:&space;\:&space;convolution&space;\:&space;\:&space;\:&space;between&space;\:&space;\:&space;\:&space;a&space;\:&space;\:&space;\:&space;and&space;\:&space;\:&space;\:&space;b\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5&space;=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}" title="C2\_Out=Pool1\_Out * C2, \: \: \: \: \: a*b \: \: \:is \: \: \: convolution \: \: \: between \: \: \: a \: \: \: and \: \: \: b\\ \\ .\: \: \: \: \: d5 = \frac{\partial E}{\partial C2\_Out} \times \frac{\partial C2\_Out}{\partial C2}=d6 \times \frac{\partial C2\_Out}{\partial C2}" /></a>
+            
+            上面式子给出了大致的关系，但是具体的维度对应还需要进一步讨论：
+            
+            
+            
+          
+       
+       
       
       
       
