@@ -103,20 +103,24 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
     
    +  **卷积神经网络的反传播**
      
-      获得误差E后，进行反向传播，计算每个需要训练的参数的梯度。这里主要介绍全连接层、卷积层、池化层、激活层的反向传播，以及如何计算梯度和更新参数值。
+      获得误差E后，进行反向传播，计算每个需要训练的参数的梯度。需要训练的参数在全连接层以及卷积层中。在池化和激活层中，不存在需要训练的参数，因此经过这些层时，只要把梯度传递到前一层即可。详见下面的叙述。
      
-      **d10： 计算成本函数E对卷积网络输出Net_Out的梯度**
+         + 首先计算成本函数E对全连接层FC2、FC1中的权重个阈值的梯度，这个和[BP神经网络](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/readme.md)的计算是一样的，此处不在赘述。
       
-       <a href="https://www.codecogs.com/eqnedit.php?latex=d10=\frac{\partial&space;E}{\partial&space;Net\_Out[j]}&space;=&space;\left&space;|&space;Net\_Out[j]&space;-&space;Real\_Out[j]&space;\right&space;|,j=0,1,2,3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d10=\frac{\partial&space;E}{\partial&space;Net\_Out[j]}&space;=&space;\left&space;|&space;Net\_Out[j]&space;-&space;Real\_Out[j]&space;\right&space;|,j=0,1,2,3" title="d10=\frac{\partial E}{\partial Net\_Out[j]} = \left | Net\_Out[j] - Real\_Out[j] \right |,j=0,1,2,3" /></a>
-      
-      **d9：计算成本函数E对卷积网络输出Net_Out的梯度d10**
-      
- 
-      
+         + 计算成本函数E对于池化层POOL2中的梯度。因为池化层没有需要训练的参数，因此只需要传递梯度即可。假设成本函数E对于In_Net的梯度向量为d8，其维度为(1,3840)，现在将其变为维度为(3,5,256)的梯度矩阵dm8。下面分2种情况说明梯度矩阵如何传递：
+           
+             1. 如果池化是最大值池化：对于dm8[a,b,c]而言，就是将dm8[a,b,c]所对应的Af2_Out中的矩阵块中，具有最大值的位置的梯度设为dm8[a,b,c]，其他的设置为0。
+             
+             2. 如果池化是均值池化：对于dm8[a,b,c]而言，就是将dm8[a,b,c]所对应的Af2_Out中的矩阵块中，所有的位置的梯度设置为dm8[a,b,c]除以矩阵块中元素的个数。如果对于有重叠的池化，则某些位置的梯度求和的。
+             
+            此时得到的梯度矩阵的维度d7应该是和Af2_Out的维度是一样的。
+             
+         
+        +  计算成本函数E对于激活层AF2中的梯度。因为激活层也没有训练的参数，因此只需要传递矩阵即可。根据上面得到的梯度矩阵d7，假设这一层得到的梯度矩阵为d6，则有：
+       
+            
+       
      
-      + **全连接层的反向传播**
-      
-      全连接层的反向传播和BP神经网络的一样，可以参考：[BP神经网络](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/readme.md)。
        
       + **卷积层的反向传播**
       
