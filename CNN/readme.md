@@ -111,28 +111,23 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
            
              1. 如果池化是最大值池化：对于dm8[a,b,c]而言，就是将dm8[a,b,c]所对应的Af2_Out中的矩阵块中，具有最大值的位置的梯度设为dm8[a,b,c]，其他的设置为0。
              
-             2. 如果池化是均值池化：对于dm8[a,b,c]而言，就是将dm8[a,b,c]所对应的Af2_Out中的矩阵块中，所有的位置的梯度设置为dm8[a,b,c]除以矩阵块中元素的个数。如果对于有重叠的池化，则某些位置的梯度求和的。
+             2. 如果池化是均值池化：对于dm8[a,b,c]而言，就是将dm8[a,b,c]所对应的Af2_Out中的矩阵块中，所有的位置的梯度设置为dm8[a,b,c]除以矩阵块中元素的个数。如果对于有重叠的池化，则具有多个梯度值的可以计算梯度的和作为该位置的最终的梯度。
              
-            此时得到的梯度矩阵的维度d7应该是和Af2_Out的维度是一样的。
+            此时得到的梯度矩阵d7的维度应该是和Af2_Out的维度是一样的。
              
          
         +  计算成本函数E对于激活层AF2中的梯度。因为激活层也没有训练的参数，因此只需要传递矩阵即可。根据上面得到的梯度矩阵d7，假设这一层得到的梯度矩阵为d6，则有：
-       
             
-       
+       <a href="https://www.codecogs.com/eqnedit.php?latex=d6[x,y,z]=d7[x,y,z]*&space;{Af2}'(C2\_Out[x,y,z])\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;{Af2}'(s)=\frac{\partial&space;Af2(s)}{\partial&space;s}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d6[x,y,z]=d7[x,y,z]*&space;{Af2}'(C2\_Out[x,y,z])\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;{Af2}'(s)=\frac{\partial&space;Af2(s)}{\partial&space;s}" title="d6[x,y,z]=d7[x,y,z]* {Af2}'(C2\_Out[x,y,z])\\ \\ .\, \, \, \, \, \, \, {Af2}'(s)=\frac{\partial Af2(s)}{\partial s}" /></a>
      
+      也就是说，传递过来的梯度值d7[x,y,z]与激活函数的导数在点C2_Out[x,y,z]处的值的乘积就是位置[x,y,z]的梯度。
        
-      + **卷积层的反向传播**
+       + 下面计算成本函数E对于卷积层CONV2的梯度矩阵，因为卷积层中需要训练的参数就是所有卷积核矩阵中的数。
       
       
       
       
       
-      
-       
-      + **池化层的反向传播**
-              
-      + **激活层的反向传播**
 
 
    
