@@ -49,44 +49,52 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
 
    + **卷积神经网络的正向传播**
      
-     1. **输入层(INPUT)**:图片的数字矩阵为PM，维度为(90,117,3)，这一层的输出为PM；
+     **1.输入层(INPUT)**:图片的数字矩阵为PM，维度为(90,117,3)，这一层的输出为PM；
      
-     2. **卷积1层(CONV1)**:卷积核设为C1，C1_c表示第c个卷积核，其维度为(11,11,3)。这一层输出为C1_Out，维度为(30,39,96)；
+     **2.卷积1层(CONV1)**:卷积核设为C1，C1_c表示第c个卷积核，其维度为(11,11,3)。这一层输出为C1_Out，维度为(30,39,96)；
      
      <a href="https://www.codecogs.com/eqnedit.php?latex=C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;C1\_Out[x,&space;y,&space;z]&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;C1\_Out[x,&space;y,&space;z]&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" title="C1\_Out = PM * C1 \\ \\ .\, \, \, \, \, \, C1\_Out[x, y, z] \\ .\, \, \, \, \, \, \, \, \, =\sum_{i=1}^{3} P\_M[x1,y1,i] * C1\_z[::i] = \sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s] \times Cm[i][h,s]\\ \\ .\, \, \, \, P\_M[x1,y1,i]\,\: is\, \: the\, \: corrding \, \: erea \, \: of PM\\ \\ . \, \, \, Pm[i]=P\_M[x1,y1,i], Cm[i]=C1\_z[::i],\\ \\ .\, \, \, x\in [0,29],y\in [0,38],z\in [0,95]" /></a>
      
      
-     3. **激活函数1层(AF1)**:激活函数定义为Af1，输出为Af1_Out，维度为(30,39,96)；
+     **3.激活函数1层(AF1)**:激活函数定义为Af1，输出为Af1_Out，维度为(30,39,96)；
      
-     4. **池化1层(POOL1)**:输出为Pool1_Out，维度为(10,13,96)；
+     <a href="https://www.codecogs.com/eqnedit.php?latex=Af1\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af1}(C1\_Out[x,y,z])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Af1\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af1}(C1\_Out[x,y,z])" title="Af1\_Out[x, y, z] = \mathbf{Af1}(C1\_Out[x,y,z])" /></a>
      
-     5. **卷积2层(CONV2)**:卷积核设为C2，C2_c表示第c个卷积核，其维度为(7,7,96)。这一层输出为C2_Out，维度为(5,7,256)；
+     **4.池化1层(POOL1)**:输出为Pool1_Out，维度为(10,13,96)；
      
-     6. **激活函数2层(AF2)**:激活函数定义为Af2，输出为Af2_Out，维度为(5,7,256)；
      
-     7. **池化2层(POOL2)**:输出为Pool2_Out，维度为(3,5,256)；
+     **5.卷积2层(CONV2)**:卷积核设为C2，C2_c表示第c个卷积核，其维度为(7,7,96)。这一层输出为C2_Out，维度为(5,7,256)；
      
-     8. **全连接1层(FC1)**:Pool2_Out变为一维的向量定义为In_Net，输入维度为(1,3840)，激活函数为FC1_af, 输出为FC1_Out，维度为(1,128)；
+        类似于卷积1层，此处不在赘述。
+     
+     **6.激活函数2层(AF2)**:激活函数定义为Af2，输出为Af2_Out，维度为(5,7,256)；
+     
+        <a href="https://www.codecogs.com/eqnedit.php?latex=Af2\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af2}(C2\_Out[x,y,z])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Af2\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af2}(C2\_Out[x,y,z])" title="Af2\_Out[x, y, z] = \mathbf{Af2}(C2\_Out[x,y,z])" /></a>
+     
+     **7.池化2层(POOL2)**:输出为Pool2_Out，维度为(3,5,256)；
+     
+     **8.全连接1层(FC1)**:Pool2_Out变为一维的向量定义为In_Net，输入维度为(1,3840)，激活函数为FC1_af, 输出为FC1_Out，维度为(1,128)；
      
      <a href="https://www.codecogs.com/eqnedit.php?latex=FC1\_Out&space;=&space;FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC1\_Out&space;=&space;FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i])" title="FC1\_Out = FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840} W1[i,j]*In\_Net[j]+B1[i])" /></a>
      
        其中W1为权重的矩阵，维度为(128,3840)，B2为阈值的矩阵，维度为(128,1)；
    
-     9. **全连接2层(FC2)**:输入维度为(1,128)，激活函数为FC2_af, 输出为FC2_Out，维度为(1,4)；
+     **9.全连接2层(FC2)**:输入维度为(1,128)，激活函数为FC2_af, 输出为FC2_Out，维度为(1,4)；
      
      <a href="https://www.codecogs.com/eqnedit.php?latex=FC2\_Out&space;=&space;FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC2\_Out&space;=&space;FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" title="FC2\_Out = FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128} W2[i,j]*FC1\_Out[j]+B2[i])" /></a>
      
      其中W2为权重的矩阵，维度为(4,128)，B2为阈值的矩阵，维度为(4,1)；
      
-     10. **输出层(OUTPUT)**:输入维度为(1,4)，输出为Net_Out，维度为(1,4)；
+     **10.输出层(OUTPUT)**:输入维度为(1,4)，输出为Net_Out，维度为(1,4)；
      
        <a href="https://www.codecogs.com/eqnedit.php?latex=Net\_Out&space;=\mathbf{&space;Softmax}(FC2\_Out)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Net\_Out&space;=\mathbf{&space;Softmax}(FC2\_Out)" title="Net\_Out =\mathbf{ Softmax}(FC2\_Out)" /></a>
      
      
      这个图片的标签为Real_Out，维度为(1,4)，元素代表图片的类别，属于此类别值为1，不属于此类别值为0。假设成本函数平方误差为代价函数，当然也可以为交叉熵代价函数。计算误差：
      
+     <a href="https://www.codecogs.com/eqnedit.php?latex=\left\{\begin{matrix}&space;E&space;=&space;\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N>1&space;\:&space;\:&space;\:&space;\:&space;(1)\\&space;\\&space;E&space;=&space;\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N=1&space;\:&space;\:&space;\:&space;\:&space;(2)&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\left\{\begin{matrix}&space;E&space;=&space;\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N>1&space;\:&space;\:&space;\:&space;\:&space;(1)\\&space;\\&space;E&space;=&space;\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N=1&space;\:&space;\:&space;\:&space;\:&space;(2)&space;\end{matrix}\right." title="\left\{\begin{matrix} E = \frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2} \: \: \: \: if N>1 \: \: \: \: (1)\\ \\ E = \sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2} \: \: \: \: if N=1 \: \: \: \: (2) \end{matrix}\right." /></a>
      
-     
+     本例中N=1，所以用式(1)。
      
     
    +  **卷积神经网络的反传播**
