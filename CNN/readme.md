@@ -94,9 +94,9 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
        <a href="https://www.codecogs.com/eqnedit.php?latex=Net\_Out&space;=\mathbf{&space;Softmax}(FC2\_Out)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Net\_Out&space;=\mathbf{&space;Softmax}(FC2\_Out)" title="Net\_Out =\mathbf{ Softmax}(FC2\_Out)" /></a>
      
-     这个图片的标签为Real_Out，维度为(1,4)，元素代表图片的类别，属于此类别值为1，不属于此类别值为0。假设成本函数平方误差为代价函数，当然也可以为交叉熵代价函数。计算误差：
+       这个图片的标签为Real_Out，维度为(1,4)，元素代表图片的类别，属于此类别值为1，不属于此类别值为0。假设成本函数平方误差为代价函数，当然也可以为交叉熵代价函数。计算误差：
      
-     <a href="https://www.codecogs.com/eqnedit.php?latex=\left\{\begin{matrix}&space;E&space;=&space;\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N>1&space;\:&space;\:&space;\:&space;\:&space;(1)\\&space;\\&space;E&space;=&space;\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N=1&space;\:&space;\:&space;\:&space;\:&space;(2)&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\left\{\begin{matrix}&space;E&space;=&space;\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N>1&space;\:&space;\:&space;\:&space;\:&space;(1)\\&space;\\&space;E&space;=&space;\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N=1&space;\:&space;\:&space;\:&space;\:&space;(2)&space;\end{matrix}\right." title="\left\{\begin{matrix} E = \frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2} \: \: \: \: if N>1 \: \: \: \: (1)\\ \\ E = \sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2} \: \: \: \: if N=1 \: \: \: \: (2) \end{matrix}\right." /></a>
+      <a href="https://www.codecogs.com/eqnedit.php?latex=\left\{\begin{matrix}&space;E&space;=&space;\frac{1}{2N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N>1&space;\:&space;\:&space;\:&space;\:&space;(1)\\&space;\\&space;E&space;=&space;\frac{1}{2}\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N=1&space;\:&space;\:&space;\:&space;\:&space;(2)&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\left\{\begin{matrix}&space;E&space;=&space;\frac{1}{2N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N>1&space;\:&space;\:&space;\:&space;\:&space;(1)\\&space;\\&space;E&space;=&space;\frac{1}{2}\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N=1&space;\:&space;\:&space;\:&space;\:&space;(2)&space;\end{matrix}\right." title="\left\{\begin{matrix} E = \frac{1}{2N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2} \: \: \: \: if N>1 \: \: \: \: (1)\\ \\ E = \frac{1}{2}\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2} \: \: \: \: if N=1 \: \: \: \: (2) \end{matrix}\right." /></a>
      
      本例中N=1，所以用式(2)。
      
@@ -104,6 +104,15 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
    +  **卷积神经网络的反传播**
      
       获得误差E后，进行反向传播，计算每个需要训练的参数的梯度。这里主要介绍全连接层、卷积层、池化层、激活层的反向传播，以及如何计算梯度和更新参数值。
+     
+      **d10： 计算成本函数E对卷积网络输出Net_Out的梯度**
+      
+       <a href="https://www.codecogs.com/eqnedit.php?latex=d10=\frac{\partial&space;E}{\partial&space;Net\_Out[j]}&space;=&space;\left&space;|&space;Net\_Out[j]&space;-&space;Real\_Out[j]&space;\right&space;|,j=0,1,2,3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d10=\frac{\partial&space;E}{\partial&space;Net\_Out[j]}&space;=&space;\left&space;|&space;Net\_Out[j]&space;-&space;Real\_Out[j]&space;\right&space;|,j=0,1,2,3" title="d10=\frac{\partial E}{\partial Net\_Out[j]} = \left | Net\_Out[j] - Real\_Out[j] \right |,j=0,1,2,3" /></a>
+      
+      **d9：计算成本函数E对卷积网络输出Net_Out的梯度d10**
+      
+ 
+      
      
       + **全连接层的反向传播**
       
