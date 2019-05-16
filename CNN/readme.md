@@ -49,14 +49,46 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
 
    + **卷积神经网络的正向传播**
      
-     1. 输入层(INPUT)：图片的数字矩阵为PM，维度为(90,117,3)，这一层的输出为PM；
+     1. **输入层(INPUT)**:图片的数字矩阵为PM，维度为(90,117,3)，这一层的输出为PM；
      
-     2. 卷积1层(CONV1): 卷积核C1，维度(11,11,3)，
+     2. **卷积1层(CONV1)**:卷积核设为C1，C1_c表示第c个卷积核，其维度为(11,11,3)。这一层输出为C1_Out，维度为(30,39,96)；
      
-     1，开始随机设置所有的参数值；
+     <a href="https://www.codecogs.com/eqnedit.php?latex=C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;C1\_Out[x,&space;y,&space;z]&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;C1\_Out[x,&space;y,&space;z]&space;\\&space;.\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;\,&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" title="C1\_Out = PM * C1 \\ \\ .\, \, \, \, \, \, C1\_Out[x, y, z] \\ .\, \, \, \, \, \, \, \, \, =\sum_{i=1}^{3} P\_M[x1,y1,i] * C1\_z[::i] = \sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s] \times Cm[i][h,s]\\ \\ .\, \, \, \, P\_M[x1,y1,i]\,\: is\, \: the\, \: corrding \, \: erea \, \: of PM\\ \\ . \, \, \, Pm[i]=P\_M[x1,y1,i], Cm[i]=C1\_z[::i],\\ \\ .\, \, \, x\in [0,29],y\in [0,38],z\in [0,95]" /></a>
      
-     2，计算数据集合中所有图片的卷积神经网络的输出结果。一般都是分类问题，因此可以利用交叉熵代价函数或者平方误差代价函数计算误差；
      
+     3. **激活函数1层(AF1)**:激活函数定义为Af1，输出为Af1_Out，维度为(30,39,96)；
+     
+     4. **池化1层(POOL1)**:输出为Pool1_Out，维度为(10,13,96)；
+     
+     5. **卷积2层(CONV2)**:卷积核设为C2，C2_c表示第c个卷积核，其维度为(7,7,96)。这一层输出为C2_Out，维度为(5,7,256)；
+     
+     6. **激活函数2层(AF2)**:激活函数定义为Af2，输出为Af2_Out，维度为(5,7,256)；
+     
+     7. **池化2层(POOL2)**:输出为Pool2_Out，维度为(3,5,256)；
+     
+     8. **全连接1层(FC1)**:Pool2_Out变为一维的向量定义为In_Net，输入维度为(1,3840)，激活函数为FC1_af, 输出为FC1_Out，维度为(1,128)；
+     
+     <a href="https://www.codecogs.com/eqnedit.php?latex=FC1\_Out&space;=&space;FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC1\_Out&space;=&space;FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i])" title="FC1\_Out = FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840} W1[i,j]*In\_Net[j]+B1[i])" /></a>
+     
+       其中W1为权重的矩阵，维度为(128,3840)，B2为阈值的矩阵，维度为(128,1)；
+   
+     9. **全连接2层(FC2)**:输入维度为(1,128)，激活函数为FC2_af, 输出为FC2_Out，维度为(1,4)；
+     
+     <a href="https://www.codecogs.com/eqnedit.php?latex=FC2\_Out&space;=&space;FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC2\_Out&space;=&space;FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" title="FC2\_Out = FC2\_af(\sum_{i=1}^{4}\sum_{j=1}^{128} W2[i,j]*FC1\_Out[j]+B2[i])" /></a>
+     
+     其中W2为权重的矩阵，维度为(4,128)，B2为阈值的矩阵，维度为(4,1)；
+     
+     10. **输出层(OUTPUT)**:输入维度为(1,4)，输出为Net_Out，维度为(1,4)；
+     
+       <a href="https://www.codecogs.com/eqnedit.php?latex=Net\_Out&space;=\mathbf{&space;Softmax}(FC2\_Out)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Net\_Out&space;=\mathbf{&space;Softmax}(FC2\_Out)" title="Net\_Out =\mathbf{ Softmax}(FC2\_Out)" /></a>
+     
+     
+     这个图片的标签为Real_Out，维度为(1,4)，元素代表图片的类别，属于此类别值为1，不属于此类别值为0。假设成本函数平方误差为代价函数，当然也可以为交叉熵代价函数。计算误差：
+     
+     
+     
+     
+    
    +  **卷积神经网络的反传播**
      
       获得误差后，就要进行反向传播，计算每个需要训练的参数的梯度。这里主要介绍全连接层、卷积层、池化层、激活层的反向传播，以及如何计算梯度和更新参数值。
