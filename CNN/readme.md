@@ -81,7 +81,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
      <a href="https://www.codecogs.com/eqnedit.php?latex=FC1\_Out&space;=&space;FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC1\_Out&space;=&space;FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i])" title="FC1\_Out = FC1\_af(\sum_{i=1}^{128}\sum_{j=1}^{3840} W1[i,j]*In\_Net[j]+B1[i])" /></a>
      
-       其中W1为权重的矩阵，维度为(128,3840)，B2为阈值的矩阵，维度为(128,1)；
+       其中W1为权重的矩阵，维度为(128,3840)，B1为阈值的矩阵，维度为(128,1)；
    
      **9，全连接2层(FC2)：输入维度为(1,128)，激活函数为FC2_af, 输出为FC2_Out，维度为(1,4)；**
      
@@ -97,18 +97,20 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
      <a href="https://www.codecogs.com/eqnedit.php?latex=\left\{\begin{matrix}&space;E&space;=&space;\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N>1&space;\:&space;\:&space;\:&space;\:&space;(1)\\&space;\\&space;E&space;=&space;\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N=1&space;\:&space;\:&space;\:&space;\:&space;(2)&space;\end{matrix}\right." target="_blank"><img src="https://latex.codecogs.com/gif.latex?\left\{\begin{matrix}&space;E&space;=&space;\frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N>1&space;\:&space;\:&space;\:&space;\:&space;(1)\\&space;\\&space;E&space;=&space;\sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2}&space;\:&space;\:&space;\:&space;\:&space;if&space;N=1&space;\:&space;\:&space;\:&space;\:&space;(2)&space;\end{matrix}\right." title="\left\{\begin{matrix} E = \frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{4}(Real\_Out[i,j]-Net\_Out[i,j])^{2} \: \: \: \: if N>1 \: \: \: \: (1)\\ \\ E = \sum_{j=1}^{4}(Real\_Out[j]-Net\_Out[j])^{2} \: \: \: \: if N=1 \: \: \: \: (2) \end{matrix}\right." /></a>
      
-     本例中N=1，所以用式(1)。
+     本例中N=1，所以用式(2)。
      
     
    +  **卷积神经网络的反传播**
      
-      获得误差后，就要进行反向传播，计算每个需要训练的参数的梯度。这里主要介绍全连接层、卷积层、池化层、激活层的反向传播，以及如何计算梯度和更新参数值。
+      获得误差E后，进行反向传播，计算每个需要训练的参数的梯度。这里主要介绍全连接层、卷积层、池化层、激活层的反向传播，以及如何计算梯度和更新参数值。
      
       + **全连接层的反向传播**
       
       全连接层的反向传播和BP神经网络的一样，可以参考：[BP神经网络](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/readme.md)。
        
       + **卷积层的反向传播**
+      
+      
       
       
       
