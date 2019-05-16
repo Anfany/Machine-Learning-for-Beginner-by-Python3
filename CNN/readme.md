@@ -79,7 +79,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
      **8，全连接1层(FC1)：Pool2_Out变为一维的向量定义为In_Net，输入维度为(1,3840)，激活函数为FC1_af, 输出为FC1_Out，维度为(1,128)；**
      
-        <a href="https://www.codecogs.com/eqnedit.php?latex=FC1\_Out[i]&space;=&space;FC1\_af(\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i]),i=0,1,2,3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC1\_Out[i]&space;=&space;FC1\_af(\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i]),i=0,1,2,3" title="FC1\_Out[i] = FC1\_af(\sum_{j=1}^{3840} W1[i,j]*In\_Net[j]+B1[i]),i=0,1,2,3" /></a>
+       <a href="https://www.codecogs.com/eqnedit.php?latex=FC1\_Out[i]&space;=&space;FC1\_af(\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i]),i=0,1,\cdots&space;127" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC1\_Out[i]&space;=&space;FC1\_af(\sum_{j=1}^{3840}&space;W1[i,j]*In\_Net[j]&plus;B1[i]),i=0,1,\cdots&space;127" title="FC1\_Out[i] = FC1\_af(\sum_{j=1}^{3840} W1[i,j]*In\_Net[j]+B1[i]),i=0,1,\cdots 127" /></a>
      
        其中W1为权重的矩阵，维度为(128,3840)，B1为阈值的矩阵，维度为(128,1)；
    
