@@ -85,7 +85,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
    
      **9，全连接2层(FC2)：输入维度为(1,128)，激活函数为FC2_af, 输出为FC2_Out，维度为(1,4)；**
      
-     <a href="https://www.codecogs.com/eqnedit.php?latex=FC2\_Out[i]&space;=&space;FC2\_af(\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC2\_Out[i]&space;=&space;FC2\_af(\sum_{j=1}^{128}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i])" title="FC2\_Out[i] = FC2\_af(\sum_{j=1}^{128} W2[i,j]*FC1\_Out[j]+B2[i]),i=0,1,2,3" /></a>
+       <a href="https://www.codecogs.com/eqnedit.php?latex=FC2\_Out[i]&space;=&space;FC2\_af(\sum_{j=0}^{127}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i]),i=0,1,2,3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC2\_Out[i]&space;=&space;FC2\_af(\sum_{j=0}^{127}&space;W2[i,j]*FC1\_Out[j]&plus;B2[i]),i=0,1,2,3" title="FC2\_Out[i] = FC2\_af(\sum_{j=0}^{127} W2[i,j]*FC1\_Out[j]+B2[i]),i=0,1,2,3" /></a>
    
      
      其中W2为权重的矩阵，维度为(4,128)，B2为阈值的矩阵，维度为(4,1)；
