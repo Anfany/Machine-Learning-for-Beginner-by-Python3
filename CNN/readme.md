@@ -68,7 +68,9 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
      **5，卷积2层(CONV2)：卷积核数字矩阵设为C2，C2_c表示第c个卷积核的数字矩阵，其维度为(7,7,96)。C2_B表示256个卷积核的偏置，其维度为(1,256)。这一层输出为C2_Out，维度为(5,7,256)；**
      
-        类似于卷积1层，此处不在赘述。
+        具体的运算过程图示：
+        
+        ![卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Cnn/cnn_conv.png)
    
      **6，激活函数2层(AF2)：激活函数定义为Af2，输出为Af2_Out，维度为(5,7,256)；**
      
@@ -91,7 +93,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
      其中W2为权重的矩阵，维度为(4,128)，B2为阈值的矩阵，维度为(4,1)；
      
-     **10.输出层(OUTPUT)：输入维度为(1,4)，输出为Net_Out，维度为(1,4)；**
+     **10，输出层(OUTPUT)：输入维度为(1,4)，输出为Net_Out，维度为(1,4)；**
      
        <a href="https://www.codecogs.com/eqnedit.php?latex=Net\_Out&space;=\mathbf{&space;Softmax}(FC2\_Out)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Net\_Out&space;=\mathbf{&space;Softmax}(FC2\_Out)" title="Net\_Out =\mathbf{ Softmax}(FC2\_Out)" /></a>
      
@@ -123,15 +125,12 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
             也就是说，传递过来的梯度值d7[x,y,z]与激活函数的导数在点C2_Out[x,y,z]处的值的乘积就是位置[x,y,z]的梯度d6[x,y,z]。
        
-       + 下面计算成本函数E对于**卷积层CONV2**的梯度矩阵，因为卷积层中需要训练的参数就是所有卷积核矩阵中的数。现在重申下符号说明，卷积层CONV2的输入为Pool1_Out，维度为(10,13,96)，卷积核的个数为K=256，单个卷积核的维度为(7,7,96)，输出为C2_Out，维度为(5,7,256)。具体运算可参考下图：
-       
-          ![卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Cnn/cnn_conv.png)
-          
+       + 下面计算成本函数E对于**卷积层CONV2**的梯度矩阵，因为卷积层中需要训练的参数就是所有卷积核矩阵中的数。现在重申下符号说明，卷积层CONV2的输入为Pool1_Out，维度为(10,13,96)，卷积核的个数为K=256，单个卷积核的维度为(7,7,96)，输出为C2_Out，维度为(5,7,256)。
+      
            <a href="https://www.codecogs.com/eqnedit.php?latex=C2\_Out=Pool1\_Out&space;*&space;C2&space;&plus;&space;C2\_B,&space;\:&space;\:&space;\:&space;\:&space;\:&space;a*b&space;\:&space;\:&space;\:is&space;\:&space;\:&space;\:&space;convolution&space;\:&space;\:&space;\:&space;between&space;\:&space;\:&space;\:&space;a&space;\:&space;\:&space;\:&space;and&space;\:&space;\:&space;\:&space;b\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5\_C2&space;=&space;\frac{\partial&space;E}{\partial&space;C2}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5\_C2\_B&space;=&space;\frac{\partial&space;E}{\partial&space;C2\_B}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2\_B}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2\_B}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C2\_Out=Pool1\_Out&space;*&space;C2&space;&plus;&space;C2\_B,&space;\:&space;\:&space;\:&space;\:&space;\:&space;a*b&space;\:&space;\:&space;\:is&space;\:&space;\:&space;\:&space;convolution&space;\:&space;\:&space;\:&space;between&space;\:&space;\:&space;\:&space;a&space;\:&space;\:&space;\:&space;and&space;\:&space;\:&space;\:&space;b\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5\_C2&space;=&space;\frac{\partial&space;E}{\partial&space;C2}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5\_C2\_B&space;=&space;\frac{\partial&space;E}{\partial&space;C2\_B}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2\_B}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2\_B}" title="C2\_Out=Pool1\_Out * C2 + C2\_B, \: \: \: \: \: a*b \: \: \:is \: \: \: convolution \: \: \: between \: \: \: a \: \: \: and \: \: \: b\\ \\ .\: \: \: \: \: d5\_C2 = \frac{\partial E}{\partial C2}= \frac{\partial E}{\partial C2\_Out} \times \frac{\partial C2\_Out}{\partial C2}=d6 \times \frac{\partial C2\_Out}{\partial C2}\\ \\ .\: \: \: \: \: d5\_C2\_B = \frac{\partial E}{\partial C2\_B}= \frac{\partial E}{\partial C2\_Out} \times \frac{\partial C2\_Out}{\partial C2\_B}=d6 \times \frac{\partial C2\_Out}{\partial C2\_B}" /></a>
             
-         
             
-            其中d6为上一层得到的梯度矩阵，其维度为(5,7,256)；这一层的所有卷积核的梯度矩阵为d5_C2，其维度应该为(7,7,96,256)，其中(7,7)表示卷积核矩阵的高度和宽度，96表示矩阵的深度或者说是通道数，256为卷积核的个数；这一层的所有卷积核的偏置的梯度矩阵为d5_C2-B，下面给出梯度的计算：
+            其中d6为上一层得到的梯度矩阵，其维度为(5,7,256)；这一层的所有卷积核的梯度矩阵为d5_C2，其维度应该为(7,7,96,256)，其中(7,7)表示卷积核矩阵的高度和宽度，96表示矩阵的深度或者说是通道数，256为卷积核的个数；这一层的所有卷积核的偏置的梯度矩阵为d5_C2_B，下面给出梯度的计算：
             
             
             
