@@ -66,7 +66,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
         选择Af1_Out中的对应区域的最大值或者均值作为输出值。
      
      
-     **5，卷积2层(CONV2)：卷积核设为C2，C2_c表示第c个卷积核，其维度为(7,7,96)。这一层输出为C2_Out，维度为(5,7,256)；**
+     **5，卷积2层(CONV2)：卷积核数字矩阵设为C2，C2_c表示第c个卷积核的数字矩阵，其维度为(7,7,96)。C2_B表示256个卷积核的偏置，其维度为(1,256)。这一层输出为C2_Out，维度为(5,7,256)；**
      
         类似于卷积1层，此处不在赘述。
    
@@ -125,7 +125,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
        
        + 下面计算成本函数E对于**卷积层CONV2**的梯度矩阵，因为卷积层中需要训练的参数就是所有卷积核矩阵中的数。现在重申下符号说明，卷积层CONV2的输入为Pool1_Out，维度为(10,13,96)，卷积核的个数为K=256，单个卷积核的维度为(7,7,96)，输出为C2_Out，维度为(5,7,256)。具体运算可参考下图，偏置的个数为输入矩阵的维度乘以卷积核的个数：
        
-          ![卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Cnn/cnn_conv.png)
+          ![卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Cnn/cnn_co.png)
           
             <a href="https://www.codecogs.com/eqnedit.php?latex=C2\_Out=Pool1\_Out&space;*&space;C2,&space;\:&space;\:&space;\:&space;\:&space;\:&space;a*b&space;\:&space;\:&space;\:is&space;\:&space;\:&space;\:&space;convolution&space;\:&space;\:&space;\:&space;between&space;\:&space;\:&space;\:&space;a&space;\:&space;\:&space;\:&space;and&space;\:&space;\:&space;\:&space;b\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5&space;=&space;\frac{\partial&space;E}{\partial&space;C2}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C2\_Out=Pool1\_Out&space;*&space;C2,&space;\:&space;\:&space;\:&space;\:&space;\:&space;a*b&space;\:&space;\:&space;\:is&space;\:&space;\:&space;\:&space;convolution&space;\:&space;\:&space;\:&space;between&space;\:&space;\:&space;\:&space;a&space;\:&space;\:&space;\:&space;and&space;\:&space;\:&space;\:&space;b\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5&space;=&space;\frac{\partial&space;E}{\partial&space;C2}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}" title="C2\_Out=Pool1\_Out * C2, \: \: \: \: \: a*b \: \: \:is \: \: \: convolution \: \: \: between \: \: \: a \: \: \: and \: \: \: b\\ \\ .\: \: \: \: \: d5 = \frac{\partial E}{\partial C2}= \frac{\partial E}{\partial C2\_Out} \times \frac{\partial C2\_Out}{\partial C2}=d6 \times \frac{\partial C2\_Out}{\partial C2}" /></a>
             
