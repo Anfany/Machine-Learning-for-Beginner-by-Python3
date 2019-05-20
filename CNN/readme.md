@@ -25,10 +25,8 @@
       
       + [Mnist手写数字集下载以及说明](http://yann.lecun.com/exdb/mnist/)。四个.gz解压缩后可得到对应文件
       
-            训练图片：train-images.idx3-ubyte
-            训练标签：train-labels.idx1-ubyte
-            测试图片：t10k-images.idx3-ubyte
-            测试标签：t10k-labels.idx1-ubyte
+            训练图片：train-images.idx3-ubyte；训练标签：train-labels.idx1-ubyte
+            测试图片：t10k-images.idx3-ubyte；测试标签：t10k-labels.idx1-ubyte
       
       + Mnist手写数字集说明：
       
@@ -44,10 +42,8 @@
    
      + [Fashion-MNIST数据集下载以及说明](https://github.com/zalandoresearch/fashion-mnist/blob/master/README.zh-CN.md)。四个.gz解压缩后可得到对应文件
  
-            训练图片：train-images.idx3-ubyte
-            训练标签：train-labels.idx1-ubyte
-            测试图片：t10k-images.idx3-ubyte
-            测试标签：t10k-labels.idx1-ubyte
+            训练图片：train-images.idx3-ubyte；训练标签：train-labels.idx1-ubyte
+            测试图片：t10k-images.idx3-ubyte；测试标签：t10k-labels.idx1-ubyte
             
       + Fashion-MNIST数据集说明：
             
