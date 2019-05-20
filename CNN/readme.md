@@ -14,7 +14,7 @@
 * **[池化](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/pooling.md)**
 
 
-### 二、(卷积神经网络理论)[https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/cnn.md]
+### 二、[卷积神经网络理论](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/cnn.md)
 
 ### 三、卷积神经网络编程
 
