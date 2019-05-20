@@ -1,30 +1,26 @@
 #  # -*- coding：utf-8 -*-
 # &Author  AnFany
 
-
-#  将mnist数据集或者Fashion-MNIST转换为图片
-
-#  因为两个数据集的格式是完全一致的，所以程序不需要修改
+#  将mnist数据集或者Fashion-MNIST数据集转换为图片
+#  因为两个数据集的格式是完全一致的，因此程序可以共用
 
 import struct
 from PIL import Image
 import numpy as np
 import os
 
-# 需要在这个文件夹子下面建立2个子文件夹mnist_train，mnist_test，分别存储训练和测试的图片数据
-path = r'C:\Users\GWT9\Desktop\mnist'
-os.chdir(path)
-
+Path = r'C:\Users\GWT9\Desktop'  # 存储下面4个文件的路径
+os.chdir(Path)   # 设置为当前的工作路径
 
 # 训练图片文件
-train_images = 'train-images.idx3-ubyte'
+train_images = 'train-images-idx3-ubyte'   # 注意Mnist数据集中images.idx3，中是点'.'，而Fashion-MNIST数据集中是'-'
 # 训练标签文件
-train_labels = 'train-labels.idx1-ubyte'
+train_labels = 'train-labels-idx1-ubyte'
 
 # 测试图片文件
-test_images = 't10k-images.idx3-ubyte'
+test_images = 't10k-images-idx3-ubyte'
 # 测试标签文件
-test_labels = 't10k-labels.idx1-ubyte'
+test_labels = 't10k-labels-idx1-ubyte'
 
 
 # 获取图片数据
@@ -84,7 +80,8 @@ def matrix_to_fig(matrix_data, fig_title, file_name):
         # 获取图片
         get_image = Image.fromarray(np.uint8(image))  # 转为uint8的格式
         # 存储图片
-        get_image.save(r".\mnist_%s\%s_%d.png" % (file_name, int(label), cc))
+        get_image.save(r".\%s\%s_%d.png" % (file_name, int(label), cc))
+    print(sign_dict)  # 查看每个标签的图片的个数
     return print('转换完成')
 
 
@@ -98,7 +95,23 @@ if __name__ == "__main__":
     test_fig_data = get_image(test_images)
     test_fig_label = get_label(test_labels)
 
+    # 存储图片的文件夹子的名称
+    New_File_Name = 'MNIST_DATA'
+
+    # 如果没有名称为该名字的文件夹就新建
+    if not os.path.isdir('%s' % New_File_Name):
+        os.mkdir('%s' % New_File_Name)
+    # 把这个文件夹作为工作路径
+    os.chdir(r'%s\%s' % (Path, New_File_Name))
+
+    # 需要在这个文件夹子下面建立2个子文件夹train，test，分别存储训练和测试的图片数据
+    if not os.path.isdir('train'):
+        os.mkdir('train')
+    if not os.path.isdir('test'):
+        os.mkdir('test')
+
     # 训练数据的转换
     matrix_to_fig(train_fig_data, train_fig_label, 'train')
     # 测试数据的转换
     matrix_to_fig(test_fig_data, test_fig_label, 'test')
+
