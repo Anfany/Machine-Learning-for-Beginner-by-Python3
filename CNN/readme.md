@@ -22,6 +22,15 @@
 ### 四、数据集
 
    * **Mnist手写数据集**
+      
+      + [Mnist数据集下载以及说明](http://yann.lecun.com/exdb/mnist/)。四个.gz解压缩后可得到对应文件
+      
+            训练图片：train-images.idx3-ubyte
+            训练标签：train-labels.idx1-ubyte
+            测试图片：t10k-images.idx3-ubyte
+            测试标签：t10k-labels.idx1-ubyte
+            
+      + Mnist数据转化为图片程序：[mnist_to_fig.py]()
    
    * **Fashion-MNIST手写数据集**   
 
