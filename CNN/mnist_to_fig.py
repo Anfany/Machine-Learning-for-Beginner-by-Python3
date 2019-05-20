@@ -2,7 +2,9 @@
 # &Author  AnFany
 
 
-#  将mnist数据集转换为图片
+#  将mnist数据集或者Fashion-MNIST转换为图片
+
+#  因为两个数据集的格式是完全一致的，所以程序不需要修改
 
 import struct
 from PIL import Image
