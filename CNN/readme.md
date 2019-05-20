@@ -16,7 +16,7 @@
 
 ### 二、[卷积神经网络理论](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/cnn.md)
 
-### 三、卷积神经网络编程
+### 三、[卷积神经网络实现](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/cnn_realize.md)
 
 
 ### 四、数据集
