@@ -30,7 +30,7 @@
             测试图片：t10k-images.idx3-ubyte
             测试标签：t10k-labels.idx1-ubyte
             
-      + Mnist数据转化为图片程序：[mnist_to_fig.py]()
+      + Mnist数据转化为图片程序：[mnist_to_fig.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/mnist_to_fig.py)
    
    * **Fashion-MNIST手写数据集**   
 
