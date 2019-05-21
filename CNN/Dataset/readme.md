@@ -30,5 +30,5 @@
       
 | 标签| 0|  1|  2|  3|  4|  5|  6|  7|  8|  9|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| 对应类别|T-shirt/Top</br>T恤| Trouser</br>裤子|Pullover</br>套衫|Dress</br>裙子|Coat</br>外套|Sandal</br>凉鞋|Shirt</br>汗衫| Sneaker</br>运动鞋|Bag</br>包|Ankle boot</br>踝靴|
+| 商品|T-shirt/Top</br>T恤| Trouser</br>裤子|Pullover</br>套衫|Dress</br>裙子|Coat</br>外套|Sandal</br>凉鞋|Shirt</br>汗衫| Sneaker</br>运动鞋|Bag</br>包|Ankle boot</br>踝靴|
 
