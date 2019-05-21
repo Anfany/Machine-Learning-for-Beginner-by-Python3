@@ -1,6 +1,6 @@
 ### 卷积神经网络
 
-试想一下，针对图片这种形式的输入，如果依然用之前的全连接神经网络会如何。对于一个图片而言，假设其数字矩阵为320\*240\*3，其中**320是图片数字矩阵的高度，240是宽度，3是通道数或者说是深度**。如果使用全连接神经网络，也就是将数字矩阵变为长度为320\*240\*3=230400的向量，作为神经网络的输入。如果第一层的神经元的个数为100个，则全连接情形下第一层的参数就有230400\*100+100=23040100个，因此对于图片而言，全连接需要的参数过多。因此需要提取图片的多个特征，在保留这些特征的前提下，缩短可以表示这个图片的向量的长度。
+试想一下，针对图片这种形式的输入，如果依然用之前的全连接神经网络会如何。对于一个图片而言，假设其数字矩阵维度为(**3,320,240**)，其中**3是通道数或者说是深度，320是图片数字矩阵的高度，240是宽度**。如果使用全连接神经网络，也就是将数字矩阵变为长度为320\*240\*3=230400的向量，作为神经网络的输入。如果第一层的神经元的个数为100个，则全连接情形下第一层的参数就有230400\*100+100=23040100个，因此对于图片而言，全连接需要的参数过多。因此需要提取图片的多个特征，在保留这些特征的前提下，缩短可以表示这个图片的向量的长度。
 
 首先重申以下几点说明：图片其实就是数字矩阵；卷积就是提取图片中的特征；池化就是对特征中的信息进行下采样。一个卷积核是多通道的，也就是分别对应输入的多个通道，输入和卷积核的对应通道的卷积的和加上该卷积核的阈值作为卷积的输出结果，因此得到的卷积结果的通道数就等于卷积核的个数。
 
@@ -34,34 +34,34 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
 
    + **卷积神经网络的正向传播**
      
-     **1，输入层(INPUT)：图片的数字矩阵为PM，维度为(90,117,3)，这一层的输出为PM；**
+     **1，输入层(INPUT)：图片的数字矩阵为PM，维度为(3,90,117)，这一层的输出为PM；**。需要注意的是，数字矩阵PM并不是利用skimage库中io.read()函数读取图片得到的，因为直接读取得到的矩阵维度是(90,117,3)的。
      
-     **2，卷积1层(CONV1)：卷积核矩阵设为C1，C1_c表示第c个卷积核的矩阵，其维度为(11,11,3)。C1_B为卷积核的偏置，维度为(1,96)。这一层输出为C1_Out，维度为(30,39,96)；**
+     **2，卷积1层(CONV1)：卷积核矩阵设为C1，C1_c表示第c个卷积核的矩阵，其维度为(3,11,11)。C1_B为卷积核的偏置，维度为(1,96)。这一层输出为C1_Out，维度为(96,30,39)；**
      
         <a href="https://www.codecogs.com/eqnedit.php?latex=C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;C1\_Out[x,&space;y,&space;z]\\&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;\\&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]&plus;C1\_B[z]&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C1\_Out&space;=&space;PM&space;*&space;C1&space;\\&space;\\&space;C1\_Out[x,&space;y,&space;z]\\&space;=\sum_{i=1}^{3}&space;P\_M[x1,y1,i]&space;*&space;C1\_z[::i]&space;\\&space;=&space;\sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s]&space;\times&space;Cm[i][h,s]&plus;C1\_B[z]&space;\\&space;\\&space;.\,&space;\,&space;\,&space;\,&space;P\_M[x1,y1,i]\,\:&space;is\,&space;\:&space;the\,&space;\:&space;corrding&space;\,&space;\:&space;erea&space;\,&space;\:&space;of&space;PM\\&space;\\&space;.&space;\,&space;\,&space;\,&space;Pm[i]=P\_M[x1,y1,i],&space;Cm[i]=C1\_z[::i],\\&space;\\&space;.\,&space;\,&space;\,&space;x\in&space;[0,29],y\in&space;[0,38],z\in&space;[0,95]" title="C1\_Out = PM * C1 \\ \\ C1\_Out[x, y, z]\\ =\sum_{i=1}^{3} P\_M[x1,y1,i] * C1\_z[::i] \\ = \sum_{i=1}^{3}\sum_{h=0}^{10}\sum_{s=0}^{10}Pm[i][h,s] \times Cm[i][h,s]+C1\_B[z] \\ \\ .\, \, \, \, P\_M[x1,y1,i]\,\: is\, \: the\, \: corrding \, \: erea \, \: of PM\\ \\ . \, \, \, Pm[i]=P\_M[x1,y1,i], Cm[i]=C1\_z[::i],\\ \\ .\, \, \, x\in [0,29],y\in [0,38],z\in [0,95]" /></a>
      
      
-     **3，激活函数1层(AF1)：激活函数定义为Af1，输出为Af1_Out，维度为(30,39,96)；**
+     **3，激活函数1层(AF1)：激活函数定义为Af1，输出为Af1_Out，维度为(96,30,39)；**
      
         <a href="https://www.codecogs.com/eqnedit.php?latex=Af1\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af1}(C1\_Out[x,y,z])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Af1\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af1}(C1\_Out[x,y,z])" title="Af1\_Out[x, y, z] = \mathbf{Af1}(C1\_Out[x,y,z])" /></a>
      
-     **4，池化1层(POOL1)：输出为Pool1_Out，维度为(10,13,96)；**
+     **4，池化1层(POOL1)：输出为Pool1_Out，维度为(96,10,13)；**
      
           
         选择Af1_Out中的对应区域的最大值或者均值作为输出值。
      
      
-     **5，卷积2层(CONV2)：卷积核数字矩阵设为C2，C2_c表示第c个卷积核的数字矩阵，其维度为(7,7,96)。C2_B表示256个卷积核的偏置，其维度为(1,256)。这一层输出为C2_Out，维度为(5,7,256)；**
+     **5，卷积2层(CONV2)：卷积核数字矩阵设为C2，C2_c表示第c个卷积核的数字矩阵，其维度为(96,7,7)。C2_B表示256个卷积核的偏置，其维度为(1,256)。这一层输出为C2_Out，维度为(256,5,7)；**
      
         具体的运算过程图示：
         
         ![卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Cnn/cnn_conv.png)
    
-     **6，激活函数2层(AF2)：激活函数定义为Af2，输出为Af2_Out，维度为(5,7,256)；**
+     **6，激活函数2层(AF2)：激活函数定义为Af2，输出为Af2_Out，维度为(256,5,7)；**
      
         <a href="https://www.codecogs.com/eqnedit.php?latex=Af2\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af2}(C2\_Out[x,y,z])" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Af2\_Out[x,&space;y,&space;z]&space;=&space;\mathbf{Af2}(C2\_Out[x,y,z])" title="Af2\_Out[x, y, z] = \mathbf{Af2}(C2\_Out[x,y,z])" /></a>
      
-     **7，池化2层(POOL2)：输出为Pool2_Out，维度为(3,5,256)；**
+     **7，池化2层(POOL2)：输出为Pool2_Out，维度为(256,3,5)；**
      
         选择Af2_Out中的对应区域的最大值或者均值作为输出值。
      
@@ -95,7 +95,7 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
          + 首先计算成本函数E对全连接层FC2、FC1中的权重个阈值的梯度，这个和[BP神经网络](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/BPNN/readme.md)的计算是一样的，此处不在赘述。
       
-         + 计算成本函数E对于**池化层POOL2**中的梯度。因为池化层没有需要训练的参数，因此只需要传递梯度即可。假设成本函数E对于In_Net的梯度向量为d8，其维度为(1,3840)，现在将其变为维度为(3,5,256)的梯度矩阵dm8。下面分2种情况说明梯度矩阵如何传递：
+         + 计算成本函数E对于**池化层POOL2**中的梯度。因为池化层没有需要训练的参数，因此只需要传递梯度即可。假设成本函数E对于In_Net的梯度向量为d8，其维度为(1,3840)，现在将其变为维度为(256,3,5)的梯度矩阵dm8。下面分2种情况说明梯度矩阵如何传递：
            
              1. 如果池化是最大值池化：对于dm8[a,b,c]而言，就是将dm8[a,b,c]所对应的Af2_Out中的矩阵块中，具有最大值的位置的梯度设为dm8[a,b,c]，其他的设置为0。
              
@@ -110,12 +110,12 @@ CNN一般是由输入层(INPUT)，卷积层(CONV)，激活层(AF)，池化层(PO
      
             也就是说，传递过来的梯度值d7[x,y,z]与激活函数的导数在点C2_Out[x,y,z]处的值的乘积就是位置[x,y,z]的梯度d6[x,y,z]。
        
-       + 下面计算成本函数E对于**卷积层CONV2**的梯度矩阵，因为卷积层中需要训练的参数就是所有卷积核矩阵中的数。现在重申下符号说明，卷积层CONV2的输入为Pool1_Out，维度为(10,13,96)，卷积核的个数为K=256，单个卷积核的维度为(7,7,96)，输出为C2_Out，维度为(5,7,256)。
+       + 下面计算成本函数E对于**卷积层CONV2**的梯度矩阵，因为卷积层中需要训练的参数就是所有卷积核矩阵中的数。现在重申下符号说明，卷积层CONV2的输入为Pool1_Out，维度为(96,10,13)，卷积核的个数为K=256，单个卷积核的维度为(96,7,7)，输出为C2_Out，维度为(256,5,7)。
       
            <a href="https://www.codecogs.com/eqnedit.php?latex=C2\_Out=Pool1\_Out&space;*&space;C2&space;&plus;&space;C2\_B,&space;\:&space;\:&space;\:&space;\:&space;\:&space;a*b&space;\:&space;\:&space;\:is&space;\:&space;\:&space;\:&space;convolution&space;\:&space;\:&space;\:&space;between&space;\:&space;\:&space;\:&space;a&space;\:&space;\:&space;\:&space;and&space;\:&space;\:&space;\:&space;b\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5\_C2&space;=&space;\frac{\partial&space;E}{\partial&space;C2}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5\_C2\_B&space;=&space;\frac{\partial&space;E}{\partial&space;C2\_B}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2\_B}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2\_B}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?C2\_Out=Pool1\_Out&space;*&space;C2&space;&plus;&space;C2\_B,&space;\:&space;\:&space;\:&space;\:&space;\:&space;a*b&space;\:&space;\:&space;\:is&space;\:&space;\:&space;\:&space;convolution&space;\:&space;\:&space;\:&space;between&space;\:&space;\:&space;\:&space;a&space;\:&space;\:&space;\:&space;and&space;\:&space;\:&space;\:&space;b\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5\_C2&space;=&space;\frac{\partial&space;E}{\partial&space;C2}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2}\\&space;\\&space;.\:&space;\:&space;\:&space;\:&space;\:&space;d5\_C2\_B&space;=&space;\frac{\partial&space;E}{\partial&space;C2\_B}=&space;\frac{\partial&space;E}{\partial&space;C2\_Out}&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2\_B}=d6&space;\times&space;\frac{\partial&space;C2\_Out}{\partial&space;C2\_B}" title="C2\_Out=Pool1\_Out * C2 + C2\_B, \: \: \: \: \: a*b \: \: \:is \: \: \: convolution \: \: \: between \: \: \: a \: \: \: and \: \: \: b\\ \\ .\: \: \: \: \: d5\_C2 = \frac{\partial E}{\partial C2}= \frac{\partial E}{\partial C2\_Out} \times \frac{\partial C2\_Out}{\partial C2}=d6 \times \frac{\partial C2\_Out}{\partial C2}\\ \\ .\: \: \: \: \: d5\_C2\_B = \frac{\partial E}{\partial C2\_B}= \frac{\partial E}{\partial C2\_Out} \times \frac{\partial C2\_Out}{\partial C2\_B}=d6 \times \frac{\partial C2\_Out}{\partial C2\_B}" /></a>
             
             
-            其中d6为上一层得到的梯度矩阵，其维度为(5,7,256)；这一层的所有卷积核的梯度矩阵为d5_C2，其维度应该为(7,7,96,256)，其中(7,7)表示卷积核矩阵的高度和宽度，96表示矩阵的深度或者说是通道数，256为卷积核的个数；这一层的所有卷积核的偏置的梯度矩阵为d5_C2_B。为了便于说明，下面给出简化的示例：
+            其中d6为上一层得到的梯度矩阵，其维度为(256,5,7)；这一层的所有卷积核的梯度矩阵为d5_C2，其维度应该为(256,96,7,7)，其中(7,7)表示卷积核矩阵的高度和宽度，96表示矩阵的深度或者说是通道数，256为卷积核的个数；这一层的所有卷积核的偏置的梯度矩阵为d5_C2_B。为了便于说明，下面给出简化的示例：
             
             ![卷积梯度](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/Cnn/cnn_d.png)
 
