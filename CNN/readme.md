@@ -19,7 +19,7 @@
 ### 三、[卷积神经网络实现](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/cnn_realize.md)
 
 
-### 四、数据集
+### 四、[数据集](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/CNN/Dataset)
 
    * **Mnist手写数字集**
       
