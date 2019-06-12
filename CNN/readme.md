@@ -8,6 +8,8 @@
 * **卷积**
 
     * **[初识卷积](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/convolution.md)**
+    
+    * **再谈卷积** 
 
 * **[池化](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/pooling.md)**
 
@@ -23,7 +25,7 @@
    
 ### 四、基于TensorFlow的实现
 
-   * **[TensorFlow函数]()**
+   * **[TensorFlow函数](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/tensorflow_cnn.md)**
    
    * **程序**
    
