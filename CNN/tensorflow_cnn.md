@@ -1,12 +1,9 @@
-### TensorFlow中CNN函数的说明
-
-
-
+## TensorFlow中CNN函数的说明
 
 
 * **卷积**
 
-##### tf.nn.conv2d：根据4维的矩阵和4维的卷积核计算2维的卷积
+### tf.nn.conv2d：根据4维的矩阵和4维的卷积核计算2维的卷积
 
 ```python
 tf.nn.conv2d(
