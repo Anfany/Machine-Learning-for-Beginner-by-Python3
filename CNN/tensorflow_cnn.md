@@ -41,17 +41,17 @@ tf.nn.conv2d(input, filter, strides, padding, use_cudnn_on_gpu=True, data_format
    tf.nn.max_pool(value, ksize, strides, padding, data_format='NHWC', name=None)
    ```
    
-   **value**：
+**value**：
    
-   **ksize**：
+**ksize**：
    
-   **strides**：
+**strides**：
    
-   **padding**：
+**padding**：
    
-   **data_format**：
+**data_format**：
    
-   **name**：定义算子的名称。属于可选参数；
+**name**：定义算子的名称。属于可选参数；
    
    
    
