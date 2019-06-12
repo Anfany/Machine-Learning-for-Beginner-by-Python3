@@ -6,7 +6,20 @@
 
 * **卷积**
 
-```tf.nn.conv2d(input, filter, strides, padding, use_cudnn_on_gpu=None, name=None)```
+##### tf.nn.conv2d：根据4维的矩阵和4维的卷积核计算2维的卷积
+
+```python
+tf.nn.conv2d(
+    input,
+    filter,
+    strides,
+    padding,
+    use_cudnn_on_gpu=True,
+    data_format='NHWC',
+    dilations=[1, 1, 1, 1],
+    name=None
+)
+```
 
 
 **input**：指需要做卷积的输入图像，它要求是一个Tensor，具有[batch, in_height, in_width, in_channels]这样的shape，具体含义是[训练时一个batch的图片数量, 图片高度, 图片宽度, 图像通道数]，注意这是一个4维的Tensor，要求类型为float32和float64其中之一
