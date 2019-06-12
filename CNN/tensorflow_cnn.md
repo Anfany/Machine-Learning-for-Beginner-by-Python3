@@ -23,7 +23,7 @@ tf.nn.conv2d(input, filter, strides, padding, use_cudnn_on_gpu=True, data_format
 
 **dilations**：对应输入矩阵维度的扩张因子列表。一个长度为4的一维整型向量。默认值为[1，1，1，1]。对应的维度的顺序为data_format确定的维度顺序，其中批训练的样本数和通道数\深度对应的值必须为1；
 
-**name**：这个算子的名称。属于可选参数；
+**name**：定义算子的名称。属于可选参数；
 
 
 * **池化**
@@ -40,6 +40,18 @@ tf.nn.conv2d(input, filter, strides, padding, use_cudnn_on_gpu=True, data_format
    ```python
    tf.nn.max_pool(value, ksize, strides, padding, data_format='NHWC', name=None)
    ```
+   
+   **value**：
+   
+   **ksize**：
+   
+   **strides**：
+   
+   **padding**：
+   
+   **data_format**：
+   
+   **name**：定义算子的名称。属于可选参数；
    
    
    
