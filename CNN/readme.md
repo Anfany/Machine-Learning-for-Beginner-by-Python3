@@ -14,14 +14,14 @@
 
 ### 二、[卷积神经网络理论](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/cnn.md)
 
-### 四、[数据集](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/CNN/Dataset)
+### 三、[数据集](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/tree/master/CNN/Dataset)
 
       
    * **数据集合转化为图片程序**：[mnist_to_fig.py](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/CNN/mnist_to_fig.py)
     
    
    
-### 五、Python3程序 
+### 四、Python3程序 
 
    
    * **TensorFlow**
