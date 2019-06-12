@@ -1,5 +1,4 @@
-## TensorFlow中CNN函数的说明
-
+## TensorFlow中CNN函数的说明（V1.13.1）
 
 * **卷积**
 
