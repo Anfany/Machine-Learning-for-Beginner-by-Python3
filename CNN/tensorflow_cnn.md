@@ -5,16 +5,7 @@
 #### tf.nn.conv2d：根据4维的矩阵和4维的卷积核计算2维的卷积
 
 ```python
-tf.nn.conv2d(
-    input,
-    filter,
-    strides,
-    padding,
-    use_cudnn_on_gpu=True,
-    data_format='NHWC',
-    dilations=[1, 1, 1, 1],
-    name=None
-)
+tf.nn.conv2d(input, filter, strides, padding, use_cudnn_on_gpu=True, data_format='NHWC', dilations=[1, 1, 1, 1], name=None)
 ```
 
 
@@ -40,27 +31,15 @@ tf.nn.conv2d(
    #### tf.nn.avg_pool：均值池化
    
    ```python
-   tf.nn.avg_pool(
-    value,
-    ksize,
-    strides,
-    padding,
-    data_format='NHWC',
-    name=None
-         )
+   tf.nn.avg_pool(value, ksize, strides, padding, data_format='NHWC', name=None)
    ```
    
    #### tf.nn.max_pool：最大值池化
    
       
    ```python
-   tf.nn.max_pool(
-    value,
-    ksize,
-    strides,
-    padding,
-    data_format='NHWC',
-    name=None
-         )
+   tf.nn.max_pool(value, ksize, strides, padding, data_format='NHWC', name=None)
    ```
+   
+   
    
