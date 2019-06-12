@@ -9,7 +9,7 @@ tf.nn.conv2d(input, filter, strides, padding, use_cudnn_on_gpu=True, data_format
 ```
 
 
-**input**：需要进行卷积的数字矩阵。一个四维的Tensor，数据类型```half```，```bfloat16```，```float32```，```float64```。维度的排列顺序和data_format的设置有关；
+**input**：需要进行卷积的数字矩阵。一个四维的Tensor，数据类型可为```half```，```bfloat16```，```float32```或者```float64```。维度的排列顺序和data_format的设置有关；
 
 **filter**：代表卷积核的数字矩阵。一个Tensor，维度和input维度一样。4维的维度的排列顺序为[高度，宽度，通道数\深度，卷积核的个数]；
 
