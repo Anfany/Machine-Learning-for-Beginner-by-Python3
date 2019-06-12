@@ -18,15 +18,22 @@ tf.nn.conv2d(
 ```
 
 
-**input**：指需要做卷积的输入图像，它要求是一个Tensor，具有[batch, in_height, in_width, in_channels]这样的shape，具体含义是[训练时一个batch的图片数量, 图片高度, 图片宽度, 图像通道数]，注意这是一个4维的Tensor，要求类型为float32和float64其中之一
+**input**：需要进行卷积的数字矩阵。一个四维的Tensor，数据类型```half```，```bfloat16```，```float32```，```float64```。维度的排列顺序和data_format的设置有关；
 
-**filter**：相当于CNN中的卷积核，它要求是一个Tensor，具有[filter_height, filter_width, in_channels, out_channels]这样的shape，具体含义是[卷积核的高度，卷积核的宽度，图像通道数，卷积核个数]，要求类型与参数input相同，有一个地方需要注意，第三维in_channels，就是参数input的第四维
+**filter**：代表卷积核的数字矩阵。一个Tensor，维度和input维度一样。4维的维度的排列顺序为[高度，宽度，通道数\深度，卷积核的个数]；
 
-**strides**：卷积时在图像每一维的步长，这是一个一维的向量，长度4
+**strides**：卷积时图像每个维度的步长。一个长度为4的一维整型向量，；
 
-**padding**：string类型的量，只能是"SAME","VALID"其中之一，这个值决定了不同的卷积方式（后面会介绍）
+**padding**：卷积的方式。字符串类型，"SAME"或者"VALID"；
 
-**use_cudnn_on_gpu**:bool类型，是否使用cudnn加速，默认为true
+**use_cudnn_on_gpu**：是否使用cudnn加速。布尔类型，默认为True；
+
+**data_format**：输入数据和输出数据的维度的排列形式。字符串类型，"NHWC"或者"NCHW"，默认为前者，此时数据维度的排列顺序为[批训练的样本数，高度，宽度，通道数\深度]。当为"NCHW"时，数据维度的排列顺序为[批训练的样本数，通道数\深度，高度，宽度]；
+
+**dilations**：
+
+**name**：
+
 
 结果返回一个Tensor，这个输出，就是我们常说的feature map
 
