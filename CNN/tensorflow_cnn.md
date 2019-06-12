@@ -36,3 +36,31 @@ tf.nn.conv2d(
 
 
 * **池化**
+
+   #### tf.nn.avg_pool：均值池化
+   
+   ```python
+   tf.nn.avg_pool(
+    value,
+    ksize,
+    strides,
+    padding,
+    data_format='NHWC',
+    name=None
+         )
+   ```
+   
+   #### tf.nn.max_pool：最大值池化
+   
+      
+   ```python
+   tf.nn.max_pool(
+    value,
+    ksize,
+    strides,
+    padding,
+    data_format='NHWC',
+    name=None
+         )
+   ```
+   
