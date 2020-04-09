@@ -394,5 +394,5 @@ def predict_picture(path='/home/aistudio/data/data29044/MyPicture'):
 ```
 ![在这里插入图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/edit/master/CNN/PaddlePaddle/1_2.png)
 [点击](https://github.com/Anfany/Python-3-Project-Practice)获得更多项目源码。欢迎Follow，感谢Star!!!  扫描关注微信公众号**pythonfan**，获取更多。
-![image](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzQ3MzQyMjAtYzY1MGI4OTg0ZGI0MzAyMA?x-oss-process=image/format,png)![image](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzQ3MzQyMjAtNjRhZTkwYzMyZGJlMTJlOQ?x-oss-process=image/format,png)
+![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/pythonfan_anfany.jpg)
 
