@@ -328,7 +328,7 @@ def draw_loss(traindata, testdata, yl='loss'):
 draw_loss(train_loss_plot, test_loss_plot)
 draw_loss(train_acc_plot, test_acc_plot, 'Acc')
 ```
-![在这里插入图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/edit/master/CNN/PaddlePaddle/1_1.png)
+![训练VS测试曲线](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/edit/master/CNN/PaddlePaddle/1_1.png)
 
 ##### 五、验证数据集准确度
 ```python
@@ -401,7 +401,7 @@ def predict_picture(path):
 
 predict_picture(path='/home/aistudio/data/data29044/MyPicture')
 ```
-![在这里插入图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/edit/master/CNN/PaddlePaddle/1_2.png)
+![预测结果](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/edit/master/CNN/PaddlePaddle/1_2.jpg)
 [点击](https://github.com/Anfany/Python-3-Project-Practice)获得更多项目源码。欢迎Follow，感谢Star!!!  扫描关注微信公众号**pythonfan**，获取更多。
 ![image](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/blob/master/pythonfan_anfany.jpg)
 
