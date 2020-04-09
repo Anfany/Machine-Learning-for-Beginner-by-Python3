@@ -364,33 +364,42 @@ with fluid.dygraph.guard(fluid.CUDAPlace(0)):
 
 ```python
 # 判断自己上传的照片的准确率,
-def predict_picture(path='/home/aistudio/data/data29044/MyPicture'):
+def predict_picture(path):
     # path 存储自己图片的文件夹.其中图片名称的第一个字符必须为图片中手势表示的数字
     for p in os.listdir(path):
         d_name = p[0]
-        # 图片的路径
-        filepath = os.path.join(path, p)
-        img = Image.open(filepath)
-        # 将分辨率调制一样
-        img = img.resize((100, 100), Image.ANTIALIAS)
-        img = np.array(img).astype('float32')
-        img = img.transpose((2, 0, 1))
-        img = img/255.0
-        #构建预测动态图过程
-        with fluid.dygraph.guard(fluid.CUDAPlace(0)):
-            model=CNNBP()#模型实例化
-            model_dict,_=fluid.load_dygraph('./para/CNNBP%s' % best_model_sign)
-            model.load_dict(model_dict)#加载模型参数
-            model.eval()#评估模式
+        pname = p.split('.')
+        if pname[-1] in ['jpg', 'JPG', 'png', 'PNG']:
+            # 图片的路径
+            filepath = os.path.join(path, p)
+            img = Image.open(filepath)
+            # 将分辨率调制一样
+            img = img.resize((100, 100), Image.ANTIALIAS)
+            display(img)
+            # 显示图片
+            img = np.array(img).astype('float32')
+            # 转换维度
+            img = img.transpose((2, 0, 1))
+            #构建预测动态图过程
+            with fluid.dygraph.guard(fluid.CUDAPlace(0)):
+                model=CNNBP()#模型实例化
+                model_dict,_=fluid.load_dygraph('./para/CNNBP%s' % best_model_sign)
+                model.load_dict(model_dict)#加载模型参数
+                model.eval()#评估模式
 
-            infer_img=np.array(img).astype('float32')
-            infer_img=infer_img[np.newaxis,:, : ,:]
-            infer_img = fluid.dygraph.to_variable(infer_img)
-            # 预测得到的softmax结果
-            result=model(infer_img)
-            # 展示图片
-            display(Image.open(filepath))
-            print('真实数字为:', d_name, '预测的数字为', np.argmax(result.numpy()))
+                infer_img=np.array(img).astype('float32')
+                infer_img=infer_img[np.newaxis,:, : ,:]
+                infer_img = fluid.dygraph.to_variable(infer_img)
+                # 预测得到的softmax结果
+                result=model(infer_img)
+                print('真实数字为:', d_name, '预测的数字为', np.argmax(result.numpy()))
+                prob_list = list(result.numpy()[0])
+                # 输出各个数字的概率
+                prob_c_dict = {j: prob_list[j] for j in range(len(prob_list))}
+                sp = sorted(prob_c_dict.items(), key=lambda x: -x[1])
+                print('各个数字的概率', sp)
+
+predict_picture(path='/home/aistudio/data/data29044/MyPicture')
 ```
 ![在这里插入图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/edit/master/CNN/PaddlePaddle/1_2.png)
 [点击](https://github.com/Anfany/Python-3-Project-Practice)获得更多项目源码。欢迎Follow，感谢Star!!!  扫描关注微信公众号**pythonfan**，获取更多。
