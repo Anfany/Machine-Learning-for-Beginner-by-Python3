@@ -328,8 +328,8 @@ def draw_loss(traindata, testdata, yl='loss'):
 draw_loss(train_loss_plot, test_loss_plot)
 draw_loss(train_acc_plot, test_acc_plot, 'Acc')
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200409143553909.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyODgyMzA5,size_16,color_FFFFFF,t_70#pic_center)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2020040914360663.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMyODgyMzA5,size_16,color_FFFFFF,t_70#pic_center)
+![在这里插入图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/edit/master/CNN/PaddlePaddle/1_1.png)
+
 ##### 五、验证数据集准确度
 ```python
 # 根据测试数据集合的精确率选择效果最后的模型
@@ -392,7 +392,7 @@ def predict_picture(path='/home/aistudio/data/data29044/MyPicture'):
             display(Image.open(filepath))
             print('真实数字为:', d_name, '预测的数字为', np.argmax(result.numpy()))
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200409150949867.png#pic_center)
+![在这里插入图片描述](https://github.com/Anfany/Machine-Learning-for-Beginner-by-Python3/edit/master/CNN/PaddlePaddle/1_2.png)
 [点击](https://github.com/Anfany/Python-3-Project-Practice)获得更多项目源码。欢迎Follow，感谢Star!!!  扫描关注微信公众号**pythonfan**，获取更多。
 ![image](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzQ3MzQyMjAtYzY1MGI4OTg0ZGI0MzAyMA?x-oss-process=image/format,png)![image](https://imgconvert.csdnimg.cn/aHR0cDovL3VwbG9hZC1pbWFnZXMuamlhbnNodS5pby91cGxvYWRfaW1hZ2VzLzQ3MzQyMjAtNjRhZTkwYzMyZGJlMTJlOQ?x-oss-process=image/format,png)
 
